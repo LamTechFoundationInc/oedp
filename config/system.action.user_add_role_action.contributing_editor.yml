@@ -1,0 +1,14 @@
+uuid: 1dec18a4-b257-45da-8069-da1c5ef2a788
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.contributing_editor
+  module:
+    - user
+id: user_add_role_action.contributing_editor
+label: 'Add the Contributing Editor role to the selected users'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: contributing_editor

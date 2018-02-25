@@ -1,0 +1,24 @@
+uuid: e3a9d869-7a50-490c-879b-4846b6ddce68
+langcode: en
+status: true
+dependencies:
+  module:
+    - workbench_moderation
+third_party_settings:
+  workbench_moderation:
+    enabled: true
+    allowed_moderation_states:
+      - published
+      - archived
+      - draft
+      - needs_review
+    default_moderation_state: draft
+_core:
+  default_config_hash: LMSufbFWhDFh2qxdN7c27xQ_np6KoeEal5VxhL1is48
+name: Chart
+type: easychart
+description: 'Create a chart using the world''s best web charting tool: Highcharts'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: true

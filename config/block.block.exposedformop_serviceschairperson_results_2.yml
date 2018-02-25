@@ -1,0 +1,29 @@
+uuid: 2abc8cf5-5db8-4ed5-b774-f0cb607bad75
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.op_services
+  module:
+    - system
+    - views
+  theme:
+    - openelections
+id: exposedformop_serviceschairperson_results_2
+theme: openelections
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'views_exposed_filter_block:op_services-chairperson_results'
+settings:
+  id: 'views_exposed_filter_block:op_services-chairperson_results'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+visibility:
+  request_path:
+    id: request_path
+    pages: /results/chairperson/table
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,13 @@
+name: Geolocation Street View
+type: module
+description: Embed Google Street View using a Geolocation widget and formatter.
+# core: 8.x
+package: Geolocation
+dependencies:
+  - geolocation
+
+# Information added by Drupal.org packaging script on 2017-03-08
+version: '8.x-1.0-beta1'
+core: '8.x'
+project: 'geolocation_street_view'
+datestamp: 1488971887

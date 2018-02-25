@@ -1,0 +1,23 @@
+uuid: b4fbcdc7-52d6-4ba9-9486-898492ee4e14
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_op_if_link
+    - paragraphs.paragraphs_type.op_icon_features
+  module:
+    - link
+id: paragraph.op_icon_features.field_op_if_link
+field_name: field_op_if_link
+entity_type: paragraph
+bundle: op_icon_features
+label: Link
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

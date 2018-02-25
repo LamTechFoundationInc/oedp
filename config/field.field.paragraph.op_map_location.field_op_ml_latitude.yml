@@ -1,0 +1,19 @@
+uuid: 57e983bc-8763-47f5-92a3-70a70536565f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_op_ml_latitude
+    - paragraphs.paragraphs_type.op_map_location
+id: paragraph.op_map_location.field_op_ml_latitude
+field_name: field_op_ml_latitude
+entity_type: paragraph
+bundle: op_map_location
+label: Latitude
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

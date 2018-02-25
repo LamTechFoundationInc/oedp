@@ -1,0 +1,27 @@
+/**
+ * @file
+ * Styles for Magazine+'s node side affix.
+ */
+@media (min-width: 1360px) {
+  #affix.affix,
+  #affix.affix-bottom,
+  #affix.affix-top {
+    position: static!important;
+  }
+}
+@media (max-width: 1359px) {
+  #affix.affix {
+    position: fixed;
+    width: 55px;
+  }
+  #affix.affix > div:first-child {
+    padding-top: 15px;
+  }
+  #affix.affix .share-links {
+    margin-top: 0;
+  }
+  #affix.affix-bottom {
+    position: absolute;
+    width: 55px;
+  } 
+}

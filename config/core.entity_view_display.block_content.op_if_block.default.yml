@@ -1,0 +1,24 @@
+uuid: c5fa46da-c1fb-4628-836e-8705183217cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.op_if_block
+    - field.field.block_content.op_if_block.field_op_if
+  module:
+    - entity_reference_revisions
+id: block_content.op_if_block.default
+targetEntityType: block_content
+bundle: op_if_block
+mode: default
+content:
+  field_op_if:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden: {  }

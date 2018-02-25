@@ -1,0 +1,18 @@
+uuid: 33d2989d-250b-49ed-899c-73b93510977f
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.lt_cand_elected_officials
+id: node.lt_cand_elected_officials.title
+field_name: title
+entity_type: node
+bundle: lt_cand_elected_officials
+label: Title
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

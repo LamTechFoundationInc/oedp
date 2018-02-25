@@ -1,0 +1,7 @@
+uuid: 668eca49-389e-499f-a7ce-4aef373fd02d
+langcode: en
+status: false
+dependencies: {  }
+formId: node_easychart_form
+captchaType: default
+label: null

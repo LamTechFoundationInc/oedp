@@ -1,0 +1,30 @@
+uuid: 77198517-845f-4d88-8ced-941c5e2376d0
+langcode: en
+status: false
+dependencies:
+  config:
+    - views.view.registration_and_polling_centres
+  module:
+    - system
+    - views
+  theme:
+    - openelections
+id: views_block__registration_and_polling_centres_block_1_2
+theme: openelections
+region: content_top_highlighted
+weight: 0
+provider: null
+plugin: 'views_block:registration_and_polling_centres-block_1'
+settings:
+  id: 'views_block:registration_and_polling_centres-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,21 @@
+uuid: cdb5811d-f74c-4a07-ac4c-b2a831953d00
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_op_collapse_body
+    - paragraphs.paragraphs_type.op_collapse
+  module:
+    - text
+id: paragraph.op_collapse.field_op_collapse_body
+field_name: field_op_collapse_body
+entity_type: paragraph
+bundle: op_collapse
+label: 'Collapse Body'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

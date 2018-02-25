@@ -1,0 +1,19 @@
+uuid: b643361b-ff4c-493b-9f30-310aee7e3d89
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_data_sources
+    - node.type.lt_regist_poll_center
+id: node.lt_regist_poll_center.field_data_sources
+field_name: field_data_sources
+entity_type: node
+bundle: lt_regist_poll_center
+label: 'Data Sources'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,24 @@
+uuid: 1d8afe3d-53d0-4648-a837-9682e271d6bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.op_fancy_tabs_block
+    - field.field.block_content.op_fancy_tabs_block.field_op_fancy_tab
+  module:
+    - entity_reference_revisions
+id: block_content.op_fancy_tabs_block.default
+targetEntityType: block_content
+bundle: op_fancy_tabs_block
+mode: default
+content:
+  field_op_fancy_tab:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden: {  }

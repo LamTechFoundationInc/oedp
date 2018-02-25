@@ -1,0 +1,21 @@
+uuid: 8a6e4169-ffde-42b0-81f7-9565bb034c53
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_election_year
+    - paragraphs.paragraphs_type.former_presidents
+  module:
+    - options
+id: paragraph.former_presidents.field_election_year
+field_name: field_election_year
+entity_type: paragraph
+bundle: former_presidents
+label: 'Election Year'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

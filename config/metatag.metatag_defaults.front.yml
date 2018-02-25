@@ -1,0 +1,13 @@
+uuid: 35277483-8684-4743-badc-65c026f542f7
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 1noCXlegCr5HFehQRF1ViXy1jhU1jZ_sNN99a8Sj5jo
+id: front
+label: 'Front page'
+tags:
+  canonical_url: '[site:url]'
+  title: '[current-page:title] | [site:name]'
+  shortlink: '[site:url]'
+  description: 'An open platform that gives journalist and the public access to historical elections data for presidential, parliamentary, local council, district chairperson, major, and village headmen in Sierra Leone'

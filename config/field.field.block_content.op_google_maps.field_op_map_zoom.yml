@@ -1,0 +1,21 @@
+uuid: 0b1925b5-f1e6-41e0-a16f-84e9a57dd997
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.op_google_maps
+    - field.storage.block_content.field_op_map_zoom
+id: block_content.op_google_maps.field_op_map_zoom
+field_name: field_op_map_zoom
+entity_type: block_content
+bundle: op_google_maps
+label: 'Map zoom'
+description: 'Enter the map zoom level or leave it to zero for auto zoom.'
+required: true
+translatable: false
+default_value:
+  -
+    value: '0'
+default_value_callback: ''
+settings: {  }
+field_type: string

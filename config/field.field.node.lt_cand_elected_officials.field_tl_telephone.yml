@@ -1,0 +1,21 @@
+uuid: c7ba7245-8326-41aa-9bf3-868f22e67b8b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tl_telephone
+    - node.type.lt_cand_elected_officials
+  module:
+    - telephone
+id: node.lt_cand_elected_officials.field_tl_telephone
+field_name: field_tl_telephone
+entity_type: node
+bundle: lt_cand_elected_officials
+label: Telephone
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

@@ -1,0 +1,30 @@
+uuid: 5e26ecee-e08d-416c-a9e6-1a721f71c64a
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.op_videos
+  module:
+    - system
+    - views
+  theme:
+    - openelections
+id: views_block__op_videos_video
+theme: openelections
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:op_videos-video'
+settings:
+  id: 'views_block:op_videos-video'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: "/get-involved/volunteer-documentation\r\n/get-involved/developer-documentation"
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,20 @@
+uuid: d49d6558-2b90-4e36-9bc6-8e8e217fe86b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_total_population
+field_name: field_total_population
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

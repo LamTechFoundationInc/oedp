@@ -1,0 +1,21 @@
+uuid: d1fd76a3-fc04-46ec-a24d-d3a60cf82229
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_op_highlight_body
+    - paragraphs.paragraphs_type.op_highlight
+  module:
+    - text
+id: paragraph.op_highlight.field_op_highlight_body
+field_name: field_op_highlight_body
+entity_type: paragraph
+bundle: op_highlight
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

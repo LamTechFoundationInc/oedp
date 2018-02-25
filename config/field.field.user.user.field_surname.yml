@@ -1,0 +1,20 @@
+uuid: ae586479-b5d2-42f2-80ef-a251c02eade8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_surname
+  module:
+    - user
+id: user.user.field_surname
+field_name: field_surname
+entity_type: user
+bundle: user
+label: Surname
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

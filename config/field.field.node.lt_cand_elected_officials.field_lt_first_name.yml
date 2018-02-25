@@ -1,0 +1,19 @@
+uuid: ca771434-8488-4edb-b2ad-0b8e6ba32d9c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lt_first_name
+    - node.type.lt_cand_elected_officials
+id: node.lt_cand_elected_officials.field_lt_first_name
+field_name: field_lt_first_name
+entity_type: node
+bundle: lt_cand_elected_officials
+label: 'First Name'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

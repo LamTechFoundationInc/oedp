@@ -1,0 +1,19 @@
+uuid: 0011898c-666d-4ec3-ade4-63cb228c000e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_data
+    - taxonomy.vocabulary.lt_political_party
+id: taxonomy_term.lt_political_party.field_data
+field_name: field_data
+entity_type: taxonomy_term
+bundle: lt_political_party
+label: 'Data Sources'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

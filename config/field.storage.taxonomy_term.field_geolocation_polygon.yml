@@ -1,0 +1,19 @@
+uuid: 17f9d804-e2ad-449c-9339-7321f2d9f7af
+langcode: en
+status: true
+dependencies:
+  module:
+    - geofield
+    - taxonomy
+id: taxonomy_term.field_geolocation_polygon
+field_name: field_geolocation_polygon
+entity_type: taxonomy_term
+type: geofield
+settings: {  }
+module: geofield
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

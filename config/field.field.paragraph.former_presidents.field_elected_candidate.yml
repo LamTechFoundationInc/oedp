@@ -1,0 +1,28 @@
+uuid: e89c57b3-137d-4540-9191-d7ea5737cacc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_elected_candidate
+    - node.type.lt_cand_elected_officials
+    - paragraphs.paragraphs_type.former_presidents
+id: paragraph.former_presidents.field_elected_candidate
+field_name: field_elected_candidate
+entity_type: paragraph
+bundle: former_presidents
+label: 'Elected Candidate'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      lt_cand_elected_officials: lt_cand_elected_officials
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

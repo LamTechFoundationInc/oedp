@@ -1,0 +1,112 @@
+/**
+ * @file
+ * Visual styles for sle_highlight paragraphs type in Corporate+.
+ */
+.field--type-entity-reference-revisions > .field__item {
+  clear: both;
+}
+.field--type-entity-reference-revisions > .field__item:last-child {
+  margin-bottom: 30px;
+}
+.field--type-entity-reference-revisions > .field__item:last-child:after {
+  clear: both;
+  display: table;
+  content: " ";
+}
+.paragraph--type--sle-highlight {
+  padding: 1.8em 0;
+}
+.paragraph--type--sle-highlight:before,
+.paragraph--type--sle-highlight:after {
+  display: table;
+  content: " ";
+}
+.paragraph--type--sle-highlight:after {
+  clear: both;
+}
+.field--name-field-sle-highlight-title {
+  font-size: 28px;
+  line-height: 1.20;
+  margin: 0 0 10px 0;
+  padding-top: 5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #363636;
+}
+.field__item .field--name-field-sle-highlight-body:after {
+  clear: none;
+}
+.field--name-field-sle-highlight-link a {
+  font-size: 18px;
+  text-transform: uppercase;
+  padding: 15px 23px;
+  margin-bottom: 30px;
+  text-decoration: none;
+  line-height: 1;
+  display: inline-block;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  min-width: 200px;
+  font-weight: 700;
+  border-width: 1px;
+  border-style: solid;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  text-align: center;
+  background-color: transparent;
+}
+.field--name-field-sle-highlight-link a:hover {
+  color: #ffffff;
+}
+@media (max-width: 767px) {
+  .field--name-field-sle-highlight-title {
+    padding-top: 20px;
+  }
+}
+@media (min-width: 768px) { 
+  .paragraph--type--sle-highlight .field--name-field-sle-highlight-image {
+    width: 50%;
+  }
+  .field__item:nth-child(even) .field--name-field-sle-highlight-image {
+    float: left;
+  }
+  .field__item:nth-child(even) .field--name-field-sle-highlight-title,
+  .field__item:nth-child(even) .field--name-field-sle-highlight-body,
+  .field__item:nth-child(even) .field--name-field-sle-highlight-link {
+    margin-left: 53%;
+  }
+  .field__item:nth-child(odd) .field--name-field-sle-highlight-image {
+    float: right;
+  }
+  .field__item:nth-child(odd) .field--name-field-sle-highlight-title,
+  .field__item:nth-child(odd) .field--name-field-sle-highlight-body,
+  .field__item:nth-child(odd) .field--name-field-sle-highlight-link {
+    margin-right: 53%;
+  }
+  .field--name-field-sle-highlight-link a {
+    margin-bottom: 10px;
+  }
+}
+@media (min-width: 1200px) { 
+  .field__item:nth-child(even) .field--name-field-sle-highlight-title,
+  .field__item:nth-child(even) .field--name-field-sle-highlight-body,
+  .field__item:nth-child(even) .field--name-field-sle-highlight-link {
+    margin-left: 55%;
+    margin-right: 5%;
+  }
+  .field__item:nth-child(odd) .field--name-field-sle-highlight-title,
+  .field__item:nth-child(odd) .field--name-field-sle-highlight-body,
+  .field__item:nth-child(odd) .field--name-field-sle-highlight-link {
+    margin-right: 55%;
+    margin-left: 5%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1200px) { 
+  .field--name-field-sle-highlight-title {
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,22 @@
+uuid: 48029452-48b9-4ca5-8ccf-068b7c646d00
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - votingapi_widgets
+id: node.field_useful_rating
+field_name: field_useful_rating
+entity_type: node
+type: voting_api_field
+settings:
+  vote_type: like
+  vote_plugin: useful
+  status: ''
+module: votingapi_widgets
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

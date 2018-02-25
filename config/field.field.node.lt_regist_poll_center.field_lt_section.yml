@@ -1,0 +1,25 @@
+uuid: 25063847-f376-47b3-ba08-c95eeda7ca24
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lt_section
+    - node.type.lt_regist_poll_center
+id: node.lt_regist_poll_center.field_lt_section
+field_name: field_lt_section
+entity_type: node
+bundle: lt_regist_poll_center
+label: Section
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: editor_taxonomy_entity_reference_fields
+      display_name: sections_entity_reference
+      arguments: {  }
+field_type: entity_reference

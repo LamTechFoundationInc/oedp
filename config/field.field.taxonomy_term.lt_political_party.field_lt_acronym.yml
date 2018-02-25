@@ -1,0 +1,19 @@
+uuid: 4bfeae76-2245-4b09-baa6-5974033ef6a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_lt_acronym
+    - taxonomy.vocabulary.lt_political_party
+id: taxonomy_term.lt_political_party.field_lt_acronym
+field_name: field_lt_acronym
+entity_type: taxonomy_term
+bundle: lt_political_party
+label: Acronym
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

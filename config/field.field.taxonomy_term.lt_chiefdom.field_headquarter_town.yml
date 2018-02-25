@@ -1,0 +1,28 @@
+uuid: 57d996e7-82ac-498a-8c6a-d317032e3e94
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_headquarter_town
+    - node.type.villages_towns_cities
+    - taxonomy.vocabulary.lt_chiefdom
+id: taxonomy_term.lt_chiefdom.field_headquarter_town
+field_name: field_headquarter_town
+entity_type: taxonomy_term
+bundle: lt_chiefdom
+label: 'Headquarter Town'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      villages_towns_cities: villages_towns_cities
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

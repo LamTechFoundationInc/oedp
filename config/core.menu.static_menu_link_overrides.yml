@@ -1,0 +1,21 @@
+definitions:
+  entity__media__collection:
+    weight: 1
+    menu_name: admin
+    parent: system.admin_content
+    enabled: true
+    expanded: false
+  poll__poll_list:
+    weight: 4
+    menu_name: admin
+    parent: system.admin_content
+    expanded: false
+    enabled: true
+  entity__scheduled_update__collection:
+    weight: 5
+    menu_name: admin
+    parent: system.admin_content
+    expanded: false
+    enabled: true
+_core:
+  default_config_hash: jdY7AU0tU-QsjmiOw3W8vwpYMb-By--_MSFgbqKUTYM

@@ -1,0 +1,279 @@
+uuid: fc18acc5-deaa-42fd-b426-2dc92d58cb69
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_browser
+    - field.field.taxonomy_term.lt_political_party.field_data
+    - field.field.taxonomy_term.lt_political_party.field_date_founded
+    - field.field.taxonomy_term.lt_political_party.field_former_mayors_district_cha
+    - field.field.taxonomy_term.lt_political_party.field_former_members_of_parliame
+    - field.field.taxonomy_term.lt_political_party.field_former_president
+    - field.field.taxonomy_term.lt_political_party.field_founders
+    - field.field.taxonomy_term.lt_political_party.field_lt_acronym
+    - field.field.taxonomy_term.lt_political_party.field_lt_address
+    - field.field.taxonomy_term.lt_political_party.field_lt_geolocation
+    - field.field.taxonomy_term.lt_political_party.field_lt_header_image
+    - field.field.taxonomy_term.lt_political_party.field_lt_party_color
+    - field.field.taxonomy_term.lt_political_party.field_official_email_a
+    - field.field.taxonomy_term.lt_political_party.field_official_phone_numbers
+    - field.field.taxonomy_term.lt_political_party.field_official_website_url
+    - field.field.taxonomy_term.lt_political_party.field_political_party_variables
+    - taxonomy.vocabulary.lt_political_party
+  module:
+    - address
+    - field_group
+    - geolocation
+    - inline_entity_form
+    - link
+    - paragraphs
+    - path
+    - telephone
+    - text
+third_party_settings:
+  field_group:
+    group_contact_information:
+      children:
+        - field_lt_address
+        - field_official_phone_numbers
+        - field_official_email_a
+        - field_official_website_url
+        - field_lt_geolocation
+      parent_name: ''
+      weight: 1
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Contact Information'
+      region: content
+    group_basic_information:
+      children:
+        - name
+        - field_lt_acronym
+        - field_lt_party_color
+        - field_date_founded
+        - description
+        - field_lt_header_image
+        - field_founders
+      parent_name: ''
+      weight: 0
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Basic Information'
+      region: content
+    group_former_and_current_elected:
+      children:
+        - field_former_president
+        - field_former_members_of_parliame
+        - field_former_mayors_district_cha
+      parent_name: ''
+      weight: 3
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Former and Current Elected Officials'
+      region: content
+id: taxonomy_term.lt_political_party.default
+targetEntityType: taxonomy_term
+bundle: lt_political_party
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 5
+    region: content
+    settings:
+      placeholder: ''
+      rows: 5
+    third_party_settings: {  }
+  field_data:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_date_founded:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_former_mayors_district_cha:
+    type: entity_reference_paragraphs
+    weight: 8
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_former_members_of_parliame:
+    type: entity_reference_paragraphs
+    weight: 7
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_former_president:
+    type: entity_reference_paragraphs
+    weight: 6
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_founders:
+    weight: 7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_lt_acronym:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_lt_address:
+    weight: 6
+    settings:
+      default_country: null
+    third_party_settings: {  }
+    type: address_default
+    region: content
+  field_lt_geolocation:
+    weight: 10
+    settings:
+      populate_address_field: ''
+      target_address_field: null
+      explicite_actions_address_field: ''
+      default_longitude: null
+      default_latitude: null
+      auto_client_location: ''
+      auto_client_location_marker: ''
+      allow_override_map_settings: 0
+      google_map_settings:
+        type: ROADMAP
+        zoom: '10'
+        minZoom: 0
+        maxZoom: 18
+        rotateControl: 0
+        mapTypeControl: 1
+        streetViewControl: 1
+        zoomControl: 1
+        fullscreenControl: 0
+        scrollwheel: 1
+        disableDoubleClickZoom: 0
+        draggable: 1
+        height: 400px
+        width: 100%
+        info_auto_display: 1
+        marker_icon_path: ''
+        disableAutoPan: 1
+        style: ''
+        preferScrollingToZooming: 0
+        gestureHandling: auto
+    third_party_settings: {  }
+    type: geolocation_googlegeocoder
+    region: content
+  field_lt_header_image:
+    weight: 6
+    settings:
+      form_mode: media_browser
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+    third_party_settings: {  }
+    type: inline_entity_form_complex
+    region: content
+  field_lt_party_color:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_official_email_a:
+    weight: 8
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
+  field_official_phone_numbers:
+    weight: 7
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+    region: content
+  field_official_website_url:
+    weight: 9
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_political_party_variables:
+    type: entity_reference_paragraphs
+    weight: 2
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  name:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

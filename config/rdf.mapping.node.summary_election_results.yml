@@ -1,0 +1,14 @@
+uuid: 46dca6c7-56b8-46a8-8c70-ad3c849f9e1f
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.summary_election_results
+  module:
+    - node
+id: node.summary_election_results
+targetEntityType: node
+bundle: summary_election_results
+types:
+  - ''
+fieldMappings: {  }

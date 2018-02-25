@@ -1,0 +1,14 @@
+uuid: d2872ec8-145c-48b2-995b-818393422a91
+langcode: en
+status: true
+dependencies: {  }
+name: op_testimonial_image
+label: 'Testimonial Image (750x750)'
+effects:
+  31655b9c-6de0-4b25-8ff6-ad2376b16314:
+    uuid: 31655b9c-6de0-4b25-8ff6-ad2376b16314
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 750
+      height: 750

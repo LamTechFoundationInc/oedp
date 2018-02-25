@@ -1,0 +1,22 @@
+uuid: fb7fa0b0-4f18-48d6-8e0e-267499244f00
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.lt_cand_elected_officials
+  module:
+    - text
+id: node.lt_cand_elected_officials.body
+field_name: body
+entity_type: node
+bundle: lt_cand_elected_officials
+label: Profile
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

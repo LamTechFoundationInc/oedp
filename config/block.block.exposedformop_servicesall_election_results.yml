@@ -1,0 +1,29 @@
+uuid: 8ea9022c-2818-4974-9320-001f9ff91996
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.op_services
+  module:
+    - system
+    - views
+  theme:
+    - openelections
+id: exposedformop_servicesall_election_results
+theme: openelections
+region: sidebar_first
+weight: -18
+provider: null
+plugin: 'views_exposed_filter_block:op_services-all_election_results'
+settings:
+  id: 'views_exposed_filter_block:op_services-all_election_results'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+visibility:
+  request_path:
+    id: request_path
+    pages: /results/all
+    negate: false
+    context_mapping: {  }

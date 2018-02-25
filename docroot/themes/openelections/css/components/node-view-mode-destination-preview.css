@@ -1,0 +1,21 @@
+/**
+ * @file
+ * Visual styles for OpenElections destination content type destionation preview view.
+ */
+.node--view-mode-op-destination-preview .node__title {
+  margin-bottom: 20px;
+}
+.node--view-mode-op-destination-preview .node__side-content {
+  margin-bottom: 25px;
+}
+.node--view-mode-op-destination-preview .google-map-canvas {
+  height: 195px;
+}
+.node--view-mode-op-destination-preview .node__side-content .field--name-field-image {
+  margin-bottom: 0;
+}
+@media (max-width: 991px) {
+  .node--view-mode-op-destination-preview .google-map-canvas {
+    height: 400px;
+  }
+}

@@ -1,0 +1,21 @@
+uuid: 572c3361-de82-455c-90fb-f902b0f1384f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lt_why_vote_for_me
+    - node.type.lt_cand_elected_officials
+  module:
+    - text
+id: node.lt_cand_elected_officials.field_lt_why_vote_for_me
+field_name: field_lt_why_vote_for_me
+entity_type: node
+bundle: lt_cand_elected_officials
+label: 'Why vote for me'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

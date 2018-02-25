@@ -1,0 +1,21 @@
+uuid: fbd93741-c955-4d64-bc3c-ffd86a23a9f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_election_year
+    - node.type.lt_regist_poll_center
+  module:
+    - options
+id: node.lt_regist_poll_center.field_election_year
+field_name: field_election_year
+entity_type: node
+bundle: lt_regist_poll_center
+label: 'Election Year (TBD)'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

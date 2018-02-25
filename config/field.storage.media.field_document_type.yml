@@ -1,0 +1,51 @@
+uuid: e375a4dd-bcd1-40e3-8bdc-1a30e8804814
+langcode: en
+status: true
+dependencies:
+  module:
+    - media_entity
+    - options
+id: media.field_document_type
+field_name: field_document_type
+entity_type: media
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'Press Releases'
+      label: 'Press Releases'
+    -
+      value: 'NEC Press Releases'
+      label: 'NEC Press Releases'
+    -
+      value: 'NEC Electoral Administration Books'
+      label: 'NEC Electoral Administration Books'
+    -
+      value: 'NEC News Bulletin'
+      label: 'NEC News Bulletin'
+    -
+      value: 'NEC Annual Reports'
+      label: 'NEC Annual Reports'
+    -
+      value: 'Boundary Delimitation'
+      label: 'Boundary Delimitation'
+    -
+      value: 'Election Results'
+      label: 'Election Results'
+    -
+      value: 'Voter Education'
+      label: 'Voter Education'
+    -
+      value: 'Legal Documents'
+      label: 'Legal Documents'
+    -
+      value: Other
+      label: Other
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

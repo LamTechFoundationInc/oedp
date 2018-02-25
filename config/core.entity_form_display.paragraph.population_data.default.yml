@@ -1,0 +1,56 @@
+uuid: d6020272-9234-4fa4-837f-ae991b47b484
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.population_data.field_election_year
+    - field.field.paragraph.population_data.field_female_population
+    - field.field.paragraph.population_data.field_male_population
+    - field.field.paragraph.population_data.field_registered_voters
+    - field.field.paragraph.population_data.field_total_population
+    - paragraphs.paragraphs_type.population_data
+  module:
+    - workbench_moderation
+id: paragraph.population_data.default
+targetEntityType: paragraph
+bundle: population_data
+mode: default
+content:
+  field_election_year:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_female_population:
+    weight: 1
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_male_population:
+    weight: 2
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_registered_voters:
+    weight: 4
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_total_population:
+    weight: 3
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

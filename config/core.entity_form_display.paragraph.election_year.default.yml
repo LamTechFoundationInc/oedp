@@ -1,0 +1,32 @@
+uuid: 560253e1-5b3e-40d0-bdf5-6454d30eff14
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.election_year.field_election_date
+    - field.field.paragraph.election_year.field_election_round
+    - paragraphs.paragraphs_type.election_year
+  module:
+    - datetime
+    - workbench_moderation
+id: paragraph.election_year.default
+targetEntityType: paragraph
+bundle: election_year
+mode: default
+content:
+  field_election_date:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_election_round:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

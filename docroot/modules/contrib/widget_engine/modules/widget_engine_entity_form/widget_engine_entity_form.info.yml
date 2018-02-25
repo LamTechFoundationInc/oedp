@@ -1,0 +1,17 @@
+name: Widget engine entity form
+description: Implementing a entity form in widget engine module.
+package: Widget system
+type: module
+# core: 8.x
+dependencies:
+  - drupal:node
+  - drupal:path
+  - drupal:text
+  - entity_browser_entity_form:entity_browser_entity_form
+  - widget_engine:widget_engine
+
+# Information added by Drupal.org packaging script on 2017-05-25
+version: '8.x-1.0'
+core: '8.x'
+project: 'widget_engine'
+datestamp: 1495723087

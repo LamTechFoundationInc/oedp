@@ -1,0 +1,21 @@
+uuid: 1020b7ce-5ccc-4190-be10-8e8f31ea6fde
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lt_election_year
+    - node.type.summary_election_results
+  module:
+    - datetime
+id: node.summary_election_results.field_lt_election_year
+field_name: field_lt_election_year
+entity_type: node
+bundle: summary_election_results
+label: 'Election Date'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

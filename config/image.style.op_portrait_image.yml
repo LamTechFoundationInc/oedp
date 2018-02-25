@@ -1,0 +1,14 @@
+uuid: e03f9332-7804-4171-bad6-c4c80da93498
+langcode: en
+status: true
+dependencies: {  }
+name: op_portrait_image
+label: 'Portrait Image (750x846)'
+effects:
+  636bcee0-1e9f-4b25-8e2d-b3e0fee327fe:
+    uuid: 636bcee0-1e9f-4b25-8e2d-b3e0fee327fe
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 750
+      height: 846

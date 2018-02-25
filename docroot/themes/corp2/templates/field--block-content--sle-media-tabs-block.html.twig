@@ -1,0 +1,88 @@
+{#
+/**
+ * @file
+ * Corporate+'s theme override for the block entity refernece field for the tabs powered custom block
+ *
+ * @see elections_preprocess_field__block_content__sle_fancy_tabs_block()
+ */
+#}
+{{ attach_library('elections/media-tabs') }}
+{%
+  set classes = [
+    'field',
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+    'field--label-' ~ label_display,
+    'field--entity-reference-target-type-' ~ entity_reference_target_type|clean_class,
+    'field--sle-media-tabs-block',
+    'clearfix',
+  ]
+%}
+{%
+  set title_classes = [
+    'field__label',
+    label_display == 'inline' ? 'inline',
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+  {% if not label_hidden %}
+    <h3{{ title_attributes.addClass(title_classes) }}>{{ label }}</h3>
+  {% endif %}
+  <ul class="nav nav-pills text-center">
+    {% for item in items %}
+      <li class="{{ loop.first ? ' active' : '' }}">
+        <a href="#{{item.tab_item_data.id}}" data-toggle="tab">
+          {{ item.content['#paragraph'].get('field_sle_media_tab_title').value }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+  <div class="tab-content">
+    {% for item in items %}
+      <div class="tab-pane fade {{ loop.first ? ' active in' : '' }}" id="{{item.tab_item_data.id}}">
+        <div class="row">
+          {% if item.content['#paragraph'].field_sle_media_image.value or item.content['#paragraph'].field_sle_media_video.value %}
+            <div class="col-md-7">
+              {% if item.content['#paragraph'].field_sle_media_video.value %}
+                {{ item.video_field }}
+              {% elseif item.content['#paragraph'].field_sle_media_image.value %}
+                <div class="overlay-container">
+                  {% if item.content['#paragraph'].field_sle_media_button.title %}
+                    <span class="overlay overlay--colored">
+                      <a class="overlay-target-link" href="{{ item.content['#paragraph'].field_sle_media_button.0.url }}"></a>
+                      <span class="overlay-inner">
+                        <a class="button overlay-animated overlay-fade-bottom" href="{{ item.content['#paragraph'].field_sle_media_button.0.url }}">
+                          {{ item.content['#paragraph'].field_sle_media_button.title }}
+                        </a>
+                      </span>
+                    </span>
+                  {% endif %}
+                  <img src="{{ item.media_image_styled_url }}" alt="{{ item.content['#paragraph'].field_sle_media_image.alt }}" title="{{ item.content['#paragraph'].field_sle_media_image.title }}">
+                </div>
+              {% endif %}
+            </div>
+          {% endif %}
+          <div class="{{ (item.content['#paragraph'].field_sle_media_image.value or item.content['#paragraph'].field_sle_media_video.value) ? 'col-md-5' : 'col-md-12' }}">
+            {% if item.content['#paragraph'].field_sle_media_title.value %}
+              <div class="sle-media-title">
+                <h3>{{ item.content['#paragraph'].field_sle_media_title.value }}</h3>
+              </div>
+            {% endif %}
+            {% if item.content['#paragraph'].field_sle_media_body.value %}
+              <div class="sle-media-body">
+                {{ item.content }}
+              </div>
+            {% endif %}
+            {% if item.content['#paragraph'].field_sle_media_button.title %}
+              <div class="sle-media-button">
+                <a class="button button--hover-style-2" href="{{ item.content['#paragraph'].field_sle_media_button.0.url }}">
+                  {{ item.content['#paragraph'].field_sle_media_button.title }}
+                </a>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>

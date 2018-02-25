@@ -1,0 +1,71 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a view template to display a list of rows.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the container.
+ * - rows: A list of rows for this list.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's contents.
+ * - title: The title of this group of rows. May be empty.
+ * - list: @todo.
+ *   - type: Starting tag will be either a ul or ol.
+ *   - attributes: HTML attributes for the list element.
+ *
+ * @see template_preprocess_views_view_list()
+ *
+ * @ingroup themeable
+ */
+#}
+{{ attach_library('elections/slider-revolution-internal-banner-init') }}
+<div id="slideshow-internal" class="slideshow-internal rev_slider_wrapper {% if rows|length <= 1 %}one-slide{% endif %}">
+  <div class="rev_slider" data-version="5.4.5">
+    {% if title %}
+      <h3>{{ title }}</h3>
+    {% endif %}
+
+    <{{ list.type }}{{ list.attributes }}>
+
+      {% for row in rows %}
+        <li{{ row.attributes }} data-transition="{{ sle_setting.rs_slideshow_internal_effect }}" data-slotamount="default" data-masterspeed="default" data-title="{{ row.content['#row'].node__field_sle_banner_image_field_sle_banner_image_title }}">
+
+          {{ row.content }}
+
+          {# Translucent Background #}
+          <div class="tp-caption transparent-background"
+            data-x="left"
+            data-y="top"
+            data-start="0"
+            data-basealign="slide"
+            data-width="full"
+            data-height="full">
+          </div>
+
+          {% if row.content['#row'].node__field_sle_banner_image_field_sle_banner_image_title %}
+            <div class="tp-caption tp-caption--transparent-background"
+              data-x="[center,center,center,center]"
+              data-y="[center,center,center,center]"
+              data-hoffset="[0,0,0,0]"
+              data-voffset="[0,0,0,0]"
+              data-fontweight="500"
+              data-whitespace="normal"
+              data-basealign="grid"
+              data-start="1200"
+              data-width="[650,650,650,430]"
+              data-transform_idle="o:1"
+              data-transform_in="y:[-100%];sX:1;sY:1;o:0;s:1000;e:Power4.easeInOut;"
+              data-transform_out="y:[100%];o:0;s:1000;e:Power2.easeInOut;">
+                <div class="tp-caption__title">
+                  {{ row.content['#row'].node__field_sle_banner_image_field_sle_banner_image_title }}
+                </div>
+            </div>
+          {% endif %}
+
+        </li>
+      {% endfor %}
+
+    </{{ list.type }}>
+    <div class="tp-bannertimer tp-bottom"></div>
+  </div>
+</div>

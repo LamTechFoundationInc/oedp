@@ -1,0 +1,23 @@
+uuid: e56477b1-d426-463f-a658-0f28ec5c92cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_male_population
+    - paragraphs.paragraphs_type.population_data
+id: paragraph.population_data.field_male_population
+field_name: field_male_population
+entity_type: paragraph
+bundle: population_data
+label: 'Male Population'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,21 @@
+uuid: 375f2268-b3f1-487e-bf58-684d8c53768d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_lt_geolocation
+    - taxonomy.vocabulary.lt_province
+  module:
+    - geolocation
+id: taxonomy_term.lt_province.field_lt_geolocation
+field_name: field_lt_geolocation
+entity_type: taxonomy_term
+bundle: lt_province
+label: 'Geolocation (TBD)'
+description: 'Please copy the data in this field to the other geodata field'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geolocation

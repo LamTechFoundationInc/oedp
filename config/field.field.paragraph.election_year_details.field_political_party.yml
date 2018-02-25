@@ -1,0 +1,28 @@
+uuid: dc775e25-ec0d-4ae0-8dde-d14cd1d0a382
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_political_party
+    - paragraphs.paragraphs_type.election_year_details
+    - taxonomy.vocabulary.lt_political_party
+id: paragraph.election_year_details.field_political_party
+field_name: field_political_party
+entity_type: paragraph
+bundle: election_year_details
+label: 'Political Party'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      lt_political_party: lt_political_party
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

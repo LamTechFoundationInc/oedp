@@ -1,0 +1,21 @@
+uuid: 1635f2af-afb2-4a63-b8af-52a9a1e48ebc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_election_year
+    - node.type.lt_article
+  module:
+    - options
+id: node.lt_article.field_election_year
+field_name: field_election_year
+entity_type: node
+bundle: lt_article
+label: 'Election Year (TBD)'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

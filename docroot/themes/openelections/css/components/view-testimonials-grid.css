@@ -1,0 +1,55 @@
+/**
+ * @file
+ * Visual styles for OpenElections testimonials grid views.
+ */
+.view-testimonials-grid .views-row {
+  margin: 0 0 30px 0;
+}
+.view-testimonials-grid .views-field-body,
+.view-testimonials-grid .views-field-title,
+.view-testimonials-grid .views-field-field-op-subtitle {
+  padding: 0 0 0 55px;
+}
+.view-testimonials-grid .views-field-body {
+  font-size: 15px;
+  line-height: 1.5;
+}
+.region--dark-typography .view-testimonials-grid .views-field-body {
+  color: #363636;
+}
+.view-testimonials-grid .views-field-body p {
+  padding: 0 0 10px;
+  position: relative;
+}
+.view-testimonials-grid .views-field-body p:first-child:before {
+  position: absolute;
+  font-family: Georgia, Times New Roman, Serif;
+  content: "“";
+  left: -60px;
+  top: 0px;
+  font-size: 96px;
+  font-style: normal;
+  line-height: 1;
+}
+.region--light-typography .view-testimonials-grid .views-field-body p:first-child:after {
+  color: rgba(255, 255, 255, 0.5);
+}
+.view-testimonials-grid .views-field-title a {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+}
+.view-testimonials-grid .views-field-title a:hover {
+  text-decoration: none;
+}
+.headings-wide-spacing-enabled .view-testimonials-grid .views-field-title {
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+.view-testimonials-grid .views-field-field-op-subtitle {
+  font-size: 11px;
+  text-transform: uppercase;
+}
+.region--dark-typography .view-testimonials-grid .views-field-field-op-subtitle {
+  color: #363636;
+}

@@ -1,0 +1,19 @@
+uuid: f4a25bc4-e9b4-49b8-b21f-7038dde2c6da
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ideology
+    - paragraphs.paragraphs_type.political_party_variables
+id: paragraph.political_party_variables.field_ideology
+field_name: field_ideology
+entity_type: paragraph
+bundle: political_party_variables
+label: Ideology
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,22 @@
+uuid: 3817ff6a-9375-444a-8701-1e314ce02d82
+langcode: en
+status: true
+dependencies:
+  module:
+    - comment
+    - message
+_core:
+  default_config_hash: A-214mC4v_Sz3g5eWrOXH1IuIcplLlrRQj1Aj8oURbs
+id: message.field_comment_reference
+field_name: field_comment_reference
+entity_type: message
+type: entity_reference
+settings:
+  target_type: comment
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

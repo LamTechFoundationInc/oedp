@@ -1,0 +1,32 @@
+uuid: 19bbf3db-c87c-4239-bb5e-ae8c476adc6c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lt_election_type
+    - node.type.summary_election_results
+    - taxonomy.vocabulary.lt_election_type
+  content:
+    - 'taxonomy_term:lt_election_type:0339a81b-836f-44ac-a491-bb9f633aae5a'
+id: node.summary_election_results.field_lt_election_type
+field_name: field_lt_election_type
+entity_type: node
+bundle: summary_election_results
+label: 'Election Type'
+description: 'Choose the election type for this result.'
+required: true
+translatable: true
+default_value:
+  -
+    target_uuid: 0339a81b-836f-44ac-a491-bb9f633aae5a
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      lt_election_type: lt_election_type
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

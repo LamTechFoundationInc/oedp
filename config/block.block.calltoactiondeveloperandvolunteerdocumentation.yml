@@ -1,0 +1,25 @@
+uuid: 7bda169e-edfb-4c9e-8f21-e04480888a77
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:0f643854-9d57-4a98-8ace-1e6438c4e05d'
+  module:
+    - block_content
+  theme:
+    - openelections
+id: calltoactiondeveloperandvolunteerdocumentation
+theme: openelections
+region: hidden_blocks_collection
+weight: 0
+provider: null
+plugin: 'block_content:0f643854-9d57-4a98-8ace-1e6438c4e05d'
+settings:
+  id: 'block_content:0f643854-9d57-4a98-8ace-1e6438c4e05d'
+  label: 'Call to action - Developer and Volunteer Documentation'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

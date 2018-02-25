@@ -1,0 +1,14 @@
+uuid: 4ae55705-bd12-4306-b2b4-004a930454a7
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.lt_regist_poll_center
+  module:
+    - node
+id: node.lt_regist_poll_center
+targetEntityType: node
+bundle: lt_regist_poll_center
+types:
+  - ''
+fieldMappings: {  }

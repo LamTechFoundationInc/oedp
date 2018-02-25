@@ -1,0 +1,8 @@
+/**
+ * @file
+ * Visual styles for OpenElections slider revolution full-screen.
+ */
+.slideshow-internal .tp-caption__title {
+  color: #ffffff;
+  padding: 1em;
+}

@@ -1,0 +1,14 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the Ban module.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function field_validation_uninstall() {
+
+}
+

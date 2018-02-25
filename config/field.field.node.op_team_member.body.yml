@@ -1,0 +1,22 @@
+uuid: 254525b8-5209-41e0-b9b4-ef103f3e84a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.op_team_member
+  module:
+    - text
+id: node.op_team_member.body
+field_name: body
+entity_type: node
+bundle: op_team_member
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

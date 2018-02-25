@@ -1,0 +1,31 @@
+uuid: 798b6191-0a8e-4f59-8bfd-5e362d7cfc0e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.former_presidents.field_elected_candidate
+    - field.field.paragraph.former_presidents.field_election_year
+    - paragraphs.paragraphs_type.former_presidents
+  module:
+    - options
+id: paragraph.former_presidents.default
+targetEntityType: paragraph
+bundle: former_presidents
+mode: default
+content:
+  field_elected_candidate:
+    weight: 1
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_election_year:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+hidden: {  }

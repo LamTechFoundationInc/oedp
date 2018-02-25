@@ -1,0 +1,21 @@
+uuid: 17e5a8bb-0842-4e6e-8c6f-9938485758a7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_op_slideshow_text
+    - node.type.op_testimonial
+  module:
+    - text
+id: node.op_testimonial.field_op_slideshow_text
+field_name: field_op_slideshow_text
+entity_type: node
+bundle: op_testimonial
+label: 'Slideshow text'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,23 @@
+uuid: 752ac395-53fb-4896-9a8c-9109202d3fb5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_female_population
+    - paragraphs.paragraphs_type.population_data
+id: paragraph.population_data.field_female_population
+field_name: field_female_population
+entity_type: paragraph
+bundle: population_data
+label: 'Female Population'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

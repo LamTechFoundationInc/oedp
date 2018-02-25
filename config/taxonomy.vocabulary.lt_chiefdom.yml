@@ -1,0 +1,9 @@
+uuid: 5f1c1482-9495-4e3a-99b6-599fb756db84
+langcode: en
+status: true
+dependencies: {  }
+name: Chiefdoms
+vid: lt_chiefdom
+description: Chiefdom
+hierarchy: 0
+weight: -7

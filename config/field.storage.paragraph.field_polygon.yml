@@ -1,0 +1,19 @@
+uuid: 4baca9d3-c775-4c19-9c19-94554a597594
+langcode: en
+status: true
+dependencies:
+  module:
+    - geofield
+    - paragraphs
+id: paragraph.field_polygon
+field_name: field_polygon
+entity_type: paragraph
+type: geofield
+settings: {  }
+module: geofield
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

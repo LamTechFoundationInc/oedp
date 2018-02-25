@@ -1,0 +1,65 @@
+/**
+ * @file
+ * Visual styles for Corporate+'s testimonials grid 2 views.
+ */
+.view-testimonials-grid-2 .views-row {
+  margin: 0 0 35px 0;
+}
+.view-testimonials-grid-2 .views-field-field-sle-testimonial-image {
+  text-align: center;
+}
+.view-testimonials-grid-2 .views-field-field-sle-testimonial-image .views-field-field-image {
+  display: inline-block;
+  max-width: 110px;
+}
+.view-testimonials-grid-2 .views-field-field-sle-testimonial-image .views-field-field-image img {
+  border-radius: 100%;
+}
+.view-testimonials-grid-2 .views-field-body {
+  padding: 55px 0 10px;
+  margin-bottom: 15px;
+  border-radius: 3px;
+  position: relative;
+  border-style: solid;
+  border-color: #f0f0f0;
+  border-width: 0 0 1px 0;
+}
+.view-testimonials-grid-2 .views-field-body p {
+  font-size: 15px;
+  line-height: 1.6;
+  padding: 0 0 10px;
+  position: relative;
+}
+.view-testimonials-grid-2 .views-field-body p:first-child:after {
+  position: absolute;
+  font-family: Georgia, Times New Roman, Serif;
+  content: "“";
+  left: -5px;
+  top: -65px;
+  font-size: 100px;
+  font-style: normal;
+  line-height: 1;
+  color: #eceff3;
+  letter-spacing: -0.25em;
+}
+.view-testimonials-grid .views-field-title a {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+}
+.headings-wide-spacing-enabled .view-testimonials-grid-2 .views-field-title {
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+.view-testimonials-grid-2 .views-field-field-sle-subtitle {
+  font-size: 11px;
+  text-transform: uppercase;
+}
+.region--dark-typography .view-testimonials-grid-2 .views-field-field-sle-subtitle {
+  color: #363636;
+}
+
+/*Testimonials @colored regions*/
+.region--light-typography .view-testimonials-grid-2 .views-field-body {
+  border-color: rgba(255, 255, 255, 0.1);
+}

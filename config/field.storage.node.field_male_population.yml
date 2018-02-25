@@ -1,0 +1,20 @@
+uuid: d81f8380-da82-479e-98f1-4a762039850b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_male_population
+field_name: field_male_population
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

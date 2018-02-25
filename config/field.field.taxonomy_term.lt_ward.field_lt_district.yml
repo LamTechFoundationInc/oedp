@@ -1,0 +1,28 @@
+uuid: ac110ed8-74bd-4fb0-a126-f1e5084824ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_lt_district
+    - taxonomy.vocabulary.lt_district
+    - taxonomy.vocabulary.lt_ward
+id: taxonomy_term.lt_ward.field_lt_district
+field_name: field_lt_district
+entity_type: taxonomy_term
+bundle: lt_ward
+label: District
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      lt_district: lt_district
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

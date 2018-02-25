@@ -1,0 +1,31 @@
+uuid: d9038c6b-9e87-4f2d-b414-461f41de93c9
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:e6a8c041-5619-455c-a317-2cdea1b8ec8e'
+  module:
+    - block_content
+    - system
+  theme:
+    - openelections
+id: calltoactionknownyourcandidates_2
+theme: openelections
+region: content_bottom_first
+weight: -11
+provider: null
+plugin: 'block_content:e6a8c041-5619-455c-a317-2cdea1b8ec8e'
+settings:
+  id: 'block_content:e6a8c041-5619-455c-a317-2cdea1b8ec8e'
+  label: 'Call to action - Known your candidates'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

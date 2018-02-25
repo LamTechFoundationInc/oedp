@@ -1,0 +1,66 @@
+uuid: 250a3b72-1711-4f7f-a62a-916b11fd7fd7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.op_icon_features.field_op_if_body
+    - field.field.paragraph.op_icon_features.field_op_if_icon
+    - field.field.paragraph.op_icon_features.field_op_if_image
+    - field.field.paragraph.op_icon_features.field_op_if_link
+    - field.field.paragraph.op_icon_features.field_op_if_title
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.op_icon_features
+  module:
+    - image
+    - link
+    - text
+    - workbench_moderation
+id: paragraph.op_icon_features.default
+targetEntityType: paragraph
+bundle: op_icon_features
+mode: default
+content:
+  field_op_if_body:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_op_if_icon:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_op_if_image:
+    type: image_image
+    weight: 1
+    settings:
+      preview_image_style: thumbnail
+      progress_indicator: throbber
+    region: content
+    third_party_settings: {  }
+  field_op_if_link:
+    weight: 4
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_op_if_title:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

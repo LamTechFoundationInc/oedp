@@ -1,0 +1,9 @@
+uuid: 4569b9fc-1cb1-4377-ab8f-21d0d84bde65
+langcode: en
+status: true
+dependencies: {  }
+id: op_fancy_tab
+label: 'Fancy Tab'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

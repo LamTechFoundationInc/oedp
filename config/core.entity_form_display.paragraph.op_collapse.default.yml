@@ -1,0 +1,36 @@
+uuid: c0077035-583b-4643-a3d2-3516920e2816
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.op_collapse.field_op_collapse_body
+    - field.field.paragraph.op_collapse.field_op_collapse_title
+    - paragraphs.paragraphs_type.op_collapse
+  module:
+    - text
+    - workbench_moderation
+id: paragraph.op_collapse.default
+targetEntityType: paragraph
+bundle: op_collapse
+mode: default
+content:
+  field_op_collapse_body:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_op_collapse_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

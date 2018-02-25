@@ -1,0 +1,23 @@
+uuid: 15178fe9-59d9-495a-a191-2ff6b12a97eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_population_that_can_vote
+    - taxonomy.vocabulary.lt_constituency
+id: taxonomy_term.lt_constituency.field_population_that_can_vote
+field_name: field_population_that_can_vote
+entity_type: taxonomy_term
+bundle: lt_constituency
+label: 'Population that can vote(TBD)'
+description: 'Please copy the data in this field to the other population field'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

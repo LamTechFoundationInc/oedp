@@ -1,0 +1,28 @@
+uuid: 5fd5cd16-8f5d-4223-9936-c0e4fc51152d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_political_party
+    - paragraphs.paragraphs_type.political_party
+    - taxonomy.vocabulary.lt_political_party
+id: paragraph.political_party.field_political_party
+field_name: field_political_party
+entity_type: paragraph
+bundle: political_party
+label: 'Political Party'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      lt_political_party: lt_political_party
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

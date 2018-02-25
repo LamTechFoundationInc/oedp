@@ -1,0 +1,23 @@
+uuid: bd4a23f4-93dc-4d23-a582-0cfa95243783
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_result_status
+    - node.type.summary_election_results
+  module:
+    - options
+id: node.summary_election_results.field_result_status
+field_name: field_result_status
+entity_type: node
+bundle: summary_election_results
+label: 'Result Status'
+description: 'If the results were obtained from NEC official records, choose certified/final. otherwise, choose provisional.'
+required: true
+translatable: false
+default_value:
+  -
+    value: Provisional
+default_value_callback: ''
+settings: {  }
+field_type: list_string

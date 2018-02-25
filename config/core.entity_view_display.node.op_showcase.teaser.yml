@@ -1,0 +1,79 @@
+uuid: de7acbfa-7317-496d-9f9f-223282e34e0d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.op_showcase.body
+    - field.field.node.op_showcase.field_comment
+    - field.field.node.op_showcase.field_image
+    - field.field.node.op_showcase.field_op_banner_image
+    - field.field.node.op_showcase.field_op_content_collapses
+    - field.field.node.op_showcase.field_op_election_type_tags
+    - field.field.node.op_showcase.field_op_showcase_tags
+    - field.field.node.op_showcase.field_op_slideshow
+    - field.field.node.op_showcase.field_op_slideshow_image
+    - field.field.node.op_showcase.field_op_slideshow_text
+    - field.field.node.op_showcase.field_op_subheader_body
+    - field.field.node.op_showcase.field_op_subtitle
+    - field.field.node.op_showcase.field_op_video
+    - image.style.large
+    - node.type.op_showcase
+  module:
+    - image
+    - panelizer
+    - text
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.op_showcase.teaser
+targetEntityType: node
+bundle: op_showcase
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 1
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  field_image:
+    type: image
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      image_style: large
+      image_link: content
+    third_party_settings: {  }
+  field_op_showcase_tags:
+    type: entity_reference_label
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+  links:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  field_comment: true
+  field_op_banner_image: true
+  field_op_content_collapses: true
+  field_op_election_type_tags: true
+  field_op_slideshow: true
+  field_op_slideshow_image: true
+  field_op_slideshow_text: true
+  field_op_subheader_body: true
+  field_op_subtitle: true
+  field_op_video: true

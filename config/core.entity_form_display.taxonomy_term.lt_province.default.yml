@@ -1,0 +1,107 @@
+uuid: fde0dbff-744b-417e-9410-3ea409dce658
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_browser
+    - field.field.taxonomy_term.lt_province.field_census_population_data
+    - field.field.taxonomy_term.lt_province.field_female_population
+    - field.field.taxonomy_term.lt_province.field_geo
+    - field.field.taxonomy_term.lt_province.field_lt_geolocation
+    - field.field.taxonomy_term.lt_province.field_lt_header_image
+    - field.field.taxonomy_term.lt_province.field_male_population
+    - field.field.taxonomy_term.lt_province.field_nec_population_data
+    - field.field.taxonomy_term.lt_province.field_polygon_map
+    - field.field.taxonomy_term.lt_province.field_population
+    - field.field.taxonomy_term.lt_province.field_population_that_can_vote
+    - field.field.taxonomy_term.lt_province.field_registered_voters
+    - taxonomy.vocabulary.lt_province
+  module:
+    - inline_entity_form
+    - paragraphs
+    - path
+    - text
+id: taxonomy_term.lt_province.default
+targetEntityType: taxonomy_term
+bundle: lt_province
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      placeholder: ''
+      rows: 5
+    third_party_settings: {  }
+  field_census_population_data:
+    type: entity_reference_paragraphs
+    weight: 5
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_geo:
+    type: entity_reference_paragraphs
+    weight: 3
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_lt_header_image:
+    weight: 2
+    settings:
+      form_mode: media_browser
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+    third_party_settings: {  }
+    type: inline_entity_form_complex
+    region: content
+  field_nec_population_data:
+    type: entity_reference_paragraphs
+    weight: 4
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_female_population: true
+  field_lt_geolocation: true
+  field_male_population: true
+  field_polygon_map: true
+  field_population: true
+  field_population_that_can_vote: true
+  field_registered_voters: true

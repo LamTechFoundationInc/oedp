@@ -1,0 +1,31 @@
+uuid: e68ad802-0a3c-4ebd-a251-1fa7b4d4add0
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:op_background_image_block:922bbd9b-d8a8-4de7-9492-a35555ac53d7'
+  module:
+    - block_content
+    - system
+  theme:
+    - openelections
+id: backgroundimageblockresourceshomepage
+theme: openelections
+region: content_bottom_first
+weight: -12
+provider: null
+plugin: 'block_content:922bbd9b-d8a8-4de7-9492-a35555ac53d7'
+settings:
+  id: 'block_content:922bbd9b-d8a8-4de7-9492-a35555ac53d7'
+  label: 'Background image block - Resources Homepage'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

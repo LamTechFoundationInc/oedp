@@ -1,0 +1,49 @@
+{#
+/**
+ * @file
+ * OpenElections theme override for the block entity refernece field for the tabs powered custom block
+ *
+ * @see openelections_preprocess_field__block_content__op_background_video_block()
+ */
+#}
+{{ attach_library('openelections/background-video-block') }}
+{%
+  set classes = [
+    'field',
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+    'field--label-' ~ label_display,
+    'field--op-background-video-block',
+    'clearfix',
+  ]
+%}
+{%
+  set title_classes = [
+    'field__label',
+    label_display == 'inline' ? 'inline',
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+  {% if not label_hidden %}
+    <h3{{ title_attributes.addClass(title_classes) }}>{{ label }}</h3>
+  {% endif %}
+  <div class="background-video-block__section">
+    <div class="background-video-fallback" style="background-image: url({{ file_url(background_video_poster_uri) }});"></div>
+    {% if background_video_webm_uri or background_video_mp4_uri or background_video_poster_uri %}
+      <video class="background-video" muted autoplay loop {% if background_video_poster_uri %}poster="{{ file_url(background_video_poster_uri) }}"{% endif %}>
+        {% if background_video_webm_uri %}
+          <source src="{{ file_url(background_video_webm_uri) }}">
+        {% endif %}
+        {% if background_video_mp4_uri %}
+          <source src="{{ file_url(background_video_mp4_uri) }}">
+        {% endif %}
+      </video>
+    {% endif %}
+    <div class="background-video-overlay {{ background_video_overlay_color }}" style="opacity: {{ background_video_overlay_opacity }};"></div>
+    <div class="{{ background_video_layout_mode }} {{ background_video_overlay_color }}">
+      {% for item in items %}
+        {{ item.content }}
+      {% endfor %}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,76 @@
+uuid: 3cf6909d-c267-4c75-9efd-78dbe1f48ba0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_election_year_details
+    - node.type.lt_cand_elected_officials
+    - paragraphs.paragraphs_type.election_year_details
+  module:
+    - entity_reference_revisions
+id: node.lt_cand_elected_officials.field_election_year_details
+field_name: field_election_year_details
+entity_type: node
+bundle: lt_cand_elected_officials
+label: 'Election Year Information'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      election_year_details: election_year_details
+    target_bundles_drag_drop:
+      election_year:
+        weight: 14
+        enabled: false
+      election_year_details:
+        enabled: true
+        weight: 15
+      op_collapse:
+        weight: 16
+        enabled: false
+      op_fancy_linked_image:
+        weight: 17
+        enabled: false
+      election_year_census:
+        weight: 18
+        enabled: false
+      op_fancy_tab:
+        weight: 18
+        enabled: false
+      op_featured_linked_text_tile:
+        weight: 19
+        enabled: false
+      geographic_data:
+        weight: 20
+        enabled: false
+      op_highlight:
+        weight: 20
+        enabled: false
+      op_icon_features:
+        weight: 21
+        enabled: false
+      op_map_location:
+        weight: 22
+        enabled: false
+      op_media_tab:
+        weight: 23
+        enabled: false
+      op_tab:
+        weight: 24
+        enabled: false
+      political_party:
+        weight: 25
+        enabled: false
+      population_data:
+        weight: 26
+        enabled: false
+      political_party_variables:
+        weight: 31
+        enabled: false
+field_type: entity_reference_revisions

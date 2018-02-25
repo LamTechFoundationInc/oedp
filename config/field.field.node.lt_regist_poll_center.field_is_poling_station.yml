@@ -1,0 +1,23 @@
+uuid: 46319bc3-f0a7-41fe-bd73-788f8070faf3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_is_poling_station
+    - node.type.lt_regist_poll_center
+id: node.lt_regist_poll_center.field_is_poling_station
+field_name: field_is_poling_station
+entity_type: node
+bundle: lt_regist_poll_center
+label: 'Is Polling Station'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

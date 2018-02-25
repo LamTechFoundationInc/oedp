@@ -1,0 +1,42 @@
+uuid: f0168561-ac99-4826-af12-9d678154753a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.geographic_data.field_election_year
+    - field.field.paragraph.geographic_data.field_point_on_the_map
+    - field.field.paragraph.geographic_data.field_polygon
+    - field.field.paragraph.geographic_data.field_voters
+    - paragraphs.paragraphs_type.geographic_data
+  module:
+    - geolocation
+    - workbench_moderation
+id: paragraph.geographic_data.default
+targetEntityType: paragraph
+bundle: geographic_data
+mode: default
+content:
+  field_election_year:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_point_on_the_map:
+    type: geolocation_latlng
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_voters:
+    weight: 2
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+hidden:
+  created: true
+  field_polygon: true
+  status: true
+  uid: true

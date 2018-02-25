@@ -1,0 +1,26 @@
+uuid: 809df2c8-1357-49d8-80df-395c328670e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.lt_election_violence_report.body
+    - node.type.lt_election_violence_report
+  module:
+    - text
+    - user
+id: node.lt_election_violence_report.default
+targetEntityType: node
+bundle: lt_election_violence_report
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden: {  }

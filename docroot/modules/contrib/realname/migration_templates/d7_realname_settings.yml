@@ -1,0 +1,16 @@
+id: d7_realname_settings
+label: Realname 7 configuration
+migration_tags:
+  - Drupal 7
+source:
+  plugin: variable
+  variables:
+    - realname_pattern
+process:
+  pattern:
+    plugin: realname_replace_token
+    source:
+      - realname_pattern
+destination:
+  plugin: config
+  config_name: realname.settings

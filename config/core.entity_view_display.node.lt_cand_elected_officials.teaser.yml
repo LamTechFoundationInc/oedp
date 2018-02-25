@@ -1,0 +1,28 @@
+uuid: 464e31ef-7549-49d6-a915-0ea7cf44b003
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.lt_cand_elected_officials.body
+    - node.type.lt_cand_elected_officials
+  module:
+    - text
+    - user
+id: node.lt_cand_elected_officials.teaser
+targetEntityType: node
+bundle: lt_cand_elected_officials
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden: {  }

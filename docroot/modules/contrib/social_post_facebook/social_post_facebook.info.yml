@@ -1,0 +1,14 @@
+name: Social Post Facebook
+type: module
+description: Social Post integration for Facebook
+# core: 8.x
+package: Social
+configure: social_post_facebook.settings_form
+dependencies:
+  - social_post
+
+# Information added by Drupal.org packaging script on 2017-08-28
+version: '8.x-1.0-alpha1'
+core: '8.x'
+project: 'social_post_facebook'
+datestamp: 1503890347

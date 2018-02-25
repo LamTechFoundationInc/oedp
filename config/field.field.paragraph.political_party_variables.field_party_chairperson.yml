@@ -1,0 +1,19 @@
+uuid: 713b12c7-1cbe-4f3c-833f-b8002650267b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_party_chairperson
+    - paragraphs.paragraphs_type.political_party_variables
+id: paragraph.political_party_variables.field_party_chairperson
+field_name: field_party_chairperson
+entity_type: paragraph
+bundle: political_party_variables
+label: 'Party Chairperson'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,23 @@
+uuid: 6be99d42-1487-4e4b-94c3-69a1cde1cf2a
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.op_background_image_block
+    - field.storage.block_content.field_op_bg_block_paddings
+id: block_content.op_background_image_block.field_op_bg_block_paddings
+field_name: field_op_bg_block_paddings
+entity_type: block_content
+bundle: op_background_image_block
+label: 'Remove top and bottom block whitespace'
+description: 'Use this checkbox to remove the top and bottom paddings of the block'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,23 @@
+uuid: 77f594e6-15b6-4f9c-9295-13e0f28f2fd0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_female_population
+    - paragraphs.paragraphs_type.election_year_census
+id: paragraph.election_year_census.field_female_population
+field_name: field_female_population
+entity_type: paragraph
+bundle: election_year_census
+label: 'Female Population'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

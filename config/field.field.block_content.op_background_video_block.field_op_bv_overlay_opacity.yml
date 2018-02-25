@@ -1,0 +1,25 @@
+uuid: 086d41ed-5732-495d-805f-16dcb94af035
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.op_background_video_block
+    - field.storage.block_content.field_op_bv_overlay_opacity
+id: block_content.op_background_video_block.field_op_bv_overlay_opacity
+field_name: field_op_bv_overlay_opacity
+entity_type: block_content
+bundle: op_background_video_block
+label: 'Background Video Overlay Opacity'
+description: 'Set the % opacity for the overlay of the background video.'
+required: true
+translatable: false
+default_value:
+  -
+    value: 80
+default_value_callback: ''
+settings:
+  min: 0
+  max: 100
+  prefix: ''
+  suffix: ''
+field_type: integer

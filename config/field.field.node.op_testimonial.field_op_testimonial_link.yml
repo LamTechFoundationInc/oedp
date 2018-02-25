@@ -1,0 +1,23 @@
+uuid: dcd96a09-4bf7-467a-8fe7-9b3ed6968d20
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_op_testimonial_link
+    - node.type.op_testimonial
+  module:
+    - link
+id: node.op_testimonial.field_op_testimonial_link
+field_name: field_op_testimonial_link
+entity_type: node
+bundle: op_testimonial
+label: 'Testimonial Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

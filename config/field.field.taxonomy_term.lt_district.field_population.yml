@@ -1,0 +1,23 @@
+uuid: 0c7b5fb9-8bcf-4088-89f3-1a9c936a52f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_population
+    - taxonomy.vocabulary.lt_district
+id: taxonomy_term.lt_district.field_population
+field_name: field_population
+entity_type: taxonomy_term
+bundle: lt_district
+label: 'Total Population (TBD)'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

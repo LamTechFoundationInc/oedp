@@ -1,0 +1,9 @@
+uuid: bbee43af-2060-4ef8-9c6c-6e10e7a73587
+langcode: en
+status: true
+dependencies: {  }
+id: op_featured_linked_text_tile
+label: 'Featured Linked Text Tile'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

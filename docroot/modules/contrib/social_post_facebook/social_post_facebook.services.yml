@@ -1,0 +1,7 @@
+services:
+  facebook_post.auth_manager:
+    class: '\Drupal\social_post_facebook\FacebookPostAuthManager'
+    arguments: ['@session','@request_stack']
+  facebook_user_entity.manager:
+    class: '\Drupal\social_post_facebook\FacebookUserEntityManager'
+    arguments: ['@entity_type.manager', '@current_user']

@@ -1,0 +1,21 @@
+uuid: b8e4bb9d-914f-4c64-b842-fbbf00e6f705
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_op_if_body
+    - paragraphs.paragraphs_type.op_icon_features
+  module:
+    - text
+id: paragraph.op_icon_features.field_op_if_body
+field_name: field_op_if_body
+entity_type: paragraph
+bundle: op_icon_features
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

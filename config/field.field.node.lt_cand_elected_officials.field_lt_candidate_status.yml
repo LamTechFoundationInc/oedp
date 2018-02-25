@@ -1,0 +1,23 @@
+uuid: 37994d05-cdc8-4947-901a-6f3565ef832c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lt_candidate_status
+    - node.type.lt_cand_elected_officials
+  module:
+    - options
+id: node.lt_cand_elected_officials.field_lt_candidate_status
+field_name: field_lt_candidate_status
+entity_type: node
+bundle: lt_cand_elected_officials
+label: Status
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: Candidate
+default_value_callback: ''
+settings: {  }
+field_type: list_string

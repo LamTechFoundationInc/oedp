@@ -1,0 +1,29 @@
+uuid: 8ede3c74-bb01-45f5-bc8b-bbd5d6c16616
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.op_services
+  module:
+    - system
+    - views
+  theme:
+    - openelections
+id: exposedformop_servicesmayor_results
+theme: openelections
+region: sidebar_first
+weight: -15
+provider: null
+plugin: 'views_exposed_filter_block:op_services-mayor_results'
+settings:
+  id: 'views_exposed_filter_block:op_services-mayor_results'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+visibility:
+  request_path:
+    id: request_path
+    pages: "/results/mayor/table\r\n/results/mayor/all"
+    negate: false
+    context_mapping: {  }

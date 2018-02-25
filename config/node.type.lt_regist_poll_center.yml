@@ -1,0 +1,27 @@
+uuid: 2496a722-e5a9-4c32-927e-4a046674215b
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - workbench_moderation
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  workbench_moderation:
+    enabled: true
+    allowed_moderation_states:
+      - published
+      - approved_to_be_published
+      - archived
+      - draft
+      - needs_review
+    default_moderation_state: draft
+name: 'Voter Registration Centre/Polling Station'
+type: lt_regist_poll_center
+description: 'Use <em>Voter Registration Centre/Polling Station</em> to add official NEC Voter Registration Centres and Polling Stations for the election year. This information will be used to give voters direction to the centres and stations and to display election results by polling station'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

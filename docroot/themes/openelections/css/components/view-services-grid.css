@@ -1,0 +1,37 @@
+/**
+ * @file
+ * Visual styles for OpenElections services grid views.
+ */
+.view-services-grid .views-row {
+  margin: 0 0 40px;
+}
+.view-services-grid .views-field-field-image {
+  margin-bottom: 20px;
+}
+.headings-wide-spacing-enabled .view-services-grid .views-field-title h5 {
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+.view-services-grid .views-field-title h5 a:hover {
+  text-decoration: none;
+}
+.region--light-typography .view-services-grid .views-field-title h5 a {
+  color: #ffffff;
+}
+.region--light-typography .view-services-grid .views-field-title h5 a:hover {
+  color: #ffffff;
+}
+.view-services-grid .views-field-field-op-price {
+  font-size: 18px;
+  margin: 0px 0 10px 0;
+  font-weight: 500;
+}
+.view-services-grid .views-field-field-op-location i {
+  margin-right: 5px;
+}
+.region--dark-typography .view-services-grid .views-field-field-op-location i {
+  color: #c0c0c0;
+}
+.view-services-grid .nav.nav-pills.filters {
+  margin-bottom: 30px;
+}

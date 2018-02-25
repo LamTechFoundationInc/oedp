@@ -1,0 +1,57 @@
+uuid: 81c11467-32aa-48af-a187-757de53941d2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.op_highlight.field_op_highlight_body
+    - field.field.paragraph.op_highlight.field_op_highlight_image
+    - field.field.paragraph.op_highlight.field_op_highlight_link
+    - field.field.paragraph.op_highlight.field_op_highlight_title
+    - image.style.large
+    - paragraphs.paragraphs_type.op_highlight
+  module:
+    - image
+    - link
+    - text
+id: paragraph.op_highlight.default
+targetEntityType: paragraph
+bundle: op_highlight
+mode: default
+content:
+  field_op_highlight_body:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_op_highlight_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: large
+      image_link: file
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_op_highlight_link:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_op_highlight_title:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

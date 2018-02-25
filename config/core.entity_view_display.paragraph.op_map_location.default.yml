@@ -1,0 +1,18 @@
+uuid: 0b628e7a-0b29-4670-a61a-8a56e34111c3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.op_map_location.field_op_ml_latitude
+    - field.field.paragraph.op_map_location.field_op_ml_location_name
+    - field.field.paragraph.op_map_location.field_op_ml_longitude
+    - paragraphs.paragraphs_type.op_map_location
+id: paragraph.op_map_location.default
+targetEntityType: paragraph
+bundle: op_map_location
+mode: default
+content: {  }
+hidden:
+  field_op_ml_latitude: true
+  field_op_ml_location_name: true
+  field_op_ml_longitude: true

@@ -1,0 +1,280 @@
+uuid: 8da07bdc-87bb-404a-945c-ba4ec7e4b3ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.lt_political_party.field_data
+    - field.field.taxonomy_term.lt_political_party.field_date_founded
+    - field.field.taxonomy_term.lt_political_party.field_former_mayors_district_cha
+    - field.field.taxonomy_term.lt_political_party.field_former_members_of_parliame
+    - field.field.taxonomy_term.lt_political_party.field_former_president
+    - field.field.taxonomy_term.lt_political_party.field_founders
+    - field.field.taxonomy_term.lt_political_party.field_lt_acronym
+    - field.field.taxonomy_term.lt_political_party.field_lt_address
+    - field.field.taxonomy_term.lt_political_party.field_lt_geolocation
+    - field.field.taxonomy_term.lt_political_party.field_lt_header_image
+    - field.field.taxonomy_term.lt_political_party.field_lt_party_color
+    - field.field.taxonomy_term.lt_political_party.field_official_email_a
+    - field.field.taxonomy_term.lt_political_party.field_official_phone_numbers
+    - field.field.taxonomy_term.lt_political_party.field_official_website_url
+    - field.field.taxonomy_term.lt_political_party.field_political_party_variables
+    - taxonomy.vocabulary.lt_political_party
+  module:
+    - address
+    - entity_reference_revisions
+    - field_group
+    - geolocation
+    - link
+    - panelizer
+    - telephone
+    - text
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+  field_group:
+    group_party_:
+      children:
+        - group_essential_information
+        - group_contact_information
+        - group_variable_political_party_i
+        - group_former_and_current_elected
+      parent_name: ''
+      weight: 2
+      format_type: accordion
+      format_settings:
+        label: 'Party Info'
+        effect: bounceslide
+        id: ''
+        classes: ''
+      label: 'Party Info'
+      region: content
+    group_contact_information:
+      children:
+        - field_lt_address
+        - field_official_phone_numbers
+        - field_official_email_a
+        - field_official_website_url
+        - field_lt_geolocation
+      parent_name: group_party_
+      weight: 21
+      format_type: accordion_item
+      format_settings:
+        label: 'Contact Information'
+        formatter: open
+        id: ''
+        classes: ''
+      label: 'Contact Information'
+      region: content
+    group_variable_political_party_i:
+      children:
+        - field_political_party_variables
+      parent_name: group_party_
+      weight: 22
+      format_type: accordion_item
+      format_settings:
+        label: 'Variable Political Party Information'
+        formatter: open
+        id: ''
+        classes: ''
+      label: 'Variable Political Party Information'
+      region: content
+    group_essential_information:
+      children:
+        - field_lt_header_image
+        - field_lt_party_color
+        - field_founders
+        - field_date_founded
+        - field_lt_acronym
+      parent_name: group_party_
+      weight: 20
+      format_type: accordion_item
+      format_settings:
+        label: 'Essential Information'
+        formatter: open
+        id: ''
+        classes: ''
+      label: 'Essential Information'
+      region: content
+    group_former_and_current_elected:
+      children:
+        - field_former_president
+        - field_former_members_of_parliame
+        - field_former_mayors_district_cha
+      parent_name: group_party_
+      weight: 23
+      format_type: accordion_item
+      format_settings:
+        label: 'Former and Current Elected Officials'
+        formatter: open
+        id: ''
+        classes: ''
+      label: 'Former and Current Elected Officials'
+      region: content
+id: taxonomy_term.lt_political_party.default
+targetEntityType: taxonomy_term
+bundle: lt_political_party
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_data:
+    weight: 4
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_date_founded:
+    weight: 3
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_former_mayors_district_cha:
+    type: entity_reference_revisions_entity_view
+    weight: 25
+    region: content
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+  field_former_members_of_parliame:
+    type: entity_reference_revisions_entity_view
+    weight: 24
+    region: content
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+  field_former_president:
+    type: entity_reference_revisions_entity_view
+    weight: 23
+    region: content
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+  field_founders:
+    weight: 2
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_lt_acronym:
+    type: string
+    weight: 4
+    region: content
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_lt_address:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: address_default
+    region: content
+  field_lt_geolocation:
+    weight: 7
+    label: hidden
+    settings:
+      set_marker: '1'
+      title: ''
+      info_text: ''
+      google_map_settings:
+        height: 200px
+        width: 100%
+        type: ROADMAP
+        zoom: '10'
+        maxZoom: 18
+        minZoom: 0
+        mapTypeControl: 1
+        streetViewControl: 1
+        zoomControl: 1
+        scrollwheel: 1
+        gestureHandling: auto
+        draggable: 1
+        style: ''
+        info_auto_display: 1
+        marker_icon_path: ''
+        disableAutoPan: 1
+        rotateControl: 0
+        fullscreenControl: 0
+        preferScrollingToZooming: 0
+        disableDoubleClickZoom: 0
+      use_overridden_map_settings: 0
+      common_map: ''
+    third_party_settings: {  }
+    type: geolocation_map
+    region: content
+  field_lt_header_image:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: embedded
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_lt_party_color:
+    weight: 1
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_official_email_a:
+    weight: 5
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_official_phone_numbers:
+    weight: 4
+    label: hidden
+    settings:
+      title: ''
+    third_party_settings: {  }
+    type: telephone_link
+    region: content
+  field_official_website_url:
+    weight: 6
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_political_party_variables:
+    type: entity_reference_revisions_entity_view
+    weight: 3
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden: {  }

@@ -1,0 +1,81 @@
+uuid: c1902303-a126-4b3a-837e-5ed548fea5d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.op_background_image_block
+    - field.field.block_content.op_background_image_block.field_op_background_image
+    - field.field.block_content.op_background_image_block.field_op_bg_block_paddings
+    - field.field.block_content.op_background_image_block.field_op_bg_image_color
+    - field.field.block_content.op_background_image_block.field_op_bg_image_layout_mode
+    - field.field.block_content.op_background_image_block.field_op_bg_image_opacity
+    - field.field.block_content.op_background_image_block.field_op_bg_image_positioning
+    - field.field.block_content.op_background_image_block.field_op_block_reference
+    - image.style.thumbnail
+  module:
+    - image
+    - workbench_moderation
+id: block_content.op_background_image_block.default
+targetEntityType: block_content
+bundle: op_background_image_block
+mode: default
+content:
+  field_op_background_image:
+    type: image_image
+    weight: 1
+    settings:
+      preview_image_style: thumbnail
+      progress_indicator: throbber
+    region: content
+    third_party_settings: {  }
+  field_op_bg_block_paddings:
+    weight: 6
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_op_bg_image_color:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_op_bg_image_layout_mode:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_op_bg_image_opacity:
+    weight: 4
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_op_bg_image_positioning:
+    weight: 2
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_op_block_reference:
+    weight: 7
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

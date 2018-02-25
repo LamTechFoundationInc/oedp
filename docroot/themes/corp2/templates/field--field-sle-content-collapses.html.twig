@@ -1,0 +1,46 @@
+{#
+/**
+ * @file
+ * Corporate+'s theme override for the content collapses field
+ *
+ * @see elections_preprocess_field__field_sle_content_collapses()
+ */
+#}
+{%
+  set classes = [
+    'field',
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+    'field--label-' ~ label_display,
+  ]
+%}
+{%
+  set title_classes = [
+    'field__label',
+    label_display == 'visually_hidden' ? 'visually-hidden',
+  ]
+%}
+{{ attach_library('elections/field-sle-content-collapses') }}
+<div{{ attributes.addClass(classes) }}>
+  {% if not label_hidden %}
+    <h3{{ title_attributes.addClass(title_classes) }}>{{ label }}</h3>
+  {% endif %}
+  <div class="panel-group panel-group--style-2" id="sle-content-collapse" role="tablist" aria-multiselectable="true">
+    {% for item in items %}
+      <div class="panel panel-default">
+        <div class="panel-heading panel-heading--trigger-icon" role="tab" id="heading-id-{{loop.index}}">
+          <div class="panel-title">
+            <a class="{{ loop.first ? '' : ' collapsed' }}" data-toggle="collapse" data-parent="#sle-content-collapse" href="#collapse-id-{{loop.index}}" aria-expanded="true" aria-controls="collapse-id-{{loop.index}}">
+              {{ item.content['#paragraph'].get('field_sle_collapse_title').value }}
+            </a>
+          </div>
+        </div>
+        <div id="collapse-id-{{loop.index}}" class="panel-collapse collapse {{ loop.first ? ' in' : '' }}" role="tabpanel" aria-labelledby="heading-id-{{loop.index}}">
+          <div class="panel-body">
+            {{ item.content }}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>

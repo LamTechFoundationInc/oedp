@@ -1,0 +1,23 @@
+uuid: be8f9dd5-093f-4725-9bd6-f15d33e1ab50
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.op_background_image_block
+    - field.storage.block_content.field_op_block_reference
+id: block_content.op_background_image_block.field_op_block_reference
+field_name: field_op_block_reference
+entity_type: block_content
+bundle: op_background_image_block
+label: 'Block Reference'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:block'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

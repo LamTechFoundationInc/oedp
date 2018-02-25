@@ -1,0 +1,27 @@
+uuid: adf4236e-1e25-4bd4-b215-363a8e6d9c62
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.op_background_video_block
+    - field.storage.block_content.field_op_bv_video_mp4
+  module:
+    - file
+id: block_content.op_background_video_block.field_op_bv_video_mp4
+field_name: field_op_bv_video_mp4
+entity_type: block_content
+bundle: op_background_video_block
+label: 'Background Video (mp4)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: mp4
+  max_filesize: ''
+  description_field: true
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

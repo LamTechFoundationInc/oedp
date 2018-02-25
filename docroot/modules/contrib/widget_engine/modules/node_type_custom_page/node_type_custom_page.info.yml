@@ -1,0 +1,16 @@
+name: Node Type Custom Page
+description: Implementing a node content type in a module.
+package: Widget system
+type: module
+# core: 8.x
+dependencies:
+  - drupal:node
+  - drupal:path
+  - drupal:text
+  - widget_engine:widget_engine
+
+# Information added by Drupal.org packaging script on 2017-05-25
+version: '8.x-1.0'
+core: '8.x'
+project: 'widget_engine'
+datestamp: 1495723087

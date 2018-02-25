@@ -1,0 +1,106 @@
+uuid: 0f24511f-c320-492b-97e1-993c61659343
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.lt_ward.field_census_population_data
+    - field.field.taxonomy_term.lt_ward.field_constituency
+    - field.field.taxonomy_term.lt_ward.field_data_
+    - field.field.taxonomy_term.lt_ward.field_female_population
+    - field.field.taxonomy_term.lt_ward.field_geo
+    - field.field.taxonomy_term.lt_ward.field_lt_district
+    - field.field.taxonomy_term.lt_ward.field_lt_geolocation
+    - field.field.taxonomy_term.lt_ward.field_lt_header_image
+    - field.field.taxonomy_term.lt_ward.field_lt_population
+    - field.field.taxonomy_term.lt_ward.field_male_population
+    - field.field.taxonomy_term.lt_ward.field_nec_population_data
+    - field.field.taxonomy_term.lt_ward.field_population
+    - taxonomy.vocabulary.lt_ward
+  module:
+    - entity_reference_revisions
+    - panelizer
+    - text
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: taxonomy_term.lt_ward.default
+targetEntityType: taxonomy_term
+bundle: lt_ward
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_census_population_data:
+    weight: 3
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  field_constituency:
+    weight: 7
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_data_:
+    weight: 6
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_geo:
+    weight: 4
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  field_lt_district:
+    weight: 5
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_lt_header_image:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: embedded
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_nec_population_data:
+    weight: 2
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+hidden:
+  field_female_population: true
+  field_lt_geolocation: true
+  field_lt_population: true
+  field_male_population: true
+  field_population: true

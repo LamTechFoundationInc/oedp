@@ -1,0 +1,28 @@
+uuid: 3ec58225-c865-47b6-9f20-9a6c37692c14
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lt_district
+    - node.type.lt_cand_elected_officials
+    - taxonomy.vocabulary.lt_district
+id: node.lt_cand_elected_officials.field_lt_district
+field_name: field_lt_district
+entity_type: node
+bundle: lt_cand_elected_officials
+label: 'District (TDB)'
+description: 'Copy the data in the field and paste it into the other district field'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      lt_district: lt_district
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

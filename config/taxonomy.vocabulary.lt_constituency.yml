@@ -1,0 +1,9 @@
+uuid: 83aa62ce-fbeb-45a5-adb0-18ef061cb77e
+langcode: en
+status: true
+dependencies: {  }
+name: Constituencies
+vid: lt_constituency
+description: Constituency
+hierarchy: 0
+weight: -8

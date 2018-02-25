@@ -1,0 +1,20 @@
+uuid: ad9158fd-2444-4809-bc26-0aa4004cee5b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_op_election_type_tags
+field_name: field_op_election_type_tags
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

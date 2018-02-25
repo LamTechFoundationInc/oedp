@@ -1,0 +1,29 @@
+uuid: a0a98253-d7a4-43ba-b9b0-701dfcb7a18c
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.op_services
+  module:
+    - system
+    - views
+  theme:
+    - openelections
+id: exposedformop_serviceslocal_council_results
+theme: openelections
+region: sidebar_first
+weight: -14
+provider: null
+plugin: 'views_exposed_filter_block:op_services-local_council_results'
+settings:
+  id: 'views_exposed_filter_block:op_services-local_council_results'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+visibility:
+  request_path:
+    id: request_path
+    pages: "/results/local-council/table\r\n/results/local-council/all"
+    negate: false
+    context_mapping: {  }

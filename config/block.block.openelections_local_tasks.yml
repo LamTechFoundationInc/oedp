@@ -1,0 +1,22 @@
+uuid: 5cab858c-991f-40fa-b934-bfe0b54cce6d
+langcode: en
+status: true
+dependencies:
+  theme:
+    - openelections
+_core:
+  default_config_hash: dXohAZr_Jna8roaR8cXSrrRTG3TgopWdOpm5OBjRtbI
+id: openelections_local_tasks
+theme: openelections
+region: content
+weight: -17
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

@@ -1,0 +1,19 @@
+uuid: 5cc339ef-51d1-454b-8aad-e7b6b0404bf7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_op_ml_longitude
+    - paragraphs.paragraphs_type.op_map_location
+id: paragraph.op_map_location.field_op_ml_longitude
+field_name: field_op_ml_longitude
+entity_type: paragraph
+bundle: op_map_location
+label: Longitude
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

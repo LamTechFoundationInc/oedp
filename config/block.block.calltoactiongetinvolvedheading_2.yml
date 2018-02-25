@@ -1,0 +1,25 @@
+uuid: e27ae8e5-5a6c-4ea6-ac85-2bab6c120597
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:d3751bbe-63bd-4969-a236-ffb2819bab86'
+  module:
+    - block_content
+  theme:
+    - openelections
+id: calltoactiongetinvolvedheading_2
+theme: openelections
+region: hidden_blocks_collection
+weight: 0
+provider: null
+plugin: 'block_content:d3751bbe-63bd-4969-a236-ffb2819bab86'
+settings:
+  id: 'block_content:d3751bbe-63bd-4969-a236-ffb2819bab86'
+  label: 'Call to action - Get Involved Heading'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

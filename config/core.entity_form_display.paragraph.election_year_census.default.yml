@@ -1,0 +1,56 @@
+uuid: 15d26401-9f7a-4874-b57a-3598c0c62c61
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.election_year_census.field_election_year
+    - field.field.paragraph.election_year_census.field_female_population
+    - field.field.paragraph.election_year_census.field_male_population
+    - field.field.paragraph.election_year_census.field_registered_voters
+    - field.field.paragraph.election_year_census.field_total_population
+    - paragraphs.paragraphs_type.election_year_census
+  module:
+    - workbench_moderation
+id: paragraph.election_year_census.default
+targetEntityType: paragraph
+bundle: election_year_census
+mode: default
+content:
+  field_election_year:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_female_population:
+    weight: 1
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_male_population:
+    weight: 2
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_registered_voters:
+    weight: 4
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_total_population:
+    weight: 3
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

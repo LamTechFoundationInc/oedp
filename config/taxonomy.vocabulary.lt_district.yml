@@ -1,0 +1,9 @@
+uuid: b965133b-573d-474c-aa2b-90239d50583f
+langcode: en
+status: true
+dependencies: {  }
+name: Districts
+vid: lt_district
+description: District
+hierarchy: 0
+weight: -9

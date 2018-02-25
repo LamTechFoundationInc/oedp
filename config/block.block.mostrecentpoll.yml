@@ -1,0 +1,20 @@
+uuid: b67dc873-5634-4ccc-a993-bcb34ef96d75
+langcode: en
+status: true
+dependencies:
+  module:
+    - poll
+  theme:
+    - openelections
+id: mostrecentpoll
+theme: openelections
+region: hidden_blocks_collection
+weight: 0
+provider: null
+plugin: poll_recent_block
+settings:
+  id: poll_recent_block
+  label: 'Most recent poll'
+  provider: poll
+  label_display: '0'
+visibility: {  }

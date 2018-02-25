@@ -1,0 +1,22 @@
+uuid: 3318ad85-0cad-4d9c-9399-8b837f72697b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.summary_election_results
+  module:
+    - text
+id: node.summary_election_results.body
+field_name: body
+entity_type: node
+bundle: summary_election_results
+label: Comments
+description: 'Use this field to enter any comments that will help someone understand the results better'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

@@ -1,0 +1,38 @@
+uuid: ae011adf-117d-4fdd-bbb8-2a313dee1068
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: b-qxCu1VLGWjqvXKv4Nt7y2BUo5VSGpEIj8gb6C_PUY
+id: global
+label: Global
+tags:
+  rights: ' Sierra Leone OpenElections Database'
+  keywords: 'sierra leone, presidential election, parliamentary election, local council election, district chairperson election, major election, and village headmen election, election open database'
+  icbm: '8.470254, -13.225104'
+  geo_position: '8.470254, -13.225104'
+  geo_region: SL
+  robots: 'index, follow'
+  content_language: en
+  title: '[current-page:title] | Sierra Leone OpenElections Platform'
+  geo_placename: Freetown
+  description: 'An open platform that gives journalist and the public access to historical elections data for presidential, parliamentary, local council, district chairperson, major, and village headmen in Sierra Leone'
+  abstract: 'An open platform that gives journalist and the public access to historical elections data for presidential, parliamentary, local council, district chairperson, major, and village headmen in Sierra Leone'
+  fb_pages: 'https://www.facebook.com/pg/Sierra-Leone-OpenElections-Database-1918031828525800'
+  fb_admins: tamba.lamin
+  shortcut_icon: /sites/default/files/favicon.ico
+  icon_96x96: /sites/default/files/
+  icon_16x16: /sites/default/files/favicon-16x16.png
+  icon_32x32: /sites/default/files/favicon-32x32.png
+  icon_192x192: /sites/default/files/android-chrome-192x192.png
+  mask-icon: /sites/default/files/safari-pinned-tab.svg
+  apple_touch_icon_180x180: /sites/default/files/apple-touch-icon.png
+  og_region: West
+  og_country_name: 'Sierra Leone'
+  og_postal_code: '00232'
+  og_site_name: ' Sierra Leone OpenElections Database'
+  og_phone_number: '+232 22 250 265'
+  og_longitude: '-13.225104'
+  og_latitude: '8.470254'
+  og_street_address: '84 Kissy Road'
+  og_email: info@elections.sl

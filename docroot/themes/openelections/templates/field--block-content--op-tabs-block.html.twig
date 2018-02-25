@@ -1,0 +1,40 @@
+{#
+/**
+ * @file
+ * OpenElections theme override for the block entity refernece field for the tabs powered custom block
+ *
+ * @see openelections_preprocess_field__block_content__op_tabs_block()
+ */
+#}
+{%
+  set classes = [
+    'field',
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+    'field--label-' ~ label_display,
+    'field--entity-reference-target-type-' ~ entity_reference_target_type|clean_class,
+    'field--op-tabs-block',
+    'clearfix',
+  ]
+%}
+{%
+  set title_classes = [
+    'field__label',
+    label_display == 'inline' ? 'inline',
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+  {% if not label_hidden %}
+    <h3{{ title_attributes.addClass(title_classes) }}>{{ label }}</h3>
+  {% endif %}
+  <ul class="nav nav-tabs">
+    {% for item in items %}
+      <li class="{{ loop.first ? ' active' : '' }}"><a href="#{{item.block_data.id}}" data-toggle="tab"><span>{{ item.block_data.label }}</span></a></li>
+    {% endfor %}
+  </ul>
+  <div class="tab-content">
+    {% for item in items %}
+      <div class="tab-pane fade {{ loop.first ? ' active in' : '' }}" id="{{item.block_data.id}}">{{ item.content }}</div>
+    {% endfor %}
+  </div>
+</div>

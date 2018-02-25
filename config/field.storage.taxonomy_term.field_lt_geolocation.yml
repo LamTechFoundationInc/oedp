@@ -1,0 +1,19 @@
+uuid: 5e1d3395-5cc5-4b82-8a75-d9270e84fefd
+langcode: en
+status: true
+dependencies:
+  module:
+    - geolocation
+    - taxonomy
+id: taxonomy_term.field_lt_geolocation
+field_name: field_lt_geolocation
+entity_type: taxonomy_term
+type: geolocation
+settings: {  }
+module: geolocation
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

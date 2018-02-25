@@ -1,0 +1,28 @@
+uuid: 36f532e0-8633-4e1d-ba24-203c13e33056
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ward
+    - paragraphs.paragraphs_type.election_year_details
+    - taxonomy.vocabulary.lt_ward
+id: paragraph.election_year_details.field_ward
+field_name: field_ward
+entity_type: paragraph
+bundle: election_year_details
+label: Ward
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      lt_ward: lt_ward
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,11 @@
+name: 'Lightning Workflow'
+core: 8.x
+type: module
+description: 'Tools to improve your content workflow.'
+version: '8.x-2.17'
+package: Lightning
+dependencies:
+  - lightning_core
+  - workbench_moderation
+components:
+  - lightning_scheduled_updates

@@ -1,0 +1,22 @@
+uuid: e913ab20-6744-4783-86b8-3c7369c1d397
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - openelections
+_core:
+  default_config_hash: qCb99k6zVlYEUEWHqbr7oIaKcXSGRf4x5UzbpIFZQhA
+id: openelections_content
+theme: openelections
+region: content
+weight: -15
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,89 @@
+uuid: af5f05db-43c1-4cb0-a0e9-e825dec956a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.rich_text
+  module:
+    - ckeditor
+_core:
+  default_config_hash: 0bVELtfx9sXhjZ6s6W-dJo8SW-IR9jiEIEylzm-2Cro
+format: rich_text
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Formatting
+          items:
+            - Bold
+            - Italic
+            - Underline
+            - Strike
+            - Superscript
+            - Subscript
+            - '-'
+            - RemoveFormat
+            - JustifyLeft
+            - JustifyCenter
+            - JustifyRight
+            - JustifyBlock
+        -
+          name: Linking
+          items:
+            - DrupalLink
+            - DrupalUnlink
+        -
+          name: Lists
+          items:
+            - BulletedList
+            - NumberedList
+        -
+          name: Media
+          items:
+            - Blockquote
+            - Table
+            - HorizontalRule
+            - media_browser
+            - DrupalImage
+            - video_embed
+            - node
+        -
+          name: 'Block Formatting'
+          items:
+            - Format
+        -
+          name: Tools
+          items:
+            - Undo
+            - Redo
+            - Copy
+            - Cut
+            - PasteFromWord
+            - Paste
+            - PasteText
+            - ShowBlocks
+            - Source
+  plugins:
+    stylescombo:
+      styles: ''
+    language:
+      language_list: un
+    linkit:
+      linkit_profile: ''
+    video_embed:
+      defaults:
+        children:
+          autoplay: true
+          responsive: true
+          width: '854'
+          height: '480'
+image_upload:
+  status: true
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null

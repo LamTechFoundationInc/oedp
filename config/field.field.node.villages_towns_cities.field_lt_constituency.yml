@@ -1,0 +1,28 @@
+uuid: 3337e9cd-5579-45dd-b69d-dc7737824eff
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lt_constituency
+    - node.type.villages_towns_cities
+    - taxonomy.vocabulary.lt_constituency
+id: node.villages_towns_cities.field_lt_constituency
+field_name: field_lt_constituency
+entity_type: node
+bundle: villages_towns_cities
+label: Constituency
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      lt_constituency: lt_constituency
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

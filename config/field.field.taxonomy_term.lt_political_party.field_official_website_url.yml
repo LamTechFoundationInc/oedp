@@ -1,0 +1,23 @@
+uuid: c3ab443a-f7ad-4f3c-b04c-3d9155266e1f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_official_website_url
+    - taxonomy.vocabulary.lt_political_party
+  module:
+    - link
+id: taxonomy_term.lt_political_party.field_official_website_url
+field_name: field_official_website_url
+entity_type: taxonomy_term
+bundle: lt_political_party
+label: 'Official Website URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 1
+field_type: link

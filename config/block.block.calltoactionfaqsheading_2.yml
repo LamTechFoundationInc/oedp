@@ -1,0 +1,25 @@
+uuid: 608ac341-d5d0-48a1-a67a-0c991f61b901
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:3805425f-a775-41f5-bc6f-d382d810268c'
+  module:
+    - block_content
+  theme:
+    - openelections
+id: calltoactionfaqsheading_2
+theme: openelections
+region: hidden_blocks_collection
+weight: 0
+provider: null
+plugin: 'block_content:3805425f-a775-41f5-bc6f-d382d810268c'
+settings:
+  id: 'block_content:3805425f-a775-41f5-bc6f-d382d810268c'
+  label: 'Call to action - FAQs Heading'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

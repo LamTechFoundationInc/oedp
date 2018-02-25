@@ -1,0 +1,23 @@
+uuid: f1fbec27-3638-464f-8069-373c96f403ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_female_population
+    - taxonomy.vocabulary.lt_province
+id: taxonomy_term.lt_province.field_female_population
+field_name: field_female_population
+entity_type: taxonomy_term
+bundle: lt_province
+label: 'Female Population (TBD)'
+description: 'Please copy the data in this field to the other population field'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,30 @@
+uuid: f604860f-21d2-4da4-b485-b35c2227ccce
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.compact
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_surname
+  module:
+    - panelizer
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: user.user.compact
+targetEntityType: user
+bundle: user
+mode: compact
+content:
+  flag_subscribe_user:
+    weight: 10
+    region: content
+hidden:
+  field_first_name: true
+  field_surname: true
+  member_for: true
+  realname: true

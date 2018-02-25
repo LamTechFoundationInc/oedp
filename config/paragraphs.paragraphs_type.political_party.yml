@@ -1,0 +1,9 @@
+uuid: 67a99d6b-b937-4803-8bab-677ca081bf12
+langcode: en
+status: true
+dependencies: {  }
+id: political_party
+label: 'Political Party'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

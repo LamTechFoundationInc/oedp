@@ -1,0 +1,51 @@
+uuid: f52cfc10-8569-46d5-8965-57056e3a1eb0
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_suffix
+field_name: field_suffix
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: PhD
+      label: PhD
+    -
+      value: J.D.
+      label: J.D.
+    -
+      value: M.D.
+      label: M.D.
+    -
+      value: D.O.
+      label: D.O.
+    -
+      value: D.C.
+      label: D.C.
+    -
+      value: Sr.
+      label: Sr.
+    -
+      value: Jr.
+      label: Jr.
+    -
+      value: II
+      label: II
+    -
+      value: III
+      label: III
+    -
+      value: Esq
+      label: Esq
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

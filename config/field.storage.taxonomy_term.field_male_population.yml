@@ -1,0 +1,20 @@
+uuid: 0ccf5ce6-8a11-4057-abb0-62c2f3383877
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.field_male_population
+field_name: field_male_population
+entity_type: taxonomy_term
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

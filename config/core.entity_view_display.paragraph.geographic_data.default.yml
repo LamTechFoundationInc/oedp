@@ -1,0 +1,69 @@
+uuid: 06a40c47-d906-4032-abd5-ba393817c7d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.geographic_data.field_election_year
+    - field.field.paragraph.geographic_data.field_point_on_the_map
+    - field.field.paragraph.geographic_data.field_polygon
+    - field.field.paragraph.geographic_data.field_voters
+    - paragraphs.paragraphs_type.geographic_data
+  module:
+    - geolocation
+    - options
+id: paragraph.geographic_data.default
+targetEntityType: paragraph
+bundle: geographic_data
+mode: default
+content:
+  field_election_year:
+    weight: 1
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_point_on_the_map:
+    weight: 0
+    label: hidden
+    settings:
+      set_marker: '1'
+      title: ''
+      info_text: ''
+      google_map_settings:
+        height: 200px
+        width: 100%
+        type: ROADMAP
+        zoom: '10'
+        maxZoom: 18
+        minZoom: 0
+        mapTypeControl: 1
+        streetViewControl: 1
+        zoomControl: 1
+        scrollwheel: 1
+        gestureHandling: auto
+        draggable: 1
+        style: ''
+        info_auto_display: 1
+        marker_icon_path: ''
+        disableAutoPan: 1
+        rotateControl: 0
+        fullscreenControl: 0
+        preferScrollingToZooming: 0
+        disableDoubleClickZoom: 0
+      use_overridden_map_settings: 0
+      common_map: ''
+    third_party_settings: {  }
+    type: geolocation_map
+    region: content
+  field_voters:
+    weight: 2
+    label: inline
+    settings:
+      thousand_separator: ','
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+hidden:
+  field_polygon: true

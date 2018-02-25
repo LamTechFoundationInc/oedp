@@ -1,0 +1,7 @@
+uuid: d2d7dc70-ee97-4fbb-ae8d-b5a2e8dc011f
+langcode: en
+status: false
+dependencies: {  }
+formId: node_lt_election_violence_report_form
+captchaType: default
+label: null

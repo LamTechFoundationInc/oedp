@@ -1,0 +1,28 @@
+uuid: 9ceef1b5-f119-404e-b040-b757f44d8679
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - workbench_moderation
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  workbench_moderation:
+    enabled: true
+    allowed_moderation_states:
+      - published
+      - approved_to_be_published
+      - archived
+      - draft
+      - needs_review
+    default_moderation_state: draft
+name: Villages/Towns/Cities
+type: villages_towns_cities
+description: Villages/Towns/Cities
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

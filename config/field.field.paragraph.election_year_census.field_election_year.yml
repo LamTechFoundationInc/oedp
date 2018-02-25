@@ -1,0 +1,21 @@
+uuid: ba1c0c18-95fe-4c85-a345-ae39ad94c3de
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_election_year
+    - paragraphs.paragraphs_type.election_year_census
+  module:
+    - options
+id: paragraph.election_year_census.field_election_year
+field_name: field_election_year
+entity_type: paragraph
+bundle: election_year_census
+label: 'Election Year'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

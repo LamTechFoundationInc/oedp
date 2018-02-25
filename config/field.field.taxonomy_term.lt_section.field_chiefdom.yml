@@ -1,0 +1,25 @@
+uuid: a7700df5-ecc1-44a3-85cb-5cc25ec2e0af
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_chiefdom
+    - taxonomy.vocabulary.lt_section
+id: taxonomy_term.lt_section.field_chiefdom
+field_name: field_chiefdom
+entity_type: taxonomy_term
+bundle: lt_section
+label: Chiefdom
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: editor_taxonomy_entity_reference_fields
+      display_name: chiefdoms_entity_reference
+      arguments: {  }
+field_type: entity_reference

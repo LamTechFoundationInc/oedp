@@ -1,0 +1,49 @@
+{#
+/**
+ * @file
+ * Theme override for a single field in a view.
+ *
+ * Available variables:
+ * - view: The view that the field belongs to.
+ * - field: The field handler that can process the input.
+ * - row: The raw result of the database query that generated this field.
+ * - output: The processed output that will normally be used.
+ *
+ * When fetching output from the row this construct should be used:
+ * data = row[field.field_alias]
+ *
+ * The above will guarantee that you'll always get the correct data, regardless
+ * of any changes in the aliasing that might happen if the view is modified.
+ *
+ * @see template_preprocess_views_view_field()
+ */
+#}
+{# Translucent Background #}
+<div class="tp-caption transparent-background"
+  data-x="left"
+  data-y="top"
+  data-start="0"
+  data-basealign="slide"
+  data-transform_idle="o:1"
+  data-transform_in="o:0;s:300;"
+  data-transform_out="o:0;s:300;"
+  data-width="full"
+  data-height="full">
+</div>
+
+{# Caption of Slide #}
+<div class="tp-caption tp-caption--transparent-background"
+  data-x="[center,center,center,center]"
+  data-y="[center,center,center,center]"
+  data-hoffset="[0,0,0,0]"
+  data-voffset="[0,0,0,0]"
+  data-fontweight="500"
+  data-whitespace="normal"
+  data-basealign="slide"
+  data-start="1200"
+  data-width="[650,650,650,430]"
+  data-transform_idle="o:1"
+  data-transform_in="y:[-100%];sX:1;sY:1;o:0;s:1000;e:Power4.easeInOut;"
+  data-transform_out="y:[100%];o:0;s:1000;e:Power2.easeInOut;">
+    {{ output -}}
+</div>

@@ -1,0 +1,25 @@
+uuid: c4ebe892-d45f-44dd-abd4-61bbd4816f54
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_op_video
+    - node.type.summary_election_results
+  module:
+    - video_embed_field
+id: node.summary_election_results.field_op_video
+field_name: field_op_video
+entity_type: node
+bundle: summary_election_results
+label: 'Video URL'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_providers:
+    youtube: youtube
+    youtube_playlist: youtube_playlist
+    vimeo: vimeo
+field_type: video_embed_field

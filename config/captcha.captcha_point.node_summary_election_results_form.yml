@@ -1,0 +1,7 @@
+uuid: c0dbf413-ab2a-48d0-92de-2b3eed22a806
+langcode: en
+status: false
+dependencies: {  }
+formId: node_summary_election_results_form
+captchaType: default
+label: null

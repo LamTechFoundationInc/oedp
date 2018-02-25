@@ -1,0 +1,64 @@
+uuid: d81848d3-4d32-4703-bcc2-60f9eb511088
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_current_political_party
+    - node.type.lt_cand_elected_officials
+    - paragraphs.paragraphs_type.political_party
+  module:
+    - entity_reference_revisions
+id: node.lt_cand_elected_officials.field_current_political_party
+field_name: field_current_political_party
+entity_type: node
+bundle: lt_cand_elected_officials
+label: 'Current Political Party'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      political_party: political_party
+    target_bundles_drag_drop:
+      election_year:
+        weight: 13
+        enabled: false
+      op_collapse:
+        weight: 14
+        enabled: false
+      op_fancy_linked_image:
+        weight: 15
+        enabled: false
+      op_fancy_tab:
+        weight: 16
+        enabled: false
+      op_featured_linked_text_tile:
+        weight: 17
+        enabled: false
+      op_highlight:
+        weight: 18
+        enabled: false
+      op_icon_features:
+        weight: 19
+        enabled: false
+      op_map_location:
+        weight: 20
+        enabled: false
+      op_media_tab:
+        weight: 21
+        enabled: false
+      op_tab:
+        weight: 22
+        enabled: false
+      political_party:
+        enabled: true
+        weight: 23
+      population_data:
+        weight: 24
+        enabled: false
+field_type: entity_reference_revisions

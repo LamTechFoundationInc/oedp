@@ -1,0 +1,69 @@
+/**
+ * @file
+ * Visual styles for Corporate+'s team members carousel.
+ */
+.view-team-members-carousel h2.title {
+  margin-bottom: 0;
+  padding-top: 30px;
+}
+
+/*navigation controls*/
+.view-team-members-carousel .owl-nav {
+  top: -55px;
+}
+.view-team-members-carousel .owl-nav div {
+  text-transform: uppercase;
+}
+.view-team-members-carousel .owl-nav div:after {
+  font-size: 36px;
+  top: -2px;
+}
+.view-team-members-carousel .owl-nav .owl-prev {
+  padding-left: 25px;
+}
+.view-team-members-carousel .owl-nav .owl-next {
+  padding-right: 25px;
+}
+
+/*images overlays*/
+.view-team-members-carousel .overlay-inner {
+  top: auto;
+  bottom: 0;
+  margin-top: 0;
+  height: auto;
+  background-color: rgba(225, 225, 225, 0.85);
+  padding: 20px 10px;
+  color: #363636;
+}
+.view-team-members-carousel .overlay-inner h5 {
+  text-transform: none;
+  margin-top: 0;
+}
+.view-team-members-carousel .overlay-inner h5 a {
+  text-decoration: none;
+}
+.view-team-members-carousel .overlay-inner .views-field-body {
+  font-size: 13px;
+  font-weight: 400;
+  margin-bottom: 15px;
+  padding: 0 10px;
+  display: block;
+}
+.view-team-members-carousel .overlay-inner .views-field-body p {
+  padding-bottom: 0;
+  padding-top: 5px;
+}
+.view-team-members-carousel .overlay-inner .views-field-field-sle-subtitle {
+  margin-bottom: 15px;
+  font-size: 15px;
+  font-weight: 400;
+  display: block;
+}
+.view-team-members-carousel ul.icons-list.icons-list--bordered li a {
+  border-color: #363636;
+  color: #363636;
+}
+.view-team-members-carousel ul.icons-list.icons-list--bordered li a:hover {
+  border-color: #777;
+  color: #777;
+}

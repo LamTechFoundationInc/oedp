@@ -1,0 +1,9 @@
+method: 0
+pattern: "lamtech.sl\r\ntambalamin.me\r\ngmail.com\r\n*.edu.sl\r\n*.sl\r\nelectiondata.io\r\nelections.sl"
+message: 'You are not allowed to register for this site.'
+_core:
+  default_config_hash: 0xE4emSSHTVKb88WL3yN2IahuH23p8VNAXMZNux6BKs
+actions: null
+form_build_id: form-1GMNYzPLqKw3UiiRwC5Ec3cEux6z7PZXmlFW9LTo7do
+form_token: ntSbdnycpuZOgjZGaAnAjhazfyE2J9QWKRdEtmoUl-Y
+form_id: domain_registration_admin_form

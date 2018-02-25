@@ -1,0 +1,47 @@
+uuid: 72befebf-3974-46f3-809a-de0d8fd82583
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.lt_article
+  module:
+    - node
+id: node.lt_article
+targetEntityType: node
+bundle: lt_article
+types:
+  - ''
+fieldMappings:
+  title:
+    properties:
+      - 'schema:name'
+  body:
+    properties:
+      - 'schema:articleBody'
+  field_comment:
+    properties:
+      - 'schema:comment'
+  field_data_sources:
+    properties:
+      - 'schema:citation'
+  field_lt_district:
+    properties:
+      - 'schema:contentLocation'
+  field_lt_election_year:
+    properties:
+      - ''
+  field_lt_geolocation:
+    properties:
+      - ''
+  field_lt_photo:
+    properties:
+      - 'schema:image'
+  field_meta_tags:
+    properties:
+      - ''
+  field_rating:
+    properties:
+      - 'schema:contentRating'
+  field_tags:
+    properties:
+      - ''

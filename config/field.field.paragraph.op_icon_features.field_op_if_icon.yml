@@ -1,0 +1,19 @@
+uuid: 1c43c867-41ce-4edb-bd1d-65b0615332ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_op_if_icon
+    - paragraphs.paragraphs_type.op_icon_features
+id: paragraph.op_icon_features.field_op_if_icon
+field_name: field_op_if_icon
+entity_type: paragraph
+bundle: op_icon_features
+label: Icon
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

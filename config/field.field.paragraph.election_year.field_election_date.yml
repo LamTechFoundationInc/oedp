@@ -1,0 +1,21 @@
+uuid: e90f9655-7f9f-41c5-acc2-f61f6485f7a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_election_date
+    - paragraphs.paragraphs_type.election_year
+  module:
+    - datetime
+id: paragraph.election_year.field_election_date
+field_name: field_election_date
+entity_type: paragraph
+bundle: election_year
+label: 'Election Date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

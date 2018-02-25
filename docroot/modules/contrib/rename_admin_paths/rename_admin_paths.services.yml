@@ -1,0 +1,6 @@
+services:
+  rename_admin_paths.rename_admin_paths_processor:
+    class: Drupal\rename_admin_paths\RenameAdminPathsProcessor
+    tags:
+      - { name: path_processor_inbound, priority: 290 }
+      - { name: path_processor_outbound, priority: 100 }

@@ -1,0 +1,23 @@
+uuid: be1529b7-bfe2-4c09-9ec5-729b0f8a775d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_registered_voters
+    - taxonomy.vocabulary.lt_province
+id: taxonomy_term.lt_province.field_registered_voters
+field_name: field_registered_voters
+entity_type: taxonomy_term
+bundle: lt_province
+label: 'Registered Voters (TBD)'
+description: 'Please copy the data in this field to the other population field'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

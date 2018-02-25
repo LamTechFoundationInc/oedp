@@ -1,0 +1,23 @@
+uuid: a6f84387-0641-40ed-9516-add185c2383c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_registered_voters
+    - paragraphs.paragraphs_type.population_data
+id: paragraph.population_data.field_registered_voters
+field_name: field_registered_voters
+entity_type: paragraph
+bundle: population_data
+label: 'Registered Voters'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

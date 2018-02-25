@@ -1,0 +1,21 @@
+uuid: ed7feee4-1f70-45af-bddd-707b4d8b498c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.political_party.field_political_party
+    - paragraphs.paragraphs_type.political_party
+id: paragraph.political_party.default
+targetEntityType: paragraph
+bundle: political_party
+mode: default
+content:
+  field_political_party:
+    weight: 0
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden: {  }

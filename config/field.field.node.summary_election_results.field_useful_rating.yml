@@ -1,0 +1,27 @@
+uuid: f6a1f8cc-04b4-464e-88ff-97342526f115
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_useful_rating
+    - node.type.summary_election_results
+  module:
+    - votingapi_widgets
+id: node.summary_election_results.field_useful_rating
+field_name: field_useful_rating
+entity_type: node
+bundle: summary_election_results
+label: 'Useful Rating'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    status: '1'
+default_value_callback: ''
+settings:
+  anonymous_window: '-1'
+  user_window: '-1'
+  result_function: vote_average
+  widget_format: fivestar
+field_type: voting_api_field

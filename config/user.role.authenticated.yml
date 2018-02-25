@@ -1,0 +1,35 @@
+uuid: 756c8934-ad41-40f0-a468-a27a8b74dae6
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
+id: authenticated
+label: 'Authenticated user'
+weight: -9
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access jsonapi resource list'
+  - 'access news feeds'
+  - 'access polls'
+  - 'access pwa'
+  - 'access shortcuts'
+  - 'access sitemap'
+  - 'cancel own vote'
+  - 'disable own tfa'
+  - 'edit own webform submission'
+  - 'flag email_node'
+  - 'flag email_term'
+  - 'flag subscribe_node'
+  - 'flag subscribe_term'
+  - 'post comments'
+  - 'setup own tfa'
+  - 'unflag email_node'
+  - 'unflag email_term'
+  - 'unflag subscribe_node'
+  - 'unflag subscribe_term'
+  - 'view media'
+  - 'view own webform submission'
+  - 'vote on node:lt_article:field_rating'

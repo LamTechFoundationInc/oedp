@@ -1,0 +1,7 @@
+status: '1'
+pattern: '[node:field_type_of_result] - [node:field_lt_candidate:entity:field_lt_first_name] [node:field_lt_candidate:entity:field_lt_surname] - [node:field_lt_election_type] - [node:field_lt_election_year:date:html_date] - [node:field_lt_party:entity:field_lt_acronym] - [node:field_votes] votes - [node:field_result_status]'
+php: 0
+dependencies:
+  config:
+    - node.type.summary_election_results
+escape: 0

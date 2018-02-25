@@ -1,0 +1,38 @@
+social_post_facebook.settings_form:
+  path: '/admin/config/social-api/social-post/facebook'
+  defaults:
+    _title: 'Facebook Settings'
+    _form: 'Drupal\social_post_facebook\Form\FacebookPostSettingsForm'
+  requirements:
+    _permission: 'administer social api autoposting'
+
+# Routes for authentication
+social_post_facebook.redirect_to_facebook:
+  path: '/user/social-post/facebook/auth'
+  defaults:
+    _controller: 'Drupal\social_post_facebook\Controller\FacebookPostController::redirectToFacebook'
+  requirements:
+    _permission: 'perform facebook autoposting tasks'
+social_post_facebook.callback:
+  path: '/user/social-post/facebook/auth/callback'
+  defaults:
+    _controller: 'Drupal\social_post_facebook\Controller\FacebookPostController::callback'
+  requirements:
+    _permission: 'perform facebook autoposting tasks'
+
+# Facebook User Entity routes
+entity.social_post_facebook_user.collection:
+  path: '/admin/config/social-api/social-post/facebook/users'
+  defaults:
+    _entity_list: 'social_post_facebook_user'
+    _title: 'Facebook User List'
+  requirements:
+    _permission: 'view social post user entities'
+entity.social_post_facebook_user.delete_form:
+  path: '/admin/config/social-api/social-post/facebook/users/{social_post_facebook_user}/delete/{user}'
+  defaults:
+    _entity_form: 'social_post_facebook_user.delete'
+    _title: 'Delete user'
+    user: false # A drupal user id will be passed instead if the form is invoked from a user edit form
+  requirements:
+    _entity_access: 'social_post_facebook_user.delete'

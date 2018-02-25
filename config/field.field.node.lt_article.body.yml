@@ -1,0 +1,22 @@
+uuid: f31168df-2571-4426-ab18-5a68051b99a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.lt_article
+  module:
+    - text
+id: node.lt_article.body
+field_name: body
+entity_type: node
+bundle: lt_article
+label: 'Article Body'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

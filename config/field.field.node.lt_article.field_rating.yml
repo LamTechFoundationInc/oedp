@@ -1,0 +1,27 @@
+uuid: 4ab36739-160f-40f8-97ec-884d8901bab6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_rating
+    - node.type.lt_article
+  module:
+    - votingapi_widgets
+id: node.lt_article.field_rating
+field_name: field_rating
+entity_type: node
+bundle: lt_article
+label: Rating
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    status: '1'
+default_value_callback: ''
+settings:
+  anonymous_window: '-1'
+  user_window: '-1'
+  result_function: vote_average
+  widget_format: fivestar
+field_type: voting_api_field

@@ -1,0 +1,28 @@
+uuid: af3c02f0-9725-4346-91a4-15b57d9fc32a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lt_district
+    - node.type.lt_article
+    - taxonomy.vocabulary.lt_district
+id: node.lt_article.field_lt_district
+field_name: field_lt_district
+entity_type: node
+bundle: lt_article
+label: District
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      lt_district: lt_district
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

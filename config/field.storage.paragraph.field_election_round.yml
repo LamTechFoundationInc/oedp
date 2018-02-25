@@ -1,0 +1,33 @@
+uuid: 8be06359-a64a-46c2-901f-4584f31a6b4c
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_election_round
+field_name: field_election_round
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'First Round'
+      label: 'First Round'
+    -
+      value: 'Second Round'
+      label: 'Second Round'
+    -
+      value: 'Third Round'
+      label: 'Third Round'
+    -
+      value: 'Fourth Round'
+      label: 'Fourth Round'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

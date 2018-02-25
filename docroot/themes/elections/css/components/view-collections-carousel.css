@@ -1,0 +1,10 @@
+/**
+ * @file
+ * Visual styles for Corporate+'s collections carousel.
+ */
+.sle-carousel-collections .owl-item {
+  text-align: center;
+}
+.sle-carousel-collections .sle-carousel-item {
+  margin: 0 15px;
+}

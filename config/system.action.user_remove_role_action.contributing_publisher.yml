@@ -1,0 +1,14 @@
+uuid: e516c92e-2c64-479c-b2d7-a79e5438cb1b
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.contributing_publisher
+  module:
+    - user
+id: user_remove_role_action.contributing_publisher
+label: 'Remove the Contributing Publisher role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: contributing_publisher

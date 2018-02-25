@@ -1,0 +1,25 @@
+uuid: 9a78214a-6b2d-43a1-98dc-d5f63edd99de
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.op_background_image_block
+    - field.storage.block_content.field_op_bg_image_opacity
+id: block_content.op_background_image_block.field_op_bg_image_opacity
+field_name: field_op_bg_image_opacity
+entity_type: block_content
+bundle: op_background_image_block
+label: 'Background Image Overlay Opacity'
+description: 'Set the % opacity for the overlay of the background image.'
+required: true
+translatable: false
+default_value:
+  -
+    value: 80
+default_value_callback: ''
+settings:
+  min: 0
+  max: 100
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,14 @@
+uuid: 4acfe8ef-8acc-4604-878b-8a13661a094c
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.contributing_publisher
+  module:
+    - user
+id: user_add_role_action.contributing_publisher
+label: 'Add the Contributing Publisher role to the selected users'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: contributing_publisher

@@ -1,0 +1,27 @@
+# Ignore binaries.
+#/bin
+/]docroot/sites/default/files/php
+/docroot/sites/default/files/js
+/docroot/sites/default/files/css
+/docroot/sites/default/files/php/*
+/docroot/sites/default/files/js/*
+/docroot/sites/default/files/css/*
+/docroot/sites/default/settings.local.php
+/docroot/sites/default/settings.php
+/files-private/
+
+docroot/sites/default/files/php
+docroot/sites/default/files/js
+docroot/sites/default/files/css
+docroot/sites/default/files/php/*
+docroot/sites/default/files/js/*
+docroot/sites/default/files/css/*
+docroot/sites/default/settings.local.php
+docroot/sites/default/settings.php
+files-private/
+
+# Ignore Composer-managed dependencies.
+#vendor/
+dbdump.sql
+copyfiles.zip
+logs

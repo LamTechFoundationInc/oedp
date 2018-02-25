@@ -1,0 +1,40 @@
+diff --git a/js/google_chart_library.js b/js/google_chart_library.js
+deleted file mode 100644
+index 45638fb..0000000
+--- a/js/google_chart_library.js
++++ /dev/null
+@@ -1 +0,0 @@
+-jQuery(document).ready(function () { google.charts.load('current', {'packages':['corechart','timeline','orgchart']}); });
+\ No newline at end of file
+diff --git a/templates/views-simplechart-graph.html.twig b/templates/views-simplechart-graph.html.twig
+index e009632..ca7fe24 100644
+--- a/templates/views-simplechart-graph.html.twig
++++ b/templates/views-simplechart-graph.html.twig
+@@ -1,6 +1,9 @@
+ {{ attach_library('views_simplechart/google-chart') }}
+ <div id="views-simplechart-{{id}}" class="{{ classes }}">
+   <script type="text/javascript">
++    google.charts.load('current', {
++        'packages': ['corechart','timeline','orgchart']
++    });
+     google.charts.setOnLoadCallback(function(){
+       var data = new google.visualization.arrayToDataTable({{ jsondata|raw }});
+       var options = {
+@@ -18,4 +21,4 @@
+     });
+   </script>
+   <div id="views-simplechart-graph-{{id}}"></div>
+-</div>
+\ No newline at end of file
++</div>
+diff --git a/views_simplechart.libraries.yml b/views_simplechart.libraries.yml
+index 1e22f0a..cc321de 100644
+--- a/views_simplechart.libraries.yml
++++ b/views_simplechart.libraries.yml
+@@ -8,6 +8,5 @@ google-chart:
+     gpl-compatible: true
+   js:
+     https://www.gstatic.com/charts/loader.js: { type: external, minified: true }
+-    js/google_chart_library.js: {}
+   dependencies:
+     - core/jquery

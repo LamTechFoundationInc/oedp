@@ -1,0 +1,35 @@
+/**
+ * @file
+ * Visual styles for OpenElections destination preview carousel.
+ */
+.mt-carousel-destination-preview .owl-nav {
+  top: 0;
+  bottom: auto;
+  height: 50px;
+}
+.mt-carousel-destination-preview .owl-nav div:after {
+  line-height: 50px;
+  color: #ffffff;
+  font-size: 24px;
+}
+.mt-carousel-destination-preview .owl-dots {
+  position: absolute;
+  top: 15px;
+  width: 100%;
+  height: 0;
+  margin-top: 0;
+}
+.mt-carousel-destination-preview .owl-dot span {
+  border-color: #ffffff;
+  width: 12px;
+  height: 12px;
+  margin: 5px 3px;
+}
+.mt-carousel-destination-preview .owl-dot:hover span {
+  background-color: #ffffff;
+  border-color: #ffffff;
+}
+.mt-carousel-destination-preview .owl-dot.active span {
+  border-color: #ffffff;
+  background-color: #ffffff;
+}

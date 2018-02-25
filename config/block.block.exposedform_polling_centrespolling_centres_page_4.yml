@@ -1,0 +1,29 @@
+uuid: 19402d4a-1b69-452e-98ad-ce3bccd7e400
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.registration_and_polling_centres
+  module:
+    - system
+    - views
+  theme:
+    - openelections
+id: exposedform_polling_centrespolling_centres_page_4
+theme: openelections
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'views_exposed_filter_block:registration_and_polling_centres-polling_centres_page_4'
+settings:
+  id: 'views_exposed_filter_block:registration_and_polling_centres-polling_centres_page_4'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: 'Filter Results'
+visibility:
+  request_path:
+    id: request_path
+    pages: /resources/polling-centres/table
+    negate: false
+    context_mapping: {  }

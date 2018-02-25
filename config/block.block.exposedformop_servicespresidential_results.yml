@@ -1,0 +1,29 @@
+uuid: 48195b38-27ca-4482-974f-192d02558cf0
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.op_services
+  module:
+    - system
+    - views
+  theme:
+    - openelections
+id: exposedformop_servicespresidential_results
+theme: openelections
+region: sidebar_first
+weight: -17
+provider: null
+plugin: 'views_exposed_filter_block:op_services-presidential_results'
+settings:
+  id: 'views_exposed_filter_block:op_services-presidential_results'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+visibility:
+  request_path:
+    id: request_path
+    pages: /results/presidential/table
+    negate: false
+    context_mapping: {  }

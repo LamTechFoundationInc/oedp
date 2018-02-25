@@ -1,0 +1,25 @@
+uuid: 7fd0d53d-23d5-46c3-8033-72b4405c8892
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_op_video
+    - node.type.op_showcase
+  module:
+    - video_embed_field
+id: node.op_showcase.field_op_video
+field_name: field_op_video
+entity_type: node
+bundle: op_showcase
+label: 'Video URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_providers:
+    youtube: youtube
+    youtube_playlist: youtube_playlist
+    vimeo: vimeo
+field_type: video_embed_field

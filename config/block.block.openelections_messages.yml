@@ -1,0 +1,22 @@
+uuid: f948234c-bcb6-464e-beb8-e525c19749ff
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - openelections
+_core:
+  default_config_hash: Tuip4AWeqmD3kMDIOev4lQKy58Q9cTeMB1DN0eWrSgg
+id: openelections_messages
+theme: openelections
+region: system_messages
+weight: -6
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

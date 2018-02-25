@@ -1,0 +1,33 @@
+uuid: a27dc216-ac4d-45e6-b0c1-12310f9c4bb2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.election_year.field_election_date
+    - field.field.paragraph.election_year.field_election_round
+    - paragraphs.paragraphs_type.election_year
+  module:
+    - datetime
+    - options
+id: paragraph.election_year.default
+targetEntityType: paragraph
+bundle: election_year
+mode: default
+content:
+  field_election_date:
+    weight: 0
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_election_round:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+hidden: {  }

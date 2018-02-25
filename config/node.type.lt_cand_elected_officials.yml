@@ -1,0 +1,27 @@
+uuid: dce243d1-baa6-4003-bd92-eb5d68442f1e
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - workbench_moderation
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  workbench_moderation:
+    enabled: true
+    allowed_moderation_states:
+      - published
+      - approved_to_be_published
+      - archived
+      - draft
+      - needs_review
+    default_moderation_state: draft
+name: 'Candidate Profile'
+type: lt_cand_elected_officials
+description: 'Use <em>Candidate Profile<em> to enter Candidate Profile information such as biographic, election year, contact, campaign, education and professional information to help the electoral learn more about the candidates.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

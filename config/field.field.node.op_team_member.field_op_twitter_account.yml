@@ -1,0 +1,19 @@
+uuid: e22ae666-74b2-44ef-9167-f60462149a3b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_op_twitter_account
+    - node.type.op_team_member
+id: node.op_team_member.field_op_twitter_account
+field_name: field_op_twitter_account
+entity_type: node
+bundle: op_team_member
+label: Twitter
+description: 'Enter the URL of your Twitter profile, e.g.: https://twitter.com/your-accou'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,21 @@
+uuid: b01b9803-eaac-4aa1-b336-76941f65f7f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_lt_geolocation
+    - taxonomy.vocabulary.lt_chiefdom
+  module:
+    - geolocation
+id: taxonomy_term.lt_chiefdom.field_lt_geolocation
+field_name: field_lt_geolocation
+entity_type: taxonomy_term
+bundle: lt_chiefdom
+label: Geolocation(TBD)
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geolocation

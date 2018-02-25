@@ -1,0 +1,38 @@
+/**
+ * @file
+ * Visual styles for Corporate+'s testimonial content type.
+ */
+.node--type-sle-testimonial .field--name-field-sle-testimonial-image {
+  margin: 0 0 20px;
+}
+.node--type-sle-testimonial .field--name-field-sle-testimonial-image img {
+  border-radius: 100%;
+  max-width: 200px;
+}
+.node--type-sle-testimonial .field--name-body,
+.node--type-sle-testimonial .field--name-field-sle-subtitle,
+.node--type-sle-testimonial .field--name-field-sle-testimonial-image {
+  padding: 0 0 0 55px;
+}
+.node--type-sle-testimonial .field--name-field-sle-subtitle {
+  padding-bottom: 15px;
+}
+.node--type-sle-testimonial .field--name-body {
+  font-size: 15px;
+  line-height: 1.5;
+  padding-bottom: 10px;
+}
+.node--type-sle-testimonial .field--name-body p {
+  padding: 0 0 10px;
+  position: relative;
+}
+.node--type-sle-testimonial .field--name-body p:first-child:after {
+  position: absolute;
+  font-family: Georgia, Times New Roman, Serif;
+  content: "“";
+  left: -60px;
+  top: 0px;
+  font-size: 96px;
+  font-style: normal;
+  line-height: 1;
+}

@@ -1,0 +1,25 @@
+uuid: 50abadfb-b1cf-4547-a142-a9ee88bdc799
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:f2136653-4e91-4d6c-b0e6-8107b763f0dd'
+  module:
+    - block_content
+  theme:
+    - openelections
+id: calltoactionresourceshomepage
+theme: openelections
+region: hidden_blocks_collection
+weight: 0
+provider: null
+plugin: 'block_content:f2136653-4e91-4d6c-b0e6-8107b763f0dd'
+settings:
+  id: 'block_content:f2136653-4e91-4d6c-b0e6-8107b763f0dd'
+  label: 'Call to action - Resources Homepage'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

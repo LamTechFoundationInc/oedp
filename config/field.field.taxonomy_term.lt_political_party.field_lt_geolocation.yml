@@ -1,0 +1,21 @@
+uuid: 55a68e9b-7c46-402f-97f0-a623974116c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_lt_geolocation
+    - taxonomy.vocabulary.lt_political_party
+  module:
+    - geolocation
+id: taxonomy_term.lt_political_party.field_lt_geolocation
+field_name: field_lt_geolocation
+entity_type: taxonomy_term
+bundle: lt_political_party
+label: 'Geolocation of Official Address'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geolocation

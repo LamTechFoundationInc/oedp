@@ -1,0 +1,11 @@
+uuid: 840a4210-9eb2-43fc-951c-2865faf37a9f
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: xgooOHdELmziSKeP5OMMkkucLbHJs9H9LtIrqnqF82w
+template: example_user_register
+label: 'Example - User register'
+description: 'Working upon creation of a user.'
+text: {  }
+settings: {  }

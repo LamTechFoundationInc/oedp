@@ -1,0 +1,28 @@
+uuid: 9c246ce3-0b5b-4f28-8166-6c5ce21ee43f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_district
+    - paragraphs.paragraphs_type.election_year_details
+    - taxonomy.vocabulary.lt_district
+id: paragraph.election_year_details.field_district
+field_name: field_district
+entity_type: paragraph
+bundle: election_year_details
+label: District
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      lt_district: lt_district
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,15 @@
+uuid: 7148b74a-40e6-440d-bbe6-f404650cfd44
+name: SLOEDP
+mail: info@elections.sl
+slogan: 'Sierra Leone Open Election Data Platform'
+page:
+  403: /node/27
+  404: ''
+  front: /node/25
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: AyT9s8OUcclfALRE_imByOMgtZ19eOlqdF6zI3p7yqo
+mail_notification: ''

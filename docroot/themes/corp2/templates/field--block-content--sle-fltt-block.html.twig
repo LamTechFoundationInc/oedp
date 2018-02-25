@@ -1,0 +1,53 @@
+{#
+/**
+ * @file
+ * Corporate+'s theme override for the block entity refernece field for the tabs powered custom block
+ *
+ * @see elections_preprocess_field__block_content__sle_fancy_linked_images_block()
+ */
+#}
+{{ attach_library('elections/featured-linked-text-tiles-block') }}
+{%
+  set classes = [
+    'field',
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+    'field--label-' ~ label_display,
+    'field--sle-featured-linked-text-tiles-block',
+    'clearfix',
+  ]
+%}
+{%
+  set title_classes = [
+    'field__label',
+    label_display == 'inline' ? 'inline',
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+  {% if not label_hidden %}
+    <h3{{ title_attributes.addClass(title_classes) }}>{{ label }}</h3>
+  {% endif %}
+  <div class="featured-linked-text-tiles">
+    <div class="row">
+      {% for item in items %}
+        <div class="col-md-4">
+          <div class="featured-linked-text-tile">
+            {% if item.content['#paragraph'].field_sle_fltt_link.0.url and item.content['#paragraph'].field_sle_fltt_title.value %}
+              <div class="featured-linked-text-tile__title"><a href="{{ item.content['#paragraph'].field_sle_fltt_link.0.url }}">{{ item.content['#paragraph'].field_sle_fltt_title.value }}</a></div>
+            {% elseif item.content['#paragraph'].field_sle_fltt_title.value %}
+              <div class="featured-linked-text-tile__title">{{ item.content['#paragraph'].field_sle_fltt_title.value }}</div>
+            {% endif %}
+            {% if item.content %}
+              <div class="featured-linked-text-tile__body">
+                {{ item.content }}
+              </div>
+            {% endif %}
+            {% if item.content['#paragraph'].field_sle_fltt_link.0.url %}
+              <a class="featured-linked-text-tile__link button" href="{{ item.content['#paragraph'].field_sle_fltt_link.0.url }}">{{ item.content['#paragraph'].field_sle_fltt_link.title }}</a>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

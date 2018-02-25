@@ -1,0 +1,23 @@
+uuid: 90c6d867-45f6-44b2-991b-161bc48e9b71
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_registered_voters
+    - taxonomy.vocabulary.lt_constituency
+id: taxonomy_term.lt_constituency.field_registered_voters
+field_name: field_registered_voters
+entity_type: taxonomy_term
+bundle: lt_constituency
+label: 'Registered Voters(TBD)'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

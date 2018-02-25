@@ -1,0 +1,21 @@
+uuid: e9623e3a-6570-4e21-9f6c-99555443c115
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - entity_reference_revisions
+    - paragraphs
+id: block_content.field_op_fancy_linked_image
+field_name: field_op_fancy_linked_image
+entity_type: block_content
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

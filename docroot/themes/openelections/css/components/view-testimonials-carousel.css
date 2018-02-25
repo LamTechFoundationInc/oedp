@@ -1,0 +1,23 @@
+/**
+ * @file
+ * Visual styles for OpenElections testimonials carousel.
+ */
+.mt-carousel-testimonials {
+  padding: 0 0 25px;
+}
+.mt-carousel-testimonials .mt-carousel-item {
+  margin: 0 15px;
+}
+.mt-carousel-testimonials .owl-nav,
+.block > h2.title ~ .content .mt-carousel-testimonials .owl-nav {
+  top: 50%;
+  margin-top: -14px;
+}
+@media (max-width: 991px) {
+  .mt-carousel-testimonials .owl-nav,
+  .block > h2.title ~ .content .mt-carousel-testimonials .owl-nav {
+    top: auto;
+    bottom: 55px;
+    margin-top: 0px;
+  } 
+}

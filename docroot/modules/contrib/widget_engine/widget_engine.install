@@ -1,0 +1,75 @@
+<?php
+
+/**
+ * @file
+ * Install file for widget_engine.
+ */
+
+use Drupal\Core\Database\Database;
+
+/**
+ * Implements hook_requirements().
+ */
+function widget_engine_requirements($phase) {
+  $requirements = [];
+
+  // Optionally use the Libraries module to determine our library paths.
+  if (\Drupal::moduleHandler()->moduleExists('libraries')) {
+    $html2canvas_path = libraries_get_path('html2canvas') . '/dist/html2canvas.min.js';
+  }
+  else {
+    $html2canvas_path = DRUPAL_ROOT . '/libraries/html2canvas/dist/html2canvas.min.js';
+  }
+
+  if (!file_exists($html2canvas_path)) {
+    $requirements['html2canvas'] = array(
+      'title' => t('html2canvas library missing'),
+      'description' => t(
+        'Widget Engine requires the html2canvas library. Download the newest release
+from https://github.com/niklasvh/html2canvas releases and place it in /libraries'
+      ),
+      'severity' => REQUIREMENT_ERROR,
+    );
+  }
+
+  return $requirements;
+}
+
+/**
+ * Implements hook_install().
+ *
+ * @ingroup widget_engine
+ */
+function widget_engine_install() {
+  // Do not allow the locked content type to be deleted.
+  $locked = Drupal::state()->get('node.type.locked');
+  $locked['locked_content_type'] = 'locked_content_type';
+  Drupal::state()->set('node.type.locked', $locked);
+}
+
+/**
+ * Implements hook_uninstall().
+ *
+ * @ingroup widget_engine
+ */
+function widget_engine_uninstall() {
+  // Allow locked_content_type to be deleted.
+  $locked = Drupal::state()->get('node.type.locked');
+  unset($locked['locked_content_type']);
+  Drupal::state()->set('node.type.locked', $locked);
+}
+
+/**
+ * Implements hook_update_N().
+ *
+ * Changes max_length for widget's field 'name' from 50 to 255.
+ */
+function widget_engine_update_8201() {
+  $schema = Database::getConnection()->schema();
+  $schema->changeField('widget', 'name', 'name', [
+    'type' => 'varchar',
+    'length' => 255,
+    'not null' => FALSE,
+    'default' => NULL,
+  ]);
+}

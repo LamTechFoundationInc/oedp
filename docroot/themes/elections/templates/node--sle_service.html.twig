@@ -1,0 +1,12 @@
+{#
+/**
+ * @file
+ * Corporate+s's theme implementation to display a Service node.
+ */
+#}
+
+{% extends "node.html.twig" %}
+{% block content %}
+  {{ attach_library('elections/node-service') }}
+  {{ content }}
+{% endblock %}

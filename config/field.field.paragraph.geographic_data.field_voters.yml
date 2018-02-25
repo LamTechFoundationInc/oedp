@@ -1,0 +1,23 @@
+uuid: 071ce2a3-1878-4187-9057-c5fb189873c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_voters
+    - paragraphs.paragraphs_type.geographic_data
+id: paragraph.geographic_data.field_voters
+field_name: field_voters
+entity_type: paragraph
+bundle: geographic_data
+label: 'Number of Voters'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

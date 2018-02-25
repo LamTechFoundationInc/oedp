@@ -1,0 +1,23 @@
+uuid: 1d5cf6e7-a75c-406e-bb23-470bf8815118
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_male_population
+    - paragraphs.paragraphs_type.election_year_census
+id: paragraph.election_year_census.field_male_population
+field_name: field_male_population
+entity_type: paragraph
+bundle: election_year_census
+label: 'Male Population'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

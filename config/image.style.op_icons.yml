@@ -1,0 +1,14 @@
+uuid: bd77f9a9-4f8a-4eff-a947-32e56faafbc9
+langcode: en
+status: true
+dependencies: {  }
+name: op_icons
+label: 'Icons (90x90)'
+effects:
+  0dea18e7-0c26-4289-8620-9b2cf5d5e151:
+    uuid: 0dea18e7-0c26-4289-8620-9b2cf5d5e151
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 90
+      height: 90

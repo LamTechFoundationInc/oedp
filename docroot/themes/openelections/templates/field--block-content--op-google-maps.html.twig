@@ -1,0 +1,34 @@
+{#
+/**
+ * @file
+ * OpenElections theme override for the block entity refernece field for the dropdown custom block.
+ *
+ * @see openelections_preprocess_field__block_content__field_op_dropdown_block__op_dropdown_block()
+ */
+#}
+{%
+  set classes = [
+    'field',
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+    'field--label-' ~ label_display,
+    'field--entity-reference-target-type-' ~ entity_reference_target_type|clean_class,
+    'clearfix',
+  ]
+%}
+{%
+  set title_classes = [
+    'field__label',
+    label_display == 'inline' ? 'inline',
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+  {% if not label_hidden %}
+    <h3{{ title_attributes.addClass(title_classes) }}>{{ label }}</h3>
+  {% endif %}
+
+  <div class="google-map-canvas"
+    data-attribute-op-locations="{{ map_locations }}"
+    data-attribute-op-map-zoom="{{field_op_map_zoom_value}}">
+  </div>
+</div>

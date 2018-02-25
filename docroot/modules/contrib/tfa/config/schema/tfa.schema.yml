@@ -1,0 +1,115 @@
+tfa.settings:
+  type: config_object
+  label: 'TFA settings'
+  mapping:
+    enabled:
+      type: integer
+      label: 'TFA enabled'
+    send_plugins:
+     type: sequence
+     label: 'Enabled send plugins'
+     sequence:
+       type: tfa.send.config.[%key]
+    login_plugins:
+      type: sequence
+      label: 'Enabled Login plugins'
+      sequence:
+        type: tfa.login.config.[%key]
+    validation_plugin:
+      type: string
+      label: 'Current validation plugin'
+    validation_plugin_settings:
+      label: 'TFA validation plugin configuration'
+      type: sequence
+      sequence:
+        type: tfa.validation.plugin.config.[%key]
+    fallback_plugins:
+      type: sequence
+      label: 'Fallback plugins'
+      sequence:
+        type: fallback.config.[%key]
+    validation_skip:
+      type: integer
+      label: 'No. of times a user without tfa validation set-up can login.'
+    encryption:
+      type: string
+      label: 'The id of the encrpytion profile.'
+    trust_cookie_expiration:
+      type: integer
+      label: 'How long before TFA cookies expire. Default is 30 days.'
+    cookie_name:
+      type: string
+      label: 'Cookie name of TFA trusted browser cookie. Default is "TB".'
+    tfa_flood_uid_only:
+      type: integer
+      label: 'TFA Flood UID Ban Only'
+    tfa_flood_window:
+      type: integer
+      label: 'TFA Flood Window'
+    tfa_flood_threshold:
+      type: integer
+      label: 'TFA Flood Threshold'
+    help_text:
+      type: string
+      label: 'Text to display on help page. Plain text only.'
+
+default.fallback.config:
+  type: mapping
+  label: 'Default Fallback plugin config.'
+  mapping:
+    enable:
+      type: integer
+      label: 'Plugin state'
+    settings:
+      type: mapping
+      label: 'Default fallback settings'
+      mapping:
+        recovery_codes_amount:
+          type: integer
+          label: 'Recovery codes amount. Default is 10.'
+    weight:
+      type: integer
+      label: 'Weight'
+
+default.fallback:
+  type: mapping
+  label: 'OTP Fallbacks'
+  mapping:
+    tfa_recovery_code:
+      type: default.fallback.config
+      label: 'Recovery code fallback'
+
+fallback.config.tfa_totp:
+  type: default.fallback
+  label: 'Fallback settings'
+
+fallback.config.tfa_hotp:
+  type: default.fallback
+  label: 'Fallback settings'
+
+tfa.login.config.tfa_trusted_browser:
+  type: string
+  label: 'Tfa Trusted Browser'
+
+tfa.validation.plugin.config.tfa_totp:
+  type: mapping
+  label: 'TFA TOTP Settings'
+  mapping:
+    time_skew:
+      type: integer
+      label: 'Number of 30 second chunks to allow TOTP keys between.'
+    name_prefix:
+      type: string
+      label: 'Prefix for TOTP QR code names. Suffix is account username.'
+
+tfa.validation.plugin.config.tfa_hotp:
+  type: mapping
+  label: 'TFA TOTP Settings'
+  mapping:
+    counter_window:
+      type: integer
+      label: 'How far ahead from current counter should we check the code.'
+    name_prefix:
+      type: string
+      label: 'Prefix for HOTP QR code names. Suffix is account username.'
+

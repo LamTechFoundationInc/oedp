@@ -1,0 +1,8 @@
+uuid: b9bcbc46-8ca4-41c4-9843-44e909f2e4f3
+langcode: en
+status: true
+dependencies: {  }
+id: op_google_maps
+label: 'Google Map'
+revision: 1
+description: 'Use this custom block type to create blocks that display a Google Map with a simple marker.'

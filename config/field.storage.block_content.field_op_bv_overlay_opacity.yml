@@ -1,0 +1,20 @@
+uuid: 62d24477-2c8a-44ea-aae1-810938702569
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.field_op_bv_overlay_opacity
+field_name: field_op_bv_overlay_opacity
+entity_type: block_content
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

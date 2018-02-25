@@ -1,0 +1,20 @@
+uuid: 78836143-bd78-466b-bce9-1c5beaa9b43e
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.field_registered_voters
+field_name: field_registered_voters
+entity_type: taxonomy_term
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

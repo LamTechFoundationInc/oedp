@@ -1,0 +1,23 @@
+uuid: 977227a5-a540-4afc-9ef9-df6f1193385a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_registered_voters
+    - paragraphs.paragraphs_type.election_year_census
+id: paragraph.election_year_census.field_registered_voters
+field_name: field_registered_voters
+entity_type: paragraph
+bundle: election_year_census
+label: 'Registered Voters'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

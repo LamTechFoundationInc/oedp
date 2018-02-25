@@ -1,0 +1,21 @@
+uuid: 80366001-8b16-4fd7-9732-ab0eb8006948
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_polygon_map
+    - taxonomy.vocabulary.lt_province
+  module:
+    - geofield
+id: taxonomy_term.lt_province.field_polygon_map
+field_name: field_polygon_map
+entity_type: taxonomy_term
+bundle: lt_province
+label: 'Polygon Map (TBD)'
+description: 'Please copy the data in this field to the other geodata field'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geofield

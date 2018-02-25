@@ -1,0 +1,85 @@
+uuid: 248d4b64-fdc5-46ac-84af-eb9d4677f7a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_geo
+    - paragraphs.paragraphs_type.geographic_data
+    - taxonomy.vocabulary.lt_province
+  module:
+    - entity_reference_revisions
+id: taxonomy_term.lt_province.field_geo
+field_name: field_geo
+entity_type: taxonomy_term
+bundle: lt_province
+label: 'Geographic Data'
+description: 'Enter geolocation data to help us display results using an interactive map '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      geographic_data: geographic_data
+    target_bundles_drag_drop:
+      election_year:
+        weight: 16
+        enabled: false
+      election_year_census:
+        weight: 17
+        enabled: false
+      election_year_details:
+        weight: 18
+        enabled: false
+      geographic_data:
+        enabled: true
+        weight: 19
+      op_collapse:
+        weight: 20
+        enabled: false
+      op_fancy_linked_image:
+        weight: 21
+        enabled: false
+      op_fancy_tab:
+        weight: 22
+        enabled: false
+      former_mayors_district_chairpers:
+        weight: 23
+        enabled: false
+      op_featured_linked_text_tile:
+        weight: 23
+        enabled: false
+      former_members_of_parliament:
+        weight: 24
+        enabled: false
+      op_highlight:
+        weight: 24
+        enabled: false
+      former_presidents:
+        weight: 25
+        enabled: false
+      op_icon_features:
+        weight: 25
+        enabled: false
+      op_map_location:
+        weight: 26
+        enabled: false
+      op_media_tab:
+        weight: 27
+        enabled: false
+      op_tab:
+        weight: 28
+        enabled: false
+      political_party:
+        weight: 29
+        enabled: false
+      population_data:
+        weight: 30
+        enabled: false
+      political_party_variables:
+        weight: 37
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,14 @@
+uuid: 800af65e-f66b-416d-af28-0b20be8d0730
+langcode: en
+status: true
+dependencies: {  }
+name: op_fli_image
+label: 'Fancy Linked Image (750x750)'
+effects:
+  b6330651-5dd5-40c0-9f99-4de8d6afbef1:
+    uuid: b6330651-5dd5-40c0-9f99-4de8d6afbef1
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 750
+      height: 750

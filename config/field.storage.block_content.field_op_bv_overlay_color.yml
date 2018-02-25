@@ -1,0 +1,39 @@
+uuid: 5d737a01-143e-4695-b9c3-b27b5430cdd4
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - options
+id: block_content.field_op_bv_overlay_color
+field_name: field_op_bv_overlay_color
+entity_type: block_content
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'region--dark-typography region--white-background'
+      label: White
+    -
+      value: 'region--dark-typography region--gray-background'
+      label: 'Light Gray'
+    -
+      value: 'region--light-typography region--colored-background'
+      label: Colored
+    -
+      value: 'region--light-typography region--colored-secondary-background'
+      label: 'Colored Secondary'
+    -
+      value: 'region--light-typography region--dark-background'
+      label: Dark
+    -
+      value: 'region--light-typography region--black-background'
+      label: Black
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

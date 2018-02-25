@@ -1,0 +1,154 @@
+{#
+/**
+ * @file
+ * Corporate+'s theme override for the main slideshow custom block
+ *
+ * @see elections_preprocess_field__block_content__sle_main_slideshow_block()
+ */
+#}
+{{ attach_library('elections/main-slideshow-block-init') }}
+{%
+  set classes = [
+    'field',
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+    'field--label-' ~ label_display,
+    'field--sle-main-slideshow-block',
+    'clearfix',
+  ]
+%}
+{%
+  set title_classes = [
+    'field__label',
+    label_display == 'inline' ? 'inline',
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+  {% if not label_hidden %}
+    <h3{{ title_attributes.addClass(title_classes) }}>{{ label }}</h3>
+  {% endif %}
+  <div class="main-slideshow-block rev_slider_wrapper"
+    data-attribute-sle-layout="{{ field_sle_main_slideshow_layout_value }}"
+    data-attribute-sle-autoheight="{{ field_sle_main_slideshow_autoheight }}"
+    data-attribute-sle-initial-height="{{ field_sle_ms_initial_height_value }}"
+    data-attribute-sle-effect-duration="{{ field_sle_ms_effect_duration_value }}"
+    data-attribute-sle-bullets-enable="{{ field_sle_ms_bullets_enable }}"
+    data-attribute-sle-tabs-enable="{{ field_sle_ms_tabs_enable }}"
+    data-attribute-sle-touch-swipe-nav="{{ field_sle_ms_touch_swipe_nav_value }}"
+    data-attribute-sle-bullets-position="{{ field_sle_ms_bullets_position_value }}"
+    data-attribute-sle-background-opacity="{{ field_sle_ms_background_opacity_value }}"
+    data-attribute-sle-ignore-header="{{ field_sle_ms_ignore_header_height_value }}">
+    <div class="rev_slider" data-version="5.4.5">
+      <ul>
+        {% for item in items %}
+          <li data-transition="{{ field_sle_ms_effect_value }}" data-slotamount="default"
+            {% if item.slide_title %}
+                data-title="{{ item.slide_title }}"
+            {% endif %} 
+          data-masterspeed="default">
+            <img src="{{ file_url(item.slide_image_url) }}" alt="{{ item.slide_image_alt }}" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+
+            {# Translucent Background #}
+            <div class="tp-caption transparent-background"
+              data-x="left"
+              data-y="top"
+              data-start="0"
+              data-basealign="slide"
+              data-transform_idle="o:1"
+              data-transform_in="o:0;s:300;"
+              data-transform_out="o:0;s:300;"
+              data-width="full"
+              data-height="full">
+            </div>
+
+            {# Caption of Slide #}
+            <div class="tp-caption ms-transparent-background"
+              data-x="[center,center,center,center]"
+              data-y="[center,center,center,center]"
+              data-hoffset="[0,0,0,0]"
+              data-voffset="[0,0,0,0]"
+              data-fontweight="500"
+              data-whitespace="normal"
+              data-basealign="grid"
+              data-start="1200"
+              data-width="[650,650,650,430]"
+              data-transform_idle="o:1"
+              data-transform_in="y:[-100%];sX:1;sY:1;o:0;s:1000;e:Power4.easeInOut;"
+              data-transform_out="y:[100%];o:0;s:1000;e:Power2.easeInOut;"
+              data-attribute-sle-caption-opacity="{{ item.slide_caption_opacity }}">
+              {% if item.slide_title and item.slide_first_link_url %}
+                <div class="tp-caption__title {{ item.slide_caption_color }}"><a href="{{ item.slide_first_link_url }}">{{ item.slide_title }}</a></div>
+              {% else %}
+                <div class="tp-caption__title {{ item.slide_caption_color }}">{{ item.slide_title }}</div>
+              {% endif %}
+              {% if item.slide_caption %}
+                <div class="tp-caption__text {{ item.slide_caption_color }}">{{ item.slide_caption }}</div>
+              {% endif %}
+              {% if item.slide_first_link_url %}
+                <div class="tp-caption__buttons-container">
+                  {% for slide_link in item.slide_links %}
+                    <a class="tp-caption__button" href="{{ slide_link.slide_link_url }}">{{ slide_link.slide_link_title }}</a>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
+
+            {# Video Background #}
+            {% if item.slide_youtube_id %}
+              <div class="rs-background-video-layer"
+                data-ytid="{{ item.slide_youtube_id }}"
+                data-videoattributes="version=3&amp;enablejsapi=1&amp;html5=1&amp;hd=1&amp;wmode=opaque&amp;showinfo=0&amp;rel=0;"
+                data-videorate="1"
+                data-videoloop="loop"
+                data-videowidth="100%"
+                data-videoheight="100%"
+                data-videocontrols="none"
+                data-aspectratio="16:9"
+                data-autoplay="true"
+                data-autoplayonlyfirsttime="false"
+                data-nextslideatend="true"
+                data-forcerewind="on"
+                data-volume="{{ item.slide_video_volume }}">
+                </div>
+            {% elseif item.slide_vimeo_id %}
+              <div class="rs-background-video-layer"
+                data-vimeoid="{{ item.slide_vimeo_id }}"
+                data-videoattributes="title=0&amp;byline=0&amp;portrait=0&amp;api=1"
+                data-videoloop="loop"
+                data-videowidth="100%"
+                data-videoheight="100%"
+                data-videocontrols="none"
+                data-aspectratio="16:9"
+                data-autoplay="true"
+                data-autoplayonlyfirsttime="false"
+                data-nextslideatend="true"
+                data-forcerewind="on"
+                data-volume="{{ item.slide_video_volume }}">
+                </div>
+            {% endif %}
+
+            <div class="tp-caption scroll-button"
+              data-actions='[{
+                "event": "click", 
+                "action": "scrollbelow", 
+                "offset": "50px",
+                "delay": "0"
+              }]'
+              data-x="center"
+              data-y="bottom"
+              data-voffset="0"
+              data-start="0"
+              data-basealign="slide"
+              data-transform_idle="o:1"
+              data-transform_in="o:0;s:300;"
+              data-transform_out="o:0;s:300;">
+              <span></span>
+            </div>
+
+          </li>
+        {% endfor %}
+      </ul>
+      <div class="tp-bannertimer tp-bottom"></div>
+    </div>
+  </div>
+</div>

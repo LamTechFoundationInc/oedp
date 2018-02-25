@@ -1,0 +1,21 @@
+uuid: 798ef65e-d540-4991-8518-b161d7913393
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_election_year
+    - node.type.lt_cand_elected_officials
+  module:
+    - options
+id: node.lt_cand_elected_officials.field_election_year
+field_name: field_election_year
+entity_type: node
+bundle: lt_cand_elected_officials
+label: 'Election Year (TBD)'
+description: 'Copy the data in the field and paste it into the other Election Year Field'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

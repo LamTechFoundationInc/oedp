@@ -1,0 +1,23 @@
+uuid: 847c4d77-973b-4fc5-a457-059f90e14ba2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_is_polling_centre
+    - node.type.lt_regist_poll_center
+id: node.lt_regist_poll_center.field_is_polling_centre
+field_name: field_is_polling_centre
+entity_type: node
+bundle: lt_regist_poll_center
+label: 'Is Polling Centre'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

@@ -1,0 +1,71 @@
+uuid: 6800c247-7592-462f-8a52-921e052b753f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.op_team_member.body
+    - field.field.node.op_team_member.field_op_banner_image
+    - field.field.node.op_team_member.field_op_facebook_account
+    - field.field.node.op_team_member.field_op_linkedin_account
+    - field.field.node.op_team_member.field_op_member_photo
+    - field.field.node.op_team_member.field_op_slideshow
+    - field.field.node.op_team_member.field_op_slideshow_image
+    - field.field.node.op_team_member.field_op_slideshow_text
+    - field.field.node.op_team_member.field_op_subtitle
+    - field.field.node.op_team_member.field_op_team_member_category
+    - field.field.node.op_team_member.field_op_twitter_account
+    - image.style.thumbnail
+    - node.type.op_team_member
+  module:
+    - image
+    - panelizer
+    - text
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.op_team_member.teaser
+targetEntityType: node
+bundle: op_team_member
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 2
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  field_op_member_photo:
+    type: image
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      image_style: thumbnail
+      image_link: content
+    third_party_settings: {  }
+  field_op_subtitle:
+    type: string
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  field_op_banner_image: true
+  field_op_facebook_account: true
+  field_op_linkedin_account: true
+  field_op_slideshow: true
+  field_op_slideshow_image: true
+  field_op_slideshow_text: true
+  field_op_team_member_category: true
+  field_op_twitter_account: true
+  links: true

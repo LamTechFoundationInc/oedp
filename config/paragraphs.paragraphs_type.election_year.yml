@@ -1,0 +1,9 @@
+uuid: 1544203d-1c42-4abb-97bf-9927c2fb71f2
+langcode: en
+status: true
+dependencies: {  }
+id: election_year
+label: 'Election Year'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,23 @@
+uuid: 42a06445-f96d-4fda-84ee-e175edf35ce5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_election_year
+    - paragraphs.paragraphs_type.geographic_data
+  module:
+    - options
+id: paragraph.geographic_data.field_election_year
+field_name: field_election_year
+entity_type: paragraph
+bundle: geographic_data
+label: 'Election Year'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: '2018'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

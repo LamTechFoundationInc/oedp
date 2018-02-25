@@ -1,0 +1,25 @@
+uuid: 6e9592df-8cff-434d-b18e-d92fbc28a859
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_op_video
+    - node.type.lt_article
+  module:
+    - video_embed_field
+id: node.lt_article.field_op_video
+field_name: field_op_video
+entity_type: node
+bundle: lt_article
+label: 'Featured Video'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_providers:
+    youtube: youtube
+    youtube_playlist: youtube_playlist
+    vimeo: vimeo
+field_type: video_embed_field

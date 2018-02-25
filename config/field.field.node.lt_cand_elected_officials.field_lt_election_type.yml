@@ -1,0 +1,28 @@
+uuid: 58e0917e-f7b0-414b-873e-f2aa8e503d00
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lt_election_type
+    - node.type.lt_cand_elected_officials
+    - taxonomy.vocabulary.lt_election_type
+id: node.lt_cand_elected_officials.field_lt_election_type
+field_name: field_lt_election_type
+entity_type: node
+bundle: lt_cand_elected_officials
+label: 'Election Type (TBD)'
+description: 'Copy the data in the field and paste it into the other Election Type field'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      lt_election_type: lt_election_type
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

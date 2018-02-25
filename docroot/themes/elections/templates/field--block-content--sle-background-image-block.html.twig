@@ -1,0 +1,39 @@
+{#
+/**
+ * @file
+ * Corporate+'s theme override for the block entity refernece field for the tabs powered custom block
+ *
+ * @see elections_preprocess_field__block_content__sle_background_image_block()
+ */
+#}
+{{ attach_library('elections/background-image-block') }}
+{%
+  set classes = [
+    'field',
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+    'field--label-' ~ label_display,
+    'field--sle-background-image-block',
+    'clearfix',
+  ]
+%}
+{%
+  set title_classes = [
+    'field__label',
+    label_display == 'inline' ? 'inline',
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+  {% if not label_hidden %}
+    <h3{{ title_attributes.addClass(title_classes) }}>{{ label }}</h3>
+  {% endif %}
+  <div class="background-image-block__section">
+    <div class="background-image {{ field_sle_bg_image_positioning_value }}" style="background-image: url({{ file_url(background_image_uri) }});"></div>
+    <div class="background-image-overlay {{ bg_image_overlay_color }}" style="opacity: {{ bg_image_overlay_opacity }};"></div>
+    <div class="{{ bg_image_layout_mode }} {{ bg_image_overlay_color }}">
+      {% for item in items %}
+        {{ item.content }}
+      {% endfor %}
+    </div>
+  </div>
+</div>
