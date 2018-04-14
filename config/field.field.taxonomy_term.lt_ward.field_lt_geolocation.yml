@@ -1,0 +1,21 @@
+uuid: ceccd35d-03f9-4d48-8c49-1c2c9efe2744
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_lt_geolocation
+    - taxonomy.vocabulary.lt_ward
+  module:
+    - geolocation
+id: taxonomy_term.lt_ward.field_lt_geolocation
+field_name: field_lt_geolocation
+entity_type: taxonomy_term
+bundle: lt_ward
+label: Geolocation(TBD)
+description: 'Please copy the data in this field to the other geodata field'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geolocation

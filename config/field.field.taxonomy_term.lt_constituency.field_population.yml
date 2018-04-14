@@ -1,0 +1,23 @@
+uuid: f07b4bd7-45a4-479a-af17-9afd9abbee3a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_population
+    - taxonomy.vocabulary.lt_constituency
+id: taxonomy_term.lt_constituency.field_population
+field_name: field_population
+entity_type: taxonomy_term
+bundle: lt_constituency
+label: 'Total Population(TBD)'
+description: 'Please copy the data in this field to the other population field'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

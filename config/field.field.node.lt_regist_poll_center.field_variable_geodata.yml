@@ -1,0 +1,85 @@
+uuid: b9cb7472-6c53-46cb-af05-a7bae32c1d19
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_variable_geodata
+    - node.type.lt_regist_poll_center
+    - paragraphs.paragraphs_type.geographic_data
+  module:
+    - entity_reference_revisions
+id: node.lt_regist_poll_center.field_variable_geodata
+field_name: field_variable_geodata
+entity_type: node
+bundle: lt_regist_poll_center
+label: 'Geographic Data'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      geographic_data: geographic_data
+    target_bundles_drag_drop:
+      election_year:
+        weight: 20
+        enabled: false
+      election_year_census:
+        weight: 21
+        enabled: false
+      election_year_details:
+        weight: 22
+        enabled: false
+      former_mayors_district_chairpers:
+        weight: 23
+        enabled: false
+      former_members_of_parliament:
+        weight: 24
+        enabled: false
+      former_presidents:
+        weight: 25
+        enabled: false
+      geographic_data:
+        enabled: true
+        weight: 26
+      op_collapse:
+        weight: 27
+        enabled: false
+      op_fancy_linked_image:
+        weight: 28
+        enabled: false
+      op_fancy_tab:
+        weight: 29
+        enabled: false
+      op_featured_linked_text_tile:
+        weight: 30
+        enabled: false
+      op_highlight:
+        weight: 31
+        enabled: false
+      op_icon_features:
+        weight: 32
+        enabled: false
+      op_map_location:
+        weight: 33
+        enabled: false
+      op_media_tab:
+        weight: 34
+        enabled: false
+      op_tab:
+        weight: 35
+        enabled: false
+      political_party:
+        weight: 36
+        enabled: false
+      political_party_variables:
+        weight: 37
+        enabled: false
+      population_data:
+        weight: 38
+        enabled: false
+field_type: entity_reference_revisions

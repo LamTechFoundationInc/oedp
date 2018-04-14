@@ -1,0 +1,28 @@
+uuid: 91477cea-3b0c-45bb-881a-cc2fd0519f05
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_lt_province
+    - taxonomy.vocabulary.lt_province
+    - taxonomy.vocabulary.lt_section
+id: taxonomy_term.lt_section.field_lt_province
+field_name: field_lt_province
+entity_type: taxonomy_term
+bundle: lt_section
+label: Region
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      lt_province: lt_province
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

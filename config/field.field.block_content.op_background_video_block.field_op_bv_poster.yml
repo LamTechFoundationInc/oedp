@@ -1,0 +1,38 @@
+uuid: 25bceea4-0f05-4cb9-b0e8-7de18b1d0c62
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.op_background_video_block
+    - field.storage.block_content.field_op_bv_poster
+  module:
+    - image
+id: block_content.op_background_video_block.field_op_bv_poster
+field_name: field_op_bv_poster
+entity_type: block_content
+bundle: op_background_video_block
+label: Poster
+description: 'Recommended pixel dimensions - W: 1920 px / H: 1080 px.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: true
+  title_field_required: true
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

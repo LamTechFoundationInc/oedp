@@ -1,0 +1,31 @@
+uuid: aec1364c-44cb-4dce-a7ff-2e891742d660
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:op_background_image_block:cb337b23-9b8f-4571-b410-6c253c67c428'
+  module:
+    - block_content
+    - system
+  theme:
+    - openelections
+id: electionresourcesheadlinebackground
+theme: openelections
+region: banner
+weight: -29
+provider: null
+plugin: 'block_content:cb337b23-9b8f-4571-b410-6c253c67c428'
+settings:
+  id: 'block_content:cb337b23-9b8f-4571-b410-6c253c67c428'
+  label: 'Election Resources Headline Background'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/resources\r\n/resources/\r\nresources\r\nresources/"
+    negate: false
+    context_mapping: {  }

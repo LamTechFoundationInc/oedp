@@ -1,0 +1,25 @@
+uuid: 7d2a42dc-f5b1-4f4f-82eb-2b4ebdea3770
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_constituency
+    - taxonomy.vocabulary.lt_ward
+id: taxonomy_term.lt_ward.field_constituency
+field_name: field_constituency
+entity_type: taxonomy_term
+bundle: lt_ward
+label: Constituency
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: editor_taxonomy_entity_reference_fields
+      display_name: constituency_entity_reference
+      arguments: {  }
+field_type: entity_reference

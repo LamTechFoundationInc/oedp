@@ -1,0 +1,20 @@
+uuid: 0e506735-0a73-4fed-8c1e-1acecff47e24
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_polling_station_entered
+field_name: field_polling_station_entered
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

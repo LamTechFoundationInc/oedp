@@ -1,0 +1,28 @@
+uuid: b56f0074-92d0-4720-af65-4a169c41586f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_constituency
+    - paragraphs.paragraphs_type.election_year_details
+    - taxonomy.vocabulary.lt_constituency
+id: paragraph.election_year_details.field_constituency
+field_name: field_constituency
+entity_type: paragraph
+bundle: election_year_details
+label: Constituency
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      lt_constituency: lt_constituency
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

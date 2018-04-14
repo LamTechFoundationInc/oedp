@@ -1,0 +1,28 @@
+uuid: 83caeebf-ace5-49b9-ae9d-0fb3e4954b6f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_impact_type
+    - node.type.lt_election_violence_report
+    - taxonomy.vocabulary.impact_types
+id: node.lt_election_violence_report.field_impact_type
+field_name: field_impact_type
+entity_type: node
+bundle: lt_election_violence_report
+label: 'Impact Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      impact_types: impact_types
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

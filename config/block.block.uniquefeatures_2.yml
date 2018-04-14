@@ -1,0 +1,31 @@
+uuid: 2dbf29d5-988a-4bcb-9377-601d798518af
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:op_if_block:d9245aee-5234-43a6-ba79-8c9a9925968a'
+  module:
+    - block_content
+    - system
+  theme:
+    - openelections
+id: uniquefeatures_2
+theme: openelections
+region: content_top
+weight: -28
+provider: null
+plugin: 'block_content:d9245aee-5234-43a6-ba79-8c9a9925968a'
+settings:
+  id: 'block_content:d9245aee-5234-43a6-ba79-8c9a9925968a'
+  label: 'Unique Features'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

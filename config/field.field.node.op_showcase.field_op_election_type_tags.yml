@@ -1,0 +1,28 @@
+uuid: 6f487eed-94b5-495b-b7b8-95cf41637973
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_op_election_type_tags
+    - node.type.op_showcase
+    - taxonomy.vocabulary.lt_election_type
+id: node.op_showcase.field_op_election_type_tags
+field_name: field_op_election_type_tags
+entity_type: node
+bundle: op_showcase
+label: 'Election Type Tags'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      lt_election_type: lt_election_type
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

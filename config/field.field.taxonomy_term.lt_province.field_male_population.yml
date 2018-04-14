@@ -1,0 +1,23 @@
+uuid: 467424aa-8823-4959-974e-cc26829e7971
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_male_population
+    - taxonomy.vocabulary.lt_province
+id: taxonomy_term.lt_province.field_male_population
+field_name: field_male_population
+entity_type: taxonomy_term
+bundle: lt_province
+label: 'Male Population (TBD)'
+description: 'Please copy the data in this field to the other population field'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

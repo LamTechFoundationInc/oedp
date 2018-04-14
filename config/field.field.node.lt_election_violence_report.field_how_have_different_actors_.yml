@@ -1,0 +1,23 @@
+uuid: fe3c2780-01ec-4640-8f92-4d25ecb507ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_how_have_different_actors_
+    - node.type.lt_election_violence_report
+id: node.lt_election_violence_report.field_how_have_different_actors_
+field_name: field_how_have_different_actors_
+entity_type: node
+bundle: lt_election_violence_report
+label: 'How have different actors responded to the incident?'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Positive
+  off_label: Negative
+field_type: boolean

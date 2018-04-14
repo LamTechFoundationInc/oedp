@@ -1,0 +1,19 @@
+uuid: d58e3045-f31b-4671-8d37-20a6b2a92929
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_founders
+    - taxonomy.vocabulary.lt_political_party
+id: taxonomy_term.lt_political_party.field_founders
+field_name: field_founders
+entity_type: taxonomy_term
+bundle: lt_political_party
+label: Founder(s)
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

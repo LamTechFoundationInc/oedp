@@ -1,0 +1,14 @@
+uuid: bad53e09-f2ef-4caa-b4a6-8339a392abe6
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.lt_election_violence_report
+  module:
+    - node
+id: node.lt_election_violence_report
+targetEntityType: node
+bundle: lt_election_violence_report
+types:
+  - ''
+fieldMappings: {  }

@@ -1,0 +1,31 @@
+uuid: 7e2291e0-bf53-408f-8c9e-5f7c83f88b5b
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:op_background_image_block:cb747380-ae53-4050-90d9-05de6287e7bf'
+  module:
+    - block_content
+    - system
+  theme:
+    - openelections
+id: backgroundimageblockresults_2
+theme: openelections
+region: content_bottom_first
+weight: -14
+provider: null
+plugin: 'block_content:cb747380-ae53-4050-90d9-05de6287e7bf'
+settings:
+  id: 'block_content:cb747380-ae53-4050-90d9-05de6287e7bf'
+  label: 'Background image block - Results'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

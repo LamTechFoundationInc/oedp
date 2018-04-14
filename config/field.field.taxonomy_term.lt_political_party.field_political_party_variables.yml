@@ -1,0 +1,76 @@
+uuid: ad11ed23-8a99-4ebc-bde1-beab555d2789
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_political_party_variables
+    - paragraphs.paragraphs_type.political_party_variables
+    - taxonomy.vocabulary.lt_political_party
+  module:
+    - entity_reference_revisions
+id: taxonomy_term.lt_political_party.field_political_party_variables
+field_name: field_political_party_variables
+entity_type: taxonomy_term
+bundle: lt_political_party
+label: 'Variable Political Party Information'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      political_party_variables: political_party_variables
+    target_bundles_drag_drop:
+      election_year:
+        weight: 17
+        enabled: false
+      election_year_census:
+        weight: 18
+        enabled: false
+      election_year_details:
+        weight: 19
+        enabled: false
+      geographic_data:
+        weight: 20
+        enabled: false
+      op_collapse:
+        weight: 21
+        enabled: false
+      op_fancy_linked_image:
+        weight: 22
+        enabled: false
+      op_fancy_tab:
+        weight: 23
+        enabled: false
+      op_featured_linked_text_tile:
+        weight: 24
+        enabled: false
+      op_highlight:
+        weight: 25
+        enabled: false
+      op_icon_features:
+        weight: 26
+        enabled: false
+      op_map_location:
+        weight: 27
+        enabled: false
+      op_media_tab:
+        weight: 28
+        enabled: false
+      op_tab:
+        weight: 29
+        enabled: false
+      political_party:
+        weight: 30
+        enabled: false
+      political_party_variables:
+        enabled: true
+        weight: 31
+      population_data:
+        weight: 32
+        enabled: false
+field_type: entity_reference_revisions

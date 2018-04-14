@@ -1,0 +1,85 @@
+uuid: 2986c179-019d-4e94-8050-daca7da961f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_nec_population_data
+    - paragraphs.paragraphs_type.election_year_census
+    - taxonomy.vocabulary.lt_ward
+  module:
+    - entity_reference_revisions
+id: taxonomy_term.lt_ward.field_nec_population_data
+field_name: field_nec_population_data
+entity_type: taxonomy_term
+bundle: lt_ward
+label: 'NEC Population Data'
+description: 'Enter information from the latest NEC voter population data published by '
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      election_year_census: election_year_census
+    target_bundles_drag_drop:
+      election_year:
+        weight: 17
+        enabled: false
+      election_year_census:
+        enabled: true
+        weight: 18
+      election_year_details:
+        weight: 19
+        enabled: false
+      geographic_data:
+        weight: 20
+        enabled: false
+      op_collapse:
+        weight: 21
+        enabled: false
+      op_fancy_linked_image:
+        weight: 22
+        enabled: false
+      op_fancy_tab:
+        weight: 23
+        enabled: false
+      former_mayors_district_chairpers:
+        weight: 23
+        enabled: false
+      former_members_of_parliament:
+        weight: 24
+        enabled: false
+      op_featured_linked_text_tile:
+        weight: 24
+        enabled: false
+      former_presidents:
+        weight: 25
+        enabled: false
+      op_highlight:
+        weight: 25
+        enabled: false
+      op_icon_features:
+        weight: 26
+        enabled: false
+      op_map_location:
+        weight: 27
+        enabled: false
+      op_media_tab:
+        weight: 28
+        enabled: false
+      op_tab:
+        weight: 29
+        enabled: false
+      political_party:
+        weight: 30
+        enabled: false
+      political_party_variables:
+        weight: 31
+        enabled: false
+      population_data:
+        weight: 32
+        enabled: false
+field_type: entity_reference_revisions

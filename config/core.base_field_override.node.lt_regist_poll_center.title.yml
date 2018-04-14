@@ -1,0 +1,18 @@
+uuid: f30abd3a-267f-4275-b2b0-d68a5a4acffb
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.lt_regist_poll_center
+id: node.lt_regist_poll_center.title
+field_name: title
+entity_type: node
+bundle: lt_regist_poll_center
+label: 'Name of centre'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

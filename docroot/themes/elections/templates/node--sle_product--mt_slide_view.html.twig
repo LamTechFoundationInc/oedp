@@ -1,0 +1,71 @@
+{#
+/**
+ * @file
+ * Corporate+'s theme implementation to display a Product node.
+ */
+#}
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    'clearfix',
+  ]
+%}
+{{ attach_library('classy/node') }}
+{{ attach_library('elections/node') }}
+<article{{ attributes.addClass(classes) }}>
+  <div class="node__container">
+    <div class="row">
+      <div class="col-md-12">
+        <header class="node__header">
+          {{ title_prefix }}
+          {% if not page %}
+            <h2{{ title_attributes.addClass('node__title') }}>
+              <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+            </h2>
+          {% else %}
+            <h1{{ title_attributes.addClass('node__title') }}>{{ label }}</h1>
+          {% endif %}
+          {{ title_suffix }}
+          {% if display_submitted %}
+            <div class="node__meta">
+              {{ author_picture }}
+              <span{{ author_attributes.addClass('node__submitted-info') }}>
+                {% trans %}By {{ author_name }} on {{ date }}{% endtrans %}
+              </span>
+              {{ metadata }}
+            </div>
+          {% endif %}
+        </header>
+      </div>
+      {% block node_side %}
+        {% if content.field_image|render %}
+          <div class="col-md-6">
+            <div class="node__side-content clearfix">
+              {{ content.field_image }}
+            </div>
+          </div>
+        {% endif %}
+      {% endblock %}
+      {% block content %}
+        {{ attach_library('elections/node-product') }}
+        {{ attach_library('elections/node-view-mode-slide-view') }}
+        <div class="
+          {% if content.field_image|render %}
+            col-md-6
+          {% else %}
+            col-md-12
+          {% endif %}">
+          <div{{ content_attributes.addClass('node__main-content', 'clearfix') }}>
+            {{ content|without('comment', 'field_image', 'links') }}
+            <a class="button button--hover-style-2" href="{{ url }}">{% trans %}Learn More{% endtrans %}</a>
+          </div>
+        </div>
+      {% endblock %}
+    </div>
+  </div>
+</article>

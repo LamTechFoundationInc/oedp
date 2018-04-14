@@ -1,0 +1,25 @@
+uuid: b197d436-67ed-4b8b-8f77-5ef926f0787f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_votes
+    - node.type.summary_election_results
+id: node.summary_election_results.field_votes
+field_name: field_votes
+entity_type: node
+bundle: summary_election_results
+label: Votes
+description: 'Votes for this candidate. An integer like 980. Decimal numbers like 980.20 are not accepted.'
+required: true
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

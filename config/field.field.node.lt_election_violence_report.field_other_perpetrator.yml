@@ -1,0 +1,19 @@
+uuid: 13788a6c-97a6-4cde-a520-c9fa431653c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_other_perpetrator
+    - node.type.lt_election_violence_report
+id: node.lt_election_violence_report.field_other_perpetrator
+field_name: field_other_perpetrator
+entity_type: node
+bundle: lt_election_violence_report
+label: 'Other Perpetrator'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

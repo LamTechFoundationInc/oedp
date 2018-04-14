@@ -1,0 +1,606 @@
+/**
+ * @file
+ * Red color styling for Corporate+ for Drupal 8.
+ *
+ * Base color: #bb111a
+ */
+
+ // variables
+$base-color: #bb111a;
+$dark-color: lighten($base-color, 5%);
+
+/* base: elements */
+a {
+  color: $dark-color;
+}
+a:hover,
+a:focus {
+  color: $base-color;
+}
+a.link--dark,
+.link--dark a {
+  color: $base-color;
+}
+a.link--dark:hover,
+.link--dark a:hover,
+a.link--dark:focus,
+.link--dark a:focus {
+  color: $dark-color;
+}
+a.link--bordered,
+.link--bordered a {
+  border-color: $dark-color;
+}
+.text--dark {
+  color: $base-color;
+}
+.text--colored {
+  color: $dark-color;
+}
+.region--dark-typography blockquote:before {
+  color: rgba($dark-color, 0.50);
+}
+.link--hover-style-3 {
+  background-image: linear-gradient(rgba($base-color, 0.5) 0%, rgba($base-color, 0.5) 100%);
+}
+.link--hover-style-3:hover {
+  background-image: linear-gradient($base-color 0%, $base-color 100%);
+}
+.region--light-typography .link--hover-style-3:hover {
+  color: $dark-color;
+}
+
+/* base: layout */
+.region--dark-background {
+  background-color: $dark-color;
+}
+.region--colored-background {
+  background-color: $base-color;
+}
+.region--dark-background + .region--separator-incline-diagonal:before {
+  background: linear-gradient(to bottom right, $dark-color 49.5%, transparent 50%);
+}
+.region--colored-background + .region--separator-incline-diagonal:before {
+  background: linear-gradient(to bottom right, $base-color 49.5%, transparent 50%);
+}
+.region--dark-background + .region--separator-decline-diagonal:before {
+  background: linear-gradient(to bottom left, $dark-color 49.5%, transparent 50%);
+}
+.region--colored-background + .region--separator-decline-diagonal:before {
+  background: linear-gradient(to bottom left, $base-color 49.5%, transparent 50%);
+}
+.page-container-border-enabled .page-container {
+  border-color: $dark-color;
+}
+
+/* components: accordion */
+.panel-title a {
+  color: $base-color;
+}
+.panel-title a:hover,
+.panel-title a:focus {
+  color: $base-color;
+}
+.panel-heading--trigger-icon .panel-title a:after {
+  background-color: $dark-color;
+}
+.panel-heading--trigger-icon .panel-title a.collapsed:after {
+  background-color: $base-color;
+}
+.panel-heading--trigger-icon .panel-title a:hover:after {
+  background-color: $dark-color;
+}
+.region--light-typography.region--dark-background .panel-title a:hover,
+.region--light-typography.region--dark-background .panel-title a:focus {
+  color: $base-color;
+}
+.panel-group.panel-group--style-2 .panel .panel-title a {
+  background-color: $dark-color;
+}
+.panel-group.panel-group--style-2 .panel-title a.collapsed {
+  background-color: $base-color;
+}
+.panel-group.panel-group--style-2 .panel-title a:hover {
+  background-color: $dark-color;
+}
+.region--light-typography .panel-group.panel-group--style-2 .panel-heading--trigger-icon .panel-title a,
+.region--light-typography .panel-group.panel-group--style-2 .panel-heading--trigger-icon .panel-title a:hover {
+  color: $base-color;
+}
+
+/* components: buttons */
+a.button,
+.button > a,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  color: $dark-color;
+  border-color: rgba($dark-color, 0.50);
+}
+a.button:hover,
+a.button:focus,
+.button > a:hover,
+.button > a:focus,
+input[type="submit"]:hover,
+input[type="submit"]:focus,
+input[type="reset"]:hover,
+input[type="reset"]:focus,
+input[type="button"]:hover,
+input[type="button"]:focus {
+  background-color: $base-color;
+  border-color: $base-color;
+}
+a.button.button--hover-style-2:before,
+.button.button--hover-style-2 > a:before {
+  background-color: $base-color;
+  border-color: $base-color;
+}
+.region--light-typography a.button:hover,
+.region--light-typography .button > a:hover,
+.region--light-typography input[type="submit"]:hover,
+.region--light-typography input[type="reset"]:hover,
+.region--light-typography input[type="button"]:hover,
+.region--light-typography a.button:focus,
+.region--light-typography .button > a:focus,
+.region--light-typography input[type="submit"]:focus,
+.region--light-typography input[type="reset"]:focus,
+.region--light-typography input[type="button"]:focus {
+  color: $base-color;
+}
+
+/* components: comment */
+.node .comment ul.links li a:hover {
+  color: $base-color;
+}
+
+/* components: dropdowns */
+.region--colored-background .dropdown-menu {
+  background-color: $base-color;
+}
+.region--dark-background .dropdown-menu {
+  background-color: $dark-color;
+}
+
+/* components: fancy block */
+.region--dark-background .fancy-block-text {
+  background-color: $dark-color;
+}
+.region--colored-background .fancy-block-text {
+  background-color: $base-color;
+}
+
+/* components: fancy linked images block */
+.clip-path-support .clip-pentagon-container {
+  background-color: $dark-color;
+}
+.clip-path-support .clip-circle-container {
+  background-color: $dark-color;
+}
+.clip-path-support .clip-rectangle-container:before {
+  border-color: $dark-color;
+}
+
+/*CSS rules only for FF*/
+@-moz-document url-prefix() {
+  .clip-pentagon-container {
+    background-color: $dark-color;
+  }
+  .clip-circle-container {
+    background-color: $dark-color;
+  }
+  .clip-rectangle-container:before {
+    border-color: $dark-color;
+  }
+}
+
+/* components: featured linked text tiles block */
+.region--light-typography .featured-linked-text-tile__body a {
+  color: $dark-color;
+}
+.region--light-typography .featured-linked-text-tile__body a:hover {
+  color: $base-color;
+}
+.region--light-typography .featured-linked-text-tile a.button {
+  background-color: $base-color;
+  border-color: $base-color;
+}
+.region--light-typography .featured-linked-text-tile a.button:hover {
+  background-color: $dark-color;
+  border-color: $dark-color;
+}
+.featured-linked-text-tile .featured-linked-text-tile__title a {
+  color: $base-color;
+}
+
+/* components: forms */
+input.form-text:hover,
+input.form-tel:hover,
+input.form-email:hover,
+input.form-url:hover,
+input.form-search:hover,
+input.form-file:hover,
+input.form-number:hover,
+input.form-color:hover,
+textarea:hover,
+select:hover,
+input.form-text:focus,
+input.form-tel:focus,
+input.form-email:focus,
+input.form-url:focus,
+input.form-search:focus,
+input.form-file:focus,
+input.form-number:focus,
+input.form-color:focus,
+textarea:focus,
+select:focus {
+  border-color: $base-color;
+}
+
+/* components: content tabs */
+.field--name-field-sle-content-tabs .nav-tabs > li > a {
+  color: $base-color;
+}
+.field--name-field-sle-content-tabs .nav-tabs > li > a:hover {
+  color: $dark-color;
+}
+.field--name-field-sle-content-tabs .nav-tabs > li > a:focus,
+.field--name-field-sle-content-tabs .nav-tabs > li.active > a,
+.field--name-field-sle-content-tabs .nav-tabs > li.active > a:focus,
+.field--name-field-sle-content-tabs .nav-tabs > li.active > a:hover {
+  color: $base-color;
+  border-color: $base-color;
+}
+
+/* components: field taxonomy terms */
+.field--entity-reference-target-type-taxonomy-term .field__item a:hover,
+.field--entity-reference-target-type-taxonomy-term.field__item a:hover {
+  background-color: $dark-color;
+}
+
+/* components: fixed header */
+.onscroll .header.js-fixed.region--dark-background {
+  background-color: rgba($dark-color, 0.95);
+}
+.onscroll .header.js-fixed.region--colored-background {
+  background-color: rgba($base-color, 0.95);
+}
+
+/* components: icon features */
+.region--dark-typography .feature__icon {
+  color: rgba($dark-color, 0.70);
+}
+.region--dark-typography .feature:hover a.feature__icon {
+  background-color: $base-color;
+  border-color: $base-color;
+}
+
+/* components: image overlay */
+.overlay--colored {
+  background-color: rgba($base-color, 0.7);
+}
+.overlay-icon--button {
+  background-color: $base-color;
+}
+
+/* components: in page navigation */
+.onscroll .header-container ul.in-page-navigation li.active a {
+  color: $dark-color;
+}
+
+/* components: language switcher */
+.region--dark-typography .block-language ul li .is-active {
+  color: $base-color;
+}
+
+/* components: layout switcher */
+.layout-switcher ul li a {
+  color: $dark-color;
+}
+.layout-switcher ul li.active a {
+  color: $base-color;
+}
+
+/*main slideshow block*/
+.ms-transparent-background .region--dark-typography.tp-caption__title a:hover {
+  color: $base-color;
+}
+
+/* components: menu */
+ul.menu li a:hover {
+  background-color: $base-color;
+}
+.region--colored-background ul.menu li > a:hover {
+  background-color: $dark-color;
+}
+.region--dark-background ul.menu li > a:hover {
+  background-color: $base-color;
+}
+.header-container ul.menu li a.is-active,
+.header-container ul.menu > li.active-trail > a {
+  color: $dark-color;
+}
+.header-container ul.menu li a:hover,
+.header-container ul.menu > li > a.is-active:hover {
+  background-color: rgba($dark-color, 0.85);
+}
+.header-container ul.sf-menu > li.active-trail > a .sf-sub-indicator:after {
+  color: $dark-color;
+}
+.header-container .sf-menu li.sfHover > a {
+  background-color: rgba($dark-color, 0.85);
+}
+.header-container .sf-menu ul li a:hover,
+.header-container .sf-menu ul li.sfHover > a,
+.header-container .sf-menu ul li a.is-active,
+.header-container .sf-menu ul li.active-trail > a {
+  background-color: $base-color;
+  color: #ffffff;
+}
+.header-container .sf-menu.menu ul {
+  background-color: rgba($dark-color, 0.85);
+}
+.menu.cta-active > li:last-child > a {
+  color: $dark-color;
+  border-color: rgba($dark-color, 0.50);
+}
+.menu.cta-active > li:last-child > a:hover {
+  background-color: $base-color;
+  border-color: $base-color;
+}
+.region--light-typography .menu.cta-active > li:last-child > a:hover {
+  color: $base-color;
+  opacity: 1;
+}
+.region--dark-typography .subfooter__section ul.menu li a:hover {
+  border-bottom-color: $base-color;
+  color: $base-color;
+}
+
+/* components: node links */
+.node ul.links li a {
+  color: $dark-color;
+  border-color: rgba($dark-color, 0.50);
+}
+.node ul.links li a.active {
+  color: $dark-color;
+}
+.node ul.links li a:hover,
+.node ul.links li a:focus {
+  background-color: $base-color;
+  border-color: $base-color;
+}
+
+/* components: node product */
+.node--type-sle-product .field--name-field-sle-buy-link a {
+  color: $dark-color;
+  border-color: rgba($dark-color, 0.50);
+}
+.node--type-sle-product .field--name-field-sle-buy-link a:hover {
+  background-color: $base-color;
+  border-color: $base-color;
+}
+.region--light-typography .field--name-field-sle-buy-link a:hover {
+  color: $base-color;
+}
+.field--name-field-sle-highlight-link a {
+  border-color: rgba($dark-color, 0.50);
+}
+.field--name-field-sle-highlight-link a:hover {
+  background-color: $base-color;
+  border-color: $base-color;
+}
+
+/* components: node service */
+.node--type-sle-service .field--name-field-sle-buy-link a {
+  color: $dark-color;
+  border-color: rgba($dark-color, 0.50);
+}
+.node--type-sle-service .field--name-field-sle-buy-link a:hover {
+  background-color: $base-color;
+  border-color: $base-color;
+}
+.region--light-typography .field--name-field-sle-buy-link a:hover {
+  color: $base-color;
+}
+
+/* components: node testimonials */
+.node--type-sle-testimonial .field--name-body p:first-child:after {
+  color: rgba($dark-color, 0.5);
+}
+
+/* components: owl carousel global */
+.owl-nav div:hover {
+  color: $base-color;
+}
+.owl-dot span {
+  border-color: $dark-color;
+}
+.owl-dot.active span {
+  border-color: $base-color;
+}
+.owl-dot:hover span {
+  background-color: $dark-color;
+  border-color: $dark-color;
+}
+
+/* components: post progress */
+.post-progress__bar {
+  background-color: $dark-color;
+}
+
+/* components: progress bars */
+.progress-bar-default {
+  background-color: $base-color;
+}
+
+/* components: share links */
+.share-links ul li a:hover {
+  background-color: $base-color;
+}
+.js-share-links-fixed .share-links ul li a:hover {
+  background-color: $base-color;
+}
+
+/* components: site branding */
+.region--dark-typography .site-slogan {
+  color: $dark-color;
+}
+
+/* components: slideout */
+.slideout-toggle {
+  background-color: $dark-color;
+}
+
+/* components: slider revolution global */
+.tp-caption__button {
+  border-color: $dark-color;
+  background-color: $dark-color;
+}
+.tp-caption__button:hover {
+  background-color: $base-color;
+  border-color: $base-color;
+}
+.tp-tabs {
+  background-color: rgba($base-color, 0.93) !important;
+}
+.tp-tabs .tp-tab.selected,
+.tp-tabs .tp-tab:hover {
+  background-color: $base-color;
+}
+
+/* components: tabs */
+.nav-tab__subtitle {
+  color: $dark-color;
+}
+.nav-tabs.nav-tabs--fancy > .active > a,
+.nav-tabs.nav-tabs--fancy > .active > a:focus,
+.nav-tabs.nav-tabs--fancy > .active > a:hover,
+.nav-tabs.nav-tabs--fancy > li > a:focus,
+.nav-tabs.nav-tabs--fancy > li > a:hover {
+  border-color: $base-color;
+  color: $base-color;
+}
+.region--light-typography.region--colored-background .nav-tabs.nav-tabs--fancy > li > a,
+.region--light-typography.region--colored-background .nav-tabs.nav-tabs--fancy > li > a:hover,
+.region--light-typography.region--colored-background .nav-tabs.nav-tabs--fancy > li > a:focus {
+  color: $base-color;
+}
+
+/* components: to top */
+.to-top {
+  background-color: rgba($dark-color, 0.4);
+}
+.to-top:hover {
+  background-color: rgba($dark-color, 0.6);
+}
+
+/* components: view articles grid */
+.view-articles-grid .views-field-title a {
+  color: $base-color;
+}
+.view-articles-grid .views-field-title a:hover {
+  color: $dark-color;
+}
+.region--light-typography .view-articles-grid .article-header a {
+  color: $dark-color;
+}
+.region--light-typography .view-articles-grid .article-header a:hover {
+  color: $base-color;
+}
+
+/* components: view articles list 2 */
+.region--dark-typography .view-articles-list-2 .views-row:after {
+  color: $dark-color;
+}
+
+/* components: view collections image overlay */
+.view-collections-grid .overlay-inner a,
+.view-collections-carousel .overlay-inner a,
+.view-collection-masonry .overlay-inner a {
+  color: $dark-color;
+  border-color: rgba($dark-color, 0.50);
+}
+.view-collections-grid .overlay-inner a:hover,
+.view-collections-carousel .overlay-inner a:hover,
+.view-collection-masonry .overlay-inner a:hover {
+  background-color: $base-color;
+  border-color: $base-color;
+}
+
+/* components: view latest items */
+.view-latest-items .views-row:hover {
+  background-color: $base-color;
+}
+
+/* components: view popular taxonomy */
+.view-sle-popular-tags .views-row a:hover {
+  background-color: $dark-color;
+}
+.region--gray-background .view-sle-popular-tags .views-row a:hover {
+  background-color: $dark-color;
+}
+.region--colored-background .view-sle-popular-tags .views-row a:hover,
+.region--dark-background .view-sle-popular-tags .views-row a:hover,
+.region--black-background .view-sle-popular-tags .views-row a:hover {
+  color: $base-color;
+}
+
+/* components: view pricing tables */
+.view-pricing-tables .pricing-table {
+  border-color: $dark-color;
+}
+.view-pricing-tables .pricing-table-header {
+  background-color: $dark-color;
+}
+.view-pricing-tables .pricing-table .views-field-field-sle-most-popular {
+  background-color: $base-color;
+}
+
+/* components: view promoted items */
+.view-promoted-items-icon {
+  color: $dark-color;
+}
+.view-promoted-items .views-row:hover .view-promoted-items-icon {
+  background-color: $base-color;
+}
+
+/* components: view promoted posts carousel */
+.view-promoted-posts-carousel .overlay-inner h5 a {
+  color: $dark-color;
+}
+.view-promoted-posts-carousel .overlay-inner h5 a:hover {
+  color: $base-color;
+}
+
+/* components: view testimonials grid */
+.view-testimonials-grid .views-field-body p:first-child::before {
+  color: rgba($dark-color, 0.5);
+}
+
+/* components: view testimonials grid 2 */
+.view-testimonials-grid-2 .views-field-body p:first-child:after {
+  color: rgba($dark-color, 0.5);
+}
+
+/* components: view testimonials list */
+.view-testimonials-list .views-field-body p:first-child:after {
+  color: rgba($dark-color, 0.5);
+}
+
+/* components: view testimonials list 2 */
+.view-testimonials-list-2 .views-field-body p:after {
+  color: rgba($dark-color, 0.5);
+}
+
+/* components: views */
+.col-md-12 .view > .more-link a {
+  color: $dark-color;
+  border-color: rgba($dark-color, 0.50);
+}
+.col-md-12 .view > .more-link a:hover {
+  background-color: $base-color;
+  border-color: $base-color;
+}
+.region--light-typography .col-md-12 .view > .more-link a:hover {
+  color: $base-color;
+}

@@ -1,0 +1,28 @@
+uuid: 5d0c61e2-cc87-4480-87e9-f6dbed51c6d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lt_party
+    - node.type.lt_cand_elected_officials
+    - taxonomy.vocabulary.lt_political_party
+id: node.lt_cand_elected_officials.field_lt_party
+field_name: field_lt_party
+entity_type: node
+bundle: lt_cand_elected_officials
+label: 'Party (TBD)'
+description: 'Copy the data in the field and paste it into the other political party field'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      lt_political_party: lt_political_party
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,17 @@
+uuid: 1f7abb04-273c-4af8-9bdc-5b7f27a13266
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.message.mail_subject
+    - message.template.example_create_node
+id: message.example_create_node.mail_subject
+targetEntityType: message
+bundle: example_create_node
+mode: mail_subject
+content:
+  partial_0:
+    weight: 0
+    region: content
+hidden:
+  partial_1: true

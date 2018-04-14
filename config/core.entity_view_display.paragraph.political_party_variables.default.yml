@@ -1,0 +1,85 @@
+uuid: 6cfb912b-8ad2-4d08-b9af-d0329dd72e35
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.political_party_variables.field_election_year
+    - field.field.paragraph.political_party_variables.field_ideology
+    - field.field.paragraph.political_party_variables.field_party_chairperson
+    - field.field.paragraph.political_party_variables.field_party_leader
+    - field.field.paragraph.political_party_variables.field_party_secretary_general
+    - field.field.paragraph.political_party_variables.field_political_position
+    - field.field.paragraph.political_party_variables.field_slogan
+    - field.field.paragraph.political_party_variables.field_spokesperson
+    - paragraphs.paragraphs_type.political_party_variables
+  module:
+    - options
+id: paragraph.political_party_variables.default
+targetEntityType: paragraph
+bundle: political_party_variables
+mode: default
+content:
+  field_election_year:
+    weight: 7
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_ideology:
+    weight: 5
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_party_chairperson:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_party_leader:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_party_secretary_general:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_political_position:
+    weight: 4
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_slogan:
+    weight: 3
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_spokesperson:
+    weight: 6
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

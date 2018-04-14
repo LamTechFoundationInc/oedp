@@ -1,0 +1,27 @@
+uuid: 06383b4a-ea6a-4859-959d-ffdfbe38be0e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_election_rounds
+field_name: field_election_rounds
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'First Round'
+      label: 'First Round'
+    -
+      value: 'Second Round'
+      label: 'Second Round'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

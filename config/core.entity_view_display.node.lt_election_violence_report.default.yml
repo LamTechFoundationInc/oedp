@@ -1,0 +1,268 @@
+uuid: 809df2c8-1357-49d8-80df-395c328670e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.lt_election_violence_report.body
+    - field.field.node.lt_election_violence_report.field_date_incident_occurred
+    - field.field.node.lt_election_violence_report.field_election_day_incident_type
+    - field.field.node.lt_election_violence_report.field_gender_of_perpetra
+    - field.field.node.lt_election_violence_report.field_gender_of_victim_s_
+    - field.field.node.lt_election_violence_report.field_has_the_incident_caused_an
+    - field.field.node.lt_election_violence_report.field_how_have_different_actors_
+    - field.field.node.lt_election_violence_report.field_image
+    - field.field.node.lt_election_violence_report.field_impact_type
+    - field.field.node.lt_election_violence_report.field_incident_type
+    - field.field.node.lt_election_violence_report.field_lt_geolocation
+    - field.field.node.lt_election_violence_report.field_other_impact
+    - field.field.node.lt_election_violence_report.field_other_perpetrator
+    - field.field.node.lt_election_violence_report.field_other_victim
+    - field.field.node.lt_election_violence_report.field_perpetrator_type
+    - field.field.node.lt_election_violence_report.field_post_election_incident_typ
+    - field.field.node.lt_election_violence_report.field_pre_election_incident_type
+    - field.field.node.lt_election_violence_report.field_related_incident_s_
+    - field.field.node.lt_election_violence_report.field_report_type
+    - field.field.node.lt_election_violence_report.field_upload_video
+    - field.field.node.lt_election_violence_report.field_victim_type
+    - field.field.node.lt_election_violence_report.field_were_there_any_warning_sig
+    - node.type.lt_election_violence_report
+  module:
+    - datetime
+    - geolocation
+    - image
+    - options
+    - panelizer
+    - text
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.lt_election_violence_report.default
+targetEntityType: node
+bundle: lt_election_violence_report
+mode: default
+content:
+  addtoany:
+    weight: 23
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  body:
+    label: hidden
+    type: text_default
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_date_incident_occurred:
+    weight: 1
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_election_day_incident_type:
+    weight: 5
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_gender_of_perpetra:
+    weight: 15
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_gender_of_victim_s_:
+    weight: 13
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_has_the_incident_caused_an:
+    weight: 19
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_how_have_different_actors_:
+    weight: 20
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_image:
+    weight: 8
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_impact_type:
+    weight: 17
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_incident_type:
+    weight: 3
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_lt_geolocation:
+    weight: 10
+    label: above
+    settings:
+      set_marker: '1'
+      title: ''
+      info_text: ''
+      google_map_settings:
+        height: 200px
+        width: 100%
+        type: ROADMAP
+        zoom: '10'
+        maxZoom: 18
+        minZoom: 0
+        mapTypeControl: 1
+        streetViewControl: 1
+        zoomControl: 1
+        scrollwheel: 1
+        gestureHandling: auto
+        draggable: 1
+        style: ''
+        info_auto_display: 1
+        marker_icon_path: ''
+        disableAutoPan: 1
+        rotateControl: 0
+        fullscreenControl: 0
+        preferScrollingToZooming: 0
+        disableDoubleClickZoom: 0
+      use_overridden_map_settings: 0
+      common_map: ''
+    third_party_settings: {  }
+    type: geolocation_map
+    region: content
+  field_other_impact:
+    weight: 18
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_other_perpetrator:
+    weight: 16
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_other_victim:
+    weight: 12
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_perpetrator_type:
+    weight: 14
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_post_election_incident_typ:
+    weight: 6
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_pre_election_incident_type:
+    weight: 4
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_related_incident_s_:
+    weight: 22
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_report_type:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_upload_video:
+    weight: 9
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_victim_type:
+    weight: 11
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_were_there_any_warning_sig:
+    weight: 21
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  links:
+    weight: 24
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  workbench_moderation_control:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

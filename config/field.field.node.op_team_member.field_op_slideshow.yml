@@ -1,0 +1,23 @@
+uuid: c8b32d16-fb43-43f7-9ffd-a1b07b0e83fc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_op_slideshow
+    - node.type.op_team_member
+id: node.op_team_member.field_op_slideshow
+field_name: field_op_slideshow
+entity_type: node
+bundle: op_team_member
+label: 'Promote to front page slideshow'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

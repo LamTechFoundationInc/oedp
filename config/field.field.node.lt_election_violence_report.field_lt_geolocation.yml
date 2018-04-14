@@ -1,0 +1,21 @@
+uuid: b54279d8-f977-4694-a0d7-e866d7560646
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lt_geolocation
+    - node.type.lt_election_violence_report
+  module:
+    - geolocation
+id: node.lt_election_violence_report.field_lt_geolocation
+field_name: field_lt_geolocation
+entity_type: node
+bundle: lt_election_violence_report
+label: 'location of incident'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geolocation

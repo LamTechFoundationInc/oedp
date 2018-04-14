@@ -1,0 +1,11 @@
+uuid: 324202ad-0cba-41f3-bc23-e695c45fd232
+langcode: en
+status: true
+dependencies:
+  module:
+    - workbench_moderation_actions
+id: state_change__media__needs_review
+label: 'Set Media as Needs Review'
+type: media
+plugin: 'state_change:media__needs_review'
+configuration: {  }

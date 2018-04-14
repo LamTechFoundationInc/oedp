@@ -1,0 +1,28 @@
+uuid: 348e92fc-b5e9-414c-81b9-b4e62ed90a99
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - workbench_moderation
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  workbench_moderation:
+    enabled: true
+    allowed_moderation_states:
+      - published
+      - approved_to_be_published
+      - archived
+      - draft
+      - needs_review
+    default_moderation_state: draft
+name: 'Volunteer Profile'
+type: op_team_member
+description: 'The Volunteer Profile post is ideal for creating a page for each of your team members. Along with a description of your team member’s position, responsibilities and qualifications, it provides the ability to attach an image, which is automatically adjusted to fit into the website’s layout. And what’s great about Team member posts, is that they are all collected under the “About us” page.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

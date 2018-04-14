@@ -1,0 +1,407 @@
+uuid: e7f9c1d4-2c62-4c99-b84b-9d1948c350ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.node.candidate_embedded_form
+    - field.field.node.summary_election_results.body
+    - field.field.node.summary_election_results.field_city_council
+    - field.field.node.summary_election_results.field_data_sources
+    - field.field.node.summary_election_results.field_election_rounds
+    - field.field.node.summary_election_results.field_lt_candidate
+    - field.field.node.summary_election_results.field_lt_chiefdom
+    - field.field.node.summary_election_results.field_lt_constituency
+    - field.field.node.summary_election_results.field_lt_district
+    - field.field.node.summary_election_results.field_lt_election_type
+    - field.field.node.summary_election_results.field_lt_election_year
+    - field.field.node.summary_election_results.field_lt_party
+    - field.field.node.summary_election_results.field_lt_region
+    - field.field.node.summary_election_results.field_lt_ward
+    - field.field.node.summary_election_results.field_meta_tags
+    - field.field.node.summary_election_results.field_number_of_votes_for_candid
+    - field.field.node.summary_election_results.field_percent_of_poll_stat_enter
+    - field.field.node.summary_election_results.field_percentage
+    - field.field.node.summary_election_results.field_percentage_voter_turnout
+    - field.field.node.summary_election_results.field_polling_station
+    - field.field.node.summary_election_results.field_polling_station_entered
+    - field.field.node.summary_election_results.field_record_discrepency
+    - field.field.node.summary_election_results.field_result_status
+    - field.field.node.summary_election_results.field_total_number_of_ballots
+    - field.field.node.summary_election_results.field_total_number_of_invalid_ba
+    - field.field.node.summary_election_results.field_total_polling_stations_rep
+    - field.field.node.summary_election_results.field_type_of_result
+    - field.field.node.summary_election_results.field_village
+    - field.field.node.summary_election_results.field_votes
+    - field.field.node.summary_election_results.field_winner_or_losser
+    - node.type.summary_election_results
+  module:
+    - datetime
+    - field_group
+    - inline_entity_form
+    - metatag
+    - path
+    - text
+    - workbench_moderation
+third_party_settings:
+  field_group:
+    group_granularity_information:
+      children:
+        - field_type_of_result
+        - field_polling_station
+        - field_village
+        - field_lt_ward
+        - field_lt_constituency
+        - field_lt_chiefdom
+        - field_city_council
+        - field_lt_district
+        - field_lt_region
+      parent_name: group_result_tabs
+      weight: 1
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+        formatter: closed
+      label: 'Granularity Information'
+      region: content
+    group_vote_information:
+      children:
+        - field_lt_election_year
+        - field_election_rounds
+        - field_lt_election_type
+        - field_lt_candidate
+        - field_lt_party
+        - field_votes
+        - field_percentage
+        - field_winner_or_losser
+        - field_result_status
+        - field_data_sources
+      parent_name: group_result_tabs
+      weight: 3
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+        formatter: closed
+      label: 'Vote Information'
+      region: content
+    group_result_tabs:
+      children:
+        - title
+        - group_granularity_information
+        - group_vote_information
+        - group_additional_details
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: vertical
+      label: 'Result Tabs'
+      region: content
+    group_additional_details:
+      children:
+        - field_total_polling_stations_rep
+        - field_polling_station_entered
+        - field_percent_of_poll_stat_enter
+        - field_percentage_voter_turnout
+        - field_number_of_votes_for_candid
+        - field_total_number_of_ballots
+        - field_total_number_of_invalid_ba
+        - field_record_discrepency
+        - body
+      parent_name: group_result_tabs
+      weight: 4
+      format_type: tab
+      format_settings:
+        label: 'Analysis of the results'
+        formatter: closed
+        description: ''
+        required_fields: true
+        id: ''
+        classes: ''
+      label: 'Analysis of the results'
+      region: content
+id: node.summary_election_results.default
+targetEntityType: node
+bundle: summary_election_results
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 39
+    region: content
+    settings:
+      rows: 3
+      placeholder: ''
+      summary_rows: 3
+    third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_city_council:
+    weight: 20
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete_tags
+    region: content
+  field_data_sources:
+    weight: 11
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_election_rounds:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_lt_candidate:
+    weight: 4
+    settings:
+      form_mode: candidate_embedded_form
+      override_labels: true
+      label_singular: Candidate
+      label_plural: Candidates
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+    third_party_settings: {  }
+    type: inline_entity_form_complex
+    region: content
+  field_lt_chiefdom:
+    type: entity_reference_autocomplete_tags
+    weight: 19
+    region: content
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: 'Enter the name of the chiefdom'
+    third_party_settings: {  }
+  field_lt_constituency:
+    weight: 18
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: 'Enter the name of the constituency'
+    third_party_settings: {  }
+    type: entity_reference_autocomplete_tags
+    region: content
+  field_lt_district:
+    weight: 21
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: 'Enter the name of the district'
+    third_party_settings: {  }
+    type: entity_reference_autocomplete_tags
+    region: content
+  field_lt_election_type:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_lt_election_year:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_lt_party:
+    type: entity_reference_autocomplete_tags
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: 'Enter the name of the political party'
+    third_party_settings: {  }
+  field_lt_region:
+    type: options_select
+    weight: 22
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_lt_ward:
+    weight: 17
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: 'Enter the name of the ward'
+    third_party_settings: {  }
+    type: entity_reference_autocomplete_tags
+    region: content
+  field_meta_tags:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_firehose
+    region: content
+  field_number_of_votes_for_candid:
+    weight: 35
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_percent_of_poll_stat_enter:
+    weight: 33
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_percentage:
+    weight: 7
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_percentage_voter_turnout:
+    weight: 34
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_polling_station:
+    weight: 15
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete_tags
+    region: content
+  field_polling_station_entered:
+    weight: 32
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_record_discrepency:
+    weight: 38
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_result_status:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_total_number_of_ballots:
+    weight: 36
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_total_number_of_invalid_ba:
+    weight: 37
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_total_polling_stations_rep:
+    weight: 31
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_type_of_result:
+    weight: 14
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_village:
+    weight: 16
+    settings:
+      form_mode: candidate_embedded_form
+      override_labels: true
+      label_singular: Village
+      label_plural: Villages
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+    third_party_settings: {  }
+    type: inline_entity_form_complex
+    region: content
+  field_votes:
+    weight: 6
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_winner_or_losser:
+    weight: 9
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  path:
+    type: path
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 6
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 3
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+  url_redirects:
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

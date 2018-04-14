@@ -1,0 +1,20 @@
+uuid: 697a0a2c-2ebd-4f94-a3cf-9c3c04b8b299
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_lt_constituency
+field_name: field_lt_constituency
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

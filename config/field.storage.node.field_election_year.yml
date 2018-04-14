@@ -1,0 +1,78 @@
+uuid: f9ae9b6f-b644-4c1c-bae4-dde7e59c53df
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_election_year
+field_name: field_election_year
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '2018'
+      label: '2018'
+    -
+      value: '2012'
+      label: '2012'
+    -
+      value: '2007'
+      label: '2007'
+    -
+      value: '2002'
+      label: '2002'
+    -
+      value: '1996'
+      label: '1996'
+    -
+      value: '1986'
+      label: '1986'
+    -
+      value: '1985'
+      label: '1985'
+    -
+      value: '1982'
+      label: '1982'
+    -
+      value: '1977'
+      label: '1977'
+    -
+      value: '1973'
+      label: '1973'
+    -
+      value: '1967'
+      label: '1967'
+    -
+      value: '1962'
+      label: '1962'
+    -
+      value: '1957'
+      label: '1957'
+    -
+      value: '1951'
+      label: '1951'
+    -
+      value: '1943'
+      label: '1943'
+    -
+      value: '1939'
+      label: '1939'
+    -
+      value: '1934'
+      label: '1934'
+    -
+      value: '1929'
+      label: '1929'
+    -
+      value: '1924'
+      label: '1924'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,25 @@
+uuid: 9e331bba-b032-4a55-ab33-73decf5e2164
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - openelections
+_core:
+  default_config_hash: enbhkYo4nv0j0rsbvC4flWZhAjLebVZo-VVjZZsZ6zg
+id: openelections_branding
+theme: openelections
+region: header_first
+weight: -6
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

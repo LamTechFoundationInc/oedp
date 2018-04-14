@@ -1,0 +1,54 @@
+uuid: c7050469-40e2-4d53-bc4a-86710dfb9526
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_score
+field_name: field_score
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '0'
+      label: 0%
+    -
+      value: '10'
+      label: 10%
+    -
+      value: '20'
+      label: 20%
+    -
+      value: '30'
+      label: 30%
+    -
+      value: '40'
+      label: 40%
+    -
+      value: '50'
+      label: 50%
+    -
+      value: '60'
+      label: 60%
+    -
+      value: '70'
+      label: 70%
+    -
+      value: '80'
+      label: 80%
+    -
+      value: '90'
+      label: 90%
+    -
+      value: '100'
+      label: 100%
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

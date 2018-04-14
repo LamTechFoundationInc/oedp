@@ -1,0 +1,31 @@
+uuid: 4f9d1497-cbb9-4b65-bfb6-451a89e4fe92
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.former_mayors_district_chairpers.field_elected_candidate
+    - field.field.paragraph.former_mayors_district_chairpers.field_election_year
+    - paragraphs.paragraphs_type.former_mayors_district_chairpers
+  module:
+    - options
+id: paragraph.former_mayors_district_chairpers.default
+targetEntityType: paragraph
+bundle: former_mayors_district_chairpers
+mode: default
+content:
+  field_elected_candidate:
+    weight: 1
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_election_year:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+hidden: {  }

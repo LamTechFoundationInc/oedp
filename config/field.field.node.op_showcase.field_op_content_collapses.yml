@@ -1,0 +1,40 @@
+uuid: 457cc524-47ae-4354-9343-995c5fb837b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_op_content_collapses
+    - node.type.op_showcase
+    - paragraphs.paragraphs_type.op_collapse
+  module:
+    - entity_reference_revisions
+id: node.op_showcase.field_op_content_collapses
+field_name: field_op_content_collapses
+entity_type: node
+bundle: op_showcase
+label: Collapses
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      op_collapse: op_collapse
+    target_bundles_drag_drop:
+      op_collapse:
+        enabled: true
+        weight: 5
+      op_highlight:
+        weight: 6
+        enabled: false
+      op_icon_features:
+        weight: 7
+        enabled: false
+      op_map_location:
+        weight: 8
+        enabled: false
+field_type: entity_reference_revisions

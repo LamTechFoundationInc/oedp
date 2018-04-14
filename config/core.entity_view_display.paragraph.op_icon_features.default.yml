@@ -1,0 +1,66 @@
+uuid: c9aba45e-7a01-41c1-8311-1c3984903eef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.op_icon_features.field_op_if_body
+    - field.field.paragraph.op_icon_features.field_op_if_icon
+    - field.field.paragraph.op_icon_features.field_op_if_image
+    - field.field.paragraph.op_icon_features.field_op_if_link
+    - field.field.paragraph.op_icon_features.field_op_if_title
+    - image.style.op_icons
+    - paragraphs.paragraphs_type.op_icon_features
+  module:
+    - image
+    - link
+    - text
+id: paragraph.op_icon_features.default
+targetEntityType: paragraph
+bundle: op_icon_features
+mode: default
+content:
+  field_op_if_body:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_op_if_icon:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_op_if_image:
+    weight: 1
+    label: hidden
+    settings:
+      image_style: op_icons
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_op_if_link:
+    weight: 4
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_op_if_title:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

@@ -1,0 +1,14 @@
+uuid: 4c3fc662-0101-4f73-b125-8250a4a7c288
+langcode: en
+status: true
+dependencies: {  }
+name: op_video_gallery_thumbnail
+label: 'Video Gallery thumbnail (400×226 )'
+effects:
+  fc76e378-d702-49b4-88c6-006bdbb01a5c:
+    uuid: fc76e378-d702-49b4-88c6-006bdbb01a5c
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 400
+      height: 226

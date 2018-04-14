@@ -1,0 +1,23 @@
+uuid: 6db0b6f1-fc42-435c-ba2f-aa2d6bc4925e
+langcode: en
+status: true
+dependencies: {  }
+name: candidate_photos
+label: 'Candidate Photos'
+effects:
+  dd6cfd9f-19df-45ff-b6bc-6ee0aeaee2e5:
+    uuid: dd6cfd9f-19df-45ff-b6bc-6ee0aeaee2e5
+    id: image_scale
+    weight: 1
+    data:
+      width: 200
+      height: null
+      upscale: false
+  0d89f1b2-e1d2-4708-89b0-564503afd058:
+    uuid: 0d89f1b2-e1d2-4708-89b0-564503afd058
+    id: image_crop
+    weight: 2
+    data:
+      width: 200
+      height: 200
+      anchor: center-center

@@ -1,0 +1,19 @@
+uuid: cb5a006e-1892-41a7-8789-e71a732cf070
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_op_subtitle
+    - node.type.op_team_member
+id: node.op_team_member.field_op_subtitle
+field_name: field_op_subtitle
+entity_type: node
+bundle: op_team_member
+label: Subtitle
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

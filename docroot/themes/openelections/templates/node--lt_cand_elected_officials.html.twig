@@ -1,0 +1,12 @@
+{#
+/**
+ * @file
+ * OpenElections theme implementation to display a Product node.
+ */
+#}
+
+{% extends "node.html.twig" %}
+{% block content %}
+  {{ attach_library('openelections/node-product') }}
+  {{ content }}
+{% endblock %}

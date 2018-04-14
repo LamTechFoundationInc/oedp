@@ -1,0 +1,28 @@
+uuid: efbc166f-d4a5-427b-9205-606e07674c06
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_election_day_incident_type
+    - node.type.lt_election_violence_report
+    - taxonomy.vocabulary.election_day_incident_type
+id: node.lt_election_violence_report.field_election_day_incident_type
+field_name: field_election_day_incident_type
+entity_type: node
+bundle: lt_election_violence_report
+label: 'Incident Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      election_day_incident_type: election_day_incident_type
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

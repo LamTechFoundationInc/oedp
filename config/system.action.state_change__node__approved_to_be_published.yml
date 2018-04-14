@@ -1,0 +1,11 @@
+uuid: d8dd7280-a797-4092-9df0-073c9c02cf2d
+langcode: en
+status: true
+dependencies:
+  module:
+    - workbench_moderation_actions
+id: state_change__node__approved_to_be_published
+label: 'Set Content as Approved to be Published'
+type: node
+plugin: 'state_change:node__approved_to_be_published'
+configuration: {  }

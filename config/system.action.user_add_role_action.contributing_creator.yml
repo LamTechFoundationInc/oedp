@@ -1,0 +1,14 @@
+uuid: 15c818a5-4149-421b-93ca-eb2f5ca0d904
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.contributing_creator
+  module:
+    - user
+id: user_add_role_action.contributing_creator
+label: 'Add the Contributing Creator role to the selected users'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: contributing_creator

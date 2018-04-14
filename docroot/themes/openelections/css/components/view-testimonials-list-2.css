@@ -1,0 +1,69 @@
+/**
+ * @file
+ * Visual styles for OpenElections testimonials list 2 views.
+ */
+/*Testimonials Slider*/
+.view-testimonials-list-2 .media-left {
+  width: 440px;
+  padding-right: 80px;
+}
+.view-testimonials-list-2 .media-left img {
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+}
+.view-testimonials-list-2 .media-body {
+  width: auto;
+}
+.view-testimonials-list-2 .views-field-body p {
+  font-size: 22px;
+  line-height: 1.4;
+  padding: 80px 0 60px;
+  position: relative;
+}
+.view-testimonials-list-2 .views-field-body p:after {
+  position: absolute;
+  font-family: Georgia, Times New Roman, Serif;
+  content: "“";
+  font-size: 120px;
+  left: 0px;
+  top: 15px;
+  font-style: normal;
+  line-height: 1;
+}
+.region--light-typography .view-testimonials-list-2 .views-field-body p:after {
+  color: rgba(255, 255, 255, 0.5);
+}
+.view-testimonials-list-2 .views-field-title a {
+  font-size: 22px;
+  line-height: 1.4;
+  font-weight: 300;
+  margin-bottom: 0;
+}
+.headings-wide-spacing-enabled .view-testimonials-list-2 .views-field-title {
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+.view-testimonials-list-2 .views-field-field-subtitle {
+  font-size: 18px;
+  line-height: 1.66;
+  text-transform: none;
+}
+@media (max-width: 767px) {
+  .view-testimonials-list-2 .media-left {
+    max-width: 180px;
+    padding-right: 0;
+    display: block;
+    margin: 0 auto;
+  }
+  .view-testimonials-list-2 .views-field-body p {
+    padding: 50px 0 20px;
+  }
+  .view-testimonials-list-2 .views-field-body p:after {
+    top: 0px;
+  }
+  .view-testimonials-list-2 .flex-direction-nav a {
+    top: 100%;
+    margin-top: 0;
+  }
+}

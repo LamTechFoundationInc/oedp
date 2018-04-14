@@ -1,0 +1,44 @@
+uuid: 843db1ff-3285-4157-8cbf-3ee9626f5d90
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.op_map_location.field_op_ml_latitude
+    - field.field.paragraph.op_map_location.field_op_ml_location_name
+    - field.field.paragraph.op_map_location.field_op_ml_longitude
+    - paragraphs.paragraphs_type.op_map_location
+  module:
+    - workbench_moderation
+id: paragraph.op_map_location.default
+targetEntityType: paragraph
+bundle: op_map_location
+mode: default
+content:
+  field_op_ml_latitude:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_op_ml_location_name:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_op_ml_longitude:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

@@ -1,0 +1,28 @@
+uuid: f4938615-f97c-439a-b767-0fb0098eccc4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_city_council
+    - paragraphs.paragraphs_type.election_year_details
+    - taxonomy.vocabulary.city_councils
+id: paragraph.election_year_details.field_city_council
+field_name: field_city_council
+entity_type: paragraph
+bundle: election_year_details
+label: 'City Council'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      city_councils: city_councils
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

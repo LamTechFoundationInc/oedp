@@ -1,0 +1,7 @@
+{
+  "name": "drupal/ga_login",
+  "type": "drupal-module",
+  "description": "TFA plugins for Hmac-Based One Time Passwords & Time Based One Time Password with recovery codes as fallback.",
+  "license": "GPL-2.0+",
+  "minimum-stability": "dev"
+}

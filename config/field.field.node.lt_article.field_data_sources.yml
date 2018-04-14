@@ -1,0 +1,19 @@
+uuid: 609d11bf-1f14-43e1-b9c7-3e0d59943f04
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_data_sources
+    - node.type.lt_article
+id: node.lt_article.field_data_sources
+field_name: field_data_sources
+entity_type: node
+bundle: lt_article
+label: 'Data Sources'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

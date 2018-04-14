@@ -1,0 +1,54 @@
+{#
+/**
+ * @file
+ * OpenElections theme override for the block entity refernece field for the tabs powered custom block
+ *
+ * @see openelections_preprocess_field__block_content__op_fancy_tabs_block()
+ */
+#}
+{{ attach_library('openelections/flexslider-nodes-slideshow') }}
+{%
+  set classes = [
+    'field',
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+    'field--label-' ~ label_display,
+    'field--op-nodes-slideshow-block',
+    'clearfix',
+  ]
+%}
+{%
+  set title_classes = [
+    'field__label',
+    label_display == 'inline' ? 'inline',
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+  {% if not label_hidden %}
+    <h3{{ title_attributes.addClass(title_classes) }}>{{ label }}</h3>
+  {% endif %}
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="nodes-slideshow-navigation flexslider">
+        <ul class="slides">
+          {% for item in items %}
+            <li>
+              <a href="#" class="link--hover-style-2">{{ item.content['#node'].title.value }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <div class="col-sm-8">
+      <div class="nodes-slideshow flexslider">
+          <ul class="slides">
+            {% for item in items %}
+              <li>
+                {{ item.content }}
+              </li>
+            {% endfor %}
+          </ul>
+      </div>
+    </div>
+  </div>
+</div>

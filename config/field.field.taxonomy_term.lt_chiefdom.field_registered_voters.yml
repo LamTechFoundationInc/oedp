@@ -1,0 +1,23 @@
+uuid: 8d6224df-c160-4165-8e49-3d634dcc95c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_registered_voters
+    - taxonomy.vocabulary.lt_chiefdom
+id: taxonomy_term.lt_chiefdom.field_registered_voters
+field_name: field_registered_voters
+entity_type: taxonomy_term
+bundle: lt_chiefdom
+label: 'Registered Voters'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

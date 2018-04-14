@@ -1,0 +1,31 @@
+uuid: 907983d6-a2ff-42b9-a014-b7fe11466ed9
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:op_background_image_block:694ff431-bd0c-4a97-96a8-47c5cc420faa'
+  module:
+    - block_content
+    - system
+  theme:
+    - openelections
+id: backgroundvideointroducingelectionsresultsapp_2
+theme: openelections
+region: banner
+weight: -24
+provider: null
+plugin: 'block_content:694ff431-bd0c-4a97-96a8-47c5cc420faa'
+settings:
+  id: 'block_content:694ff431-bd0c-4a97-96a8-47c5cc420faa'
+  label: 'Background Video: Introducing Elections Results App'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /results
+    negate: false
+    context_mapping: {  }

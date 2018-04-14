@@ -1,0 +1,14 @@
+uuid: a31312ca-650f-4321-bcbd-2510c547efae
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.contributing_editor
+  module:
+    - user
+id: user_remove_role_action.contributing_editor
+label: 'Remove the Contributing Editor role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: contributing_editor

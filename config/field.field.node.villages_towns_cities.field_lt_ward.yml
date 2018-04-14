@@ -1,0 +1,28 @@
+uuid: ede5741c-8014-4d37-976e-9820baa1ef38
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lt_ward
+    - node.type.villages_towns_cities
+    - taxonomy.vocabulary.lt_ward
+id: node.villages_towns_cities.field_lt_ward
+field_name: field_lt_ward
+entity_type: node
+bundle: villages_towns_cities
+label: Ward
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      lt_ward: lt_ward
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

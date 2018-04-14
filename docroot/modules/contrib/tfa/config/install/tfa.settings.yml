@@ -1,0 +1,14 @@
+enabled: 0
+send_plugins: { }
+login_plugins: { }
+validation_plugin: 'tfa_totp'
+validation_plugin_settings: { }
+fallback_plugins: { }
+help_text: 'Contact support to reset your access'
+validation_skip: 3
+encryption: ''
+trust_cookie_expiration: 2592000
+cookie_name: 'TFA'
+tfa_flood_uid_only: 1
+tfa_flood_window: 300
+tfa_flood_threshold: 6

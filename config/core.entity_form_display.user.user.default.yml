@@ -1,0 +1,57 @@
+uuid: 94e25a9d-acae-4e66-b40a-776012c31232
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_surname
+    - field.field.user.user.message_subscribe_email
+  module:
+    - user
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  account:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_first_name:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_surname:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  google_analytics:
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  language:
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  message_subscribe_email:
+    type: boolean_checkbox
+    weight: 25
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    region: content
+hidden:
+  contact: true
+  path: true
+  timezone: true

@@ -1,0 +1,21 @@
+uuid: d37f6b99-542d-4f4b-a353-e38c1218feca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lt_geolocation
+    - node.type.villages_towns_cities
+  module:
+    - geolocation
+id: node.villages_towns_cities.field_lt_geolocation
+field_name: field_lt_geolocation
+entity_type: node
+bundle: villages_towns_cities
+label: Geolocation
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geolocation

@@ -1,0 +1,78 @@
+tfa.entry:
+  path: 'tfa/{user}/{hash}'
+  defaults:
+    _form: '\Drupal\tfa\Form\EntryForm'
+    _title: 'Two-Factor Authentication'
+  requirements:
+    _permission: 'access content'
+    _custom_access: '\Drupal\tfa\Controller\TfaLoginController::access'
+  options:
+    _maintenance_access: TRUE
+    no_cache: TRUE
+
+tfa.settings:
+  path: 'admin/config/people/tfa'
+  defaults:
+    _form: '\Drupal\tfa\Form\SettingsForm'
+    _title: 'TFA Settings'
+  options:
+    _admin_route: TRUE
+  requirements:
+    _permission: 'administer site configuration'
+
+tfa.settings.reset:
+  path: 'admin/config/people/tfa/reset'
+  defaults:
+    _form: '\Drupal\tfa\Form\ResetSettingsForm'
+    _title: 'Reset TFA Settings'
+  options:
+    _admin_route: TRUE
+  requirements:
+    _permission: 'administer site configuration'
+
+tfa.login:
+  path: '/tfa/login'
+  defaults:
+    _form: '\Drupal\tfa\Form\TfaLoginForm'
+    _title: 'User Logon'
+  requirements:
+    _user_is_logged_in: 'FALSE'
+  options:
+    _maintenance_access: TRUE
+
+tfa.overview:
+  path: 'user/{user}/security/tfa'
+  defaults:
+    _form: 'Drupal\tfa\Form\BasicOverview'
+    _title: 'Security'
+  requirements:
+    _custom_access: '\Drupal\tfa\Controller\TfaLoginController::accessSelfOrAdmin'
+    _permission: 'setup own tfa'
+
+tfa.validation.setup:
+  path: 'user/{user}/security/tfa/{method}'
+  defaults:
+    _form: 'Drupal\tfa\Form\BasicSetup'
+    _title: 'TFA setup'
+  requirements:
+    _custom_access: '\Drupal\tfa\Controller\TfaLoginController::accessSelfOrAdmin'
+    _permission: 'setup own tfa'
+
+tfa.disable:
+  path: 'user/{user}/security/tfa/disable'
+  defaults:
+    _form: 'Drupal\tfa\Form\BasicDisable'
+    _title: 'TFA disable'
+  requirements:
+    _custom_access: '\Drupal\tfa\Controller\TfaLoginController::accessSelfOrAdmin'
+    _permission: 'disable own tfa'
+    user: \d+
+
+tfa.plugin.reset:
+  path: 'user/{user}/security/tfa/{method}/{reset}'
+  defaults:
+    _form: 'Drupal\tfa\Form\BasicSetup'
+    _title: 'TFA setup'
+  requirements:
+    _custom_access: '\Drupal\tfa\Controller\TfaLoginController::accessSelfOrAdmin'
+    _permission: 'setup own tfa'

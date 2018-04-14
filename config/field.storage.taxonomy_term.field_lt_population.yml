@@ -1,0 +1,20 @@
+uuid: c9a450c9-0ab9-4c0b-85de-f84663b13222
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.field_lt_population
+field_name: field_lt_population
+entity_type: taxonomy_term
+type: decimal
+settings:
+  precision: 10
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

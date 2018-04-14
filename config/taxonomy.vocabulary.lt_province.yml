@@ -1,0 +1,9 @@
+uuid: aec29ac1-916c-4948-9779-b783dd45b1a8
+langcode: en
+status: true
+dependencies: {  }
+name: Regions
+vid: lt_province
+description: Region
+hierarchy: 0
+weight: -10

@@ -1,0 +1,21 @@
+uuid: e0cb65cf-f772-47c1-95bb-b0495fb24809
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_lt_party_color
+    - taxonomy.vocabulary.lt_political_party
+id: taxonomy_term.lt_political_party.field_lt_party_color
+field_name: field_lt_party_color
+entity_type: taxonomy_term
+bundle: lt_political_party
+label: 'Party Color'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: '808080'
+default_value_callback: ''
+settings: {  }
+field_type: string

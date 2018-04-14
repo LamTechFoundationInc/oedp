@@ -1,0 +1,21 @@
+uuid: 147308ab-f247-4121-9b11-12ace5170a2b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_data_sources
+    - node.type.score_card
+id: node.score_card.field_data_sources
+field_name: field_data_sources
+entity_type: node
+bundle: score_card
+label: 'Data Sources'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 'https://electiondata.io/sites/default/files/2018-02/slpp-2018-manifesto.pdf'
+default_value_callback: ''
+settings: {  }
+field_type: string

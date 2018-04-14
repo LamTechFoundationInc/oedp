@@ -1,0 +1,25 @@
+uuid: 2c9856af-0a67-4423-9a8a-9ac183d8a04e
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:d2d36da8-23fc-43cd-b150-2dd9def78ff1'
+  module:
+    - block_content
+  theme:
+    - openelections
+id: electionresourcesheadline
+theme: openelections
+region: hidden_blocks_collection
+weight: 0
+provider: null
+plugin: 'block_content:d2d36da8-23fc-43cd-b150-2dd9def78ff1'
+settings:
+  id: 'block_content:d2d36da8-23fc-43cd-b150-2dd9def78ff1'
+  label: 'Election Resources Headline'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -1,0 +1,11 @@
+uuid: e7d49a42-8348-4379-bb08-8b7309c6f794
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: SX6X4HcrDxbOKSP9NMowQFZWc1E6e1fFw-_CcyBN67k
+template: example_create_comment
+label: 'Example - Create comment'
+description: 'A user created comment.'
+text: {  }
+settings: {  }

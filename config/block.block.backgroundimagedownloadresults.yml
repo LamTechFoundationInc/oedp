@@ -1,0 +1,31 @@
+uuid: 88662345-98b0-4023-a76f-f65343d6dca2
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:op_background_image_block:d8ca1b03-0eb1-4b71-939a-52b9e3e7ba4b'
+  module:
+    - block_content
+    - system
+  theme:
+    - openelections
+id: backgroundimagedownloadresults
+theme: openelections
+region: banner
+weight: 0
+provider: null
+plugin: 'block_content:d8ca1b03-0eb1-4b71-939a-52b9e3e7ba4b'
+settings:
+  id: 'block_content:d8ca1b03-0eb1-4b71-939a-52b9e3e7ba4b'
+  label: 'Background Image: Download Results'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

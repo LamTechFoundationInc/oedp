@@ -1,0 +1,9 @@
+uuid: 0f1f34a6-01ed-425c-870e-8aaacf0d8391
+langcode: en
+status: true
+dependencies: {  }
+name: 'Post-Election Incident Type'
+vid: post_election_incident_type
+description: ''
+hierarchy: 0
+weight: 0

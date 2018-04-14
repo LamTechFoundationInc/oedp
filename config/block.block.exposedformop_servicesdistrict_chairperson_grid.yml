@@ -1,0 +1,29 @@
+uuid: 00ee9aca-9d84-4a69-b2b1-0bbc0ff085fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.op_services
+  module:
+    - system
+    - views
+  theme:
+    - openelections
+id: exposedformop_servicesdistrict_chairperson_grid
+theme: openelections
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'views_exposed_filter_block:op_services-district_chairperson_grid'
+settings:
+  id: 'views_exposed_filter_block:op_services-district_chairperson_grid'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+visibility:
+  request_path:
+    id: request_path
+    pages: /results/chairperson/cards
+    negate: false
+    context_mapping: {  }

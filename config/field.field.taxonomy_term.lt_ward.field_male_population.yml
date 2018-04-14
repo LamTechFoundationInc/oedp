@@ -1,0 +1,23 @@
+uuid: 8d53e457-0e9e-4cc6-ab5a-a948c3e742bd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_male_population
+    - taxonomy.vocabulary.lt_ward
+id: taxonomy_term.lt_ward.field_male_population
+field_name: field_male_population
+entity_type: taxonomy_term
+bundle: lt_ward
+label: 'Male Population(TBD)'
+description: 'Please copy the data in this field to the other population field'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

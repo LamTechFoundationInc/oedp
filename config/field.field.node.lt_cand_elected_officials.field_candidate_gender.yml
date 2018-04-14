@@ -1,0 +1,21 @@
+uuid: 4a50f6e3-9070-4635-8caa-f37da00e4431
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_candidate_gender
+    - node.type.lt_cand_elected_officials
+  module:
+    - options
+id: node.lt_cand_elected_officials.field_candidate_gender
+field_name: field_candidate_gender
+entity_type: node
+bundle: lt_cand_elected_officials
+label: Gender
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

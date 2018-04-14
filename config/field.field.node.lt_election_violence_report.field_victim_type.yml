@@ -1,0 +1,28 @@
+uuid: 15cb958b-3b4b-4ba5-8cd1-66426c7afa2d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_victim_type
+    - node.type.lt_election_violence_report
+    - taxonomy.vocabulary.victim_types
+id: node.lt_election_violence_report.field_victim_type
+field_name: field_victim_type
+entity_type: node
+bundle: lt_election_violence_report
+label: 'Victim Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      victim_types: victim_types
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

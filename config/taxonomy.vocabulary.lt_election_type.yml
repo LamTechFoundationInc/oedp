@@ -1,0 +1,9 @@
+uuid: 43904961-85a7-4acd-9d48-c21148dc0de6
+langcode: en
+status: true
+dependencies: {  }
+name: 'Election Types'
+vid: lt_election_type
+description: 'Election Type'
+hierarchy: 0
+weight: 0

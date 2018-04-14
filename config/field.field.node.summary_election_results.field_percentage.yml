@@ -1,0 +1,25 @@
+uuid: caa20018-3f94-4443-822c-54092f4b6176
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_percentage
+    - node.type.summary_election_results
+id: node.summary_election_results.field_percentage
+field_name: field_percentage
+entity_type: node
+bundle: summary_election_results
+label: Percentage
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: !!float 0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: '%'
+field_type: decimal

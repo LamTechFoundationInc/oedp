@@ -1,0 +1,21 @@
+uuid: 21a4405c-9f48-4dba-9203-d70e8d25d48c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_other_impact
+field_name: field_other_impact
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

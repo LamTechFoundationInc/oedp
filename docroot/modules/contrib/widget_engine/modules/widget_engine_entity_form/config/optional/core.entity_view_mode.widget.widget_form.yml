@@ -1,0 +1,10 @@
+uuid: 94e44247-cc7c-4747-a77b-7ffa2b9f6c72
+langcode: en
+status: true
+dependencies:
+  module:
+    - widget_engine
+id: widget.widget_form
+label: 'Widget form'
+targetEntityType: widget
+cache: true

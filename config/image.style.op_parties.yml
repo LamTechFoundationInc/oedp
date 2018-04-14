@@ -1,0 +1,15 @@
+uuid: 8cd07f36-4773-4e6f-b721-a3da8e500b37
+langcode: en
+status: true
+dependencies: {  }
+name: op_parties
+label: 'Parties (scale width to 230)'
+effects:
+  9e208c0d-af21-42c6-97ed-2a6c179dca36:
+    uuid: 9e208c0d-af21-42c6-97ed-2a6c179dca36
+    id: image_scale
+    weight: 1
+    data:
+      width: 230
+      height: null
+      upscale: false

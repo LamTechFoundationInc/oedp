@@ -1,0 +1,23 @@
+uuid: d64a91d4-d7eb-4f72-910a-3804e1e06764
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_score
+    - taxonomy.vocabulary.campaign_promises
+  module:
+    - options
+id: taxonomy_term.campaign_promises.field_score
+field_name: field_score
+entity_type: taxonomy_term
+bundle: campaign_promises
+label: Score
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: '0'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

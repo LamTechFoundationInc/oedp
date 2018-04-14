@@ -1,0 +1,18 @@
+uuid: 873c07e5-38c2-47a8-8cc5-b2ca3ff43539
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.lt_election_violence_report
+id: node.lt_election_violence_report.title
+field_name: title
+entity_type: node
+bundle: lt_election_violence_report
+label: 'What Happened?'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

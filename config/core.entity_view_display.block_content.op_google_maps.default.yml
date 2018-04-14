@@ -1,0 +1,26 @@
+uuid: 9ba5cd1b-ff9c-4e72-8c05-f6663fb37ce7
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.op_google_maps
+    - field.field.block_content.op_google_maps.field_op_map_location
+    - field.field.block_content.op_google_maps.field_op_map_zoom
+  module:
+    - entity_reference_revisions
+id: block_content.op_google_maps.default
+targetEntityType: block_content
+bundle: op_google_maps
+mode: default
+content:
+  field_op_map_location:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_op_map_zoom: true

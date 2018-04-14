@@ -1,0 +1,25 @@
+uuid: 2de3443f-cccc-4af3-be54-a3a35416ab5e
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:e26ec68e-17bf-45c2-9de2-69f8fdadacf6'
+  module:
+    - block_content
+  theme:
+    - openelections
+id: getinvolvedheadline
+theme: openelections
+region: hidden_blocks_collection
+weight: 0
+provider: null
+plugin: 'block_content:e26ec68e-17bf-45c2-9de2-69f8fdadacf6'
+settings:
+  id: 'block_content:e26ec68e-17bf-45c2-9de2-69f8fdadacf6'
+  label: 'Get Involved Headline'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

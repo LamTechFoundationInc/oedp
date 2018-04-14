@@ -1,0 +1,9 @@
+uuid: 9af88d0e-f942-4591-8e3f-0fea8bff9b11
+langcode: en
+status: true
+dependencies: {  }
+name: 'Perpetrator Types'
+vid: perpetrator_types
+description: ''
+hierarchy: 0
+weight: 0

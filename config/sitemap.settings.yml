@@ -1,0 +1,56 @@
+page_title: Sitemap
+message:
+  value: ''
+  format: advanced_html
+show_front: true
+show_titles: true
+show_books: {  }
+books_expanded: true
+show_menus:
+  main: main
+  account: '0'
+  admin: '0'
+  footer: '0'
+  tools: '0'
+  workbench: '0'
+show_menus_hidden: false
+show_vocabularies:
+  lt_chiefdom: lt_chiefdom
+  lt_constituency: lt_constituency
+  lt_district: lt_district
+  lt_political_party: lt_political_party
+  lt_province: lt_province
+  lt_ward: lt_ward
+  lt_election_type: '0'
+  lt_section: '0'
+  tags: '0'
+  team_category: '0'
+show_description: true
+show_count: true
+vocabulary_depth: -1
+term_threshold: 0
+forum_threshold: -1
+rss_front: rss.xml
+show_rss_links: 1
+rss_taxonomy: -1
+css: true
+order:
+  front: -50
+  vocabularies_lt_district: -50
+  vocabularies_tags: -50
+  vocabularies_lt_ward: -50
+  vocabularies_lt_section: -50
+  vocabularies_lt_province: -50
+  vocabularies_lt_political_party: -50
+  vocabularies_lt_election_type: -50
+  vocabularies_lt_constituency: -50
+  menus_account: -50
+  vocabularies_lt_chiefdom: -50
+  menus_workbench: -50
+  menus_tools: -50
+  menus_main: -50
+  menus_footer: -50
+  menus_admin: -50
+  vocabularies_team_category: -50
+_core:
+  default_config_hash: yUNkiSB-fp4pyUb6B2L9HiiCdISBDvK7r1v9_XkGUaQ

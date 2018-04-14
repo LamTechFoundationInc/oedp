@@ -1,0 +1,18 @@
+uuid: 0f25febd-ddcc-49ca-9cf6-18ec7bf8c401
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.villages_towns_cities
+id: node.villages_towns_cities.title
+field_name: title
+entity_type: node
+bundle: villages_towns_cities
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

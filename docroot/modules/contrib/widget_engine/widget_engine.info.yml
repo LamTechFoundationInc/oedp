@@ -1,0 +1,16 @@
+name: Widget engine
+type: module
+description: Widget engine module
+# core: 8.x
+package: Widget system
+dependencies:
+  - inline_entity_form
+  - drupal:node
+  - drupal:path
+  - drupal:text
+
+# Information added by Drupal.org packaging script on 2017-05-25
+version: '8.x-1.0'
+core: '8.x'
+project: 'widget_engine'
+datestamp: 1495723087

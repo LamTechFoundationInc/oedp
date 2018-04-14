@@ -1,0 +1,28 @@
+uuid: b2fd5b07-bd25-4f39-8f47-ded9f76c45b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_village
+    - node.type.lt_cand_elected_officials
+    - node.type.villages_towns_cities
+id: node.lt_cand_elected_officials.field_village
+field_name: field_village
+entity_type: node
+bundle: lt_cand_elected_officials
+label: 'Village (TBD)'
+description: 'Copy the data in the field and paste it into the other Village field'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      villages_towns_cities: villages_towns_cities
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

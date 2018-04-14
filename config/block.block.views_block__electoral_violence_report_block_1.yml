@@ -1,0 +1,30 @@
+uuid: 7c49607d-adcf-4bb6-97d0-e6fc22f610d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.electoral_violence_report
+  module:
+    - system
+    - views
+  theme:
+    - openelections
+id: views_block__electoral_violence_report_block_1
+theme: openelections
+region: banner
+weight: -25
+provider: null
+plugin: 'views_block:electoral_violence_report-block_1'
+settings:
+  id: 'views_block:electoral_violence_report-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: /resources/electoral-violence-reports
+    negate: false
+    context_mapping: {  }

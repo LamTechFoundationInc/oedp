@@ -1,0 +1,76 @@
+uuid: bbbf8121-118f-474e-a4f8-7cd2d0e017af
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.election_year_details.field_city_council
+    - field.field.paragraph.election_year_details.field_constituency
+    - field.field.paragraph.election_year_details.field_district
+    - field.field.paragraph.election_year_details.field_election_type
+    - field.field.paragraph.election_year_details.field_election_year
+    - field.field.paragraph.election_year_details.field_political_party
+    - field.field.paragraph.election_year_details.field_village
+    - field.field.paragraph.election_year_details.field_ward
+    - paragraphs.paragraphs_type.election_year_details
+  module:
+    - workbench_moderation
+id: paragraph.election_year_details.default
+targetEntityType: paragraph
+bundle: election_year_details
+mode: default
+content:
+  field_city_council:
+    weight: 7
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_constituency:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_district:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_election_type:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_election_year:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_political_party:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_village:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_ward:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

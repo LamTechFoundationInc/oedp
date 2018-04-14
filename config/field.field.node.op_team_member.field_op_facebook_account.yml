@@ -1,0 +1,19 @@
+uuid: adefeb1b-6815-458c-b142-afb388ca811d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_op_facebook_account
+    - node.type.op_team_member
+id: node.op_team_member.field_op_facebook_account
+field_name: field_op_facebook_account
+entity_type: node
+bundle: op_team_member
+label: Facebook
+description: 'Enter the URL of your Facebook profile, e.g.: https://www.facebook.com/your-accoun'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

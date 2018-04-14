@@ -1,0 +1,20 @@
+uuid: 2a935d74-e6ff-4621-8cd5-052453041d8f
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_male_population
+field_name: field_male_population
+entity_type: paragraph
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

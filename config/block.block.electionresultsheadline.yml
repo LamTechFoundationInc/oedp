@@ -1,0 +1,31 @@
+uuid: d05e3072-957a-418a-9565-a237b055b09f
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:c2b2d3c6-d917-4821-ac66-e8fa1e02c249'
+  module:
+    - block_content
+    - system
+  theme:
+    - openelections
+id: electionresultsheadline
+theme: openelections
+region: hidden_blocks_collection
+weight: 0
+provider: null
+plugin: 'block_content:c2b2d3c6-d917-4821-ac66-e8fa1e02c249'
+settings:
+  id: 'block_content:c2b2d3c6-d917-4821-ac66-e8fa1e02c249'
+  label: 'Election Results Headline'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /results
+    negate: true
+    context_mapping: {  }

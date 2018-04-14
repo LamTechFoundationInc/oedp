@@ -1,0 +1,29 @@
+uuid: 1e8e2e8e-a9c3-4d26-8c1c-edb2e0561602
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.score_card.body
+    - node.type.score_card
+  module:
+    - text
+    - user
+id: node.score_card.teaser
+targetEntityType: node
+bundle: score_card
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  addtoany: true

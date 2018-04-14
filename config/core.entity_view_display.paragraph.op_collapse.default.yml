@@ -1,0 +1,24 @@
+uuid: 415bc7b9-7150-485c-b2cc-074a6f0558d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.op_collapse.field_op_collapse_body
+    - field.field.paragraph.op_collapse.field_op_collapse_title
+    - paragraphs.paragraphs_type.op_collapse
+  module:
+    - text
+id: paragraph.op_collapse.default
+targetEntityType: paragraph
+bundle: op_collapse
+mode: default
+content:
+  field_op_collapse_body:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden:
+  field_op_collapse_title: true

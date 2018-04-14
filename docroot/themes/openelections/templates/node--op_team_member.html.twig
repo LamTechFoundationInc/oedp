@@ -1,0 +1,53 @@
+{% extends "node.html.twig" %}
+{#
+/**
+ * @file
+ * OpenElections theme implementation to display a Team member node.
+ */
+#}
+
+{% block content %}
+  {{ attach_library('openelections/node-team-member') }}
+  <div class="row content">
+    {% if content.field_op_member_photo|render %}
+      {% if view_mode == "full" %}
+        {{ attach_library('openelections/magnific-popup-field-member-photo-init') }}
+      {% endif %}
+      <div class="col-md-4 col-md-push-8">
+        <div class="photo-container">
+          {{ content.field_op_member_photo }}
+        </div>
+      </div>
+    {% endif %}
+    <div class="{{ (content.field_op_member_photo|render) ? 'col-md-8 col-md-pull-4' : 'col-sm-12' }}">
+      {{ content.field_op_subtitle }}
+      {{ content.body }}
+      {% if content.field_op_facebook_account|render or content.field_op_twitter_account|render or content.field_op_linkedin_account|render %}
+        <ul class="icons-list icons-list--small icons-list--bordered">
+          {% if content.field_op_facebook_account|render %}
+            <li>
+              <a target="_blank" href="{{ node.field_op_facebook_account.value }}">
+                <i class="fa fa-facebook"><span class="sr-only">facebook</span></i>
+              </a>
+            </li>
+          {% endif %}
+          {% if content.field_op_twitter_account|render %}
+            <li>
+              <a target="_blank" href="{{ node.field_op_twitter_account.value }}">
+                <i class="fa fa-twitter"><span class="sr-only">twitter</span></i>
+              </a>
+            </li>
+          {% endif %}
+          {% if content.field_op_linkedin_account|render %}
+            <li>
+              <a target="_blank" href="{{ node.field_op_linkedin_account.value }}">
+                <i class="fa fa-linkedin"><span class="sr-only">linkedin</span></i>
+              </a>
+            </li>
+          {% endif %}
+        </ul>
+      {% endif %}
+    </div>
+  </div>
+  {{ content|without('field_op_member_photo','field_op_subtitle','field_op_facebook_account','field_op_twitter_account','field_op_linkedin_account','body') }}
+{% endblock %}

@@ -1,0 +1,212 @@
+langcode: en
+status: open
+dependencies:
+  enforced:
+    module:
+      - webform
+open: null
+close: null
+uid: 1
+template: false
+id: ireport
+title: iReport
+description: 'Use this form to submit iReports'
+category: SLOEDP
+elements: "markup:\n  '#type': webform_markup\n  '#markup': 'Welcome to the world of citizens generated data. We want to use photos, audio recordings and videos to tell accurately the story of the March 7th, 2018 general elections in Sierra Leone. Have your say by submitting your iReport to the Sierra Leone Open Elections Data Platform. Your stories will be aggregated, formatted and published on this platform for the whole world to see. Feel free to <a href=\"https://electiondata.io/news-and-events/ireports\">read stories already submitted, approved and published</a> by citizens like yourself. &nbsp;Thank you for joining the citizens&#39; generated data revolution.'\nsubject:\n  '#type': textfield\n  '#title': Title\n  '#required': true\n  '#test': 'Testing contact webform from [site:name]'\nmedia_upload:\n  '#type': fieldset\n  '#title': 'Media Upload'\n  image_assets:\n    '#type': fieldset\n    '#title': 'Image Assets'\n    upload_photo:\n      '#type': webform_image_file\n      '#title': 'Upload Photo'\n    caption_for_photo_file:\n      '#type': textfield\n      '#title': 'Caption for Photo File'\n  video_asset:\n    '#type': fieldset\n    '#title': 'Video Assets'\n    upload_video_file:\n      '#type': webform_video_file\n      '#title': 'Upload Video'\n      '#max_filesize': '100'\n    caption_for_video_file:\n      '#type': textfield\n      '#title': 'Caption for Video File'\n  audio_:\n    '#type': fieldset\n    '#title': 'Audio Assets'\n    upload_audio_file:\n      '#type': webform_audio_file\n      '#title': 'Upload Audio'\n    caption_for_audio_file:\n      '#type': textfield\n      '#title': 'Caption for Audio File'\ndescription_story:\n  '#type': textarea\n  '#title': Description/Story\n  '#required': true\nyour_details:\n  '#type': fieldset\n  '#title': 'Your Details'\n  name:\n    '#title': 'Your Name'\n    '#type': textfield\n    '#required': true\n    '#default_value': '[webform-authenticated-user:display-name]'\n  email:\n    '#title': 'Your Email'\n    '#type': email\n    '#required': true\n    '#default_value': '[webform-authenticated-user:mail]'\n  phone_numbers:\n    '#type': tel\n    '#title': 'Phone Numbers'\nyour_location:\n  '#type': webform_location\n  '#title': 'Your Location'\n  '#lat__access': true\n  '#lng__access': true\n  '#geolocation': true\n  '#hidden': true\nterms_of_service:\n  '#type': webform_terms_of_service\n  '#terms_type': slideout\n  '#terms_title': 'SLOEDP iReport Terms of Service'\n  '#terms_content': '<div style=\"margin-top:6.0pt; margin-right:0in; margin-bottom:6.0pt\"><span style=\"line-height:15.0pt\"><span lang=\"EN-GB\" style=\"font-size:11.0pt\"><span style=\"font-family:&quot;Arial&quot;,sans-serif\">iReports and all open data stored and published in the Sierra Leone Open Elections Data Platform&nbsp;</span></span></span><span style=\"font-size:11.0pt\"><span style=\"font-family:&quot;Arial&quot;,sans-serif\">is licensed under Creative Commons Attribution 4.0 International license&nbsp;and&nbsp;is made available under the Open Database License: http://opendatacommons.org/licenses/odbl/1.0/. Any rights in individual contents of the database are licensed under the Database Contents License: http://opendatacommons.org/licenses/dbcl/1.0</span></span></div>'\n  '#required': true\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#submit__label': 'Send message'\n"
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  form_submit_once: false
+  form_exception_message: ''
+  form_open_message: ''
+  form_close_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_reset: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_login: false
+  form_login_message: ''
+  submission_label: ''
+  submission_log: false
+  submission_user_columns: {  }
+  submission_login: false
+  submission_login_message: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_start_label: ''
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_track: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  confirmation_type: url_message
+  confirmation_title: ''
+  confirmation_message: "Thank you&nbsp;for submitting your iReport&nbsp;story us. Your story has been sent to our moderators for review. We will inform you via email when your story is published. You can check <a href=\"https://electiondata.io/news-and-events/ireports\">https://electiondata.io/news-and-events/ireports</a> the latest stories.<br />\r\nFeel free to use <a href=\"https://evmer.wsrsl.org\">https//evmer.wsrsl.org</a> to submit electoral violence incidents.&nbsp;Electoral Violence Monitoring, Education and Reporting (EVMER) is a partnership between The Women Situation Room Sierra Leone (WSRSL) and LAM-TECH Consulting to increase transparency and accountability in Sierra Leone&#39;s general election through active citizen participation.<br />\r\n<br />\r\n<strong>How to Report?</strong>\r\n<div>\r\n<p>1. Call free 977</p>\r\n\r\n<p>2. Send SMS to<br />\r\n<a class=\"button-link\" href=\"tel:+23230 696797\">+232 30 696797</a><br />\r\n<a class=\"button-link\" href=\"tel:+23279 370537\">+232 79 370537</a></p>\r\n\r\n<p>3. <a class=\"button-link\" href=\"https://www.messenger.com/t/openelectionssl\">Submit via Facebook</a></p>\r\n\r\n<p>4. <a class=\"button-link\" href=\"https://api.whatsapp.com/send?phone=19176234281\">Submit via What&#39;sApp</a></p>\r\n\r\n<p>5. Twiter hashtag(s):<br />\r\n<a class=\"button-link\" href=\"https://twitter.com/search?q=%23wsrsl2018&amp;src=typd\">#wsrsl2018</a><br />\r\n<a class=\"button-link\" href=\"https://twitter.com/search?q=%23salonevote2018&amp;src=typd\">#salonevote2018</a><br />\r\n<a class=\"button-link\" href=\"https://twitter.com/search?q=%23sloedp2018&amp;src=typd\">#sloedp2018</a></p>\r\n\r\n<p>6. Send an email to <a class=\"button-link\" href=\"mailto:submit@wsrsl.sl\" title=\"Subject\">submit@wsrsl.org</a></p>\r\n\r\n<p>7. Use the <a class=\"button-link\" href=\"/posts/create/1\">web form</a></p>\r\nIf this is regarding an urgent technical support issue, please feel free to contact us via <a href=\"https://api.whatsapp.com/send?phone=19176234281\">WhatsApp</a>&nbsp;</div>"
+  confirmation_url: /news-and-events/ireports
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  token_update: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers:
+  email_confirmation:
+    id: email
+    label: 'Email confirmation'
+    handler_id: email_confirmation
+    status: true
+    conditions: {  }
+    weight: 1
+    settings:
+      states:
+        - completed
+      to_mail: '[webform_submission:values:email:raw]'
+      to_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: default
+      from_options: {  }
+      from_name: default
+      subject: '[webform_submission:values:subject:raw]'
+      body: '[webform_submission:values:message:value]'
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      html: true
+      attachments: false
+      twig: false
+      debug: false
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+  email_notification:
+    id: email
+    label: 'Email notification'
+    handler_id: email_notification
+    status: true
+    conditions: {  }
+    weight: 1
+    settings:
+      states:
+        - completed
+      to_mail: default
+      to_options: {  }
+      cc_mail: tamba@tambalamin.me
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: '[webform_submission:values:email:raw]'
+      from_options: {  }
+      from_name: '[webform_submission:values:name:raw]'
+      subject: '[webform_submission:values:subject:raw]'
+      body: '[webform_submission:values:message:value]'
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      html: true
+      attachments: false
+      twig: false
+      debug: false
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+uuid: 2a3dff45-110b-47b8-a178-cd97c1bb0c55
+_core:
+  default_config_hash: wn06eL40L0LLwBac3EprLc2EE3B93WlUg39fTOOmDdU

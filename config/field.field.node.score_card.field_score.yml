@@ -1,0 +1,23 @@
+uuid: 011d351a-42c7-4d43-bfc8-7eeacfa2a9ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_score
+    - node.type.score_card
+  module:
+    - options
+id: node.score_card.field_score
+field_name: field_score
+entity_type: node
+bundle: score_card
+label: Score
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: '0'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

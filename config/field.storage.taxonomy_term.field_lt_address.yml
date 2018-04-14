@@ -1,0 +1,19 @@
+uuid: 5884640b-dc20-4a69-9e19-3b268fe4d3f9
+langcode: en
+status: true
+dependencies:
+  module:
+    - address
+    - taxonomy
+id: taxonomy_term.field_lt_address
+field_name: field_lt_address
+entity_type: taxonomy_term
+type: address
+settings: {  }
+module: address
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

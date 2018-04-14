@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * OpenElections theme override for the block entity refernece field for the tabs powered custom block
+ *
+ * @see openelections_preprocess_field__field_op_destinations()
+ */
+#}
+{%
+  set classes = [
+    'field',
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+    'field--label-' ~ label_display,
+  ]
+%}
+{%
+  set title_classes = [
+    'field__label',
+    label_display == 'visually_hidden' ? 'visually-hidden',
+  ]
+%}
+{{ attach_library('openelections/google-maps-init') }}
+<div{{ attributes.addClass(classes) }}>
+  {% if not label_hidden %}
+    <h3{{ title_attributes.addClass(title_classes) }}>{{ label }}</h3>
+  {% endif %}
+  <div class="google-map-canvas"
+    data-attribute-op-locations="{{ map_locations }}"
+    data-attribute-op-map-zoom="{{ field_op_map_zoom_value }}">
+  </div>
+</div>

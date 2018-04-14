@@ -1,0 +1,28 @@
+uuid: 03efd1fb-0c26-4868-818c-acdd5a954df2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_campaign_promise
+    - node.type.score_card
+    - taxonomy.vocabulary.campaign_promises
+id: node.score_card.field_campaign_promise
+field_name: field_campaign_promise
+entity_type: node
+bundle: score_card
+label: 'Campaign Promise'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      campaign_promises: campaign_promises
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

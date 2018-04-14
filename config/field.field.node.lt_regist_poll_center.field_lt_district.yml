@@ -1,0 +1,28 @@
+uuid: 6de687e3-bbb9-416e-ad85-8817d44f67c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lt_district
+    - node.type.lt_regist_poll_center
+    - taxonomy.vocabulary.lt_district
+id: node.lt_regist_poll_center.field_lt_district
+field_name: field_lt_district
+entity_type: node
+bundle: lt_regist_poll_center
+label: District
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      lt_district: lt_district
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

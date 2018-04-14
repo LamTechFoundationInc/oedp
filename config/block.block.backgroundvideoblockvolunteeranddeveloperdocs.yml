@@ -1,0 +1,31 @@
+uuid: 228f5f91-8389-4229-8dea-24cf4e9c3d35
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:op_background_video_block:c4cdc60b-5011-4900-bc35-2260bf3d45ae'
+  module:
+    - block_content
+    - system
+  theme:
+    - openelections
+id: backgroundvideoblockvolunteeranddeveloperdocs
+theme: openelections
+region: sub_featured
+weight: -28
+provider: null
+plugin: 'block_content:c4cdc60b-5011-4900-bc35-2260bf3d45ae'
+settings:
+  id: 'block_content:c4cdc60b-5011-4900-bc35-2260bf3d45ae'
+  label: 'Background Video block - Volunteer and Developer Docs'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

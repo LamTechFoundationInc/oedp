@@ -1,0 +1,23 @@
+uuid: 92fe9ae7-3e9e-4ed1-883e-5bec5cb1e90b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_data_sources
+    - node.type.summary_election_results
+id: node.summary_election_results.field_data_sources
+field_name: field_data_sources
+entity_type: node
+bundle: summary_election_results
+label: 'Data Sources'
+description: 'Where did you obtain the data? We want to make sure the information is credible and also give credit to the original authors.'
+required: true
+translatable: true
+default_value:
+  -
+    value: 'http://necsl2018.org/election-results/'
+  -
+    value: 'https://electiondata.io/resources/downloads/results'
+default_value_callback: ''
+settings: {  }
+field_type: string

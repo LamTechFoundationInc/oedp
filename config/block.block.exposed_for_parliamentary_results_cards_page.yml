@@ -1,0 +1,29 @@
+uuid: 3c14b47f-3643-403c-aebd-819731edbe6f
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.op_services
+  module:
+    - system
+    - views
+  theme:
+    - openelections
+id: exposed_for_parliamentary_results_cards_page
+theme: openelections
+region: sidebar_first
+weight: -25
+provider: null
+plugin: 'views_exposed_filter_block:op_services-parliamentary_results_cards_page'
+settings:
+  id: 'views_exposed_filter_block:op_services-parliamentary_results_cards_page'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+visibility:
+  request_path:
+    id: request_path
+    pages: /results/parliamentary/cards
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,29 @@
+uuid: d623eb13-9896-4c29-80bb-c81c51d00661
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.op_services
+  module:
+    - system
+    - views
+  theme:
+    - openelections
+id: exposed_for_presidential_results_card_page
+theme: openelections
+region: sidebar_first
+weight: -23
+provider: null
+plugin: 'views_exposed_filter_block:op_services-presidential_results_card_page'
+settings:
+  id: 'views_exposed_filter_block:op_services-presidential_results_card_page'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+visibility:
+  request_path:
+    id: request_path
+    pages: /results/presidential/cards
+    negate: false
+    context_mapping: {  }

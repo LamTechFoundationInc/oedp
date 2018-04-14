@@ -1,0 +1,14 @@
+uuid: eb1e4b8e-54c8-49c5-81fb-2eebba00811d
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.contributing_creator
+  module:
+    - user
+id: user_remove_role_action.contributing_creator
+label: 'Remove the Contributing Creator role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: contributing_creator

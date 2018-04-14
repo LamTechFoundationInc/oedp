@@ -1,0 +1,19 @@
+uuid: 1a88aa7e-04d4-431c-86b4-ce7f5694fa49
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lt_previous_employer
+    - node.type.lt_cand_elected_officials
+id: node.lt_cand_elected_officials.field_lt_previous_employer
+field_name: field_lt_previous_employer
+entity_type: node
+bundle: lt_cand_elected_officials
+label: 'Previous Employer'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

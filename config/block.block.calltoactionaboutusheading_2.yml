@@ -1,0 +1,25 @@
+uuid: ce001635-1807-4d9b-895d-c496339b9a6e
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:54dc6b42-5844-4d9d-a778-bf096126004b'
+  module:
+    - block_content
+  theme:
+    - openelections
+id: calltoactionaboutusheading_2
+theme: openelections
+region: hidden_blocks_collection
+weight: 0
+provider: null
+plugin: 'block_content:54dc6b42-5844-4d9d-a778-bf096126004b'
+settings:
+  id: 'block_content:54dc6b42-5844-4d9d-a778-bf096126004b'
+  label: 'Call to action - About us Heading'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -1,0 +1,14 @@
+uuid: 9fd38ddd-4b07-4056-be0d-867e753bc9a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.op_team_member
+  module:
+    - node
+id: node.op_team_member
+targetEntityType: node
+bundle: op_team_member
+types:
+  - ''
+fieldMappings: {  }

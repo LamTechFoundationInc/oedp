@@ -1,0 +1,23 @@
+uuid: a7b4598d-ddcf-4391-a56c-4e447f74f495
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_has_the_incident_caused_an
+    - node.type.lt_election_violence_report
+id: node.lt_election_violence_report.field_has_the_incident_caused_an
+field_name: field_has_the_incident_caused_an
+entity_type: node
+bundle: lt_election_violence_report
+label: 'Has the incident caused an increase in tensions?'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

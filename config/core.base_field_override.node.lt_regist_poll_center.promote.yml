@@ -1,0 +1,22 @@
+uuid: 9d7847de-7db9-47bf-a802-46a06efa50d2
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.lt_regist_poll_center
+id: node.lt_regist_poll_center.promote
+field_name: promote
+entity_type: node
+bundle: lt_regist_poll_center
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

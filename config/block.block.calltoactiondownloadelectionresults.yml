@@ -1,0 +1,25 @@
+uuid: 1090cafd-aeba-43e3-a82f-b28958b247e8
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:e6a8c041-5619-455c-a317-2cdea1b8ec8e'
+  module:
+    - block_content
+  theme:
+    - openelections
+id: calltoactiondownloadelectionresults
+theme: openelections
+region: hidden_blocks_collection
+weight: 0
+provider: null
+plugin: 'block_content:e6a8c041-5619-455c-a317-2cdea1b8ec8e'
+settings:
+  id: 'block_content:e6a8c041-5619-455c-a317-2cdea1b8ec8e'
+  label: 'Call to action - Download Election Results'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

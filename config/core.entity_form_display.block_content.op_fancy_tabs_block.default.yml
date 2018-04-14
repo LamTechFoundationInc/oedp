@@ -1,0 +1,36 @@
+uuid: c50e1e10-d522-4a5d-b300-a6ae5b3bbeff
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.op_fancy_tabs_block
+    - field.field.block_content.op_fancy_tabs_block.field_op_fancy_tab
+  module:
+    - paragraphs
+    - workbench_moderation
+id: block_content.op_fancy_tabs_block.default
+targetEntityType: block_content
+bundle: op_fancy_tabs_block
+mode: default
+content:
+  field_op_fancy_tab:
+    type: entity_reference_paragraphs
+    weight: 27
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

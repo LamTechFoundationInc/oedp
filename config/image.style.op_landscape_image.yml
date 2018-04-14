@@ -1,0 +1,14 @@
+uuid: bda3406c-a170-4eb4-8182-5de71024baa7
+langcode: en
+status: true
+dependencies: {  }
+name: op_landscape_image
+label: 'Landscape Image (850x460)'
+effects:
+  0dae68b4-a7f1-4357-83e4-e3d7048dab51:
+    uuid: 0dae68b4-a7f1-4357-83e4-e3d7048dab51
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 850
+      height: 460

@@ -1,0 +1,25 @@
+uuid: 07b298f2-5ef2-4b4a-ab69-d5dd1dc4c4c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_running_mate
+    - node.type.lt_cand_elected_officials
+id: node.lt_cand_elected_officials.field_running_mate
+field_name: field_running_mate
+entity_type: node
+bundle: lt_cand_elected_officials
+label: 'Running Mate'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: editor_node_entity_reference_fields
+      display_name: entity_reference_1
+      arguments: {  }
+field_type: entity_reference

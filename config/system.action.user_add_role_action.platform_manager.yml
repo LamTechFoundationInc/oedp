@@ -1,0 +1,14 @@
+uuid: 12aefb2c-e14c-41d1-807f-510d3e9ba385
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.platform_manager
+  module:
+    - user
+id: user_add_role_action.platform_manager
+label: 'Add the Platform Manager role to the selected users'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: platform_manager

@@ -1,0 +1,22 @@
+uuid: 71eb7b4f-8515-44f5-a95d-c969a353ceb8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_op_subheader_body
+    - node.type.op_showcase
+  module:
+    - text
+id: node.op_showcase.field_op_subheader_body
+field_name: field_op_subheader_body
+entity_type: node
+bundle: op_showcase
+label: 'Subheader body'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

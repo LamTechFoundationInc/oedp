@@ -1,0 +1,21 @@
+uuid: 2ba66a36-368a-4334-98ed-fc757017a09f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date_of_birth
+    - node.type.lt_cand_elected_officials
+  module:
+    - datetime
+id: node.lt_cand_elected_officials.field_date_of_birth
+field_name: field_date_of_birth
+entity_type: node
+bundle: lt_cand_elected_officials
+label: 'Date of Birth'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

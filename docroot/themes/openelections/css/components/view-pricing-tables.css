@@ -1,0 +1,122 @@
+/**
+ * @file
+ * Visual styles for OpenElections pricing tables.
+ */
+.view-pricing-tables {
+  position: relative;
+  padding-top: 30px;
+}
+.view-pricing-tables .view-header {
+  padding-bottom: 40px;
+}
+.view-pricing-tables .pricing-table {
+  text-align: center;
+  border-width: 1px;
+  border-style: solid;
+  margin: 0 0 40px 0;
+  padding:0 0 95px 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  position: relative;
+}
+.region--light-typography .view-pricing-tables .pricing-table {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+.view-pricing-tables .pricing-table-header {
+  color: #ffffff;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+.region--light-typography .view-pricing-tables .pricing-table-header {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.view-pricing-tables .pricing-table .views-field-title {
+  font-weight: 400;
+  font-size: 14px;
+  padding: 18px 0 2px;
+}
+.view-pricing-tables .pricing-table .views-field-title a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.view-pricing-tables .pricing-table .views-field-title a:hover {
+  text-decoration: none;
+  color: #ffffff;
+}
+.view-pricing-tables .views-field-field-op-price {
+  padding: 0 0 20px 0;
+  font-weight: 700;
+  font-size: 40px;
+}
+.view-pricing-tables .pricing-table .item-list>ul {
+  list-style: none;
+  margin: 0;
+}
+.view-pricing-tables .views-row:not(.most-popular) .views-field-field-op-most-popular {
+  display: none;
+}
+.view-pricing-tables .pricing-table .views-field-field-op-most-popular {
+  position: absolute;
+  font-size: 12px;
+  line-height: 1.4;
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  border-radius: 100%;
+  color: #ffffff;
+  padding: 30px 20px 0;
+  right: -20px;
+  top: -40px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+.region--light-typography .view-pricing-tables .pricing-table .views-field-field-op-most-popular {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.view-pricing-tables .pricing-table .item-list li {
+  margin: 0;
+}
+.view-pricing-tables .pricing-table .views-field-item {
+  padding:15px 20px;
+  margin:0;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: #f3f3f3;
+}
+.view-pricing-tables .pricing-table li:last-child .views-field-item {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #f3f3f3;
+}
+.view-pricing-tables .pricing-table li:nth-child(2n) .views-field-item {
+  background-color: #fafafa;
+}
+.region--light-typography .view-pricing-tables .pricing-table .views-field-item {
+  border-top-color: rgba(255, 255, 255, 0.05);
+}
+.region--light-typography .view-pricing-tables .pricing-table li:last-child .views-field-item {
+  border-bottom-color: rgba(255, 255, 255, 0.11);
+}
+.region--light-typography .view-pricing-tables .pricing-table li:nth-child(2n) .views-field-item {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.view-pricing-tables .pricing-table-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  padding: 0 0 15px;
+}
+@media (max-width: 767px) {
+  .view-pricing-tables .views-row.most-popular .pricing-table {
+    margin-top: 70px;
+  }
+  .view-pricing-tables .pricing-table .views-field-field-op-most-popular {
+    top: -50px;
+    right: -15px;
+    left: 50%;
+    margin-left: -45px;
+  }
+}

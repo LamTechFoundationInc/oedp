@@ -1,0 +1,21 @@
+uuid: 3fc77d96-d366-40d8-a8bd-0b24f999b2c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_official_phone_numbers
+    - taxonomy.vocabulary.lt_political_party
+  module:
+    - telephone
+id: taxonomy_term.lt_political_party.field_official_phone_numbers
+field_name: field_official_phone_numbers
+entity_type: taxonomy_term
+bundle: lt_political_party
+label: 'Official Phone Numbers'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

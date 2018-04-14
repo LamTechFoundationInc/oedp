@@ -1,0 +1,9 @@
+uuid: e86a18dc-2239-4a40-ae2d-40c2c86af975
+langcode: en
+status: true
+dependencies: {  }
+name: 'Team Category'
+vid: team_category
+description: ''
+hierarchy: 0
+weight: 0

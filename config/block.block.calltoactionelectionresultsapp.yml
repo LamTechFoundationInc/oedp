@@ -1,0 +1,25 @@
+uuid: 5aa55114-4a6b-4f60-87b1-c95d40da9a42
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:ed81c82f-86f3-44c4-869e-10e4264e913e'
+  module:
+    - block_content
+  theme:
+    - openelections
+id: calltoactionelectionresultsapp
+theme: openelections
+region: hidden_blocks_collection
+weight: 0
+provider: null
+plugin: 'block_content:ed81c82f-86f3-44c4-869e-10e4264e913e'
+settings:
+  id: 'block_content:ed81c82f-86f3-44c4-869e-10e4264e913e'
+  label: 'Call to action: Election Results App'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

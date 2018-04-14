@@ -1,0 +1,23 @@
+/**
+ * @file
+ * Visual styles for Corporate+'s testimonials carousel.
+ */
+.sle-carousel-testimonials {
+  padding: 0 0 25px;
+}
+.sle-carousel-testimonials .sle-carousel-item {
+  margin: 0 15px;
+}
+.sle-carousel-testimonials .owl-nav,
+.block > h2.title ~ .content .sle-carousel-testimonials .owl-nav {
+  top: 50%;
+  margin-top: -14px;
+}
+@media (max-width: 991px) {
+  .sle-carousel-testimonials .owl-nav,
+  .block > h2.title ~ .content .sle-carousel-testimonials .owl-nav {
+    top: auto;
+    bottom: 55px;
+    margin-top: 0px;
+  } 
+}

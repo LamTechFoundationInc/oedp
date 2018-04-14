@@ -1,0 +1,31 @@
+uuid: 91b400f0-f37c-4e76-886d-cd3a6c67f136
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:op_background_image_block:2787a739-e069-46b0-b8b9-d00a8d50c5ed'
+  module:
+    - block_content
+    - system
+  theme:
+    - openelections
+id: electoralnewsandeventsheadlinebackground
+theme: openelections
+region: banner
+weight: -26
+provider: null
+plugin: 'block_content:2787a739-e069-46b0-b8b9-d00a8d50c5ed'
+settings:
+  id: 'block_content:2787a739-e069-46b0-b8b9-d00a8d50c5ed'
+  label: 'Electoral News and Events Headline Background'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/news-and-events\r\n/news-and-events/\r\nnews-and-events\r\nnews-and-events/"
+    negate: false
+    context_mapping: {  }

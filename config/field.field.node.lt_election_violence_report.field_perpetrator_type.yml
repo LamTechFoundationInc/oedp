@@ -1,0 +1,28 @@
+uuid: e4bb60ce-89e4-471b-8ff9-1e52d8e9d6be
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_perpetrator_type
+    - node.type.lt_election_violence_report
+    - taxonomy.vocabulary.perpetrator_types
+id: node.lt_election_violence_report.field_perpetrator_type
+field_name: field_perpetrator_type
+entity_type: node
+bundle: lt_election_violence_report
+label: 'Perpetrator Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      perpetrator_types: perpetrator_types
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

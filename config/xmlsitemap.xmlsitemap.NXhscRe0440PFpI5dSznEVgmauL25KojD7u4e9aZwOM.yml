@@ -1,0 +1,11 @@
+uuid: 2807bedc-4c08-42ad-965f-6340deb12249
+langcode: en
+status: true
+dependencies: {  }
+id: NXhscRe0440PFpI5dSznEVgmauL25KojD7u4e9aZwOM
+label: 'https://electiondata.io/'
+chunks: 1
+links: 1
+max_filesize: 266
+context: {  }
+updated: 1522209586

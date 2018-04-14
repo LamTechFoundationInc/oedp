@@ -1,0 +1,23 @@
+uuid: 18f7a756-4175-442e-80aa-efd00e64ba2c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_status
+    - taxonomy.vocabulary.campaign_promises
+  module:
+    - options
+id: taxonomy_term.campaign_promises.field_status
+field_name: field_status
+entity_type: taxonomy_term
+bundle: campaign_promises
+label: Status
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 'Not Started'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

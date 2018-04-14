@@ -1,0 +1,31 @@
+uuid: 02b24a34-2341-44e6-8d25-28965ee33088
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:op_background_image_block:1b89008b-d755-487c-a899-ab1442f5d7bf'
+  module:
+    - block_content
+    - system
+  theme:
+    - openelections
+id: electionresultsheadlinewithbackground
+theme: openelections
+region: banner
+weight: -27
+provider: null
+plugin: 'block_content:1b89008b-d755-487c-a899-ab1442f5d7bf'
+settings:
+  id: 'block_content:1b89008b-d755-487c-a899-ab1442f5d7bf'
+  label: 'Election Results Headline With Background'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/results\r\n/results/\r\nresults\r\nresults/\r\n/node/982"
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,23 @@
+uuid: 2c1e9c34-f933-4373-9e69-0a70edc94d4c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_male_population
+    - taxonomy.vocabulary.lt_district
+id: taxonomy_term.lt_district.field_male_population
+field_name: field_male_population
+entity_type: taxonomy_term
+bundle: lt_district
+label: 'Male Population (TBD)'
+description: 'Please copy the data in this field to the other population field'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

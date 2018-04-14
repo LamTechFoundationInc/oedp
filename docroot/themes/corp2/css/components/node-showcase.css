@@ -1,0 +1,96 @@
+/**
+ * @file
+ * Visual styles for Corporate+'s showcase content type.
+ */
+.node--type-sle-showcase .node__meta {
+  margin-bottom: 0;
+}
+.node--type-sle-showcase .node__header {
+  padding-bottom: 0;
+}
+.node--type-sle-showcase .node__header + .field:not(.field--name-field-sle-subtitle) {
+  padding-top: 10px;
+}
+.node--type-sle-showcase .node__title {
+  margin-bottom: 20px;
+}
+
+/**/
+.node--type-sle-showcase .field--name-field-sle-subtitle {
+  font-size: 18px;
+  line-height: 1.66;
+  color: #363636;
+  font-weight: 400;
+  text-transform: none;
+}
+
+/* showcase layout */
+.node--type-sle-showcase .node__side {
+  float: left;
+  width: 75px;
+  padding-right: 20px;
+  min-height: 1px;
+}
+.node--type-sle-showcase .node__side + .node__main-content {
+  overflow: hidden;
+}
+@media (max-width: 480px) {
+  .node--type-sle-showcase .node__side {
+    margin-top: 10px;
+  }
+}
+
+/*showcase header*/
+.node--type-sle-showcase .node__submitted-info {
+  font-size: 11px;
+}
+
+/*showcase side styling*/
+.node--type-sle-showcase .node__side .user-picture {
+  margin-bottom: 20px;
+}
+.node--type-sle-showcase .node__submitted-date {
+  font-weight: 700;
+  text-align: center;
+  line-height: 1;
+  margin:6px 0 0 0;
+  border-right: 1px solid #c2c2c2;
+  padding-bottom: 10px;
+  display: block;
+}
+.node--type-sle-showcase .node__submitted-date .month {
+  margin-top: -2px;
+}
+.node--type-sle-showcase .node__submitted-date .month,
+.node--type-sle-showcase .node__submitted-date .year {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.node--type-sle-showcase .node__submitted-date .day {
+  font-size: 29px;
+  font-weight: 900;
+  margin-bottom: 2px;
+}
+.node--type-sle-showcase .node__comments {
+  margin-top: 6px;
+  margin-bottom: 20px;
+  border-right: 1px solid #c2c2c2;
+  display: block;
+  font-weight: 700;
+  text-align: center;
+}
+.node--type-sle-showcase .node__submitted-date + .node__comments {
+  border-top: 1px solid #c2c2c2;
+  margin-top: 0;
+}
+.node--type-sle-showcase .node__comments i {
+  color: #363636;
+  margin-bottom: 5px;
+  width: 100%;
+  padding-top: 17px;
+}
+.node--type-sle-showcase .node__comments-count {
+  font-size: 11px;
+  color: #363636;
+  padding-bottom: 15px;
+}

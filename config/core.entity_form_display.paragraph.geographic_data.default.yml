@@ -1,0 +1,71 @@
+uuid: f0168561-ac99-4826-af12-9d678154753a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.geographic_data.field_election_year
+    - field.field.paragraph.geographic_data.field_point_on_the_map
+    - field.field.paragraph.geographic_data.field_polygon
+    - field.field.paragraph.geographic_data.field_voters
+    - paragraphs.paragraphs_type.geographic_data
+  module:
+    - geolocation
+    - workbench_moderation
+id: paragraph.geographic_data.default
+targetEntityType: paragraph
+bundle: geographic_data
+mode: default
+content:
+  field_election_year:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_point_on_the_map:
+    type: geolocation_googlegeocoder
+    weight: 1
+    region: content
+    settings:
+      default_longitude: '8.589767'
+      default_latitude: '-11.906745'
+      google_map_settings:
+        height: 200px
+        width: 100%
+        type: ROADMAP
+        zoom: '10'
+        maxZoom: 18
+        minZoom: 0
+        mapTypeControl: 1
+        streetViewControl: 1
+        zoomControl: 1
+        scrollwheel: 1
+        gestureHandling: auto
+        draggable: 1
+        style: ''
+        info_auto_display: 1
+        marker_icon_path: ''
+        disableAutoPan: 1
+        rotateControl: 0
+        fullscreenControl: 0
+        preferScrollingToZooming: 0
+        disableDoubleClickZoom: 0
+      auto_client_location: '0'
+      auto_client_location_marker: '0'
+      allow_override_map_settings: 0
+      populate_address_field: ''
+      target_address_field: null
+      explicite_actions_address_field: ''
+    third_party_settings: {  }
+  field_voters:
+    weight: 2
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+hidden:
+  created: true
+  field_polygon: true
+  status: true
+  uid: true

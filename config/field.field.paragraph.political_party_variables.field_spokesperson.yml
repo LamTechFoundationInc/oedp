@@ -1,0 +1,19 @@
+uuid: 79b1a1b2-7e6b-4cb8-ba8d-2b5834754adb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_spokesperson
+    - paragraphs.paragraphs_type.political_party_variables
+id: paragraph.political_party_variables.field_spokesperson
+field_name: field_spokesperson
+entity_type: paragraph
+bundle: political_party_variables
+label: Spokesperson
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,27 @@
+uuid: a46d560e-292a-4c68-a90b-5e1711a30c5a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.political_party.field_political_party
+    - paragraphs.paragraphs_type.political_party
+  module:
+    - workbench_moderation
+id: paragraph.political_party.default
+targetEntityType: paragraph
+bundle: political_party
+mode: default
+content:
+  field_political_party:
+    weight: 6
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

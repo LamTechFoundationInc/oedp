@@ -1,0 +1,29 @@
+uuid: 7adae206-9cca-4c20-900f-4feb2eb64297
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.op_services
+  module:
+    - system
+    - views
+  theme:
+    - openelections
+id: exposedformop_servicesvillage_headman_page
+theme: openelections
+region: sidebar_first
+weight: -22
+provider: null
+plugin: 'views_exposed_filter_block:op_services-village_headman_page'
+settings:
+  id: 'views_exposed_filter_block:op_services-village_headman_page'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+visibility:
+  request_path:
+    id: request_path
+    pages: /results/village-headman/cards
+    negate: false
+    context_mapping: {  }

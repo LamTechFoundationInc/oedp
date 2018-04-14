@@ -1,0 +1,23 @@
+uuid: ea67ded5-bd84-443f-a639-e430767faa4f
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - file
+id: block_content.field_op_bv_video_webm
+field_name: field_op_bv_video_webm
+entity_type: block_content
+type: file
+settings:
+  display_field: true
+  display_default: true
+  uri_scheme: public
+  target_type: file
+module: file
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

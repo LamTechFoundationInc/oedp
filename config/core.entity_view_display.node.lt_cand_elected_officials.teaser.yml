@@ -1,0 +1,97 @@
+uuid: 464e31ef-7549-49d6-a915-0ea7cf44b003
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.lt_cand_elected_officials.body
+    - field.field.node.lt_cand_elected_officials.field_address
+    - field.field.node.lt_cand_elected_officials.field_candidate_gender
+    - field.field.node.lt_cand_elected_officials.field_current_political_party
+    - field.field.node.lt_cand_elected_officials.field_data_sources
+    - field.field.node.lt_cand_elected_officials.field_date_of_birth
+    - field.field.node.lt_cand_elected_officials.field_election_year
+    - field.field.node.lt_cand_elected_officials.field_election_year_details
+    - field.field.node.lt_cand_elected_officials.field_lt_candidate_status
+    - field.field.node.lt_cand_elected_officials.field_lt_chiefdom
+    - field.field.node.lt_cand_elected_officials.field_lt_constituency
+    - field.field.node.lt_cand_elected_officials.field_lt_district
+    - field.field.node.lt_cand_elected_officials.field_lt_election_type
+    - field.field.node.lt_cand_elected_officials.field_lt_email
+    - field.field.node.lt_cand_elected_officials.field_lt_first_name
+    - field.field.node.lt_cand_elected_officials.field_lt_level_of_education
+    - field.field.node.lt_cand_elected_officials.field_lt_manifesto
+    - field.field.node.lt_cand_elected_officials.field_lt_name_prefix
+    - field.field.node.lt_cand_elected_officials.field_lt_party
+    - field.field.node.lt_cand_elected_officials.field_lt_photo
+    - field.field.node.lt_cand_elected_officials.field_lt_previous_employer
+    - field.field.node.lt_cand_elected_officials.field_lt_profession
+    - field.field.node.lt_cand_elected_officials.field_lt_surname
+    - field.field.node.lt_cand_elected_officials.field_lt_ward
+    - field.field.node.lt_cand_elected_officials.field_lt_website
+    - field.field.node.lt_cand_elected_officials.field_lt_why_vote_for_me
+    - field.field.node.lt_cand_elected_officials.field_middle_given_names
+    - field.field.node.lt_cand_elected_officials.field_running_mate
+    - field.field.node.lt_cand_elected_officials.field_suffix
+    - field.field.node.lt_cand_elected_officials.field_tl_telephone
+    - field.field.node.lt_cand_elected_officials.field_village
+    - node.type.lt_cand_elected_officials
+  module:
+    - panelizer
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.lt_cand_elected_officials.teaser
+targetEntityType: node
+bundle: lt_cand_elected_officials
+mode: teaser
+content:
+  field_lt_photo:
+    type: entity_reference_entity_view
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      view_mode: thumbnail
+      link: false
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  body: true
+  field_address: true
+  field_candidate_gender: true
+  field_current_political_party: true
+  field_data_sources: true
+  field_date_of_birth: true
+  field_election_year: true
+  field_election_year_details: true
+  field_lt_candidate_status: true
+  field_lt_chiefdom: true
+  field_lt_constituency: true
+  field_lt_district: true
+  field_lt_election_type: true
+  field_lt_email: true
+  field_lt_first_name: true
+  field_lt_level_of_education: true
+  field_lt_manifesto: true
+  field_lt_name_prefix: true
+  field_lt_party: true
+  field_lt_previous_employer: true
+  field_lt_profession: true
+  field_lt_surname: true
+  field_lt_ward: true
+  field_lt_website: true
+  field_lt_why_vote_for_me: true
+  field_middle_given_names: true
+  field_running_mate: true
+  field_suffix: true
+  field_tl_telephone: true
+  field_village: true
+  flag_email_node: true
+  flag_subscribe_node: true
+  links: true
+  workbench_moderation_control: true

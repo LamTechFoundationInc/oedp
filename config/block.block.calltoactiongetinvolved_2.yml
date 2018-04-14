@@ -1,0 +1,31 @@
+uuid: 1b8713ed-d728-4454-8af0-a7784c485b9a
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:e092ab72-b013-4eeb-abd6-8d351cda36ba'
+  module:
+    - block_content
+    - system
+  theme:
+    - openelections
+id: calltoactiongetinvolved_2
+theme: openelections
+region: content_bottom_first
+weight: -13
+provider: null
+plugin: 'block_content:e092ab72-b013-4eeb-abd6-8d351cda36ba'
+settings:
+  id: 'block_content:e092ab72-b013-4eeb-abd6-8d351cda36ba'
+  label: 'Call to action - Get Involved'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

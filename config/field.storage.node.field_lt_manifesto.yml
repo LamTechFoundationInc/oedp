@@ -1,0 +1,20 @@
+uuid: 4bbb867b-e30a-46eb-bb02-af383e3e55bb
+langcode: en
+status: true
+dependencies:
+  module:
+    - media_entity
+    - node
+id: node.field_lt_manifesto
+field_name: field_lt_manifesto
+entity_type: node
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

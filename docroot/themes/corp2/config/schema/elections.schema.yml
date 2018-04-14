@@ -1,0 +1,5 @@
+# Schema for the configuration files of the Corporate+ theme.
+
+elections.settings:
+  type: theme_settings
+  label: 'Corporate+ settings'

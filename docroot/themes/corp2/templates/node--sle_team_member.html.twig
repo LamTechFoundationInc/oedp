@@ -1,0 +1,76 @@
+{% extends "node.html.twig" %}
+{#
+/**
+ * @file
+ * Corporate+'s theme implementation to display a Team member node.
+ */
+#}
+
+{% block content %}
+  {{ attach_library('elections/node-team-member') }}
+  <div class="row content">
+    {% if content.field_sle_member_photo|render %}
+      {{ attach_library('elections/magnific-popup-field-member-photo-init') }}
+      <div class="col-md-6">
+        <div class="photo-container">
+          {{ content.field_sle_member_photo }}
+          {% if content.field_sle_facebook_account|render or content.field_sle_twitter_account|render or content.field_sle_linkedin_account|render %}
+            <ul class="icons-list icons-list--bordered">
+              {% if content.field_sle_facebook_account|render %}
+                <li>
+                  <a target="_blank" href="{{ node.field_sle_facebook_account.value }}">
+                    <i class="fa fa-facebook"><span class="sr-only">facebook</span></i>
+                  </a>
+                </li>
+              {% endif %}
+              {% if content.field_sle_twitter_account|render %}
+                <li>
+                  <a target="_blank" href="{{ node.field_sle_twitter_account.value }}">
+                    <i class="fa fa-twitter"><span class="sr-only">twitter</span></i>
+                  </a>
+                </li>
+              {% endif %}
+              {% if content.field_sle_linkedin_account|render %}
+                <li>
+                  <a target="_blank" href="{{ node.field_sle_linkedin_account.value }}">
+                    <i class="fa fa-linkedin"><span class="sr-only">linkedin</span></i>
+                  </a>
+                </li>
+              {% endif %}
+            </ul>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+    <div class="{{ (content.field_sle_member_photo|render) ? 'col-md-6' : 'col-sm-12' }}">
+      {{ content.field_sle_subtitle }}
+      {{ content.body }}
+      {% if (not content.field_sle_member_photo|render) and (content.field_sle_facebook_account|render or content.field_sle_twitter_account|render or content.field_sle_linkedin_account|render) %}
+        <ul class="icons-list icons-list--bordered">
+          {% if content.field_sle_facebook_account|render %}
+            <li>
+              <a target="_blank" href="{{ node.field_sle_facebook_account.value }}">
+                <i class="fa fa-facebook"><span class="sr-only">facebook</span></i>
+              </a>
+            </li>
+          {% endif %}
+          {% if content.field_sle_twitter_account|render %}
+            <li>
+              <a target="_blank" href="{{ node.field_sle_twitter_account.value }}">
+                <i class="fa fa-twitter"><span class="sr-only">twitter</span></i>
+              </a>
+            </li>
+          {% endif %}
+          {% if content.field_sle_linkedin_account|render %}
+            <li>
+              <a target="_blank" href="{{ node.field_sle_linkedin_account.value }}">
+                <i class="fa fa-linkedin"><span class="sr-only">linkedin</span></i>
+              </a>
+            </li>
+          {% endif %}
+        </ul>
+      {% endif %}
+    </div>
+  </div>
+  {{ content|without('field_sle_member_photo','field_sle_subtitle','field_sle_facebook_account','field_sle_twitter_account','field_sle_linkedin_account','body') }}
+{% endblock %}

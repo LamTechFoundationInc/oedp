@@ -1,0 +1,34 @@
+/**
+ * @file
+ * Visual styles for OpenElections popular tags views.
+ */
+.view-op-popular-tags .views-row {
+  display: inline-block;
+  margin: 0 1px 1px 0;
+}
+.view-op-popular-tags .views-row a {
+  padding: 2px 8px;
+  display: block;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: #363636;
+  background-color: #dfdfdf;
+  text-decoration: none;
+}
+.view-op-popular-tags .views-row a:hover {
+  color: #ffffff;
+}
+.region--colored-background .view-op-popular-tags .views-row a,
+.region--dark-background .view-op-popular-tags .views-row a,
+.region--black-background .view-op-popular-tags .views-row a {
+  background-color: transparent;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ffffff;
+  color: #ffffff;
+}
+.region--colored-background .view-op-popular-tags .views-row a:hover,
+.region--dark-background .view-op-popular-tags .views-row a:hover,
+.region--black-background .view-op-popular-tags .views-row a:hover {
+  background-color: #ffffff;
+}

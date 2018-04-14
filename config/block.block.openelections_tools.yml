@@ -1,0 +1,31 @@
+uuid: 6ac75d80-b3f7-4b27-bde0-5e2a44858adc
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.tools
+  module:
+    - system
+  theme:
+    - openelections
+_core:
+  default_config_hash: AjOUzFqFCiDoW3H7mgivq5CzCgT9sACl-hsztBKo-cc
+id: openelections_tools
+theme: openelections
+region: sidebar_first
+weight: -29
+provider: null
+plugin: 'system_menu_block:tools'
+settings:
+  id: 'system_menu_block:tools'
+  label: Tools
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility:
+  request_path:
+    id: request_path
+    pages: "/user\r\n/get-involved\r\n/get-involved/*"
+    negate: false
+    context_mapping: {  }

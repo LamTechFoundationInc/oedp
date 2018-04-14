@@ -1,0 +1,23 @@
+uuid: 7ee19050-2301-479a-8a1f-eabdd55f2ca2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_population_that_can_vote
+    - taxonomy.vocabulary.lt_province
+id: taxonomy_term.lt_province.field_population_that_can_vote
+field_name: field_population_that_can_vote
+entity_type: taxonomy_term
+bundle: lt_province
+label: 'Population that can vote (TBD)'
+description: 'Please copy the data in this field to the other population field'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

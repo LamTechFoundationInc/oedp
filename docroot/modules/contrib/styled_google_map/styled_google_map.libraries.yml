@@ -1,0 +1,12 @@
+styled-google-map:
+  version: 1.0  
+  js:
+    //maps.google.com/maps/api/js: { type: external }
+    //cdn.rawgit.com/googlemaps/js-info-bubble/gh-pages/src/infobubble.js: { type: external }
+    js/styled-google-map.js: {}
+  css:
+    css/styled-google-map.css : {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings    

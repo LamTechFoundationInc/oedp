@@ -1,0 +1,19 @@
+uuid: cc4f7e9e-4df0-494f-9fcd-55189d9852ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_op_if_title
+    - paragraphs.paragraphs_type.op_icon_features
+id: paragraph.op_icon_features.field_op_if_title
+field_name: field_op_if_title
+entity_type: paragraph
+bundle: op_icon_features
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

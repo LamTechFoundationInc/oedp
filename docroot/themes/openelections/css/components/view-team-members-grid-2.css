@@ -1,0 +1,35 @@
+/**
+ * @file
+ * Visual styles for OpenElections team members grid 2 views.
+ */
+.view-team-members-grid-2 .views-row {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.view-team-members-grid-2 h4 {
+  margin-top: 0px;
+  margin-bottom: 15px;
+}
+.view-team-members-grid-2 .views-field-field-op-subtitle {
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+.view-team-members-grid-2 .views-field-field-op-member-photo {
+  margin-bottom: 30px;
+}
+@media (min-width: 1200px) {
+  .view-team-members-grid-2 .views-field-field-op-member-photo {
+    max-width: 240px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.view-team-members-grid-2 .views-field-field-op-member-photo img {
+  border-radius: 100%;
+}
+.region--light-typography .view-team-members-grid-2 .views-field-title a {
+  color: #ffffff;
+}
+.region--light-typography .view-team-members-grid-2 .views-field-title a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,57 @@
+uuid: ce7e68a2-bfb0-4c5e-9205-a1df6aa7794b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.op_highlight.field_op_highlight_body
+    - field.field.paragraph.op_highlight.field_op_highlight_image
+    - field.field.paragraph.op_highlight.field_op_highlight_link
+    - field.field.paragraph.op_highlight.field_op_highlight_title
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.op_highlight
+  module:
+    - image
+    - link
+    - text
+    - workbench_moderation
+id: paragraph.op_highlight.default
+targetEntityType: paragraph
+bundle: op_highlight
+mode: default
+content:
+  field_op_highlight_body:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_op_highlight_image:
+    type: image_image
+    weight: 0
+    settings:
+      preview_image_style: thumbnail
+      progress_indicator: throbber
+    region: content
+    third_party_settings: {  }
+  field_op_highlight_link:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_op_highlight_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

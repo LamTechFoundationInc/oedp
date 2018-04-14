@@ -1,0 +1,27 @@
+uuid: 4a1dd9ff-ec19-4117-9056-1c0bb0b6de60
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - workbench_moderation
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  workbench_moderation:
+    enabled: true
+    allowed_moderation_states:
+      - published
+      - approved_to_be_published
+      - archived
+      - draft
+      - needs_review
+    default_moderation_state: draft
+name: 'Electoral News Article'
+type: lt_article
+description: 'Use <em>Electoral News Article</em> to submit election-related news articles. These will usually come from official Sierra Leone and International Newspapers or maybe new articles contributed by media and student volunteers in the field'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

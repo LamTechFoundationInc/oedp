@@ -1,0 +1,129 @@
+/* Winget structure. */
+.ief-entity-table .inline-entity-form-widget-widget_preview {
+    width: 50%;
+    padding: 50px 20px;
+}
+
+.ief-entity-table .inline-entity-form-widget-widget_preview img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Widget buttons styles. */
+.ief-widget-table .button {
+    color: #fff;
+    min-width: 100px;
+    margin: .2em 1em .2em 0;
+}
+
+.ief-widget-table .button:first-child {
+    margin-right: 1em;
+}
+
+.ief-widget-table .button:last-child {
+    margin-right: 1em;
+}
+
+/* Used the bootstrap colors to styles buttons. */
+.button.form-submit[id*="ief-add-existing"] {
+    color: #fff;
+    background-color: #5bc0de;
+    border-color: #46b8da;
+}
+
+.button.form-submit[id*="ief-add-existing"]:hover,
+.button.form-submit[id*="ief-add-existing"]:focus {
+    color: #fff;
+    background-color: #31b0d5;
+    border-color: #269abc;
+}
+
+.button.form-submit[data-drupal-selector="edit-field-widgets-actions-ief-add"],
+.ief-form .button[id*="edit"],
+.ief-widget-table .button[id*="edit"] {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
+
+.button.form-submit[data-drupal-selector="edit-field-widgets-actions-ief-add"]:focus,
+.ief-form .button[id*="edit"]:focus,
+.ief-widget-table .button[id*="edit"]:focus,
+.button.form-submit[data-drupal-selector="edit-field-widgets-actions-ief-add"]:hover,
+.ief-form .button[id*="edit"]:hover,
+.ief-widget-table .button[id*="edit"]:hover {
+    color: #fff;
+    background-color: #286090;
+    border-color: #204d74;
+}
+
+.ief-widget-table .button[id*="cancel"],
+.ief-form .button[id*="cancel"],
+.ief-widget-table .button[id*="remove"] {
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d43f3a;
+}
+
+.ief-widget-table .button[id*="cancel"]:focus,
+.ief-form .button[id*="cancel"]:focus,
+.ief-widget-table .button[id*="remove"]:focus,
+.ief-widget-table .button[id*="cancel"]:hover,
+.ief-form .button[id*="cancel"]:hover,
+.ief-widget-table .button[id*="remove"]:hover {
+    color: #fff;
+    background-color: #c9302c;
+    border-color: #ac2925;
+}
+
+/* General theme buttons. */
+.button#edit-delete {
+    display: inline-block;
+    padding: 5px 1.5em;
+}
+
+.button.form-submit[id*="remove-button"],
+.button#edit-delete {
+    background-color: #d9534f;
+    border-color: #d43f3a;
+    color: #fff;
+}
+
+.button.form-submit[id*="remove-button"]:focus,
+.button#edit-delete:focus,
+.button.form-submit[id*="remove-button"]:hover,
+.button#edit-delete:hover {
+    color: #fff;
+    background-color: #c9302c;
+    border-color: #ac2925;
+}
+
+/* Fix widget buttons indents. */
+@media all and (max-width: 1023px) {
+    div[data-drupal-selector="edit-field-widgets-actions"] .form-select,
+    div[data-drupal-selector="edit-field-widgets-actions"] .button {
+        margin-bottom: 10px;
+    }
+
+    div[data-drupal-selector="edit-field-widgets-actions"] .button + .button {
+        margin-left: 0;
+    }
+}
+
+/* Change layout. */
+.layout-region-node-main {
+    width: 100%;
+    float: none;
+    padding-right: 0;
+}
+
+.layout-region-node-secondary {
+    float: none;
+    margin-top: 2em;
+    width: 100%;
+}
+
+.layout-region-node-secondary .form-type-textfield {
+    max-width: 50%;
+    min-width: 240px;
+}

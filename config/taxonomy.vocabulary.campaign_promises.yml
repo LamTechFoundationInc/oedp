@@ -1,0 +1,9 @@
+uuid: 7f9556f3-dfa7-4a93-9f35-ac4446abc84f
+langcode: en
+status: true
+dependencies: {  }
+name: 'Campaign Promises'
+vid: campaign_promises
+description: ''
+hierarchy: 1
+weight: 0

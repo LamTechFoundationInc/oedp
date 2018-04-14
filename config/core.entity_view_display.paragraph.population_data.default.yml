@@ -1,0 +1,152 @@
+uuid: eb2115f9-1abd-413f-aa75-fc0f4ff22041
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.population_data.field_election_year
+    - field.field.paragraph.population_data.field_female_population
+    - field.field.paragraph.population_data.field_male_population
+    - field.field.paragraph.population_data.field_registered_voters
+    - field.field.paragraph.population_data.field_total_population
+    - paragraphs.paragraphs_type.population_data
+  module:
+    - field_group
+    - options
+third_party_settings:
+  field_group:
+    group_first_column:
+      children:
+        - field_election_year
+        - field_total_population
+        - field_registered_voters
+      parent_name: group_row
+      weight: 2
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: col-md-6
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'First Column'
+      region: content
+    group_second_column:
+      children:
+        - field_female_population
+        - field_male_population
+      parent_name: group_row
+      weight: 3
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: col-md-6
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Second Column'
+      region: content
+    group_fi:
+      children: {  }
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: clearfix
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'First Clearfix'
+      region: content
+    group_second_clearfix:
+      children: {  }
+      parent_name: ''
+      weight: 4
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: clearfix
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Second Clearfix'
+      region: content
+    group_row:
+      children:
+        - group_first_column
+        - group_second_column
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: row
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Row
+      region: content
+id: paragraph.population_data.default
+targetEntityType: paragraph
+bundle: population_data
+mode: default
+content:
+  field_election_year:
+    weight: 5
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_female_population:
+    weight: 7
+    label: inline
+    settings:
+      thousand_separator: ','
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_male_population:
+    weight: 8
+    label: inline
+    settings:
+      thousand_separator: ','
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_registered_voters:
+    weight: 7
+    label: inline
+    settings:
+      thousand_separator: ','
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_total_population:
+    weight: 6
+    label: inline
+    settings:
+      thousand_separator: ','
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+hidden: {  }

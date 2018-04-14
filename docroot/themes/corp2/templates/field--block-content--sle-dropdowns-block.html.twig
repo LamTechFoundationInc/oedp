@@ -1,0 +1,47 @@
+{#
+/**
+ * @file
+ * Corporate+'s theme override for the block entity refernece field for the dropdowns powered custom block
+ *
+ * @see elections_preprocess_field__block_content__sle_tabs_block()
+ */
+#}
+{%
+  set classes = [
+    'field',
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+    'field--label-' ~ label_display,
+    'field--sle-dropdowns-block',
+    'clearfix',
+  ]
+%}
+{%
+  set title_classes = [
+    'field__label',
+    label_display == 'inline' ? 'inline',
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+  {% if not label_hidden %}
+    <h3{{ title_attributes.addClass(title_classes) }}>{{ label }}</h3>
+  {% endif %}
+    {% for item in items %}
+    <div class="btn-group" role="group">
+      <div class="dropdown">
+        <button class="dropdown-trigger" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {% if item.content['#paragraph'].get('field_sle_dropdown_trigger_icon').value %}
+            <i class="fa {{ item.content['#paragraph'].get('field_sle_dropdown_trigger_icon').value }}">
+              <span class="sr-only">
+                {{item.content['#paragraph'].get('field_sle_dropdown_trigger_icon').value}} dropdown trigger
+              </span>
+            </i>
+          {% endif %}
+        </button>
+        <div class="dropdown-menu dropdown-menu-right">
+          {{ item.content }}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+</div>

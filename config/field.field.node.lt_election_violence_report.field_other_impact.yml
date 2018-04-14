@@ -1,0 +1,19 @@
+uuid: 294f96d5-3bf7-404f-8a13-73e289137e2c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_other_impact
+    - node.type.lt_election_violence_report
+id: node.lt_election_violence_report.field_other_impact
+field_name: field_other_impact
+entity_type: node
+bundle: lt_election_violence_report
+label: 'Other Impact'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

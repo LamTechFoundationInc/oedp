@@ -1,0 +1,23 @@
+uuid: 5dc48201-5f59-4f8b-8389-9548129d2ce3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_report_type
+    - node.type.lt_election_violence_report
+  module:
+    - options
+id: node.lt_election_violence_report.field_report_type
+field_name: field_report_type
+entity_type: node
+bundle: lt_election_violence_report
+label: 'Report Type'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 'Field Report'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

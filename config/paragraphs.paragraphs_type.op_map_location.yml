@@ -1,0 +1,9 @@
+uuid: b3e68827-585c-4aaa-a2a2-23049e523719
+langcode: en
+status: true
+dependencies: {  }
+id: op_map_location
+label: 'Map Location'
+icon_uuid: null
+description: 'Use it to enter map locations'
+behavior_plugins: {  }

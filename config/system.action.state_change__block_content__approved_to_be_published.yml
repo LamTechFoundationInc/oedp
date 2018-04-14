@@ -1,0 +1,11 @@
+uuid: 48e01f57-0203-49d9-91e6-ccdc757b861a
+langcode: en
+status: true
+dependencies:
+  module:
+    - workbench_moderation_actions
+id: state_change__block_content__approved_to_be_published
+label: 'Set Custom block as Approved to be Published'
+type: block_content
+plugin: 'state_change:block_content__approved_to_be_published'
+configuration: {  }

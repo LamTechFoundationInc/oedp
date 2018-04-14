@@ -1,0 +1,14 @@
+uuid: b445435d-81a6-42e4-8a1e-46fd050aea9b
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.platform_manager
+  module:
+    - user
+id: user_remove_role_action.platform_manager
+label: 'Remove the Platform Manager role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: platform_manager

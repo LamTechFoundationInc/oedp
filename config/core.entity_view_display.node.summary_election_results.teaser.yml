@@ -1,0 +1,97 @@
+uuid: bc3df97b-2092-4341-9820-7daa67025ae5
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.summary_election_results.body
+    - field.field.node.summary_election_results.field_data_sources
+    - field.field.node.summary_election_results.field_lt_candidate
+    - field.field.node.summary_election_results.field_lt_chiefdom
+    - field.field.node.summary_election_results.field_lt_constituency
+    - field.field.node.summary_election_results.field_lt_district
+    - field.field.node.summary_election_results.field_lt_election_type
+    - field.field.node.summary_election_results.field_lt_election_year
+    - field.field.node.summary_election_results.field_lt_party
+    - field.field.node.summary_election_results.field_lt_region
+    - field.field.node.summary_election_results.field_lt_ward
+    - field.field.node.summary_election_results.field_meta_tags
+    - field.field.node.summary_election_results.field_number_of_votes_for_candid
+    - field.field.node.summary_election_results.field_percentage
+    - field.field.node.summary_election_results.field_polling_station
+    - field.field.node.summary_election_results.field_record_discrepency
+    - field.field.node.summary_election_results.field_result_status
+    - field.field.node.summary_election_results.field_total_number_of_ballots
+    - field.field.node.summary_election_results.field_total_number_of_invalid_ba
+    - field.field.node.summary_election_results.field_type_of_result
+    - field.field.node.summary_election_results.field_village
+    - field.field.node.summary_election_results.field_votes
+    - field.field.node.summary_election_results.field_winner_or_losser
+    - node.type.summary_election_results
+  module:
+    - panelizer
+    - text
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.summary_election_results.teaser
+targetEntityType: node
+bundle: summary_election_results
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  flag_email_node:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  flag_subscribe_node:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  workbench_moderation_control:
+    weight: -20
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  field_data_sources: true
+  field_lt_candidate: true
+  field_lt_chiefdom: true
+  field_lt_constituency: true
+  field_lt_district: true
+  field_lt_election_type: true
+  field_lt_election_year: true
+  field_lt_party: true
+  field_lt_region: true
+  field_lt_ward: true
+  field_meta_tags: true
+  field_number_of_votes_for_candid: true
+  field_percentage: true
+  field_polling_station: true
+  field_record_discrepency: true
+  field_result_status: true
+  field_total_number_of_ballots: true
+  field_total_number_of_invalid_ba: true
+  field_type_of_result: true
+  field_village: true
+  field_votes: true
+  field_winner_or_losser: true

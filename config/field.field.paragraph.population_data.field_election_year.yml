@@ -1,0 +1,21 @@
+uuid: 49f54f82-de9b-459b-8ba3-fad2b8cd9c10
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_election_year
+    - paragraphs.paragraphs_type.population_data
+  module:
+    - options
+id: paragraph.population_data.field_election_year
+field_name: field_election_year
+entity_type: paragraph
+bundle: population_data
+label: 'Election Year'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

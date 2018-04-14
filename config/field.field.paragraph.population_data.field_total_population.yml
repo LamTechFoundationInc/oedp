@@ -1,0 +1,23 @@
+uuid: f52dd795-d4a6-4cd9-8db5-c999f3c90d9d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_total_population
+    - paragraphs.paragraphs_type.population_data
+id: paragraph.population_data.field_total_population
+field_name: field_total_population
+entity_type: paragraph
+bundle: population_data
+label: 'Total Population'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

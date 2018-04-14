@@ -1,0 +1,23 @@
+uuid: f95ebf1f-cc37-444a-8df0-090c4886b7ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_total_number_of_ballots
+    - node.type.summary_election_results
+id: node.summary_election_results.field_total_number_of_ballots
+field_name: field_total_number_of_ballots
+entity_type: node
+bundle: summary_election_results
+label: 'Total Number of Valid Votes'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,14 @@
+uuid: 302d6626-a53c-4acd-978e-22d27d50cfcd
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.lt_cand_elected_officials
+  module:
+    - node
+id: node.lt_cand_elected_officials
+targetEntityType: node
+bundle: lt_cand_elected_officials
+types:
+  - ''
+fieldMappings: {  }

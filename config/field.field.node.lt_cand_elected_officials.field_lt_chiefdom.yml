@@ -1,0 +1,28 @@
+uuid: 19d173a8-ec1b-49b8-84b7-21625361eba2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lt_chiefdom
+    - node.type.lt_cand_elected_officials
+    - taxonomy.vocabulary.lt_chiefdom
+id: node.lt_cand_elected_officials.field_lt_chiefdom
+field_name: field_lt_chiefdom
+entity_type: node
+bundle: lt_cand_elected_officials
+label: Chiefdom
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      lt_chiefdom: lt_chiefdom
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

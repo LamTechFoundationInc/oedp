@@ -1,0 +1,10 @@
+/*main slider custom block caption*/
+.ms-transparent-background .region--dark-typography.tp-caption__title a {
+  color: #363636;
+}
+.ms-transparent-background .region--light-typography.tp-caption__title a {
+  text-decoration: none;
+}
+.ms-transparent-background .region--dark-typography.tp-caption__text {
+  color: #363636;
+}

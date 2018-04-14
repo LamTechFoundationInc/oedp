@@ -1,0 +1,25 @@
+uuid: 67ebcf16-bc09-48d7-89d4-c3a4e761cba4
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:c54d22a9-0750-4918-bfa4-f4652020147f'
+  module:
+    - block_content
+  theme:
+    - openelections
+id: calltoactionnewsandeventsheading
+theme: openelections
+region: hidden_blocks_collection
+weight: 0
+provider: null
+plugin: 'block_content:c54d22a9-0750-4918-bfa4-f4652020147f'
+settings:
+  id: 'block_content:c54d22a9-0750-4918-bfa4-f4652020147f'
+  label: 'Call to action - News and Events Heading'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -1,0 +1,24 @@
+uuid: 7060c5e2-e32d-464d-9be0-ad27d0b97dda
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date_incident_occurred
+    - node.type.lt_election_violence_report
+  module:
+    - datetime
+id: node.lt_election_violence_report.field_date_incident_occurred
+field_name: field_date_incident_occurred
+entity_type: node
+bundle: lt_election_violence_report
+label: 'Date Incident Occurred'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

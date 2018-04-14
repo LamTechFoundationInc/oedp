@@ -1,0 +1,21 @@
+uuid: 7fc565e9-0c39-4af7-ba5a-d71d028d3df2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_election_year
+    - paragraphs.paragraphs_type.former_members_of_parliament
+  module:
+    - options
+id: paragraph.former_members_of_parliament.field_election_year
+field_name: field_election_year
+entity_type: paragraph
+bundle: former_members_of_parliament
+label: 'Election Year'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

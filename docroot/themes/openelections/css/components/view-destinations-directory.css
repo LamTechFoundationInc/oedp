@@ -1,0 +1,54 @@
+/**
+ * @file
+ * Visual styles for OpenElections destinations directory views.
+ */
+.view-destinations-directory .view-content > h3 {
+  padding-bottom: 15px;
+  font-size: 30px;
+}
+.directory-item .views-field-field-image {
+  width: 70px;
+  height: 70px;
+  float: left;
+}
+.directory-item {
+  margin-bottom: 30px;
+}
+.directory-item .views-field-title {
+  font-size: 16px;
+  min-height: 70px;
+  background-color: #f6f6f6;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.directory-item .views-field-field-image ~ .views-field-title {
+  margin-left: 70px;
+}
+.directory-item .views-field-title a {
+  display: block;
+  padding: 21px 10px 21px 30px;
+}
+.directory-item .views-field-title a:hover {
+  text-decoration: none;
+  color: #ffffff;
+}
+@media (min-width: 992px) {
+  .view-destinations-directory {
+    margin-left: -15px;
+    margin-right: -15px;
+    font-size: 0;
+  }
+  .view-destinations-directory .view-content > h3 {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .directory-item {
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 50%;
+    display: inline-block;
+  }
+}

@@ -1,0 +1,23 @@
+uuid: 52349c85-8d25-4bf9-93c1-4d9152302307
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_record_discrepency
+    - node.type.summary_election_results
+id: node.summary_election_results.field_record_discrepency
+field_name: field_record_discrepency
+entity_type: node
+bundle: summary_election_results
+label: 'Record Discrepency'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

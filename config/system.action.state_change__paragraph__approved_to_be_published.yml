@@ -1,0 +1,11 @@
+uuid: cc7a78a6-761e-45b7-8d16-16e61ec573b4
+langcode: en
+status: true
+dependencies:
+  module:
+    - workbench_moderation_actions
+id: state_change__paragraph__approved_to_be_published
+label: 'Set Paragraph as Approved to be Published'
+type: paragraph
+plugin: 'state_change:paragraph__approved_to_be_published'
+configuration: {  }

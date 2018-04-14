@@ -1,0 +1,20 @@
+uuid: 1e6c5080-0d62-47ac-8923-f7a8d66613fe
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_op_showcase_tags
+field_name: field_op_showcase_tags
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

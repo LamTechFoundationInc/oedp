@@ -1,0 +1,9 @@
+uuid: 15a32d4a-cc06-468d-ace2-c9162685808d
+langcode: en
+status: true
+dependencies: {  }
+id: political_party_variables
+label: 'Political Party Variables'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,9 @@
+uuid: f00283ab-c0e7-477f-bc31-0a3fb337d296
+langcode: en
+status: true
+dependencies: {  }
+name: 'Political Parties'
+vid: lt_political_party
+description: 'Political Party'
+hierarchy: 0
+weight: 0

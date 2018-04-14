@@ -1,0 +1,28 @@
+/**
+ * @file
+ * Visual styles for OpenElections products grid views.
+ */
+.view-products-grid .views-row {
+  margin: 15px 0;
+}
+.view-products-grid .views-field-field-image {
+  margin-bottom: 20px;
+}
+.headings-wide-spacing-enabled .view-products-grid .views-field-title h5 {
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+.view-products-grid .views-field-title h5 a:hover {
+  text-decoration: none;
+}
+.region--light-typography .view-products-grid .views-field-title h5 a {
+  color: #ffffff;
+}
+.region--light-typography .view-products-grid .views-field-title h5 a:hover {
+  color: #ffffff;
+}
+.view-products-grid .views-field-field-op-price {
+  font-size: 18px;
+  margin: 0px 0 10px 0;
+  font-weight: 700;
+}

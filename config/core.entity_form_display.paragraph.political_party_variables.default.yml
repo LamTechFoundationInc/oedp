@@ -1,0 +1,87 @@
+uuid: 14d106ba-f626-4058-829d-72f72b09d889
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.political_party_variables.field_election_year
+    - field.field.paragraph.political_party_variables.field_ideology
+    - field.field.paragraph.political_party_variables.field_party_chairperson
+    - field.field.paragraph.political_party_variables.field_party_leader
+    - field.field.paragraph.political_party_variables.field_party_secretary_general
+    - field.field.paragraph.political_party_variables.field_political_position
+    - field.field.paragraph.political_party_variables.field_slogan
+    - field.field.paragraph.political_party_variables.field_spokesperson
+    - paragraphs.paragraphs_type.political_party_variables
+  module:
+    - workbench_moderation
+id: paragraph.political_party_variables.default
+targetEntityType: paragraph
+bundle: political_party_variables
+mode: default
+content:
+  field_election_year:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_ideology:
+    weight: 7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_party_chairperson:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_party_leader:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_party_secretary_general:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_political_position:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_slogan:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_spokesperson:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

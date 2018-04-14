@@ -1,0 +1,23 @@
+uuid: 01c3b128-d135-406b-981f-aa6b51940245
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.op_background_video_block
+    - field.storage.block_content.field_op_bv_layout_mode
+  module:
+    - options
+id: block_content.op_background_video_block.field_op_bv_layout_mode
+field_name: field_op_bv_layout_mode
+entity_type: block_content
+bundle: op_background_video_block
+label: 'Inner Blocks Layout'
+description: 'From the drop-down menu, select the layout mode you prefer.'
+required: true
+translatable: false
+default_value:
+  -
+    value: container
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,21 @@
+uuid: 4e00fe81-bb36-4e41-8c21-21d33df777d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_document_type
+    - media_entity.bundle.document
+  module:
+    - options
+id: media.document.field_document_type
+field_name: field_document_type
+entity_type: media
+bundle: document
+label: 'Document Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

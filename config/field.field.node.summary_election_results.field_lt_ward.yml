@@ -1,0 +1,25 @@
+uuid: 01505471-3499-40b7-876b-1f52440e650d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lt_ward
+    - node.type.summary_election_results
+id: node.summary_election_results.field_lt_ward
+field_name: field_lt_ward
+entity_type: node
+bundle: summary_election_results
+label: Ward
+description: 'Choose the name of the Ward. This is required when entering results for local council elections only'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: editor_taxonomy_entity_reference_fields
+      display_name: wards_entity_reference
+      arguments: {  }
+field_type: entity_reference

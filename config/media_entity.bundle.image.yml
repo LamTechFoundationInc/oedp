@@ -1,0 +1,18 @@
+uuid: 406c5987-e176-4808-920b-77ad97b25738
+langcode: und
+status: true
+dependencies:
+  module:
+    - media_entity_image
+_core:
+  default_config_hash: '-L1iQMNQszdvp0XZx3HA7uzKBmU7ccdXh3kHCKtVFQs'
+id: image
+label: Image
+description: 'Locally hosted images.'
+type: image
+queue_thumbnail_downloads: false
+new_revision: false
+type_configuration:
+  source_field: image
+  gather_exif: false
+field_map: {  }

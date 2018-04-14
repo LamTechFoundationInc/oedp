@@ -1,0 +1,28 @@
+uuid: 72a95972-bafd-47f6-b78e-2f17d5a25266
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_election_type
+    - paragraphs.paragraphs_type.election_year_details
+    - taxonomy.vocabulary.lt_election_type
+id: paragraph.election_year_details.field_election_type
+field_name: field_election_type
+entity_type: paragraph
+bundle: election_year_details
+label: 'Election Type'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      lt_election_type: lt_election_type
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

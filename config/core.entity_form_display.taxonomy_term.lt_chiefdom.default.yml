@@ -1,0 +1,148 @@
+uuid: 00d5f01d-93bb-4885-a144-5b16f1285222
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_browser
+    - field.field.taxonomy_term.lt_chiefdom.field_census_population_data
+    - field.field.taxonomy_term.lt_chiefdom.field_chief
+    - field.field.taxonomy_term.lt_chiefdom.field_data_
+    - field.field.taxonomy_term.lt_chiefdom.field_female_population
+    - field.field.taxonomy_term.lt_chiefdom.field_geo
+    - field.field.taxonomy_term.lt_chiefdom.field_headquarter_town
+    - field.field.taxonomy_term.lt_chiefdom.field_lt_district
+    - field.field.taxonomy_term.lt_chiefdom.field_lt_geolocation
+    - field.field.taxonomy_term.lt_chiefdom.field_lt_header_image
+    - field.field.taxonomy_term.lt_chiefdom.field_male_population
+    - field.field.taxonomy_term.lt_chiefdom.field_nec_population_data
+    - field.field.taxonomy_term.lt_chiefdom.field_population
+    - field.field.taxonomy_term.lt_chiefdom.field_population_that_can_vote
+    - field.field.taxonomy_term.lt_chiefdom.field_registered_voters
+    - taxonomy.vocabulary.lt_chiefdom
+  module:
+    - inline_entity_form
+    - paragraphs
+    - path
+    - text
+id: taxonomy_term.lt_chiefdom.default
+targetEntityType: taxonomy_term
+bundle: lt_chiefdom
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      placeholder: ''
+      rows: 5
+    third_party_settings: {  }
+  field_census_population_data:
+    weight: 8
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    type: entity_reference_paragraphs
+    region: content
+  field_chief:
+    weight: 3
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete_tags
+    region: content
+  field_data_:
+    weight: 9
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_geo:
+    weight: 6
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    type: entity_reference_paragraphs
+    region: content
+  field_headquarter_town:
+    weight: 4
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+    third_party_settings: {  }
+    type: inline_entity_form_complex
+    region: content
+  field_lt_district:
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: 'Enter the name of the district'
+    third_party_settings: {  }
+    type: entity_reference_autocomplete_tags
+    region: content
+  field_lt_header_image:
+    weight: 5
+    settings:
+      form_mode: media_browser
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+    third_party_settings: {  }
+    type: inline_entity_form_complex
+    region: content
+  field_nec_population_data:
+    weight: 7
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    type: entity_reference_paragraphs
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_female_population: true
+  field_lt_geolocation: true
+  field_male_population: true
+  field_population: true
+  field_population_that_can_vote: true
+  field_registered_voters: true

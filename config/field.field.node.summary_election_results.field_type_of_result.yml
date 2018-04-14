@@ -1,0 +1,23 @@
+uuid: d2b0d280-b01b-4c93-b264-d44770ee53d2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_type_of_result
+    - node.type.summary_election_results
+  module:
+    - options
+id: node.summary_election_results.field_type_of_result
+field_name: field_type_of_result
+entity_type: node
+bundle: summary_election_results
+label: 'Result Granularity'
+description: 'Choose the result Granularity. If you choose polling station, make sure you enter the name of the polling station. If you choose ward results, make sure you choose the ward, if you choose district results, make sure you choose the district. For national presidential results, choose nation results without choosing any other boundary delimitation'
+required: true
+translatable: false
+default_value:
+  -
+    value: 'Polling Station'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

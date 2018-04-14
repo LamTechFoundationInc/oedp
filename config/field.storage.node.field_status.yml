@@ -1,0 +1,33 @@
+uuid: 56f2deaf-e56d-4869-b560-5611f0896e07
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_status
+field_name: field_status
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Kept
+      label: Kept
+    -
+      value: 'In the works'
+      label: 'In the works'
+    -
+      value: Stalled
+      label: Stalled
+    -
+      value: 'Not Started'
+      label: 'Not Started'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

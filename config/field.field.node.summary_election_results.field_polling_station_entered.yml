@@ -1,0 +1,23 @@
+uuid: 43e2fb5d-cf8e-4ad4-827d-779aca1d5c6f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_polling_station_entered
+    - node.type.summary_election_results
+id: node.summary_election_results.field_polling_station_entered
+field_name: field_polling_station_entered
+entity_type: node
+bundle: summary_election_results
+label: 'Number of polling station results entered'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

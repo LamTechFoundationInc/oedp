@@ -1,0 +1,152 @@
+uuid: 939c5aba-2ffb-46c7-8bdf-b9b1f4fb9724
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.election_year_census.field_election_year
+    - field.field.paragraph.election_year_census.field_female_population
+    - field.field.paragraph.election_year_census.field_male_population
+    - field.field.paragraph.election_year_census.field_registered_voters
+    - field.field.paragraph.election_year_census.field_total_population
+    - paragraphs.paragraphs_type.election_year_census
+  module:
+    - field_group
+    - options
+third_party_settings:
+  field_group:
+    group_first:
+      children:
+        - field_election_year
+        - field_female_population
+        - field_male_population
+      parent_name: group_row
+      weight: 2
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: col-md-6
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'First Column'
+      region: content
+    group_se:
+      children:
+        - field_registered_voters
+        - field_total_population
+      parent_name: group_row
+      weight: 3
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: col-md-6
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Second Column'
+      region: content
+    group_clear_all:
+      children: {  }
+      parent_name: ''
+      weight: 4
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: clearfix
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'clear all'
+      region: content
+    group_first_clearfi:
+      children: {  }
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: clearfix
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'First Clearfix'
+      region: content
+    group_row:
+      children:
+        - group_first
+        - group_se
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: row
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Row
+      region: content
+id: paragraph.election_year_census.default
+targetEntityType: paragraph
+bundle: election_year_census
+mode: default
+content:
+  field_election_year:
+    weight: 3
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_female_population:
+    weight: 5
+    label: inline
+    settings:
+      thousand_separator: ','
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_male_population:
+    weight: 6
+    label: inline
+    settings:
+      thousand_separator: ','
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_registered_voters:
+    weight: 2
+    label: inline
+    settings:
+      thousand_separator: ','
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_total_population:
+    weight: 3
+    label: inline
+    settings:
+      thousand_separator: ','
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+hidden: {  }

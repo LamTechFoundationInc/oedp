@@ -1,0 +1,21 @@
+uuid: aa28a885-2b0a-4345-b90f-c4133c6acf3e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_op_slideshow_text
+    - node.type.op_showcase
+  module:
+    - text
+id: node.op_showcase.field_op_slideshow_text
+field_name: field_op_slideshow_text
+entity_type: node
+bundle: op_showcase
+label: 'Slideshow text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

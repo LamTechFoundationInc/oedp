@@ -1,0 +1,42 @@
+/**
+ * @file
+ * Visual styles for OpenElections team member content type.
+ */
+.page-node-type-op-team-member h1.page-title {
+  margin-bottom: 10px;
+}
+.photo-container {
+  position: relative;
+  margin: 0 0 20px 0;
+}
+.node--type-op-team-member .field--name-field-op-subtitle {
+  font-size: 15px;
+  font-style: italic;
+}
+.region--dark-typography .node--type-op-team-member .field--name-field-op-subtitle {
+  color: #a8a8a8;
+}
+
+/*lists*/
+.node--type-op-team-member .list-unstyled li {
+  margin-bottom: 5px;
+}
+
+/*teaser view mode*/
+.node--type-op-service .node--type-op-team-member.node--view-mode-teaser {
+  padding-bottom: 20px;
+  margin-bottom: 0;
+}
+.node--type-op-team-member.node--view-mode-teaser .photo-container {
+  width: 100px;
+  height: 70px;
+  padding-right: 30px;
+  float: left;
+}
+.node--type-op-team-member.node--view-mode-teaser .photo-container ~ .node__title,
+.node--type-op-team-member.node--view-mode-teaser .photo-container ~ .field--name-field-op-subtitle {
+  margin-left: 100px;
+}
+.node--type-op-team-member.node--view-mode-teaser .node__header ~ div {
+  clear: both;
+}

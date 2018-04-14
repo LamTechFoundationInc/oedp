@@ -1,0 +1,23 @@
+uuid: 6f666f9b-5d4d-47f2-b770-e233f5050931
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_percentage_voter_turnout
+    - node.type.summary_election_results
+id: node.summary_election_results.field_percentage_voter_turnout
+field_name: field_percentage_voter_turnout
+entity_type: node
+bundle: summary_election_results
+label: 'Percentage voter turnout'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

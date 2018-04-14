@@ -1,0 +1,23 @@
+uuid: 7e7c29c8-fa35-4b2e-adcc-11430363b17e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_population_that_can_vote
+    - taxonomy.vocabulary.lt_district
+id: taxonomy_term.lt_district.field_population_that_can_vote
+field_name: field_population_that_can_vote
+entity_type: taxonomy_term
+bundle: lt_district
+label: 'Population that can vote (TBD)'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

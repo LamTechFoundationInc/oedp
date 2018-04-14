@@ -1,0 +1,9 @@
+uuid: 0ea30161-c909-490b-ac03-857128abbf65
+langcode: en
+status: true
+dependencies: {  }
+name: 'Victim Types'
+vid: victim_types
+description: ''
+hierarchy: 0
+weight: 0

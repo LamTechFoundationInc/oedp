@@ -1,0 +1,85 @@
+uuid: eb959d0c-dc15-4524-9407-32de833c99ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_geo
+    - paragraphs.paragraphs_type.geographic_data
+    - taxonomy.vocabulary.lt_constituency
+  module:
+    - entity_reference_revisions
+id: taxonomy_term.lt_constituency.field_geo
+field_name: field_geo
+entity_type: taxonomy_term
+bundle: lt_constituency
+label: 'Geographic Data'
+description: 'Enter geolocation data to help us display results using an interactive map '
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      geographic_data: geographic_data
+    target_bundles_drag_drop:
+      election_year:
+        weight: 17
+        enabled: false
+      election_year_census:
+        weight: 18
+        enabled: false
+      election_year_details:
+        weight: 19
+        enabled: false
+      geographic_data:
+        enabled: true
+        weight: 20
+      op_collapse:
+        weight: 21
+        enabled: false
+      op_fancy_linked_image:
+        weight: 22
+        enabled: false
+      op_fancy_tab:
+        weight: 23
+        enabled: false
+      former_mayors_district_chairpers:
+        weight: 23
+        enabled: false
+      former_members_of_parliament:
+        weight: 24
+        enabled: false
+      op_featured_linked_text_tile:
+        weight: 24
+        enabled: false
+      former_presidents:
+        weight: 25
+        enabled: false
+      op_highlight:
+        weight: 25
+        enabled: false
+      op_icon_features:
+        weight: 26
+        enabled: false
+      op_map_location:
+        weight: 27
+        enabled: false
+      op_media_tab:
+        weight: 28
+        enabled: false
+      op_tab:
+        weight: 29
+        enabled: false
+      political_party:
+        weight: 30
+        enabled: false
+      political_party_variables:
+        weight: 31
+        enabled: false
+      population_data:
+        weight: 32
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,28 @@
+uuid: 20f422b7-dde0-435f-8e2b-60fe15622119
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - workbench_moderation
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  workbench_moderation:
+    enabled: true
+    allowed_moderation_states:
+      - published
+      - approved_to_be_published
+      - archived
+      - draft
+      - needs_review
+    default_moderation_state: draft
+name: 'Election Results'
+type: summary_election_results
+description: 'Use this <em>Election Results</em> to enter presidential, member of parliament, mayor, district chairperson, local council and village headman election results by region, district, constituency, ward, and polling station.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

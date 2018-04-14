@@ -1,0 +1,7 @@
+uuid: f0ec7728-23d6-4eec-b645-d3640110f959
+langcode: en
+status: false
+dependencies: {  }
+formId: node_lt_regist_poll_center_form
+captchaType: default
+label: null

@@ -1,0 +1,9 @@
+uuid: 0c7fee56-86ab-492c-ae47-f286f1ae26e7
+langcode: en
+status: true
+dependencies: {  }
+name: 'Pre-Election Incident Type'
+vid: pre_election_incident_type
+description: ''
+hierarchy: 0
+weight: 0

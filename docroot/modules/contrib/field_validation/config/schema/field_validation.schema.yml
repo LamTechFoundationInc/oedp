@@ -1,0 +1,41 @@
+field_validation.field_validation_rule_set.*:
+  type: config_entity
+  label: 'field validation rule set'
+  mapping:
+    name:
+      type: string
+    label:
+      type: string
+      label: 'Label'
+    entity_type:
+      type: string
+      label: 'Entity type'
+    bundle:
+      type: string
+      label: 'Entity type'
+    field_validation_rules:
+      type: sequence
+      sequence:
+        type: mapping
+        mapping:
+          id:
+            type: string
+          title:
+            type: string
+            label: 'field validation title'
+          data:
+            type: field_validation.field_validation_rule.[%parent.id]
+          weight:
+            type: integer
+          uuid:
+            type: string
+          field_name:
+            type: string
+          column:
+            type: string
+          error_message:
+            type: string			
+field_validation.field_validation_rule.*:
+  type: mapping
+  label: 'Field validation rule'
+

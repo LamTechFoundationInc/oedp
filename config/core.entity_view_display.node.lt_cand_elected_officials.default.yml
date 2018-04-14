@@ -1,0 +1,347 @@
+uuid: d1f0ad1a-a500-490f-9d83-b21451d35725
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.lt_cand_elected_officials.body
+    - field.field.node.lt_cand_elected_officials.field_address
+    - field.field.node.lt_cand_elected_officials.field_candidate_gender
+    - field.field.node.lt_cand_elected_officials.field_current_political_party
+    - field.field.node.lt_cand_elected_officials.field_data_sources
+    - field.field.node.lt_cand_elected_officials.field_date_of_birth
+    - field.field.node.lt_cand_elected_officials.field_election_year
+    - field.field.node.lt_cand_elected_officials.field_election_year_details
+    - field.field.node.lt_cand_elected_officials.field_lt_candidate_status
+    - field.field.node.lt_cand_elected_officials.field_lt_chiefdom
+    - field.field.node.lt_cand_elected_officials.field_lt_constituency
+    - field.field.node.lt_cand_elected_officials.field_lt_district
+    - field.field.node.lt_cand_elected_officials.field_lt_election_type
+    - field.field.node.lt_cand_elected_officials.field_lt_email
+    - field.field.node.lt_cand_elected_officials.field_lt_first_name
+    - field.field.node.lt_cand_elected_officials.field_lt_level_of_education
+    - field.field.node.lt_cand_elected_officials.field_lt_manifesto
+    - field.field.node.lt_cand_elected_officials.field_lt_name_prefix
+    - field.field.node.lt_cand_elected_officials.field_lt_party
+    - field.field.node.lt_cand_elected_officials.field_lt_photo
+    - field.field.node.lt_cand_elected_officials.field_lt_previous_employer
+    - field.field.node.lt_cand_elected_officials.field_lt_profession
+    - field.field.node.lt_cand_elected_officials.field_lt_surname
+    - field.field.node.lt_cand_elected_officials.field_lt_ward
+    - field.field.node.lt_cand_elected_officials.field_lt_website
+    - field.field.node.lt_cand_elected_officials.field_lt_why_vote_for_me
+    - field.field.node.lt_cand_elected_officials.field_middle_given_names
+    - field.field.node.lt_cand_elected_officials.field_running_mate
+    - field.field.node.lt_cand_elected_officials.field_suffix
+    - field.field.node.lt_cand_elected_officials.field_tl_telephone
+    - field.field.node.lt_cand_elected_officials.field_village
+    - node.type.lt_cand_elected_officials
+  module:
+    - address
+    - datetime
+    - entity_reference_revisions
+    - field_group
+    - link
+    - options
+    - panelizer
+    - telephone
+    - text
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+  field_group:
+    group_candidate_details:
+      children:
+        - group_biographic_information
+        - field_running_mate
+        - group_contact_information
+        - group_education_and_professional
+        - group_election_year_details
+        - group_campaign_information
+      parent_name: ''
+      weight: 2
+      format_type: accordion
+      format_settings:
+        id: ''
+        classes: ''
+        effect: none
+      label: 'Candidate Details'
+      region: content
+    group_biographic_information:
+      children:
+        - field_lt_name_prefix
+        - field_lt_first_name
+        - field_middle_given_names
+        - field_lt_surname
+        - field_suffix
+        - field_candidate_gender
+        - field_date_of_birth
+      parent_name: group_candidate_details
+      weight: 7
+      format_type: accordion_item
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+      label: 'Biographic Information'
+      region: content
+    group_election_year_details:
+      children:
+        - field_election_year_details
+      parent_name: group_candidate_details
+      weight: 12
+      format_type: accordion_item
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+      label: 'Election Year Details'
+      region: content
+    group_education_and_professional:
+      children:
+        - field_lt_profession
+        - field_lt_previous_employer
+        - field_lt_level_of_education
+      parent_name: group_candidate_details
+      weight: 11
+      format_type: accordion_item
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+      label: 'Education and Professional Information'
+      region: content
+    group_contact_information:
+      children:
+        - field_address
+        - field_tl_telephone
+        - field_lt_email
+        - field_lt_website
+      parent_name: group_candidate_details
+      weight: 10
+      format_type: accordion_item
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+      label: 'Contact Information'
+      region: content
+    group_campaign_information:
+      children:
+        - body
+        - field_lt_why_vote_for_me
+        - field_lt_manifesto
+      parent_name: group_candidate_details
+      weight: 13
+      format_type: accordion_item
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+      label: 'Campaign Information'
+      region: content
+id: node.lt_cand_elected_officials.default
+targetEntityType: node
+bundle: lt_cand_elected_officials
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_address:
+    weight: 17
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: address_default
+    region: content
+  field_candidate_gender:
+    weight: 20
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_data_sources:
+    weight: 3
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_date_of_birth:
+    weight: 21
+    label: inline
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_election_year_details:
+    type: entity_reference_revisions_entity_view
+    weight: 10
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_lt_email:
+    weight: 19
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_lt_first_name:
+    weight: 16
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_lt_level_of_education:
+    weight: 21
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_lt_manifesto:
+    weight: 12
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_lt_name_prefix:
+    weight: 15
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_lt_photo:
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: thumbnail
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_lt_previous_employer:
+    weight: 20
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_lt_profession:
+    weight: 19
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_lt_surname:
+    weight: 18
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_lt_website:
+    weight: 20
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_lt_why_vote_for_me:
+    weight: 11
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_middle_given_names:
+    weight: 17
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_running_mate:
+    weight: 9
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_suffix:
+    weight: 19
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_tl_telephone:
+    weight: 18
+    label: above
+    settings:
+      title: ''
+    third_party_settings: {  }
+    type: telephone_link
+    region: content
+  flag_subscribe_node:
+    weight: 10
+    region: content
+  links:
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  workbench_moderation_control:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  field_current_political_party: true
+  field_election_year: true
+  field_lt_candidate_status: true
+  field_lt_chiefdom: true
+  field_lt_constituency: true
+  field_lt_district: true
+  field_lt_election_type: true
+  field_lt_party: true
+  field_lt_ward: true
+  field_village: true

@@ -1,0 +1,31 @@
+uuid: 5edb5658-4eab-421a-8e77-6d42f0f7cab5
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:8ae44b4e-b920-4d7d-947a-4ee4d630c740'
+  module:
+    - block_content
+    - system
+  theme:
+    - openelections
+id: pollingcentreheader
+theme: openelections
+region: content_top
+weight: -29
+provider: null
+plugin: 'block_content:8ae44b4e-b920-4d7d-947a-4ee4d630c740'
+settings:
+  id: 'block_content:8ae44b4e-b920-4d7d-947a-4ee4d630c740'
+  label: 'Polling Centre Header'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/resources/polling-centres/table\r\n/resources/polling-centres/cards"
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,23 @@
+uuid: 74aad0d5-0949-47a7-aa5d-fb0bd5c09d9f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_were_there_any_warning_sig
+    - node.type.lt_election_violence_report
+id: node.lt_election_violence_report.field_were_there_any_warning_sig
+field_name: field_were_there_any_warning_sig
+entity_type: node
+bundle: lt_election_violence_report
+label: 'Were there any warning signs or events that may have led to the incident'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

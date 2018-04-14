@@ -1,0 +1,36 @@
+uuid: a3276edf-8e4f-438d-8eed-067bbd6daa63
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_lt_address
+    - taxonomy.vocabulary.lt_political_party
+  module:
+    - address
+id: taxonomy_term.lt_political_party.field_lt_address
+field_name: field_lt_address
+entity_type: taxonomy_term
+bundle: lt_political_party
+label: Address
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_countries:
+    SL: SL
+  fields:
+    administrativeArea: administrativeArea
+    locality: locality
+    dependentLocality: dependentLocality
+    postalCode: postalCode
+    addressLine1: addressLine1
+    addressLine2: addressLine2
+    sortingCode: '0'
+    organization: '0'
+    givenName: '0'
+    additionalName: '0'
+    familyName: '0'
+  langcode_override: ''
+field_type: address

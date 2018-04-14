@@ -1,0 +1,24 @@
+uuid: 9d4ce45f-b186-4dad-b98e-9fd317a3dfe6
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.op_fancy_linked_images_block
+    - field.field.block_content.op_fancy_linked_images_block.field_op_fancy_linked_image
+  module:
+    - entity_reference_revisions
+id: block_content.op_fancy_linked_images_block.default
+targetEntityType: block_content
+bundle: op_fancy_linked_images_block
+mode: default
+content:
+  field_op_fancy_linked_image:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden: {  }

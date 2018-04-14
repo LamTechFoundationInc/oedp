@@ -1,0 +1,14 @@
+uuid: 6fb43409-4ad2-4844-b3ce-67703c864014
+langcode: en
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - taxonomy
+third_party_settings:
+  lightning_core:
+    description: ''
+id: taxonomy_term.cam
+label: 'Campaign Promise'
+targetEntityType: taxonomy_term
+cache: true

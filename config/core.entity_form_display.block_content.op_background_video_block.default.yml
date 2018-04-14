@@ -1,0 +1,82 @@
+uuid: b7abc54b-f249-430d-9621-a4747ff31295
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.op_background_video_block
+    - field.field.block_content.op_background_video_block.field_op_block_reference
+    - field.field.block_content.op_background_video_block.field_op_bv_layout_mode
+    - field.field.block_content.op_background_video_block.field_op_bv_overlay_color
+    - field.field.block_content.op_background_video_block.field_op_bv_overlay_opacity
+    - field.field.block_content.op_background_video_block.field_op_bv_poster
+    - field.field.block_content.op_background_video_block.field_op_bv_video_mp4
+    - field.field.block_content.op_background_video_block.field_op_bv_video_webm
+    - image.style.thumbnail
+  module:
+    - file
+    - image
+    - workbench_moderation
+id: block_content.op_background_video_block.default
+targetEntityType: block_content
+bundle: op_background_video_block
+mode: default
+content:
+  field_op_block_reference:
+    weight: 7
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_op_bv_layout_mode:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_op_bv_overlay_color:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_op_bv_overlay_opacity:
+    weight: 5
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_op_bv_poster:
+    type: image_image
+    weight: 3
+    settings:
+      preview_image_style: thumbnail
+      progress_indicator: throbber
+    region: content
+    third_party_settings: {  }
+  field_op_bv_video_mp4:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_op_bv_video_webm:
+    weight: 2
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

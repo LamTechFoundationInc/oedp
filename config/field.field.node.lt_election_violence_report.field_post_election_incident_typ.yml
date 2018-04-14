@@ -1,0 +1,28 @@
+uuid: 8b73630e-beb3-417d-bea4-8d2b2b4cbbcb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_post_election_incident_typ
+    - node.type.lt_election_violence_report
+    - taxonomy.vocabulary.post_election_incident_type
+id: node.lt_election_violence_report.field_post_election_incident_typ
+field_name: field_post_election_incident_typ
+entity_type: node
+bundle: lt_election_violence_report
+label: 'Incident Type'
+description: 'Post-Election '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      post_election_incident_type: post_election_incident_type
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

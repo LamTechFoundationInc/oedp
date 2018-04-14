@@ -1,0 +1,9 @@
+uuid: 6e546bf0-bac6-4619-aa29-708c4d8523ef
+langcode: en
+status: true
+dependencies: {  }
+id: op_media_tab
+label: 'Media Tab'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

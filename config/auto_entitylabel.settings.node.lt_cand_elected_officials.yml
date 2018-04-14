@@ -1,0 +1,7 @@
+status: '1'
+pattern: '[node:field_lt_name_prefix]  [node:field_lt_first_name]  [node:field_middle_given_names]  [node:field_lt_surname] [node:field_suffix] - [node:field_election_year_details:0:entity:field_political_party:entity:field_lt_acronym] - [node:field_election_year_details:0:entity:field_election_year] - [node:field_election_year_details:0:entity:field_election_type]'
+php: 0
+dependencies:
+  config:
+    - node.type.lt_cand_elected_officials
+escape: 0

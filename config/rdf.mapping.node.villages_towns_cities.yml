@@ -1,0 +1,14 @@
+uuid: 1041a5a7-817c-4ee4-9699-5ba093948b93
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.villages_towns_cities
+  module:
+    - node
+id: node.villages_towns_cities
+targetEntityType: node
+bundle: villages_towns_cities
+types:
+  - 'schema:City'
+fieldMappings: {  }

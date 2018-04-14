@@ -1,0 +1,28 @@
+uuid: 23b2bbe0-16c6-4cc4-bbc2-ad6410cea601
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_point_on_the_map
+    - paragraphs.paragraphs_type.geographic_data
+  module:
+    - geolocation
+id: paragraph.geographic_data.field_point_on_the_map
+field_name: field_point_on_the_map
+entity_type: paragraph
+bundle: geographic_data
+label: 'Point on the map'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    lat: '8.589767'
+    lng: '-11.906745'
+    lat_sin: null
+    lat_cos: null
+    lng_rad: null
+    data: null
+default_value_callback: ''
+settings: {  }
+field_type: geolocation

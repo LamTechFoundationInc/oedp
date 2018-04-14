@@ -1,0 +1,30 @@
+uuid: bdaa8a67-bb7f-4ea8-b169-3fb34b9fbc34
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lt_geolocation
+    - node.type.lt_regist_poll_center
+  module:
+    - geolocation
+id: node.lt_regist_poll_center.field_lt_geolocation
+field_name: field_lt_geolocation
+entity_type: node
+bundle: lt_regist_poll_center
+label: Geolocation
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    controls:
+      location: 'Sierra Leone'
+    lat: '8.460555'
+    lng: '-11.779889000000026'
+    lat_sin: null
+    lat_cos: null
+    lng_rad: null
+    data: null
+default_value_callback: ''
+settings: {  }
+field_type: geolocation

@@ -1,0 +1,19 @@
+uuid: 3a72fefd-ecb1-4f15-8eec-bc4733f8418c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_op_collapse_title
+    - paragraphs.paragraphs_type.op_collapse
+id: paragraph.op_collapse.field_op_collapse_title
+field_name: field_op_collapse_title
+entity_type: paragraph
+bundle: op_collapse
+label: 'Collapse Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

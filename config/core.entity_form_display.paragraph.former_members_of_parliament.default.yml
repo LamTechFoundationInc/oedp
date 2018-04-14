@@ -1,0 +1,31 @@
+uuid: 8967e9cd-0c68-421d-a5ac-818051b5ad98
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.former_members_of_parliament.field_elected_candidate
+    - field.field.paragraph.former_members_of_parliament.field_election_year
+    - paragraphs.paragraphs_type.former_members_of_parliament
+  module:
+    - workbench_moderation
+id: paragraph.former_members_of_parliament.default
+targetEntityType: paragraph
+bundle: former_members_of_parliament
+mode: default
+content:
+  field_elected_candidate:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_election_year:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

@@ -1,0 +1,26 @@
+uuid: b6a4a314-7509-4ef6-a70a-310a9cb6847a
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - workbench_moderation
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  workbench_moderation:
+    enabled: true
+    allowed_moderation_states:
+      - published
+      - archived
+      - draft
+      - needs_review
+    default_moderation_state: draft
+name: 'Election Violence Report'
+type: lt_election_violence_report
+description: 'Election Violence Report'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

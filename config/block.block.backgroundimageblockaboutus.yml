@@ -1,0 +1,31 @@
+uuid: a745eefe-639c-43df-b89a-9ce039cc2604
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:op_background_image_block:7fc547c3-cd44-433a-9c91-57923f0454a5'
+  module:
+    - block_content
+    - system
+  theme:
+    - openelections
+id: backgroundimageblockaboutus
+theme: openelections
+region: banner
+weight: -31
+provider: null
+plugin: 'block_content:7fc547c3-cd44-433a-9c91-57923f0454a5'
+settings:
+  id: 'block_content:7fc547c3-cd44-433a-9c91-57923f0454a5'
+  label: 'Background image block - About us'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/about-us\r\n/about-us/\r\nabout-us\r\nabout-us/\r\n/node/706"
+    negate: false
+    context_mapping: {  }

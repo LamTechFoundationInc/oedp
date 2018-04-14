@@ -1,0 +1,25 @@
+uuid: 209f2967-87ae-4fc0-bacb-d9e35a23151e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lt_chiefdom
+    - node.type.summary_election_results
+id: node.summary_election_results.field_lt_chiefdom
+field_name: field_lt_chiefdom
+entity_type: node
+bundle: summary_election_results
+label: Chiefdom
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: editor_taxonomy_entity_reference_fields
+      display_name: chiefdoms_entity_reference
+      arguments: {  }
+field_type: entity_reference

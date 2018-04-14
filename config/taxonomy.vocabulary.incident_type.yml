@@ -1,0 +1,9 @@
+uuid: bd076127-a3b0-46f2-a62c-c19fc68a2e72
+langcode: en
+status: true
+dependencies: {  }
+name: 'Incident Type'
+vid: incident_type
+description: ''
+hierarchy: 0
+weight: 0

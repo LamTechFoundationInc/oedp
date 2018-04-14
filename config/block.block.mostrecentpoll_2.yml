@@ -1,0 +1,26 @@
+uuid: 6fc35313-6d66-490e-874c-c1c1e2455918
+langcode: en
+status: true
+dependencies:
+  module:
+    - poll
+    - system
+  theme:
+    - openelections
+id: mostrecentpoll_2
+theme: openelections
+region: sidebar_second
+weight: -26
+provider: null
+plugin: poll_recent_block
+settings:
+  id: poll_recent_block
+  label: 'Most recent poll'
+  provider: poll
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: /news-and-events
+    negate: false
+    context_mapping: {  }

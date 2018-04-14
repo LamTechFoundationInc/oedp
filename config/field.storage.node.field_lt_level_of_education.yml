@@ -1,0 +1,51 @@
+uuid: e68f5585-9c23-424c-9fb6-9dda585d29f4
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_lt_level_of_education
+field_name: field_lt_level_of_education
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: NPSE
+      label: NPSE
+    -
+      value: BECE
+      label: BECE
+    -
+      value: WASSCE
+      label: WASSCE
+    -
+      value: 'Post Secondary Certificate'
+      label: 'Post Secondary Certificate'
+    -
+      value: 'Post Secondary Diploma'
+      label: 'Post Secondary Diploma'
+    -
+      value: 'Bachelors Degree'
+      label: 'Bachelors Degree'
+    -
+      value: 'Postgraduate Certificate'
+      label: 'Postgraduate Certificate'
+    -
+      value: 'Postgraduate Diploma'
+      label: 'Postgraduate Diploma'
+    -
+      value: 'Masters Degree'
+      label: 'Masters Degree'
+    -
+      value: 'Doctorate Degree'
+      label: 'Doctorate Degree'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

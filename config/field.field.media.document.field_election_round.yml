@@ -1,0 +1,21 @@
+uuid: f46990a3-533b-4ea1-a027-98c828d42063
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_election_round
+    - media_entity.bundle.document
+  module:
+    - options
+id: media.document.field_election_round
+field_name: field_election_round
+entity_type: media
+bundle: document
+label: 'Election Round'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

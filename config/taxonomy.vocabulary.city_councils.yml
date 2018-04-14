@@ -1,0 +1,9 @@
+uuid: 5899e341-f77a-4e40-81a9-072abb715f24
+langcode: en
+status: true
+dependencies: {  }
+name: 'City Councils'
+vid: city_councils
+description: ''
+hierarchy: 0
+weight: 0

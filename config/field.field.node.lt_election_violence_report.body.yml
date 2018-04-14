@@ -1,0 +1,22 @@
+uuid: f504b696-063c-405d-a42a-fb2816e8c99c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.lt_election_violence_report
+  module:
+    - text
+id: node.lt_election_violence_report.body
+field_name: body
+entity_type: node
+bundle: lt_election_violence_report
+label: 'Explain what happened'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

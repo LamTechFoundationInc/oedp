@@ -1,0 +1,9 @@
+uuid: ec1d0e0a-2714-4db8-959b-442fdc327c52
+langcode: en
+status: true
+dependencies: {  }
+name: 'Election Day Incident Type'
+vid: election_day_incident_type
+description: ''
+hierarchy: 0
+weight: 0

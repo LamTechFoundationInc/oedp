@@ -1,0 +1,22 @@
+uuid: e5332c57-037f-454e-b323-6736b8254ce7
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.villages_towns_cities
+id: node.villages_towns_cities.promote
+field_name: promote
+entity_type: node
+bundle: villages_towns_cities
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

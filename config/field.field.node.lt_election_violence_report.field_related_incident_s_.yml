@@ -1,0 +1,27 @@
+uuid: 50596a21-bc07-4d63-8b0e-8f0c656b513f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_related_incident_s_
+    - node.type.lt_election_violence_report
+id: node.lt_election_violence_report.field_related_incident_s_
+field_name: field_related_incident_s_
+entity_type: node
+bundle: lt_election_violence_report
+label: 'Related Incident(s)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      lt_election_violence_report: lt_election_violence_report
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

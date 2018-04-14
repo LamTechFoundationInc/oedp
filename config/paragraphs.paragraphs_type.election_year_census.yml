@@ -1,0 +1,9 @@
+uuid: 22b83e6d-6134-4682-b25e-521078ef7683
+langcode: en
+status: true
+dependencies: {  }
+id: election_year_census
+label: 'NEC Population Data'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

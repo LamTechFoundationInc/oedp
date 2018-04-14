@@ -1,0 +1,9 @@
+uuid: d2416ea1-a6fa-4bcd-a07c-b9d928ffb527
+langcode: en
+status: true
+dependencies: {  }
+id: op_fancy_linked_image
+label: 'Fancy Linked Image'
+icon_uuid: null
+description: 'Fancy Linked Image'
+behavior_plugins: {  }

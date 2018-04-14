@@ -1,0 +1,31 @@
+uuid: 9dca5eea-ac46-4824-a9c8-51e14aa47abc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.former_members_of_parliament.field_elected_candidate
+    - field.field.paragraph.former_members_of_parliament.field_election_year
+    - paragraphs.paragraphs_type.former_members_of_parliament
+  module:
+    - options
+id: paragraph.former_members_of_parliament.default
+targetEntityType: paragraph
+bundle: former_members_of_parliament
+mode: default
+content:
+  field_elected_candidate:
+    weight: 1
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_election_year:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+hidden: {  }

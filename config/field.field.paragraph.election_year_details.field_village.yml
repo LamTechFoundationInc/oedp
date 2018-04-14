@@ -1,0 +1,28 @@
+uuid: cfc08ceb-902b-479e-810e-1e51bc22cb42
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_village
+    - node.type.villages_towns_cities
+    - paragraphs.paragraphs_type.election_year_details
+id: paragraph.election_year_details.field_village
+field_name: field_village
+entity_type: paragraph
+bundle: election_year_details
+label: Village
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      villages_towns_cities: villages_towns_cities
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,29 @@
+uuid: 4f739dd5-bdca-4580-b4ee-536b115efb76
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_elected_official
+    - taxonomy.vocabulary.campaign_promises
+  content:
+    - 'node:lt_cand_elected_officials:2f7f430f-e67a-45dd-ab1c-8dc5432ec6b4'
+id: taxonomy_term.campaign_promises.field_elected_official
+field_name: field_elected_official
+entity_type: taxonomy_term
+bundle: campaign_promises
+label: 'Elected Official'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    target_uuid: 2f7f430f-e67a-45dd-ab1c-8dc5432ec6b4
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: editor_node_entity_reference_fields
+      display_name: entity_reference_1
+      arguments: {  }
+field_type: entity_reference

@@ -1,0 +1,54 @@
+uuid: a32c8fa2-7c65-4e53-9f53-a26f01f56b08
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.campaign_promises.field_elected_official
+    - field.field.taxonomy_term.campaign_promises.field_score
+    - field.field.taxonomy_term.campaign_promises.field_status
+    - taxonomy.vocabulary.campaign_promises
+  module:
+    - options
+    - panelizer
+    - text
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: taxonomy_term.campaign_promises.default
+targetEntityType: taxonomy_term
+bundle: campaign_promises
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_elected_official:
+    weight: 0
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_score:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_status:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+hidden: {  }

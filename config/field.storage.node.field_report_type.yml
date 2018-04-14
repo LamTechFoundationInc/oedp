@@ -1,0 +1,30 @@
+uuid: e912e0bd-3967-4789-8396-a8f88afea8d0
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_report_type
+field_name: field_report_type
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'Field Report'
+      label: 'Field Report'
+    -
+      value: 'Media Report'
+      label: 'Media Report'
+    -
+      value: Both
+      label: Both
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

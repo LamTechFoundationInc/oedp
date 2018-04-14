@@ -1,0 +1,25 @@
+uuid: 8643fe61-9972-4590-8178-a1bc55028f0f
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:917d8efa-7d60-4d93-863a-ebd86cdb9cb7'
+  module:
+    - block_content
+  theme:
+    - openelections
+id: calltoactionresourcesheading_2
+theme: openelections
+region: hidden_blocks_collection
+weight: 0
+provider: null
+plugin: 'block_content:917d8efa-7d60-4d93-863a-ebd86cdb9cb7'
+settings:
+  id: 'block_content:917d8efa-7d60-4d93-863a-ebd86cdb9cb7'
+  label: 'Call to action - Resources Heading'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

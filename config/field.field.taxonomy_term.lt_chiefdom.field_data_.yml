@@ -1,0 +1,25 @@
+uuid: b5d68b9b-2642-4be0-a971-0be4e59471e5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_data_
+    - taxonomy.vocabulary.lt_chiefdom
+id: taxonomy_term.lt_chiefdom.field_data_
+field_name: field_data_
+entity_type: taxonomy_term
+bundle: lt_chiefdom
+label: 'Data Sources'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 'Population Data: Statistics Sierra Leone website - https://www.statistics.sl/wp-content/uploads/2017/01/final-results_-2015_population_and_housing_census.pdf'
+  -
+    value: 'Chiefdom Description: https://msu.edu/~bernsten/PCSLReunion67/Documents%20%28WP-Adobe%29/Chiefdoms%20of%20SL%281%29.pdf'
+  -
+    value: 'Photos: Google Search for photos with the name of the chiefdom'
+default_value_callback: ''
+settings: {  }
+field_type: string

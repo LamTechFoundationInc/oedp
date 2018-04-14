@@ -1,0 +1,31 @@
+uuid: 564e7ef2-239c-4ba9-bbdd-03e35d3a6d11
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:61f3ecd4-ed0c-4d7e-b221-ab5bd8243804'
+  module:
+    - block_content
+    - system
+  theme:
+    - openelections
+id: evmercalltoaction
+theme: openelections
+region: banner
+weight: -22
+provider: null
+plugin: 'block_content:61f3ecd4-ed0c-4d7e-b221-ab5bd8243804'
+settings:
+  id: 'block_content:61f3ecd4-ed0c-4d7e-b221-ab5bd8243804'
+  label: 'EVMER Call to Action'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

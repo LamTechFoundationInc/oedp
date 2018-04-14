@@ -1,0 +1,9 @@
+uuid: d0c24991-0d49-485c-b782-590f9faae62f
+langcode: en
+status: true
+dependencies: {  }
+name: 'Impact Types'
+vid: impact_types
+description: ''
+hierarchy: 0
+weight: 0

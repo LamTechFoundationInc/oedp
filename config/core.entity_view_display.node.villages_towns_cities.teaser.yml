@@ -1,0 +1,28 @@
+uuid: 3e4dd6dc-2c5a-4f87-93c2-928bf5ccc652
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.villages_towns_cities.body
+    - node.type.villages_towns_cities
+  module:
+    - text
+    - user
+id: node.villages_towns_cities.teaser
+targetEntityType: node
+bundle: villages_towns_cities
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden: {  }

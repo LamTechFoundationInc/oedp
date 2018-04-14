@@ -1,0 +1,19 @@
+uuid: 935430c6-ff96-4bf5-b5f4-f667e7541f34
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_official_email_a
+    - taxonomy.vocabulary.lt_political_party
+id: taxonomy_term.lt_political_party.field_official_email_a
+field_name: field_official_email_a
+entity_type: taxonomy_term
+bundle: lt_political_party
+label: 'Official Email Address'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

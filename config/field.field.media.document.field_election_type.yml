@@ -1,0 +1,28 @@
+uuid: 27ce235c-00f1-4356-ada5-0d7d99c8543c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_election_type
+    - media_entity.bundle.document
+    - taxonomy.vocabulary.lt_election_type
+id: media.document.field_election_type
+field_name: field_election_type
+entity_type: media
+bundle: document
+label: 'Election Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      lt_election_type: lt_election_type
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

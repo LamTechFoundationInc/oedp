@@ -1,0 +1,25 @@
+uuid: a83cb3d4-1df2-46ef-b2ff-1a35ef7fc7b6
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:140a3cd5-5b6f-44d2-960f-0913a66be5a5'
+  module:
+    - block_content
+  theme:
+    - openelections
+id: calltoactionresultsheading_2
+theme: openelections
+region: hidden_blocks_collection
+weight: 0
+provider: null
+plugin: 'block_content:140a3cd5-5b6f-44d2-960f-0913a66be5a5'
+settings:
+  id: 'block_content:140a3cd5-5b6f-44d2-960f-0913a66be5a5'
+  label: 'Call to action - Results Heading'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -1,0 +1,14 @@
+uuid: 4b1f465f-99ac-4dc9-b145-6c61b6e4b58c
+langcode: en
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - node
+third_party_settings:
+  lightning_core:
+    description: ''
+id: node.candidate_embedded_form
+label: 'Candidate Embedded Form'
+targetEntityType: node
+cache: true

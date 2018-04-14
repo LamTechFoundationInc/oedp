@@ -1,0 +1,95 @@
+/**
+ * @file
+ * Visual styles for Corporate+'s latest items views.
+ */
+.view-latest-items .views-row {
+  padding: 10px 0;
+  -webkit-transition: all linear 0.2s;
+  -moz-transition: all linear 0.2s;
+  -o-transition: all linear 0.2s;
+  -ms-transition: all linear 0.2s;
+  transition: all linear 0.2s;
+  clear: both;
+}
+.view-latest-items .views-row:hover {
+  color: #ffffff;
+}
+.view-latest-items .views-field-field-image {
+  width: 125px;
+  margin-right: 20px;
+  float: left;
+}
+.view-latest-items .views-field-field-image ~ .views-field-title,
+.view-latest-items .views-field-field-image ~ .views-field-field-sle-price,
+.view-latest-items .views-field-field-image ~ .views-field-body {
+  margin-left: 145px;
+}
+.view-latest-items .views-field-title a {
+  text-transform: uppercase;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+.headings-wide-spacing-enabled .view-latest-items .views-field-title a {
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+.view-latest-items .views-field-title a:hover {
+  text-decoration: none;
+}
+.view-latest-items .views-row:hover .views-field-title a,
+.view-latest-items .views-row:hover .views-field-field-sle-price .text--colored,
+.view-latest-items .views-row:hover .views-field-body {
+  color: #fff;
+}
+.view-latest-items .views-field-field-sle-price {
+  font-size: 15px;
+}
+.view-latest-items .views-field-body {
+  font-size: 0.8em;
+  line-height: 1.5;
+}
+.view-latest-items .views-field-body p {
+  padding: 0;
+}
+.region--dark-typography .view-latest-items .views-field-body {
+  color: #363636;
+}
+.view-latest-items > .more-link a {
+  padding: 10px 0 5px 145px;
+  margin: 0;
+  clear: both;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #c2c2c2;
+}
+.region--light-typography .view-latest-items > .more-link a {
+  border-bottom-color: rgba(255, 255, 255, 0.3);
+}
+@media (min-width:992px) {
+  .layout-two-sidebars .sidebar .view-latest-items .views-field-field-image {
+    display: none;
+  }
+  .layout-two-sidebars .sidebar .view-latest-items .views-field-field-image ~ .views-field-title,
+  .layout-two-sidebars .sidebar .view-latest-items .views-field-field-image ~ .views-field-field-sle-price,
+  .layout-two-sidebars .sidebar .view-latest-items .views-field-field-image ~ .views-field-body {
+    margin-left: 0;
+  }
+}
+@media (min-width:768px) and (max-width:991px) {
+  .view-latest-items .views-row {
+    clear: none;
+  }
+}
+@media (max-width:480px) {
+  .view-latest-items .col-xs-6.col-md-12 {
+    width: 100%;
+    float: none;
+  }
+}
+.view-latest-items .views-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}

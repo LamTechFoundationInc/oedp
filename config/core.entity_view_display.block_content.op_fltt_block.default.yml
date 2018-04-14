@@ -1,0 +1,24 @@
+uuid: 847c7360-c863-494f-9559-d5f56b3c2ad6
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.op_fltt_block
+    - field.field.block_content.op_fltt_block.field_op_fltt
+  module:
+    - entity_reference_revisions
+id: block_content.op_fltt_block.default
+targetEntityType: block_content
+bundle: op_fltt_block
+mode: default
+content:
+  field_op_fltt:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden: {  }

@@ -1,0 +1,29 @@
+uuid: ec2ed2b9-22eb-46ec-892e-59cd8d76131b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lt_candidate
+    - node.type.lt_cand_elected_officials
+    - node.type.summary_election_results
+id: node.summary_election_results.field_lt_candidate
+field_name: field_lt_candidate
+entity_type: node
+bundle: summary_election_results
+label: Candidate
+description: 'Name of the candidate whose result you are entering. If you are unable to find the candidate, <a href="/node/add/lt_cand_elected_officials">create a new candidate profile</a> first'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      lt_cand_elected_officials: lt_cand_elected_officials
+    sort:
+      field: field_lt_first_name
+      direction: ASC
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,23 @@
+uuid: 3a4f77fb-9bd6-4c47-b220-20626f970d99
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - openelections
+id: sitebranding
+theme: openelections
+region: footer_top_first
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

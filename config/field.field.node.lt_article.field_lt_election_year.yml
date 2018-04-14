@@ -1,0 +1,21 @@
+uuid: cb4275da-65eb-46c4-83be-5904b8abbba7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lt_election_year
+    - node.type.lt_article
+  module:
+    - datetime
+id: node.lt_article.field_lt_election_year
+field_name: field_lt_election_year
+entity_type: node
+bundle: lt_article
+label: 'Election Date'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

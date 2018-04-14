@@ -1,0 +1,19 @@
+uuid: e590f53b-8742-4d71-ae98-329ba24cad6e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_date_founded
+    - taxonomy.vocabulary.lt_political_party
+id: taxonomy_term.lt_political_party.field_date_founded
+field_name: field_date_founded
+entity_type: taxonomy_term
+bundle: lt_political_party
+label: 'Date Founded'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

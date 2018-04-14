@@ -1,0 +1,19 @@
+uuid: 905606a6-502a-46dc-a21d-95a0c5c1f1ff
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_data_sources
+    - node.type.lt_cand_elected_officials
+id: node.lt_cand_elected_officials.field_data_sources
+field_name: field_data_sources
+entity_type: node
+bundle: lt_cand_elected_officials
+label: 'Data Sources'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

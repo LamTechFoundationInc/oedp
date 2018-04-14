@@ -1,0 +1,25 @@
+uuid: 273c4db9-d4a9-4e0d-84e1-3c1cb072a7d2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_ward
+    - taxonomy.vocabulary.lt_section
+id: taxonomy_term.lt_section.field_ward
+field_name: field_ward
+entity_type: taxonomy_term
+bundle: lt_section
+label: Ward
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: editor_taxonomy_entity_reference_fields
+      display_name: wards_entity_reference
+      arguments: {  }
+field_type: entity_reference

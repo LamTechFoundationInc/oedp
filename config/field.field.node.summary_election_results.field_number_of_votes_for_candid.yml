@@ -1,0 +1,23 @@
+uuid: 7076e2ec-7b2b-400c-8606-adf5bd628f8d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_number_of_votes_for_candid
+    - node.type.summary_election_results
+id: node.summary_election_results.field_number_of_votes_for_candid
+field_name: field_number_of_votes_for_candid
+entity_type: node
+bundle: summary_election_results
+label: 'Total number of votes cast'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

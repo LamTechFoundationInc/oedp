@@ -1,0 +1,21 @@
+uuid: 1882c832-6fd1-4677-860d-bfe22eee3963
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_polygon
+    - paragraphs.paragraphs_type.geographic_data
+  module:
+    - geofield
+id: paragraph.geographic_data.field_polygon
+field_name: field_polygon
+entity_type: paragraph
+bundle: geographic_data
+label: 'Polygon Map'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geofield

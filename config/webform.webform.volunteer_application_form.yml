@@ -1,0 +1,212 @@
+langcode: en
+status: open
+dependencies:
+  enforced:
+    module:
+      - webform
+open: null
+close: null
+uid: 1
+template: false
+id: volunteer_application_form
+title: 'Volunteer Application Form'
+description: 'Basic Volunteer Application Form'
+category: ''
+elements: "what_do_you_want_to_work_on:\n  '#type': select\n  '#title': 'What do you want to work on'\n  '#options':\n    'Realtime Election Results Data': 'Realtime Election Results Data'\n    'Election Results Data': 'Historical Election Results Data'\n    'Polling Station Data': 'Polling Station Data'\n    'Candidate Profiles Data': 'Candidate Profiles Data'\n    'Political Party Data': 'Political Party Data'\n    'Boundary Delimitations': 'Boundary Delimitations'\n    'Electoral News and Events Data': 'Electoral News and Events Data'\n    'Electoral Resource Data': 'Electoral Resource Data'\n    'Volunteer & Technical Documentation': 'Volunteer & Technical Documentation'\n    'Voter Registration Data': 'Voter Registration Data'\n    Other: Other\n  '#chosen': true\n  '#required': true\nselect_the_district_you_want_to_claim:\n  '#type': webform_entity_select\n  '#title': 'Select the district you want to claim'\n  '#chosen': true\n  '#required': true\n  '#target_type': taxonomy_term\n  '#selection_handler': 'default:taxonomy_term'\n  '#selection_settings':\n    target_bundles:\n      lt_district: lt_district\nselect_the_ward_you_want_to_cover:\n  '#type': entity_autocomplete\n  '#title': 'Select the ward you want to cover'\n  '#target_type': taxonomy_term\n  '#selection_handler': views\n  '#selection_settings':\n    view:\n      view_name: editor_taxonomy_entity_reference_fields\n      display_name: wards_entity_reference\n      arguments: {  }\noccupation:\n  '#type': textfield\n  '#title': 'Your Current Occupation'\n  '#required': true\nsurname:\n  '#type': textfield\n  '#title': 'Your Surname'\n  '#required': true\nname:\n  '#type': textfield\n  '#title': 'Your Middle Name'\n  '#default_value': '[webform-authenticated-user:display-name]'\nfirst_name:\n  '#type': textfield\n  '#title': 'Your First Name'\n  '#required': true\nemail:\n  '#title': 'Your Email'\n  '#type': email\n  '#required': true\n  '#default_value': '[webform-authenticated-user:mail]'\nphone_number_s_:\n  '#type': tel\n  '#title': 'Phone Number(s)'\n  '#multiple': 3\n  '#international': true\n  '#international_initial_country': SL\n  '#required': true\npreferred_method_to_contact_you:\n  '#type': select\n  '#title': 'Preferred Method to contact you'\n  '#options':\n    WhatsApp: WhatsApp\n    SMS: SMS\n    'Facebook Messager': 'Facebook Messager'\n    'Phone Call': 'Phone Call'\n    Email: Email\n  '#required': true\npreferred_day_and_time_for_virtual_or_in_person_meeting:\n  '#type': select\n  '#title': 'Preferred Day and Time for Virtual or in person meeting'\n  '#options':\n    'Monday at 7PM GMT': 'Monday at 7PM GMT'\n    'Wednesday at 7PM GMT': 'Wednesday at 7PM GMT'\n    'Friday at 7PM GMT': 'Friday at 7PM GMT'\n    'Saturday at 11AM GMT': 'Saturday at 11AM GMT'\n    'Saturday at 3PM GMT': 'Saturday at 3PM GMT'\n    'Saturday at 7PM GMT': 'Saturday at 7PM GMT'\n    'Saturday at 9PM GMT': 'Saturday at 9PM GMT'\n  '#required': true\nbrief_profile_for_the_volunteers_page:\n  '#type': textarea\n  '#title': 'Brief Profile for the volunteers page'\n  '#required': true\nmessage:\n  '#title': Message\n  '#type': textarea\n  '#test': 'Please ignore this email.'\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#submit__label': 'Send message'\n"
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  page: true
+  page_submit_path: volunteer-application
+  page_confirm_path: ''
+  form_submit_once: false
+  form_exception_message: ''
+  form_open_message: ''
+  form_close_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_reset: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_login: false
+  form_login_message: ''
+  submission_label: 'Submit Application'
+  submission_log: true
+  submission_user_columns: {  }
+  submission_login: false
+  submission_login_message: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_start_label: ''
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_track: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  confirmation_type: url_message
+  confirmation_title: ''
+  confirmation_message: 'Thank you&nbsp;for contacting us. Your message has been sent. One of our volunteers will be in touch within the next 24hrs. If this is regarding an urgent technical support issue, please feel free to contact us via <a href="https://api.whatsapp.com/send?phone=19176234281">WhatsApp</a>&nbsp;'
+  confirmation_url: /get-involved
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  token_update: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers:
+  email_confirmation:
+    id: email
+    label: 'Email confirmation'
+    handler_id: email_confirmation
+    status: true
+    conditions: {  }
+    weight: 1
+    settings:
+      states:
+        - completed
+      to_mail: '[webform_submission:values:email:raw]'
+      to_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: default
+      from_options: {  }
+      from_name: default
+      subject: 'Elections.sl platform Volunteer Application Submission'
+      body: 'Thank you for submitting your volunteer application. We will be in touch within 48hrs with the next steps.'
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      html: true
+      attachments: false
+      twig: false
+      debug: false
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+  email_notification:
+    id: email
+    label: 'Email notification'
+    handler_id: email_notification
+    status: true
+    conditions: {  }
+    weight: 1
+    settings:
+      states:
+        - completed
+      to_mail: default
+      to_options: {  }
+      cc_mail: tamba@tambalamin.me
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: '[webform_submission:values:email:raw]'
+      from_options: {  }
+      from_name: '[webform_submission:values:name:raw]'
+      subject: 'Volunteer application submitted'
+      body: '[webform_submission:values:message:value]'
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      html: true
+      attachments: false
+      twig: false
+      debug: false
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+uuid: 6337e3dc-62d4-4ac5-a249-9a2ef5b9d3e3
+_core:
+  default_config_hash: wn06eL40L0LLwBac3EprLc2EE3B93WlUg39fTOOmDdU

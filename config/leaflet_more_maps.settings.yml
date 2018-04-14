@@ -1,0 +1,16 @@
+leaflet_more_maps_custom_maps:
+  1:
+    map-key: 'Google High Resolution RoadMap'
+    layer-keys:
+      'google-high-res roadmap': 'google-high-res roadmap'
+    reverse-order: 0
+  2:
+    map-key: 'Open Street Map Transport'
+    layer-keys:
+      'osm-transport layer': 'osm-transport layer'
+    reverse-order: 0
+  3:
+    map-key: 'MapQuest Road Map'
+    layer-keys:
+      'mapquest road layer': 'mapquest road layer'
+    reverse-order: 0

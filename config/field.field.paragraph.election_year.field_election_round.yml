@@ -1,0 +1,21 @@
+uuid: de842b30-477b-405e-9de3-cfdbe2110f5f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_election_round
+    - paragraphs.paragraphs_type.election_year
+  module:
+    - options
+id: paragraph.election_year.field_election_round
+field_name: field_election_round
+entity_type: paragraph
+bundle: election_year
+label: 'Election Round'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

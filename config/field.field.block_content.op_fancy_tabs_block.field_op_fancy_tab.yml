@@ -1,0 +1,55 @@
+uuid: ba41fcb8-7d44-4fe3-847a-05aaf85b32a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.op_fancy_tabs_block
+    - field.storage.block_content.field_op_fancy_tab
+    - paragraphs.paragraphs_type.op_fancy_tab
+  module:
+    - entity_reference_revisions
+id: block_content.op_fancy_tabs_block.field_op_fancy_tab
+field_name: field_op_fancy_tab
+entity_type: block_content
+bundle: op_fancy_tabs_block
+label: 'Fancy Tab'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      op_fancy_tab: op_fancy_tab
+    target_bundles_drag_drop:
+      op_collapse:
+        weight: 10
+        enabled: false
+      op_fancy_linked_image:
+        weight: 11
+        enabled: false
+      op_fancy_tab:
+        enabled: true
+        weight: 12
+      op_featured_linked_text_tile:
+        weight: 13
+        enabled: false
+      op_highlight:
+        weight: 14
+        enabled: false
+      op_icon_features:
+        weight: 15
+        enabled: false
+      op_map_location:
+        weight: 16
+        enabled: false
+      op_media_tab:
+        weight: 17
+        enabled: false
+      op_tab:
+        weight: 18
+        enabled: false
+field_type: entity_reference_revisions

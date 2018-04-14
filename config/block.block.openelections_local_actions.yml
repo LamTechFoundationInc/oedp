@@ -1,0 +1,20 @@
+uuid: 0d6e04e8-f1ae-400d-8e35-766ddef088ac
+langcode: en
+status: true
+dependencies:
+  theme:
+    - openelections
+_core:
+  default_config_hash: GtC0zI6Okk1J26TtPGHSrW-dfqXojg3zo9twS4IlotE
+id: openelections_local_actions
+theme: openelections
+region: content
+weight: -18
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

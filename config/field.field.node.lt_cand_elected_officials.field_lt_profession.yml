@@ -1,0 +1,19 @@
+uuid: f2ed1a2c-c0f3-44c0-80af-cf640fdb2318
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lt_profession
+    - node.type.lt_cand_elected_officials
+id: node.lt_cand_elected_officials.field_lt_profession
+field_name: field_lt_profession
+entity_type: node
+bundle: lt_cand_elected_officials
+label: Profession
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

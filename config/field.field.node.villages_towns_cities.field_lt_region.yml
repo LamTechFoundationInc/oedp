@@ -1,0 +1,32 @@
+uuid: 091ad591-9657-48ab-a7be-1593ab6e2692
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lt_region
+    - node.type.villages_towns_cities
+    - taxonomy.vocabulary.lt_province
+  content:
+    - 'taxonomy_term:lt_province:176134ae-ab36-4dd9-a7e3-fa7731b0c711'
+id: node.villages_towns_cities.field_lt_region
+field_name: field_lt_region
+entity_type: node
+bundle: villages_towns_cities
+label: Region
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    target_uuid: 176134ae-ab36-4dd9-a7e3-fa7731b0c711
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      lt_province: lt_province
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

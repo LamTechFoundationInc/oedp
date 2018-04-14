@@ -1,0 +1,30 @@
+uuid: e3d21675-7f35-4810-888c-b8fd114f043a
+langcode: en
+status: true
+dependencies:
+  module:
+    - media_entity
+    - options
+id: media.field_election_round
+field_name: field_election_round
+entity_type: media
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'First Round'
+      label: 'First Round'
+    -
+      value: 'Second Round'
+      label: 'Second Round'
+    -
+      value: 'Not Applicable'
+      label: 'Not Applicable'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

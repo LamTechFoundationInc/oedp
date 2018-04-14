@@ -1,0 +1,23 @@
+uuid: b62a1a62-cb94-4bc8-ba77-864225bb06a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_election_rounds
+    - node.type.summary_election_results
+  module:
+    - options
+id: node.summary_election_results.field_election_rounds
+field_name: field_election_rounds
+entity_type: node
+bundle: summary_election_results
+label: 'Election Rounds'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 'First Round'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

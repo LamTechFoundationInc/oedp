@@ -1,0 +1,160 @@
+uuid: 06b7ac4a-96cb-4f15-93cd-0964b42b35d6
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.full
+    - field.field.taxonomy_term.lt_chiefdom.field_chief
+    - field.field.taxonomy_term.lt_chiefdom.field_data_
+    - field.field.taxonomy_term.lt_chiefdom.field_female_population
+    - field.field.taxonomy_term.lt_chiefdom.field_headquarter_town
+    - field.field.taxonomy_term.lt_chiefdom.field_lt_district
+    - field.field.taxonomy_term.lt_chiefdom.field_lt_geolocation
+    - field.field.taxonomy_term.lt_chiefdom.field_lt_header_image
+    - field.field.taxonomy_term.lt_chiefdom.field_male_population
+    - field.field.taxonomy_term.lt_chiefdom.field_population
+    - field.field.taxonomy_term.lt_chiefdom.field_population_that_can_vote
+    - field.field.taxonomy_term.lt_chiefdom.field_registered_voters
+    - taxonomy.vocabulary.lt_chiefdom
+  module:
+    - geolocation
+    - panelizer
+    - text
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: taxonomy_term.lt_chiefdom.full
+targetEntityType: taxonomy_term
+bundle: lt_chiefdom
+mode: full
+content:
+  description:
+    label: above
+    type: text_default
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_chief:
+    weight: 5
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_data_:
+    weight: 11
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_female_population:
+    weight: 8
+    label: inline
+    settings:
+      thousand_separator: ','
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_headquarter_town:
+    weight: 3
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_lt_district:
+    weight: 4
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_lt_geolocation:
+    weight: 2
+    label: hidden
+    settings:
+      title: ''
+      set_marker: '1'
+      common_map: ''
+      info_text: ''
+      use_overridden_map_settings: 0
+      google_map_settings:
+        type: ROADMAP
+        zoom: '10'
+        minZoom: 0
+        maxZoom: 18
+        rotateControl: 0
+        mapTypeControl: 1
+        streetViewControl: 1
+        zoomControl: 1
+        fullscreenControl: 0
+        scrollwheel: 1
+        disableDoubleClickZoom: 0
+        draggable: 1
+        height: 400px
+        width: 100%
+        info_auto_display: 1
+        marker_icon_path: ''
+        disableAutoPan: 1
+        style: ''
+        preferScrollingToZooming: 0
+        gestureHandling: auto
+    third_party_settings: {  }
+    type: geolocation_map
+    region: content
+  field_lt_header_image:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: embedded
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_male_population:
+    weight: 7
+    label: inline
+    settings:
+      thousand_separator: ','
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_population:
+    weight: 6
+    label: inline
+    settings:
+      thousand_separator: ','
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_population_that_can_vote:
+    weight: 9
+    label: inline
+    settings:
+      thousand_separator: ','
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_registered_voters:
+    weight: 10
+    label: inline
+    settings:
+      thousand_separator: ','
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+hidden: {  }

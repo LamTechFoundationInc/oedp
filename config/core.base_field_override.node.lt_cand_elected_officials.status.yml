@@ -1,0 +1,22 @@
+uuid: 4f13860c-cc4b-4ca0-aee7-ced71a491df9
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.lt_cand_elected_officials
+id: node.lt_cand_elected_officials.status
+field_name: status
+entity_type: node
+bundle: lt_cand_elected_officials
+label: 'Publishing status'
+description: 'A boolean indicating the published state.'
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

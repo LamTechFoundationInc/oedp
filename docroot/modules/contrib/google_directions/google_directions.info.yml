@@ -1,0 +1,14 @@
+name: Google Directions
+description: Provides trip planner functionality using Google Directions API.
+package: Custom
+
+type: module
+# core: 8.x
+
+configure: google_directions.settings
+
+# Information added by Drupal.org packaging script on 2017-04-23
+version: '8.x-1.0'
+core: '8.x'
+project: 'google_directions'
+datestamp: 1492916047

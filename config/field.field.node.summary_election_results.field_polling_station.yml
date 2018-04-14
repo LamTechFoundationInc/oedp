@@ -1,0 +1,25 @@
+uuid: 49288935-d55d-4fb1-9164-9e4003ec052e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_polling_station
+    - node.type.summary_election_results
+id: node.summary_election_results.field_polling_station
+field_name: field_polling_station
+entity_type: node
+bundle: summary_election_results
+label: 'Polling Centre'
+description: 'Name of the polling Centre that reported this result. You can find it using the centre code. This is required for all races but only when you choose polling centre as the granularity. If the centre does not exist in our system <a href="/node/add/lt_regist_poll_center?destination=/node/add/summary_election_results">create a new centre now</a>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: editor_node_entity_reference_fields
+      display_name: entity_reference_2
+      arguments: {  }
+field_type: entity_reference

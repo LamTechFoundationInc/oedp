@@ -1,0 +1,23 @@
+uuid: 93dbe436-d8a9-4b62-aed1-8092bbf541f0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_total_population
+    - paragraphs.paragraphs_type.election_year_census
+id: paragraph.election_year_census.field_total_population
+field_name: field_total_population
+entity_type: paragraph
+bundle: election_year_census
+label: 'Total Population'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

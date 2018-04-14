@@ -1,0 +1,31 @@
+uuid: c5bfeec5-8f82-4da1-a592-c1fda393b4ba
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:op_google_maps:2cb30db7-d10f-4bb3-973f-67312ac2b7a5'
+  module:
+    - block_content
+    - system
+  theme:
+    - openelections
+id: contactinformation
+theme: openelections
+region: banner
+weight: -30
+provider: null
+plugin: 'block_content:2cb30db7-d10f-4bb3-973f-67312ac2b7a5'
+settings:
+  id: 'block_content:2cb30db7-d10f-4bb3-973f-67312ac2b7a5'
+  label: 'Contact Information'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /form/contact
+    negate: false
+    context_mapping: {  }

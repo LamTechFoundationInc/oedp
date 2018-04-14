@@ -1,0 +1,11 @@
+uuid: b3296bc4-cf3f-48dc-9d31-3005b44d26e1
+langcode: en
+status: true
+dependencies:
+  module:
+    - workbench_moderation_actions
+id: state_change__paragraph__published
+label: 'Set Paragraph as Published'
+type: paragraph
+plugin: 'state_change:paragraph__published'
+configuration: {  }

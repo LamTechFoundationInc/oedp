@@ -1,0 +1,23 @@
+uuid: f0b444ae-329f-4232-bc9d-62d40edeb2bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_percent_of_poll_stat_enter
+    - node.type.summary_election_results
+id: node.summary_election_results.field_percent_of_poll_stat_enter
+field_name: field_percent_of_poll_stat_enter
+entity_type: node
+bundle: summary_election_results
+label: 'Percentage of polling stations entered'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

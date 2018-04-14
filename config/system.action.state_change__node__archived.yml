@@ -1,0 +1,11 @@
+uuid: 34550786-beab-4e92-a1fc-ba116ffe9ee2
+langcode: en
+status: true
+dependencies:
+  module:
+    - workbench_moderation_actions
+id: state_change__node__archived
+label: 'Set Content as Archived'
+type: node
+plugin: 'state_change:node__archived'
+configuration: {  }

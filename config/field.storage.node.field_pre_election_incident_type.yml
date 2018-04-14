@@ -1,0 +1,20 @@
+uuid: b309f521-a49c-44d5-ac16-c52539f24feb
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_pre_election_incident_type
+field_name: field_pre_election_incident_type
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

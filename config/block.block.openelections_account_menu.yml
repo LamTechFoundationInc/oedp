@@ -1,0 +1,31 @@
+uuid: 15f5a4a5-0390-4481-ac80-2ca99b6e5b1a
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - openelections
+_core:
+  default_config_hash: fJsXwfMg1PYJBIvU11r3f0KBZ0rNm_dd8018XBrrxlo
+id: openelections_account_menu
+theme: openelections
+region: sidebar_first
+weight: -30
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 1
+visibility:
+  request_path:
+    id: request_path
+    pages: "/user\r\n/get-involved\r\n/get-involved/*"
+    negate: false
+    context_mapping: {  }

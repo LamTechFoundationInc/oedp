@@ -1,0 +1,23 @@
+uuid: 2d8ce6e6-bb17-4fae-8304-80f5ae3f1f40
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_population
+    - taxonomy.vocabulary.lt_province
+id: taxonomy_term.lt_province.field_population
+field_name: field_population
+entity_type: taxonomy_term
+bundle: lt_province
+label: 'Total Population (TBD)'
+description: 'Please copy the data in this field to the other population field'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

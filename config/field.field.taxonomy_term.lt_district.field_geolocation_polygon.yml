@@ -1,0 +1,21 @@
+uuid: cf648788-6c03-4f21-9f54-d8469d8e03f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_geolocation_polygon
+    - taxonomy.vocabulary.lt_district
+  module:
+    - geofield
+id: taxonomy_term.lt_district.field_geolocation_polygon
+field_name: field_geolocation_polygon
+entity_type: taxonomy_term
+bundle: lt_district
+label: 'Geolocation Polygon (TBD)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geofield

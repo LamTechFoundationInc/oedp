@@ -1,0 +1,34 @@
+uuid: 90ca43a1-0525-4e2a-b7c3-686a750d8e3b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.candidate_photos
+    - field.field.media.image.field_media_in_library
+    - field.field.media.image.image
+    - image.style.candidate_photos
+    - media_entity.bundle.image
+  module:
+    - image
+_core:
+  default_config_hash: ymMlJDFlZOxNHB9FxTecp6V-1Dgab7eUjzGXoRFy9YM
+id: media.image.candidate_photos
+targetEntityType: media
+bundle: image
+mode: candidate_photos
+content:
+  image:
+    type: image
+    weight: 0
+    label: hidden
+    settings:
+      image_style: candidate_photos
+      image_link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  field_media_in_library: true
+  name: true
+  thumbnail: true
+  uid: true

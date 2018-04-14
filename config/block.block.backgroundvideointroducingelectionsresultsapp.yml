@@ -1,0 +1,31 @@
+uuid: b708e84f-16f2-4498-9f6b-a1afb9ab64cb
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:op_background_image_block:694ff431-bd0c-4a97-96a8-47c5cc420faa'
+  module:
+    - block_content
+    - system
+  theme:
+    - openelections
+id: backgroundvideointroducingelectionsresultsapp
+theme: openelections
+region: banner
+weight: -32
+provider: null
+plugin: 'block_content:694ff431-bd0c-4a97-96a8-47c5cc420faa'
+settings:
+  id: 'block_content:694ff431-bd0c-4a97-96a8-47c5cc420faa'
+  label: 'Welcome to Sierra Leone Open Election Data Platform'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

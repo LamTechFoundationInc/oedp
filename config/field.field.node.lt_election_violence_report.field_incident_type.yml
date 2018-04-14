@@ -1,0 +1,28 @@
+uuid: 18a88e18-42dd-4966-a6ff-2e64266c0c8b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_incident_type
+    - node.type.lt_election_violence_report
+    - taxonomy.vocabulary.incident_type
+id: node.lt_election_violence_report.field_incident_type
+field_name: field_incident_type
+entity_type: node
+bundle: lt_election_violence_report
+label: 'Election Period'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      incident_type: incident_type
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

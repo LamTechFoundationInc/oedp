@@ -1,0 +1,21 @@
+uuid: 82060f31-b670-460b-a62f-f52f447a492a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lt_name_prefix
+    - node.type.lt_cand_elected_officials
+  module:
+    - options
+id: node.lt_cand_elected_officials.field_lt_name_prefix
+field_name: field_lt_name_prefix
+entity_type: node
+bundle: lt_cand_elected_officials
+label: Prefix/Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

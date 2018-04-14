@@ -1,0 +1,25 @@
+uuid: 5caea4ef-e72c-41d0-b900-e8f8aac361fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.message.field_published
+    - message.template.example_create_comment
+_core:
+  default_config_hash: OxMEdFCs9Vvht7Qe9xml3Zuq3BwpXdBXQduJ5q23yVw
+id: message.example_create_comment.field_published
+field_name: field_published
+entity_type: message
+bundle: example_create_comment
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,21 @@
+css_adjust_sort_browsers: true
+css_adjust_sort_external: true
+css_defer: 0
+css_defer_admin: false
+css_defer_external: false
+css_defer_js_code: 0
+css_preprocess: true
+css_translate: null
+js_adjust_sort_browsers: true
+js_adjust_sort_external: true
+js_async: false
+js_async_in_header: false
+js_defer: 2
+js_preprocess: true
+prefetch: null
+_core:
+  default_config_hash: DIsgflQr3uh-j0GWnPgGhZn0yCXGdImu4-u1m2Uv9IY
+ga_inline_to_file: null
+js_footer: null
+js_remove_console_log: false
+unified_multisite_dir: null

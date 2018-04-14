@@ -1,0 +1,20 @@
+uuid: 4d21a79c-a749-49ed-8736-2a77a1f1fea6
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - node
+id: node.field_lt_election_year
+field_name: field_lt_election_year
+entity_type: node
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

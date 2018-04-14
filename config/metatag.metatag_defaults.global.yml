@@ -1,0 +1,67 @@
+uuid: ae011adf-117d-4fdd-bbb8-2a313dee1068
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: b-qxCu1VLGWjqvXKv4Nt7y2BUo5VSGpEIj8gb6C_PUY
+id: global
+label: Global
+tags:
+  icbm: '8.470254, -13.225104'
+  title: '[current-page:title] | Sierra Leone Open Elections Data Platform'
+  abstract: 'An open source platform that collects, aggregates, visualizes and shares Sierra Leone elections data in human and machine-readable formats. Datasets include election results for all races, candidate profiles, boundary delimitations, news and much more. '
+  rights: ' Sierra Leone Open Elections Data Platform'
+  geo_region: SL
+  keywords: '2018 elections in sierra Leone, sierra leone elections 2018, sierra leone elections, presidential election, parliamentary election, local council election, district chairperson election, major election, sierra leone open election open data'
+  geo_position: '8.470254, -13.225104'
+  content_language: en
+  geo_placename: Freetown
+  robots: 'index, follow'
+  description: 'An open source platform that collects, aggregates, visualizes and shares Sierra Leone elections data in human and machine-readable formats. Datasets include election results for all races, candidate profiles, boundary delimitations, news and much more. '
+  fb_app_id: '2022760747938593'
+  fb_pages: 'https://www.facebook.com/pg/Sierra-Leone-OpenElections-Database-1918031828525800'
+  fb_admins: tamba.lamin
+  apple_touch_icon_precomposed_120x120: /sites/default/files/apple-touch-icon-120x120.png
+  apple_touch_icon_precomposed_114x114: /sites/default/files/apple-touch-icon-114x114.png
+  icon_96x96: /sites/default/files/favicon-96x96.png
+  apple_touch_icon_precomposed_72x72: /sites/default/files/apple-touch-icon-72x72.png
+  apple_touch_icon_precomposed_152x152: /sites/default/files/apple-touch-icon-152x152.png
+  apple_touch_icon_72x72: /sites/default/files/apple-touch-icon-72x72.png
+  apple_touch_icon: /sites/default/files/apple-touch-icon-60x60.png
+  apple_touch_icon_144x144: /sites/default/files/apple-touch-icon-144x144.png
+  apple_touch_icon_precomposed_144x144: /sites/default/files/apple-touch-icon-144x144.png
+  apple_touch_icon_114x114: /sites/default/files/apple-touch-icon-114x114.png
+  icon_16x16: /sites/default/files/favicon-16x16.png
+  apple_touch_icon_76x76: /sites/default/files/apple-touch-icon-76x76.png
+  icon_192x192: /sites/default/files/favicon-196x196.png
+  apple_touch_icon_152x152: /sites/default/files/apple-touch-icon-152x152.png
+  apple_touch_icon_precomposed: /sites/default/files/apple-touch-icon-57x57.png
+  apple_touch_icon_120x120: /sites/default/files/apple-touch-icon-120x120.png
+  apple_touch_icon_precomposed_76x76: /sites/default/files/apple-touch-icon-76x76.png
+  icon_32x32: /sites/default/files/favicon-32x32.png
+  shortcut_icon: /sites/default/files/sloedp-logo.png
+  google_plus_publisher: 'https://plus.google.com/+Lamtechconsulting'
+  google_plus_author: 'https://plus.google.com/+Lamtechconsulting'
+  google_plus_image: sites/default/files/oedp-logo-google.png
+  google_plus_name: 'Sierra Leone Open Elections Data Platform'
+  google_plus_description: 'An open election data platform that gives journalist and the public access to historical elections data for presidential, parliamentary, local council, district chairperson, major, and village headmen in Sierra Leone'
+  og_email: info@elections.sl
+  og_country_name: 'Sierra Leone'
+  og_street_address: '84 Kissy Road'
+  og_latitude: '8.470254'
+  og_phone_number: '+232 22 250 265'
+  og_postal_code: '00232'
+  og_longitude: '-13.225104'
+  og_region: West
+  og_site_name: ' Sierra Leone Open Elections Data Platform'
+  twitter_cards_creator_id: OpenElectionssl
+  twitter_cards_creator: '@OpenElectionssl'
+  twitter_cards_description: 'An open source database of information on all Sierra Leone elections, including candidates, election types, election results, boundary delimitations, and news'
+  twitter_cards_image_alt: 'Sierra Leone Open Elections Data Platform Logo'
+  twitter_cards_site_id: '936699870064332801'
+  twitter_cards_title: 'Sierra Leone Open Elections Data Platform'
+  twitter_cards_site: '@OpenElectionssl'
+  twitter_cards_image: /sites/default/files/apple-touch-icon-120x120.png
+  twitter_cards_image_height: 120px
+  twitter_cards_image_width: 120px
+  twitter_cards_type: summary

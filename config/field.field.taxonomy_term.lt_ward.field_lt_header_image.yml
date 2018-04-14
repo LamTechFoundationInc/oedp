@@ -1,0 +1,28 @@
+uuid: b278a240-ef02-413a-8e52-50e4b01ed918
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_lt_header_image
+    - media_entity.bundle.image
+    - taxonomy.vocabulary.lt_ward
+id: taxonomy_term.lt_ward.field_lt_header_image
+field_name: field_lt_header_image
+entity_type: taxonomy_term
+bundle: lt_ward
+label: 'Featured Image'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

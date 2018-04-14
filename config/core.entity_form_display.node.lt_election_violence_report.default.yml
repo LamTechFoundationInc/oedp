@@ -1,0 +1,488 @@
+uuid: 434dfe09-2420-4b2f-9415-34d0fdef96df
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.lt_election_violence_report.body
+    - field.field.node.lt_election_violence_report.field_date_incident_occurred
+    - field.field.node.lt_election_violence_report.field_election_day_incident_type
+    - field.field.node.lt_election_violence_report.field_gender_of_perpetra
+    - field.field.node.lt_election_violence_report.field_gender_of_victim_s_
+    - field.field.node.lt_election_violence_report.field_has_the_incident_caused_an
+    - field.field.node.lt_election_violence_report.field_how_have_different_actors_
+    - field.field.node.lt_election_violence_report.field_image
+    - field.field.node.lt_election_violence_report.field_impact_type
+    - field.field.node.lt_election_violence_report.field_incident_type
+    - field.field.node.lt_election_violence_report.field_lt_geolocation
+    - field.field.node.lt_election_violence_report.field_other_impact
+    - field.field.node.lt_election_violence_report.field_other_perpetrator
+    - field.field.node.lt_election_violence_report.field_other_victim
+    - field.field.node.lt_election_violence_report.field_perpetrator_type
+    - field.field.node.lt_election_violence_report.field_post_election_incident_typ
+    - field.field.node.lt_election_violence_report.field_pre_election_incident_type
+    - field.field.node.lt_election_violence_report.field_related_incident_s_
+    - field.field.node.lt_election_violence_report.field_report_type
+    - field.field.node.lt_election_violence_report.field_upload_video
+    - field.field.node.lt_election_violence_report.field_victim_type
+    - field.field.node.lt_election_violence_report.field_were_there_any_warning_sig
+    - image.style.thumbnail
+    - node.type.lt_election_violence_report
+  module:
+    - datetime
+    - field_group
+    - geolocation
+    - image
+    - inline_entity_form
+    - path
+    - text
+    - workbench_moderation
+third_party_settings:
+  field_group:
+    group_main_form:
+      children:
+        - group_required_information
+        - group_perpetrator_information
+        - group_victim_information
+        - group_impact_informaation
+        - group_detail_information
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: vertical
+      label: 'Main Form'
+      region: content
+    group_required_information:
+      children:
+        - field_report_type
+        - field_date_incident_occurred
+        - field_incident_type
+        - field_pre_election_incident_type
+        - field_election_day_incident_type
+        - field_post_election_incident_typ
+        - title
+        - body
+        - field_image
+        - field_lt_geolocation
+      parent_name: group_main_form
+      weight: 20
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Required Information'
+      region: content
+    group_detail_information:
+      children:
+        - field_upload_video
+        - field_has_the_incident_caused_an
+        - field_how_have_different_actors_
+        - field_were_there_any_warning_sig
+        - field_related_incident_s_
+      parent_name: group_main_form
+      weight: 24
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Detail Information'
+      region: content
+    group_impact_informaation:
+      children:
+        - field_impact_type
+        - field_other_impact
+      parent_name: group_main_form
+      weight: 23
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Impact Information'
+      region: hidden
+    group_victim_information:
+      children:
+        - field_victim_type
+        - field_other_victim
+        - field_gender_of_victim_s_
+      parent_name: group_main_form
+      weight: 22
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Victim Information'
+      region: hidden
+    group_perpetrator_information:
+      children:
+        - field_perpetrator_type
+        - field_other_perpetrator
+        - field_gender_of_perpetra
+      parent_name: group_main_form
+      weight: 21
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Perpetrator Information'
+      region: hidden
+id: node.lt_election_violence_report.default
+targetEntityType: node
+bundle: lt_election_violence_report
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 25
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  created:
+    type: datetime_timestamp
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_date_incident_occurred:
+    weight: 19
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_election_day_incident_type:
+    weight: 22
+    settings: {  }
+    third_party_settings:
+      conditional_fields:
+        3917ae79-47bb-444b-8159-52747b97dd11:
+          dependee: field_incident_type
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '1089'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: lt_election_violence_report
+    type: options_buttons
+    region: content
+  field_gender_of_perpetra:
+    weight: 17
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_gender_of_victim_s_:
+    weight: 12
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_has_the_incident_caused_an:
+    weight: 21
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_how_have_different_actors_:
+    weight: 22
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_image:
+    type: image_image
+    weight: 26
+    settings:
+      preview_image_style: thumbnail
+      progress_indicator: throbber
+    region: content
+    third_party_settings: {  }
+  field_impact_type:
+    weight: 18
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_incident_type:
+    weight: 20
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_lt_geolocation:
+    weight: 27
+    settings:
+      populate_address_field: ''
+      target_address_field: null
+      explicite_actions_address_field: ''
+      default_longitude: null
+      default_latitude: null
+      auto_client_location: ''
+      auto_client_location_marker: ''
+      allow_override_map_settings: 0
+      google_map_settings:
+        type: ROADMAP
+        zoom: '10'
+        minZoom: 0
+        maxZoom: 18
+        rotateControl: 0
+        mapTypeControl: 1
+        streetViewControl: 1
+        zoomControl: 1
+        fullscreenControl: 0
+        scrollwheel: 1
+        disableDoubleClickZoom: 0
+        draggable: 1
+        height: 400px
+        width: 100%
+        info_auto_display: 1
+        marker_icon_path: ''
+        disableAutoPan: 1
+        style: ''
+        preferScrollingToZooming: 0
+        gestureHandling: auto
+    third_party_settings: {  }
+    type: geolocation_googlegeocoder
+    region: content
+  field_other_impact:
+    weight: 19
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        93bede2d-d81f-4004-bc3e-000477ed2b52:
+          dependee: field_impact_type
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '1069'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: lt_election_violence_report
+    type: string_textfield
+    region: content
+  field_other_perpetrator:
+    weight: 16
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        54888508-2500-4c1b-8ad8-c4a95e4d651d:
+          dependee: field_perpetrator_type
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '1057'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: lt_election_violence_report
+    type: string_textfield
+    region: content
+  field_other_victim:
+    weight: 11
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        d4bc7d33-32d0-437d-ad83-6649247f1e04:
+          dependee: field_victim_type
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '1086'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: lt_election_violence_report
+    type: string_textfield
+    region: content
+  field_perpetrator_type:
+    weight: 15
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_post_election_incident_typ:
+    weight: 23
+    settings: {  }
+    third_party_settings:
+      conditional_fields:
+        9444957e-1c93-4c50-868f-c6c5b11e600e:
+          dependee: field_incident_type
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '1090'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: lt_election_violence_report
+    type: options_buttons
+    region: content
+  field_pre_election_incident_type:
+    weight: 21
+    settings: {  }
+    third_party_settings:
+      conditional_fields:
+        a90ff951-b485-4236-91cc-5a36e3e77322:
+          dependee: field_incident_type
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: '1088'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: lt_election_violence_report
+    type: options_buttons
+    region: content
+  field_related_incident_s_:
+    weight: 24
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_report_type:
+    weight: 18
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_upload_video:
+    type: inline_entity_form_complex
+    weight: 20
+    settings:
+      form_mode: default
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: false
+      match_operator: CONTAINS
+    region: content
+    third_party_settings: {  }
+  field_victim_type:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_were_there_any_warning_sig:
+    weight: 23
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  path:
+    type: path
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 6
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 8
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 24
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 4
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+  url_redirects:
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

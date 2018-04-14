@@ -1,0 +1,11 @@
+uuid: 1b1f6843-abcd-4ec7-aef4-19d5acaeef96
+langcode: en
+status: true
+dependencies:
+  module:
+    - workbench_moderation_actions
+id: state_change__media__archived
+label: 'Set Media as Archived'
+type: media
+plugin: 'state_change:media__archived'
+configuration: {  }

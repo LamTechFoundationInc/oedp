@@ -1,0 +1,23 @@
+uuid: b5602e9e-44b1-41e9-804b-cd9756c9b727
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.op_background_image_block
+    - field.storage.block_content.field_op_bg_image_layout_mode
+  module:
+    - options
+id: block_content.op_background_image_block.field_op_bg_image_layout_mode
+field_name: field_op_bg_image_layout_mode
+entity_type: block_content
+bundle: op_background_image_block
+label: 'Inner Blocks Layout'
+description: 'From the drop-down menu, select the layout mode you prefer.'
+required: true
+translatable: false
+default_value:
+  -
+    value: container
+default_value_callback: ''
+settings: {  }
+field_type: list_string

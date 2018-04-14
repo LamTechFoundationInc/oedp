@@ -1,0 +1,28 @@
+uuid: 90941c27-c653-4588-8616-392fbbefcda6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_upload_video
+    - media_entity.bundle.video
+    - node.type.lt_election_violence_report
+id: node.lt_election_violence_report.field_upload_video
+field_name: field_upload_video
+entity_type: node
+bundle: lt_election_violence_report
+label: 'Upload Video'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      video: video
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

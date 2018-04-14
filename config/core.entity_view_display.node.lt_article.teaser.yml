@@ -1,0 +1,95 @@
+uuid: efece84e-9475-43eb-89f8-db74d2682412
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.lt_article.body
+    - field.field.node.lt_article.field_comment
+    - field.field.node.lt_article.field_data_sources
+    - field.field.node.lt_article.field_election_year
+    - field.field.node.lt_article.field_lt_district
+    - field.field.node.lt_article.field_lt_election_year
+    - field.field.node.lt_article.field_lt_geolocation
+    - field.field.node.lt_article.field_lt_photo
+    - field.field.node.lt_article.field_meta_tags
+    - field.field.node.lt_article.field_op_video
+    - field.field.node.lt_article.field_rating
+    - field.field.node.lt_article.field_tags
+    - node.type.lt_article
+  module:
+    - panelizer
+    - text
+    - user
+    - votingapi_widgets
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.lt_article.teaser
+targetEntityType: node
+bundle: lt_article
+mode: teaser
+content:
+  addtoany:
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 3
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  field_lt_photo:
+    type: entity_reference_entity_view
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      view_mode: embedded
+      link: false
+    third_party_settings: {  }
+  field_rating:
+    type: voting_api_formatter
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      style: fontawesome-stars-o
+      show_results: '1'
+      readonly: 0
+      values: {  }
+    third_party_settings: {  }
+  field_tags:
+    type: entity_reference_label
+    weight: 4
+    region: content
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+  links:
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  workbench_moderation_control:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_comment: true
+  field_data_sources: true
+  field_election_year: true
+  field_lt_district: true
+  field_lt_election_year: true
+  field_lt_geolocation: true
+  field_meta_tags: true
+  field_op_video: true

@@ -1,0 +1,18 @@
+uuid: 8fd1219f-bb2c-4f80-a315-318c90e47114
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_has_the_incident_caused_an
+field_name: field_has_the_incident_caused_an
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

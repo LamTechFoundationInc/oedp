@@ -1,0 +1,25 @@
+uuid: d648d895-e53e-4934-b40d-511e78f99ff5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_lt_district
+    - taxonomy.vocabulary.lt_section
+id: taxonomy_term.lt_section.field_lt_district
+field_name: field_lt_district
+entity_type: taxonomy_term
+bundle: lt_section
+label: District
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: editor_taxonomy_entity_reference_fields
+      display_name: districts_entity_reference
+      arguments: {  }
+field_type: entity_reference

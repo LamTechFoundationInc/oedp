@@ -1,0 +1,21 @@
+uuid: 8e374be8-d76d-4530-afbf-84904031984c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_election_year
+    - paragraphs.paragraphs_type.political_party_variables
+  module:
+    - options
+id: paragraph.political_party_variables.field_election_year
+field_name: field_election_year
+entity_type: paragraph
+bundle: political_party_variables
+label: 'Election Year'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

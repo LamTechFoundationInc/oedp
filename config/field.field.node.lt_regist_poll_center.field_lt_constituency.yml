@@ -1,0 +1,25 @@
+uuid: b3426486-dd64-4d64-9661-cdecf42ea3e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lt_constituency
+    - node.type.lt_regist_poll_center
+id: node.lt_regist_poll_center.field_lt_constituency
+field_name: field_lt_constituency
+entity_type: node
+bundle: lt_regist_poll_center
+label: Constituency
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: editor_taxonomy_entity_reference_fields
+      display_name: constituency_entity_reference
+      arguments: {  }
+field_type: entity_reference

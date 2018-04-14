@@ -1,0 +1,13 @@
+uuid: 074eb25a-2280-455a-bba5-a54a0b4be679
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - like_and_dislike
+_core:
+  default_config_hash: t-2hQleHC6E274OBNGFY7kjmq1LNW3VCYpj7htcgidc
+id: like
+label: 'Like vote'
+value_type: points
+description: 'A like vote, for positive reviews.'

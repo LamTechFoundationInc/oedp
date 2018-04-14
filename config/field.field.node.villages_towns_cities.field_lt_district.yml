@@ -1,0 +1,29 @@
+uuid: d38af4e4-75e4-4e5a-a9eb-5924f80918d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lt_district
+    - node.type.villages_towns_cities
+  content:
+    - 'taxonomy_term:lt_district:c30b9e14-b0fc-447b-8765-08b21b6d5c97'
+id: node.villages_towns_cities.field_lt_district
+field_name: field_lt_district
+entity_type: node
+bundle: villages_towns_cities
+label: District
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    target_uuid: c30b9e14-b0fc-447b-8765-08b21b6d5c97
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: editor_taxonomy_entity_reference_fields
+      display_name: districts_entity_reference
+      arguments: {  }
+field_type: entity_reference

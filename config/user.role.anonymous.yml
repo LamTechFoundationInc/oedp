@@ -1,0 +1,28 @@
+uuid: 94411519-74e9-44eb-8e56-112b60d8f09c
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
+id: anonymous
+label: 'Anonymous user'
+weight: -10
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access news feeds'
+  - 'access polls'
+  - 'access pwa'
+  - 'access sitemap'
+  - 'flag email_node'
+  - 'flag email_term'
+  - 'flag subscribe_node'
+  - 'flag subscribe_term'
+  - 'post comments'
+  - 'unflag email_node'
+  - 'unflag email_term'
+  - 'unflag subscribe_node'
+  - 'unflag subscribe_term'
+  - 'view media'
+  - 'vote on node:lt_article:field_rating'

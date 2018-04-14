@@ -1,0 +1,100 @@
+uuid: c5ecf568-1f81-4576-91d6-d2c3845fda33
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.document.field_document
+    - field.field.media.document.field_document_type
+    - field.field.media.document.field_election_date
+    - field.field.media.document.field_election_round
+    - field.field.media.document.field_election_type
+    - field.field.media.document.field_keywords
+    - field.field.media.document.field_media_in_library
+    - media_entity.bundle.document
+  module:
+    - datetime
+    - field_group
+    - file
+    - workbench_moderation
+third_party_settings:
+  field_group:
+    group_result_details:
+      children:
+        - field_election_date
+        - field_election_type
+        - field_election_round
+      parent_name: ''
+      weight: 5
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Result Details'
+      region: content
+_core:
+  default_config_hash: K5QiIC30jxqja4WpUuubIcbFH-oyKadFhtPNyw-zQjw
+id: media.document.default
+targetEntityType: media
+bundle: document
+mode: default
+content:
+  field_document:
+    weight: 0
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_document_type:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_election_date:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_election_round:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_election_type:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_keywords:
+    weight: 4
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete_tags
+    region: content
+  field_media_in_library:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 2
+    third_party_settings: {  }
+    region: content
+  name:
+    type: string_textfield
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  uid: true

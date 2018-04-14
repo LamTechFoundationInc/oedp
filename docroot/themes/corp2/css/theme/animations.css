@@ -1,0 +1,6 @@
+/*Animations*/
+/*fix for admin pages*/
+.path-admin .sle-no-opacity {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}

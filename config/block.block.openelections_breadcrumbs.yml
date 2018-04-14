@@ -1,0 +1,27 @@
+uuid: fdd268c5-e928-4c19-86c4-81d7ae7e9831
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - openelections
+_core:
+  default_config_hash: mcTErCF3sIBq5thaaBxtwA9QwtCWuBLUlbjfjlSHPlc
+id: openelections_breadcrumbs
+theme: openelections
+region: content_top
+weight: -30
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: "<front>\r\n/results"
+    negate: true
+    context_mapping: {  }

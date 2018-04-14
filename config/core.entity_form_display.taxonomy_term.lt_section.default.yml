@@ -1,0 +1,126 @@
+uuid: 7cf5681e-d5c5-4a8b-b773-f83d65b087ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.lt_section.field_census_population_data
+    - field.field.taxonomy_term.lt_section.field_chiefdom
+    - field.field.taxonomy_term.lt_section.field_geo
+    - field.field.taxonomy_term.lt_section.field_lt_district
+    - field.field.taxonomy_term.lt_section.field_lt_geolocation
+    - field.field.taxonomy_term.lt_section.field_lt_header_image
+    - field.field.taxonomy_term.lt_section.field_lt_province
+    - field.field.taxonomy_term.lt_section.field_nec_population_data
+    - field.field.taxonomy_term.lt_section.field_ward
+    - taxonomy.vocabulary.lt_section
+  module:
+    - inline_entity_form
+    - paragraphs
+    - path
+    - text
+id: taxonomy_term.lt_section.default
+targetEntityType: taxonomy_term
+bundle: lt_section
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 4
+    region: content
+    settings:
+      placeholder: ''
+      rows: 5
+    third_party_settings: {  }
+  field_census_population_data:
+    weight: 8
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    type: entity_reference_paragraphs
+    region: content
+  field_chiefdom:
+    weight: 3
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete_tags
+    region: content
+  field_geo:
+    weight: 6
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    type: entity_reference_paragraphs
+    region: content
+  field_lt_district:
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: 'Enter the name of the district'
+    third_party_settings: {  }
+    type: entity_reference_autocomplete_tags
+    region: content
+  field_lt_header_image:
+    type: inline_entity_form_complex
+    weight: 5
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+    region: content
+    third_party_settings: {  }
+  field_nec_population_data:
+    weight: 7
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    type: entity_reference_paragraphs
+    region: content
+  field_ward:
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: 'Enter the name of the ward'
+    third_party_settings: {  }
+    type: entity_reference_autocomplete_tags
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_lt_geolocation: true
+  field_lt_province: true

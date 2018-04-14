@@ -1,0 +1,23 @@
+uuid: 47504bdc-c19b-4a2a-a6b4-39b50669e5d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_op_highlight_link
+    - paragraphs.paragraphs_type.op_highlight
+  module:
+    - link
+id: paragraph.op_highlight.field_op_highlight_link
+field_name: field_op_highlight_link
+entity_type: paragraph
+bundle: op_highlight
+label: Link
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

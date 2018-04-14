@@ -1,0 +1,94 @@
+uuid: 82eb3648-98cd-4203-9e91-c825f1ba834d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.op_team_member.body
+    - field.field.node.op_team_member.field_op_banner_image
+    - field.field.node.op_team_member.field_op_facebook_account
+    - field.field.node.op_team_member.field_op_linkedin_account
+    - field.field.node.op_team_member.field_op_member_photo
+    - field.field.node.op_team_member.field_op_slideshow
+    - field.field.node.op_team_member.field_op_slideshow_image
+    - field.field.node.op_team_member.field_op_slideshow_text
+    - field.field.node.op_team_member.field_op_subtitle
+    - field.field.node.op_team_member.field_op_team_member_category
+    - field.field.node.op_team_member.field_op_twitter_account
+    - image.style.op_member_photo
+    - node.type.op_team_member
+  module:
+    - image
+    - panelizer
+    - text
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.op_team_member.default
+targetEntityType: node
+bundle: op_team_member
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_op_facebook_account:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_op_linkedin_account:
+    weight: 4
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_op_member_photo:
+    weight: 1
+    label: hidden
+    settings:
+      image_style: op_member_photo
+      image_link: file
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_op_subtitle:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_op_twitter_account:
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  field_op_banner_image: true
+  field_op_slideshow: true
+  field_op_slideshow_image: true
+  field_op_slideshow_text: true
+  field_op_team_member_category: true

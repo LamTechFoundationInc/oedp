@@ -1,0 +1,10 @@
+name: Clickatell
+type: module
+description: 'Enables modules to use Clickatell API, and integrates with SMS Framework.'
+# core: 8.x
+
+# Information added by Drupal.org packaging script on 2018-02-15
+version: '8.x-2.0'
+core: '8.x'
+project: 'sms_clickatell'
+datestamp: 1518690486

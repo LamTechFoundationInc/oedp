@@ -1,0 +1,9 @@
+uuid: 17e53c44-b41f-44e7-9818-f88d2fe6cdfc
+langcode: en
+status: true
+dependencies: {  }
+id: election_year_details
+label: 'Election Year Details'
+icon_uuid: null
+description: 'This paragraph allows you to enter the variable election year details like political party of a candidate, actual election year, office or election type'
+behavior_plugins: {  }

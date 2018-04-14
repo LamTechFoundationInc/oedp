@@ -1,0 +1,21 @@
+uuid: c285729e-65ad-4b7b-8fd4-d0f41eb77667
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_gender_of_victim_s_
+    - node.type.lt_election_violence_report
+  module:
+    - options
+id: node.lt_election_violence_report.field_gender_of_victim_s_
+field_name: field_gender_of_victim_s_
+entity_type: node
+bundle: lt_election_violence_report
+label: 'Gender of victim(s)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,15 @@
+uuid: 35277483-8684-4743-badc-65c026f542f7
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 1noCXlegCr5HFehQRF1ViXy1jhU1jZ_sNN99a8Sj5jo
+id: front
+label: 'Front page'
+tags:
+  shortlink: '[site:url]'
+  title: 'Sierra Leone Open Elections Data Platform | We collect, aggregate, visualize and share Sierra Leone elections data'
+  abstract: 'An open source platform that collects, aggregates, visualizes and shares Sierra Leone elections data in human and machine-readable formats. Datasets include election results for all races, candidate profiles, boundary delimitations, news and much more. '
+  keywords: '2018 elections in sierra Leone, sierra leone elections 2018, sierra leone elections, presidential election, parliamentary election, local council election, district chairperson election, major election, sierra leone open election open data'
+  canonical_url: '[site:url]'
+  description: 'An open source platform that collects, aggregates, visualizes and shares Sierra Leone elections data in human and machine-readable formats. Datasets include election results for all races, candidate profiles, boundary delimitations, news and much more. '

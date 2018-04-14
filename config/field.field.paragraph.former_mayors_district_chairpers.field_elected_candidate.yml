@@ -1,0 +1,28 @@
+uuid: 03222d08-45ef-4e75-83c3-b9305ae8ac8f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_elected_candidate
+    - node.type.lt_cand_elected_officials
+    - paragraphs.paragraphs_type.former_mayors_district_chairpers
+id: paragraph.former_mayors_district_chairpers.field_elected_candidate
+field_name: field_elected_candidate
+entity_type: paragraph
+bundle: former_mayors_district_chairpers
+label: 'Elected Candidate'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      lt_cand_elected_officials: lt_cand_elected_officials
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

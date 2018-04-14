@@ -1,0 +1,19 @@
+uuid: ea04896c-af07-4cab-b7d9-2b00fc9ef3e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_other_victim
+    - node.type.lt_election_violence_report
+id: node.lt_election_violence_report.field_other_victim
+field_name: field_other_victim
+entity_type: node
+bundle: lt_election_violence_report
+label: 'Other Victim'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

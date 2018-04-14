@@ -1,0 +1,14 @@
+name: Simple gateway
+type: module
+description: 'Gateway: Configurable module for quick & easy integration to myriad gateway providers'
+package: SMS Framework
+# core: 8.x
+configure: admin/config/smsframework/sms_simplegateway
+dependencies:
+  - sms
+
+# Information added by Drupal.org packaging script on 2017-09-13
+version: '8.x-1.1'
+core: '8.x'
+project: 'sms_simplegateway'
+datestamp: 1505327047

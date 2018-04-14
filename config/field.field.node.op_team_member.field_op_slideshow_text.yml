@@ -1,0 +1,21 @@
+uuid: f2aa31a5-2268-4003-bf18-ec423f6b02ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_op_slideshow_text
+    - node.type.op_team_member
+  module:
+    - text
+id: node.op_team_member.field_op_slideshow_text
+field_name: field_op_slideshow_text
+entity_type: node
+bundle: op_team_member
+label: 'Slideshow text'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

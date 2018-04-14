@@ -1,0 +1,14 @@
+uuid: 190043bc-bc62-4734-b3ba-9a16fe9df4d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.score_card
+  module:
+    - node
+id: node.score_card
+targetEntityType: node
+bundle: score_card
+types:
+  - ''
+fieldMappings: {  }

@@ -1,0 +1,14 @@
+uuid: 0ba6463b-2fbd-4dc0-9335-88f3ab780c50
+langcode: en
+status: true
+dependencies: {  }
+name: op_candidate_image
+label: 'Candidate Image (750x750)'
+effects:
+  ca79af30-be77-437d-bf03-ba1704643b2e:
+    uuid: ca79af30-be77-437d-bf03-ba1704643b2e
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 750
+      height: 750

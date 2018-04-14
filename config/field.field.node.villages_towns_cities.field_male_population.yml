@@ -1,0 +1,23 @@
+uuid: d735bab1-823c-4b24-b13f-e13ce8af93ca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_male_population
+    - node.type.villages_towns_cities
+id: node.villages_towns_cities.field_male_population
+field_name: field_male_population
+entity_type: node
+bundle: villages_towns_cities
+label: 'Male Population'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

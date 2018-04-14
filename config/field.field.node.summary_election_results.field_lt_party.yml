@@ -1,0 +1,25 @@
+uuid: 3287e918-e7e5-4002-b99e-f524ff31bdf2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lt_party
+    - node.type.summary_election_results
+id: node.summary_election_results.field_lt_party
+field_name: field_lt_party
+entity_type: node
+bundle: summary_election_results
+label: 'Political Party'
+description: 'Name of the candidate''s political party. We have this captured on the candidates but candidates can change parties. Make sure you choose the party based on the results. If no party is provided, choose independent (I)'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: editor_taxonomy_entity_reference_fields
+      display_name: political_party_entity_reference
+      arguments: {  }
+field_type: entity_reference

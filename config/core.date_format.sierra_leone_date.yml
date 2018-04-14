@@ -1,0 +1,8 @@
+uuid: 3e5bbcd2-eeb4-43ec-9dd1-af6595ba7b45
+langcode: en
+status: true
+dependencies: {  }
+id: sierra_leone_date
+label: 'Sierra Leone Date'
+locked: false
+pattern: m-d-Y

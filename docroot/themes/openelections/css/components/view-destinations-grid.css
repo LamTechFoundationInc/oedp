@@ -1,0 +1,32 @@
+/**
+ * @file
+ * Visual styles for OpenElections destinations grid views.
+ */
+.view-destinations-grid .views-row {
+  margin: 0 0 40px;
+}
+.view-destinations-grid .views-field-field-image {
+  margin-bottom: 20px;
+}
+.headings-wide-spacing-enabled .view-destinations-grid .views-field-title h5 {
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+.view-destinations-grid .views-field-title h5 a:hover {
+  text-decoration: none;
+}
+.region--light-typography .view-destinations-grid .views-field-title h5 a {
+  color: #ffffff;
+}
+.region--light-typography .view-destinations-grid .views-field-title h5 a:hover {
+  color: #ffffff;
+}
+.view-destinations-grid .views-field-field-op-location i {
+  margin-right: 5px;
+}
+.region--dark-typography .view-destinations-grid .views-field-field-op-location i {
+  color: #c0c0c0;
+}
+.view-destinations-grid .nav.nav-pills.filters {
+  margin-bottom: 30px;
+}

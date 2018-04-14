@@ -1,0 +1,25 @@
+uuid: 61957c09-2ee6-41ff-a54a-4ad477dd4f24
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:d172850f-7b25-4a3d-8974-2121c6297c44'
+  module:
+    - block_content
+  theme:
+    - openelections
+id: calltoactionwelcome_2
+theme: openelections
+region: hidden_blocks_collection
+weight: 0
+provider: null
+plugin: 'block_content:d172850f-7b25-4a3d-8974-2121c6297c44'
+settings:
+  id: 'block_content:d172850f-7b25-4a3d-8974-2121c6297c44'
+  label: 'Call to action - Welcome'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }
