@@ -1,0 +1,248 @@
+diff --git c/src/Entity/ModerationStateUninstallValidator.php w/src/Entity/ModerationStateUninstallValidator.php
+new file mode 100644
+index 0000000..375b0f9
+--- /dev/null
++++ w/src/Entity/ModerationStateUninstallValidator.php
+@@ -0,0 +1,88 @@
++<?php
++
++namespace Drupal\workbench_moderation\Entity;
++
++use Drupal\Core\Entity\EntityTypeManagerInterface;
++use Drupal\Core\Entity\FieldableEntityStorageInterface;
++use Drupal\Core\Entity\Sql\SqlContentEntityStorage;
++use Drupal\Core\Extension\ModuleUninstallValidatorInterface;
++use Drupal\Core\StringTranslation\StringTranslationTrait;
++use Drupal\Core\StringTranslation\TranslationInterface;
++use Drupal\Core\Url;
++use Drupal\workbench_moderation\ModerationInformationInterface;
++
++/**
++ * Provides link to delete moderation_state field values.
++ */
++class ModerationStateUninstallValidator implements ModuleUninstallValidatorInterface {
++
++  use StringTranslationTrait;
++
++  /**
++   * The entity_type manager.
++   *
++   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
++   */
++  protected $entityTypeManager;
++
++  /**
++   * The workbench_moderation.moderation_information service.
++   *
++   * @var \Drupal\workbench_moderation\ModerationInformationInterface
++   */
++  protected $moderationInformation;
++
++  /**
++   * Constructs a new ModerationStateUninstallValidator.
++   *
++   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
++   *   The entity manager.
++   * @param \Drupal\Core\StringTranslation\TranslationInterface $string_translation
++   *   The string translation service.
++   * @param \Drupal\workbench_moderation\ModerationInformationInterface $moderation_information
++   *   The workbench_moderation.moderation_information service.
++   */
++  public function __construct(EntityTypeManagerInterface $entity_type_manager, TranslationInterface $string_translation, ModerationInformationInterface $moderation_information) {
++    $this->entityTypeManager = $entity_type_manager;
++    $this->stringTranslation = $string_translation;
++    $this->moderationInformation = $moderation_information;
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public function validate($module) {
++    $entity_types = $this->entityTypeManager->getDefinitions();
++    $reasons = [];
++
++    foreach ($entity_types as $entity_type_id => $entity_type) {
++      if ($this->moderationInformation->isModeratableEntityType($entity_type)) {
++        $storage = $this->entityTypeManager->getStorage($entity_type_id);
++
++        if ($storage instanceof SqlContentEntityStorage) {
++          foreach ($storage->getFieldStorageDefinitions() as $storage_definition) {
++            if (
++              $storage_definition->getProvider() == $module
++              && $storage instanceof FieldableEntityStorageInterface
++              && $storage->countFieldData($storage_definition, TRUE)
++            ) {
++              $reasons[] = $this->t(
++                '<a href=":url">Remove field values</a>: @field-name on entity type @entity_type.',
++                array(
++                  '@field-name' => $storage_definition->getName(),
++                  '@entity_type' => $entity_type->getLabel(),
++                  ':url' => Url::fromRoute(
++                    'workbench_moderation.prepare_module_uninstall'
++                  )->toString(),
++                )
++              );
++            }
++          }
++        }
++      }
++    }
++
++    return $reasons;
++  }
++
++}
+diff --git c/src/Form/PrepareUninstallForm.php w/src/Form/PrepareUninstallForm.php
+new file mode 100644
+index 0000000..052302b
+--- /dev/null
++++ w/src/Form/PrepareUninstallForm.php
+@@ -0,0 +1,119 @@
++<?php
++
++namespace Drupal\workbench_moderation\Form;
++
++use Drupal\Core\Database\Database;
++use Drupal\Core\Entity\EntityTypeManagerInterface;
++use Drupal\Core\Form\ConfirmFormBase;
++use Drupal\Core\Form\FormStateInterface;
++use Drupal\Core\Url;
++use Drupal\workbench_moderation\ModerationInformationInterface;
++use Symfony\Component\DependencyInjection\ContainerInterface;
++
++/**
++ * Provides a form removing moderation_state field data before uninstallation.
++ */
++class PrepareUninstallForm extends ConfirmFormBase {
++
++  /**
++   * The entity_type manager.
++   *
++   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
++   */
++  protected $entityTypeManager;
++
++  /**
++   * The workbench_moderation.moderation_information service.
++   *
++   * @var \Drupal\workbench_moderation\ModerationInformationInterface
++   */
++  protected $moderationInformation;
++
++  /**
++   * {@inheritdoc}
++   */
++  public static function create(ContainerInterface $container) {
++    return new static(
++      $container->get('entity_type.manager'),
++      $container->get('workbench_moderation.moderation_information')
++    );
++  }
++
++  /**
++   * Constructs a new ModerationStateUninstallValidator.
++   *
++   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
++   *   The entity manager.
++   * @param \Drupal\workbench_moderation\ModerationInformationInterface $moderation_information
++   *   The workbench_moderation.moderation_information service.
++   */
++  public function __construct(EntityTypeManagerInterface $entity_type_manager, ModerationInformationInterface $moderation_information) {
++    $this->entityTypeManager = $entity_type_manager;
++    $this->moderationInformation = $moderation_information;
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public function getFormId() {
++    return 'workbench_moderation.prepare_module_uninstall';
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public function getQuestion() {
++    return $this->t(
++      'Are you sure you want to delete all moderation_state field values?'
++    );
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public function getDescription() {
++    return $this->t('This action cannot be undone.<br />Make a backup of your database if you want to be able to restore these items.');
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public function getConfirmText() {
++    return $this->t('Delete all moderation_state field values');
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public function getCancelUrl() {
++    return Url::fromRoute('system.modules_uninstall');
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public function submitForm(array &$form, FormStateInterface $form_state) {
++    $tables_to_update = [];
++
++    foreach ($this->entityTypeManager->getDefinitions() as $entity_type) {
++      if ($this->moderationInformation->isModeratableEntityType($entity_type)) {
++        $tables_to_update[] = $entity_type->getDataTable();
++        $tables_to_update[] = $entity_type->getRevisionDataTable();
++      }
++    }
++
++    $db_connection = Database::getConnection();
++
++    foreach ($tables_to_update as $table) {
++      if ($table && $db_connection->schema()->fieldExists($table, 'moderation_state')) {
++        $db_connection->update($table)
++          ->fields(['moderation_state' => NULL])
++          ->execute();
++      }
++    }
++    drupal_set_message(t('All values have been deleted.'));
++
++    $form_state->setRedirect('system.modules_uninstall');
++  }
++
++}
+diff --git c/workbench_moderation.routing.yml w/workbench_moderation.routing.yml
+index 0eba541..28bd4f4 100644
+--- c/workbench_moderation.routing.yml
++++ w/workbench_moderation.routing.yml
+@@ -87,3 +87,11 @@ entity.moderation_state_transition.delete_form:
+     _permission: 'administer moderation state transitions'
+   options:
+     _admin_route: TRUE
++
++workbench_moderation.prepare_module_uninstall:
++  path: '/admin/modules/uninstall/workbench_moderation'
++  defaults:
++    _form: '\Drupal\workbench_moderation\Form\PrepareUninstallForm'
++    _title_callback: '\Drupal\workbench_moderation\Form\PrepareUninstallForm::formTitle'
++  requirements:
++    _permission: 'administer modules'
+diff --git c/workbench_moderation.services.yml w/workbench_moderation.services.yml
+index 330e91a..9a24fef 100644
+--- c/workbench_moderation.services.yml
++++ w/workbench_moderation.services.yml
+@@ -35,3 +35,8 @@ services:
+   workbench_moderation.views_data:
+     class: \Drupal\workbench_moderation\ViewsData
+     arguments: ['@entity_type.manager', '@workbench_moderation.moderation_information']
++  moderation_state_uninstall_validator:
++    class: Drupal\workbench_moderation\Entity\ModerationStateUninstallValidator
++    tags:
++      - { name: module_install.uninstall_validator }
++    arguments: ['@entity_type.manager', '@string_translation', '@workbench_moderation.moderation_information']
