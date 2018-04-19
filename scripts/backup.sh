@@ -2,7 +2,7 @@
 backuplocation=/usr/share/nginx/backups/prod.electiondata.io/db
 dev=/usr/share/nginx/dev.electiondata.io/docroot/sites/default
 prod=/usr/share/nginx/prod.electiondata.io/docroot/sites/default
-timestamp='date +%Y-%m-%d_%H-%M-%S'
+timestamp=$(date +%Y-%m-%d_%H-%M-%S)
 vhost=/usr/share/nginx
 cd $prod
 drush status
