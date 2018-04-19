@@ -3,24 +3,25 @@ backuplocation=/usr/share/nginx/backup/electiondata.io/db
 dev=/usr/share/nginx/dev.electiondata.io/docroot/sites/default
 prod=/usr/share/nginx/prod.electiondata.io/docroot/sites/default
 timestamp=$(date +%s)
-cd ../docroot/sites/default
+vhost=/usr/share/nginx
+cd $prod
 drush status
 drush cr
-drush cron
+sudo drush cron
 drush cex -y
-drush sql-dump --result-file=backuplocation/timestamp.sql
+drush sql-dump --result-file=$backuplocation/$timestamp.sql
 git status
 git add --all
-git commit -am"captured latest configuration and backup database using script"
+git commit -am"$timestamp: captured latest configuration and backup database using script"
 
-#cd /usr/share/nginx/
-#mv dev.electiondata.io dev.electiondata.io.original
-#cp -R prod.electiondata.io/ dev.electiondata.io/
+cd $vhost
+mv dev.electiondata.io dev.electiondata.io.original
+cp -R prod.electiondata.io/ dev.electiondata.io/
+mv $dev/settings.php $dev/settings.php.prod
 #mv $dev/settings.php $dev/settings.php.prod
-#mv $dev/settings.php $dev/settings.php.prod
-#cp dev.electiondata.io.original/docroot/sites/default/settings.php $dev/settings.php
+cp dev.electiondata.io.original/docroot/sites/default/settings.php $dev/settings.php
 
-#cd $dev
-#drush status
-#drush cr
-#drush cron
+cd $dev
+drush status
+drush cr
+sudo drush cron
