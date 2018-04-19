@@ -23,5 +23,8 @@ cp dev.electiondata.io.original/docroot/sites/default/settings.php $dev/settings
 
 cd $dev
 drush status
+drush sql-drop -y
+drush sql-cli <$backuplocation/$timestamp.sql
+drush status
 drush cr
 sudo drush cron
