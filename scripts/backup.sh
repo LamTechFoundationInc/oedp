@@ -1,5 +1,5 @@
 #!/bin/bash
-backuplocation=/usr/share/nginx/backup/electiondata.io/db
+backuplocation=/usr/share/nginx/backups/electiondata.io/db
 dev=/usr/share/nginx/dev.electiondata.io/docroot/sites/default
 prod=/usr/share/nginx/prod.electiondata.io/docroot/sites/default
 timestamp=$(date +%s)
