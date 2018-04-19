@@ -1,0 +1,22 @@
+uuid: cdf7dd9a-a642-445d-b9a2-38c220caa07b
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.score_card
+id: node.score_card.promote
+field_name: promote
+entity_type: node
+bundle: score_card
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

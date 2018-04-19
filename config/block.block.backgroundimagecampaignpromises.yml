@@ -1,0 +1,31 @@
+uuid: cc630da6-85c5-4e30-8241-0f49ca11ba22
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:op_background_image_block:56a4171e-876b-4957-a8c9-38be71a51bd4'
+  module:
+    - block_content
+    - system
+  theme:
+    - openelections
+id: backgroundimagecampaignpromises
+theme: openelections
+region: banner
+weight: 0
+provider: null
+plugin: 'block_content:56a4171e-876b-4957-a8c9-38be71a51bd4'
+settings:
+  id: 'block_content:56a4171e-876b-4957-a8c9-38be71a51bd4'
+  label: 'Background Image: Campaign Promises'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

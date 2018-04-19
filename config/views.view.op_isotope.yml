@@ -1,6 +1,6 @@
 uuid: 70486231-4577-4b3b-aa29-e0f9e366bd26
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - node.type.lt_cand_elected_officials

@@ -11,7 +11,7 @@ id: node.score_card.body
 field_name: body
 entity_type: node
 bundle: score_card
-label: Description
+label: 'Detail Activities'
 description: ''
 required: false
 translatable: true

@@ -4,11 +4,21 @@ status: true
 dependencies:
   module:
     - menu_ui
+    - workbench_moderation
 third_party_settings:
   menu_ui:
     available_menus:
       - main
     parent: 'main:'
+  workbench_moderation:
+    enabled: true
+    allowed_moderation_states:
+      - published
+      - approved_to_be_published
+      - archived
+      - draft
+      - needs_review
+    default_moderation_state: draft
 name: Showcase
 type: op_showcase
 description: 'A Showcase post is ideal for creating and displaying showcases. It has the option to be displayed on front page slide show. It provides the ability to attach an image which is automatically adjusted to fit into the layout of the website. What’s particularly cool about a Showcase post, is that it provides the ability to attach a series of images, thumbnails of which are automatically created and adjusted to fit into the website layout. Showcase post enables free tagging (just like labels), taking the bests from the taxonomy system.'

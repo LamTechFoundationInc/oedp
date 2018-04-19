@@ -8,20 +8,10 @@ dependencies:
     - field.storage.media.field_keywords
     - media_entity.bundle.document
     - system.menu.main
-    - taxonomy.vocabulary.lt_election_type
-  content:
-    - 'taxonomy_term:lt_election_type:0339a81b-836f-44ac-a491-bb9f633aae5a'
-    - 'taxonomy_term:lt_election_type:2e4f1b21-3ec3-4bab-a2e9-4a64656a3358'
-    - 'taxonomy_term:lt_election_type:400f2789-47e2-432c-b0da-5026723db2fd'
-    - 'taxonomy_term:lt_election_type:78bacb21-5ab6-4d90-bdc0-cf6dab4f2391'
-    - 'taxonomy_term:lt_election_type:a84bd683-85f2-418f-b5ef-1e7e219a9f83'
-    - 'taxonomy_term:lt_election_type:cc8d1332-5b9b-4ac9-b8f5-5f5ab38cf1b6'
   module:
-    - datetime
     - file
     - media_entity
     - options
-    - taxonomy
     - user
 _core:
   default_config_hash: '-fJpPBLfGRPa6VPFiBweHcjlSOTqltsw5cbz8VVqXAI'
@@ -335,47 +325,6 @@ display:
           plugin_id: boolean
           entity_type: media
           entity_field: status
-        bundle:
-          id: bundle
-          table: media_field_data
-          field: bundle
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: in
-          value:
-            document: document
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            reduce: false
-            argument: null
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          entity_type: media
-          entity_field: bundle
-          plugin_id: bundle
         field_document_type_value:
           id: field_document_type_value
           table: media__field_document_type
@@ -458,6 +407,47 @@ display:
           entity_type: media
           entity_field: name
           plugin_id: string
+        bundle:
+          id: bundle
+          table: media_field_data
+          field: bundle
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value:
+            document: document
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+            argument: null
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: media
+          entity_field: bundle
+          plugin_id: bundle
       sorts:
         created:
           id: created
@@ -564,47 +554,6 @@ display:
           plugin_id: boolean
           entity_type: media
           entity_field: status
-        bundle:
-          id: bundle
-          table: media_field_data
-          field: bundle
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: in
-          value:
-            document: document
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            reduce: false
-            argument: null
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          entity_type: media
-          entity_field: bundle
-          plugin_id: bundle
         field_document_type_value:
           id: field_document_type_value
           table: media__field_document_type
@@ -916,47 +865,6 @@ display:
           plugin_id: boolean
           entity_type: media
           entity_field: status
-        bundle:
-          id: bundle
-          table: media_field_data
-          field: bundle
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: in
-          value:
-            document: document
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            reduce: false
-            argument: null
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          entity_type: media
-          entity_field: bundle
-          plugin_id: bundle
         field_document_type_value:
           id: field_document_type_value
           table: media__field_document_type
@@ -1268,47 +1176,6 @@ display:
           plugin_id: boolean
           entity_type: media
           entity_field: status
-        bundle:
-          id: bundle
-          table: media_field_data
-          field: bundle
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: in
-          value:
-            document: document
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            reduce: false
-            argument: null
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          entity_type: media
-          entity_field: bundle
-          plugin_id: bundle
         field_document_type_value:
           id: field_document_type_value
           table: media__field_document_type
@@ -1620,47 +1487,6 @@ display:
           plugin_id: boolean
           entity_type: media
           entity_field: status
-        bundle:
-          id: bundle
-          table: media_field_data
-          field: bundle
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: in
-          value:
-            document: document
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            reduce: false
-            argument: null
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          entity_type: media
-          entity_field: bundle
-          plugin_id: bundle
         field_document_type_value:
           id: field_document_type_value
           table: media__field_document_type
@@ -1972,47 +1798,6 @@ display:
           plugin_id: boolean
           entity_type: media
           entity_field: status
-        bundle:
-          id: bundle
-          table: media_field_data
-          field: bundle
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: in
-          value:
-            document: document
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            reduce: false
-            argument: null
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          entity_type: media
-          entity_field: bundle
-          plugin_id: bundle
         field_document_type_value:
           id: field_document_type_value
           table: media__field_document_type
@@ -2324,47 +2109,6 @@ display:
           plugin_id: boolean
           entity_type: media
           entity_field: status
-        bundle:
-          id: bundle
-          table: media_field_data
-          field: bundle
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: in
-          value:
-            document: document
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            reduce: false
-            argument: null
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          entity_type: media
-          entity_field: bundle
-          plugin_id: bundle
         field_document_type_value:
           id: field_document_type_value
           table: media__field_document_type
@@ -2730,47 +2474,6 @@ display:
           plugin_id: boolean
           entity_type: media
           entity_field: status
-        bundle:
-          id: bundle
-          table: media_field_data
-          field: bundle
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: in
-          value:
-            document: document
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            reduce: false
-            argument: null
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          entity_type: media
-          entity_field: bundle
-          plugin_id: bundle
         field_document_type_value:
           id: field_document_type_value
           table: media__field_document_type
@@ -3155,411 +2858,13 @@ display:
       title: 'Downloadable Election Results'
       defaults:
         title: false
-        filters: false
-        filter_groups: false
+        filters: true
+        filter_groups: true
         style: false
         row: false
         relationships: false
         fields: false
         sorts: false
-      filters:
-        status:
-          id: status
-          table: media_field_data
-          field: status
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: '='
-          value: '1'
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: 'True'
-            description: null
-            use_operator: false
-            operator: status_op
-            identifier: status
-            required: true
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-          is_grouped: true
-          group_info:
-            label: 'Publishing status'
-            description: ''
-            identifier: status
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items:
-              1:
-                title: Published
-                operator: '='
-                value: '1'
-              2:
-                title: Unpublished
-                operator: '='
-                value: '0'
-          plugin_id: boolean
-          entity_type: media
-          entity_field: status
-        bundle:
-          id: bundle
-          table: media_field_data
-          field: bundle
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: in
-          value:
-            document: document
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            reduce: false
-            argument: null
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          entity_type: media
-          entity_field: bundle
-          plugin_id: bundle
-        field_document_type_value:
-          id: field_document_type_value
-          table: media__field_document_type
-          field: field_document_type_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: or
-          value:
-            'Election Results': 'Election Results'
-          group: 1
-          exposed: false
-          expose:
-            operator_id: field_document_type_value_op
-            label: 'Document Type'
-            description: ''
-            use_operator: false
-            operator: field_document_type_value_op
-            identifier: field_document_type_value
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              page_creator: '0'
-              layout_manager: '0'
-              page_reviewer: '0'
-              landing_page_creator: '0'
-              landing_page_reviewer: '0'
-              media_creator: '0'
-              media_manager: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          plugin_id: list_field
-        field_election_date_value:
-          id: field_election_date_value
-          table: media__field_election_date
-          field: field_election_date_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: '='
-          value:
-            min: ''
-            max: ''
-            value: ''
-            type: date
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_election_date_value_op
-            label: 'Election Date (field_election_date)'
-            description: null
-            use_operator: false
-            operator: field_election_date_value_op
-            identifier: field_election_date_value
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-          is_grouped: true
-          group_info:
-            label: 'Election Date'
-            description: ''
-            identifier: election_date
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items:
-              1:
-                title: '2018-03-31'
-                operator: '='
-                value:
-                  type: date
-                  value: '2018-03-27'
-                  min: ''
-                  max: ''
-              2:
-                title: '2018-03-07'
-                operator: '='
-                value:
-                  type: date
-                  value: '2018-03-07'
-                  min: ''
-                  max: ''
-              3:
-                title: '2012-11-17'
-                operator: '='
-                value:
-                  type: date
-                  value: '2012-11-17'
-                  min: ''
-                  max: ''
-              4:
-                title: '2007-09-08'
-                operator: '='
-                value:
-                  type: date
-                  value: '2007-09-08'
-                  min: ''
-                  max: ''
-              5:
-                title: '2007-08-11'
-                operator: '='
-                value:
-                  type: date
-                  value: '2007-08-11'
-                  min: ''
-                  max: ''
-              6:
-                title: '2002-05-14'
-                operator: '='
-                value:
-                  type: date
-                  value: '2002-05-14'
-                  min: ''
-                  max: ''
-              7:
-                title: '1996-03-15'
-                operator: '='
-                value:
-                  type: date
-                  value: '1996-03-15'
-                  min: ''
-                  max: ''
-              8:
-                title: '1996-02-27'
-                operator: '='
-                value:
-                  type: date
-                  value: '1996-02-27'
-                  min: ''
-                  max: ''
-              9:
-                title: '1996-02-26'
-                operator: '='
-                value:
-                  type: date
-                  value: '1996-02-26'
-                  min: ''
-                  max: ''
-          plugin_id: datetime
-        field_election_type_target_id:
-          id: field_election_type_target_id
-          table: media__field_election_type
-          field: field_election_type_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: or
-          value:
-            21: 21
-            22: 22
-            19: 19
-            18: 18
-            23: 23
-            24: 24
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_election_type_target_id_op
-            label: 'Election Type'
-            description: ''
-            use_operator: false
-            operator: field_election_type_target_id_op
-            identifier: election_type
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              contributing_creator: '0'
-              contributing_editor: '0'
-              contributing_publisher: '0'
-              platform_manager: '0'
-              administrator: '0'
-            reduce: true
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          type: select
-          limit: true
-          vid: lt_election_type
-          hierarchy: true
-          error_message: false
-          plugin_id: taxonomy_index_tid
-        field_election_round_value:
-          id: field_election_round_value
-          table: media__field_election_round
-          field: field_election_round_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: or
-          value:
-            all: all
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_election_round_value_op
-            label: 'Election Round'
-            description: ''
-            use_operator: false
-            operator: field_election_round_value_op
-            identifier: round
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              contributing_creator: '0'
-              contributing_editor: '0'
-              contributing_publisher: '0'
-              platform_manager: '0'
-              administrator: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          plugin_id: list_field
-        combine:
-          id: combine
-          table: views
-          field: combine
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: contains
-          value: ''
-          group: 1
-          exposed: true
-          expose:
-            operator_id: combine_op
-            label: Keyword
-            description: ''
-            use_operator: false
-            operator: combine_op
-            identifier: combine
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              contributing_creator: '0'
-              contributing_editor: '0'
-              contributing_publisher: '0'
-              platform_manager: '0'
-              administrator: '0'
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          fields:
-            name: name
-            field_document_type: field_document_type
-            filename: filename
-          plugin_id: combine
-      filter_groups:
-        operator: AND
-        groups:
-          1: AND
       style:
         type: default
         options:
@@ -4219,7 +3524,6 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
-        - user
         - user.permissions
       tags:
         - 'config:field.storage.media.field_document'

@@ -10,7 +10,7 @@ id: node.score_card.field_campaign_promise
 field_name: field_campaign_promise
 entity_type: node
 bundle: score_card
-label: 'Campaign Promise'
+label: 'Reference in Manifesto'
 description: ''
 required: true
 translatable: false

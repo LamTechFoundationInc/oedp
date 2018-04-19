@@ -11,6 +11,7 @@ module:
   aggregator: 0
   auto_entitylabel: 0
   autologout: 0
+  ban: 0
   better_exposed_filters: 0
   big_pipe: 0
   block: 0
@@ -55,7 +56,6 @@ module:
   field_ui: 0
   file: 0
   filter: 0
-  flag: 0
   geofield: 0
   geolocation: 0
   geolocation_google_places_api: 0
@@ -67,7 +67,6 @@ module:
   inline_entity_form: 0
   jsonapi: 0
   layout_discovery: 0
-  leaflet_more_maps: 0
   libraries: 0
   lightning_api: 0
   lightning_contact_form: 0
@@ -77,29 +76,20 @@ module:
   lightning_media: 0
   lightning_media_document: 0
   lightning_media_image: 0
-  lightning_media_instagram: 0
-  lightning_media_twitter: 0
-  lightning_media_video: 0
   lightning_page: 0
   lightning_roles: 0
-  lightning_scheduled_updates: 0
-  lightning_search: 0
   lightning_workflow: 0
   like_and_dislike: 0
   link: 0
+  login_security: 0
   media_entity: 0
   media_entity_document: 0
   media_entity_image: 0
-  media_entity_instagram: 0
-  media_entity_twitter: 0
   memcache: 0
   menu_ui: 0
   message: 0
   message_example: 0
   message_notify: 0
-  message_subscribe: 0
-  message_subscribe_email: 0
-  message_subscribe_ui: 0
   metatag: 0
   metatag_dc: 0
   metatag_dc_advanced: 0
@@ -126,8 +116,6 @@ module:
   poll: 0
   quickedit: 0
   rdf: 0
-  rdf_builder: 0
-  rdfui: 0
   realname: 0
   redirect: 0
   redirect_404: 0
@@ -135,14 +123,13 @@ module:
   scheduled_updates: 0
   schemata: 0
   schemata_json_schema: 0
-  search_api: 0
-  search_api_db: 0
   serialization: 0
   shortcut: 0
   simple_oauth: 0
   simple_oauth_extras: 0
   sitemap: 0
   smtp: 0
+  social_api: 0
   styled_google_map: 0
   superfish: 0
   syslog: 0
@@ -158,10 +145,10 @@ module:
   video_embed_field: 0
   video_embed_media: 0
   video_embed_wysiwyg: 0
+  views_bootstrap: 0
   views_bulk_operations: 0
   views_data_export: 0
   views_infinite_scroll: 0
-  views_simplechart: 0
   views_ui: 0
   votingapi: 0
   votingapi_widgets: 0
@@ -175,7 +162,6 @@ module:
   xmlsitemap_engines: 0
   contribute: 1
   menu_link_content: 1
-  pathauto: 1
   views: 10
   lightning: 1000
 theme:

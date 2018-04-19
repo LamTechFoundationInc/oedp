@@ -1,0 +1,18 @@
+uuid: b97784ea-ae64-4d68-ac41-3eb4657bed14
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.score_card
+id: node.score_card.title
+field_name: title
+entity_type: node
+bundle: score_card
+label: 'Campaign Promise'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

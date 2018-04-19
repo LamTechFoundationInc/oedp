@@ -1,0 +1,25 @@
+uuid: 892fe5ce-bb04-439d-a141-cd60ab353c27
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:352f6de6-8ac1-4fa4-960f-a415de370391'
+  module:
+    - block_content
+  theme:
+    - openelections
+id: calltoactiontrackingcampaignpromises
+theme: openelections
+region: hidden_blocks_collection
+weight: 0
+provider: null
+plugin: 'block_content:352f6de6-8ac1-4fa4-960f-a415de370391'
+settings:
+  id: 'block_content:352f6de6-8ac1-4fa4-960f-a415de370391'
+  label: 'Call to action: Tracking Campaign Promises'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

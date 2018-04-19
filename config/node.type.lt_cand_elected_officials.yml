@@ -22,6 +22,6 @@ name: 'Candidate Profile'
 type: lt_cand_elected_officials
 description: 'Use <em>Candidate Profile<em> to enter Candidate Profile information such as biographic, election year, contact, campaign, education and professional information to help the electoral learn more about the candidates.'
 help: ''
-new_revision: false
+new_revision: true
 preview_mode: 1
 display_submitted: false

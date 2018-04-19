@@ -1,0 +1,23 @@
+uuid: 7b6f3bfc-64a7-4f60-8706-1a56d7c60948
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_meta_tags
+    - node.type.score_card
+  module:
+    - metatag
+id: node.score_card.field_meta_tags
+field_name: field_meta_tags
+entity_type: node
+bundle: score_card
+label: 'Meta tags'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 'a:0:{}'
+default_value_callback: ''
+settings: {  }
+field_type: metatag

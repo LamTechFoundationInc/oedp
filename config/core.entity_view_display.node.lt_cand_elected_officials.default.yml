@@ -320,9 +320,16 @@ content:
     third_party_settings: {  }
     type: telephone_link
     region: content
+  flag_email_node:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   flag_subscribe_node:
     weight: 10
     region: content
+    settings: {  }
+    third_party_settings: {  }
   links:
     weight: 4
     region: content

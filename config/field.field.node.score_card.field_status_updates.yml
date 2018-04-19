@@ -1,0 +1,21 @@
+uuid: c87c44c0-7b39-4645-a87e-2e84e7249534
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_status_updates
+    - node.type.score_card
+  module:
+    - text
+id: node.score_card.field_status_updates
+field_name: field_status_updates
+entity_type: node
+bundle: score_card
+label: 'Status Updates'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
