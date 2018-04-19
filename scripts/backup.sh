@@ -20,7 +20,7 @@ mv dev.electiondata.io dev.electiondata.io.$timestamp
 cp -R prod.electiondata.io/ dev.electiondata.io/
 mv $dev/settings.php $dev/settings.php.prod
 #mv $dev/settings.php $dev/settings.php.prod
-cp dev.electiondata.io.original/docroot/sites/default/settings.php $dev/settings.php
+cp dev.electiondata.io-backup/docroot/sites/default/settings.php $dev/settings.php
 chown -R tlamin:www-data dev.electiondata.io/
 chown -R www-data:www-data dev.electiondata.io/docroot/sites/default/files/
 cd $dev
