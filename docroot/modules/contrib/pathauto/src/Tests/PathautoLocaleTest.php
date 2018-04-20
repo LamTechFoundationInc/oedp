@@ -87,21 +87,7 @@ class PathautoLocaleTest extends WebTestBase {
    * Test that patterns work on multilingual content.
    */
   function testLanguagePatterns() {
-
-    // Allow other modules to add additional permissions for the admin user.
-    $permissions = array(
-      'administer pathauto',
-      'administer url aliases',
-      'create url aliases',
-      'bypass node access',
-      'access content overview',
-      'administer languages',
-      'translate any entity',
-      'administer content translation'
-
-    );
-    $admin_user = $this->drupalCreateUser($permissions);
-    $this->drupalLogin($admin_user);
+    $this->drupalLogin($this->rootUser);
 
     // Add French language.
     $edit = array(
@@ -148,9 +134,8 @@ class PathautoLocaleTest extends WebTestBase {
       'title[0][value]' => 'English node',
       'langcode[0][value]' => 'en',
     );
-    $this->drupalPostForm('node/add/article', $edit, t('Save'));
+    $this->drupalPostForm('node/add/article', $edit, t('Save and publish'));
     $english_node = $this->drupalGetNodeByTitle('English node');
-    return;
     $this->assertAlias('/node/' . $english_node->id(), '/the-articles/english-node', 'en');
 
     $this->drupalGet('node/' . $english_node->id() . '/translations');
@@ -158,7 +143,7 @@ class PathautoLocaleTest extends WebTestBase {
     $edit = array(
       'title[0][value]' => 'French node',
     );
-    $this->drupalPostForm(NULL, $edit, t('Save (this translation)'));
+    $this->drupalPostForm(NULL, $edit, t('Save and keep published (this translation)'));
     $this->rebuildContainer();
     $english_node = $this->drupalGetNodeByTitle('English node');
     $french_node = $english_node->getTranslation('fr');

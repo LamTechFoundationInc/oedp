@@ -97,6 +97,7 @@ class PathautoSettingsFormWebTest extends WebTestBase {
       'notify of path changes',
       'administer url aliases',
       'create url aliases',
+      'administer nodes',
       'bypass node access',
     );
     $this->adminUser = $this->drupalCreateUser($permissions);
@@ -132,11 +133,11 @@ class PathautoSettingsFormWebTest extends WebTestBase {
     $title = 'Verbose settings test';
     $this->drupalGet('/node/add/article');
     $this->assertFieldChecked('edit-path-0-pathauto');
-    $this->drupalPostForm(NULL, array('title[0][value]' => $title), t('Save'));
+    $this->drupalPostForm(NULL, array('title[0][value]' => $title), t('Save and publish'));
     $this->assertText('Created new alias /content/verbose-settings-test for');
 
     $node = $this->drupalGetNodeByTitle($title);
-    $this->drupalPostForm('/node/' . $node->id() . '/edit', array('title[0][value]' => 'Updated title'), t('Save'));
+    $this->drupalPostForm('/node/' . $node->id() . '/edit', array('title[0][value]' => 'Updated title'), t('Save and keep published'));
     $this->assertText('Created new alias /content/updated-title for');
     $this->assertText('replacing /content/verbose-settings-test.');
   }
