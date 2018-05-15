@@ -1,0 +1,19 @@
+uuid: a6cbbfde-68ec-40e9-a83f-6eac7c1928b4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lt_surname
+    - node.type.public_servants
+id: node.public_servants.field_lt_surname
+field_name: field_lt_surname
+entity_type: node
+bundle: public_servants
+label: Surname
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

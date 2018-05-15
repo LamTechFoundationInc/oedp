@@ -1,0 +1,22 @@
+uuid: 24a6cbbe-c7e1-43ec-a635-1ae46157b83a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: candidate
+label: Candidate
+type: 'canonical_entities:node'
+pattern: 'resources/candidates/[node:field_election_year_details:0:entity:field_election_type]/[node:field_election_year_details:0:entity:field_political_party:entity:field_lt_acronym]/[node:field_election_year_details:0:entity:field_election_year]/[node:field_lt_first_name]-[node:field_lt_surname]'
+selection_criteria:
+  19b74571-a785-46fe-bb25-e8045fa293cd:
+    id: node_type
+    bundles:
+      lt_cand_elected_officials: lt_cand_elected_officials
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 19b74571-a785-46fe-bb25-e8045fa293cd
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -1,0 +1,17 @@
+uuid: 25310cea-b890-4e3e-9612-4ced7a1b358a
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Public Servants'
+type: public_servants
+description: 'Public Servants'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

@@ -1,0 +1,29 @@
+uuid: 2306f4a9-0c0a-45ae-9be3-38d61458e72a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.public_servants.body
+    - node.type.public_servants
+  module:
+    - text
+    - user
+id: node.public_servants.teaser
+targetEntityType: node
+bundle: public_servants
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  addtoany: true

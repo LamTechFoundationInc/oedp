@@ -1,0 +1,28 @@
+uuid: 5adbe7d4-4663-4398-bdd7-ddd41e37e0f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lt_photo
+    - media_entity.bundle.image
+    - node.type.public_servants
+id: node.public_servants.field_lt_photo
+field_name: field_lt_photo
+entity_type: node
+bundle: public_servants
+label: 'Featured Image'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

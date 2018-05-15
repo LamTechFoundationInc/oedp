@@ -9,7 +9,7 @@ dependencies:
     - image.style.medium
     - media_entity.bundle.image
   module:
-    - lightning_media
+    - image_widget_crop
     - workbench_moderation
 _core:
   default_config_hash: JI-1XbVBCjxKia_ogu_O1bxY9ZOlygQyq3V-OtC7D-0
@@ -26,10 +26,16 @@ content:
     third_party_settings: {  }
     region: content
   image:
-    type: image_immutable
+    type: image_widget_crop
     weight: 0
     settings:
+      show_crop_area: true
+      show_default_crop: true
+      warn_multiple_usages: true
       preview_image_style: medium
+      crop_preview_image_style: crop_thumbnail
+      crop_list:
+        - freeform
       progress_indicator: throbber
     third_party_settings: {  }
     region: content

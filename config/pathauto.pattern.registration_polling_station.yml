@@ -1,0 +1,22 @@
+uuid: 807212d0-2558-4966-bee4-954d5fabd44a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: registration_polling_station
+label: 'Registration/Polling station'
+type: 'canonical_entities:node'
+pattern: '[node:field_lt_region]/[node:field_lt_district]/[node:field_lt_constituency]/[node:field_lt_ward]/[node:field_lt_chiefdom]/[node:field_lt_section]/[node:field_lt_centre_code]'
+selection_criteria:
+  d4f34f2f-4816-44c8-8dfa-5b43fb46445f:
+    id: node_type
+    bundles:
+      lt_regist_poll_center: lt_regist_poll_center
+    negate: false
+    context_mapping:
+      node: node
+    uuid: d4f34f2f-4816-44c8-8dfa-5b43fb46445f
+selection_logic: and
+weight: -5
+relationships: {  }

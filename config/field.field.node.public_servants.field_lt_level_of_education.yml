@@ -1,0 +1,21 @@
+uuid: 2fc5ac7b-67ab-4064-b82d-0eaf45c25e34
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lt_level_of_education
+    - node.type.public_servants
+  module:
+    - options
+id: node.public_servants.field_lt_level_of_education
+field_name: field_lt_level_of_education
+entity_type: node
+bundle: public_servants
+label: 'Highest Level of Education'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

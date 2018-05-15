@@ -1,0 +1,22 @@
+uuid: e16c6def-d2e2-475d-b2ea-b83ba9314f5b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.public_servants
+  module:
+    - text
+id: node.public_servants.body
+field_name: body
+entity_type: node
+bundle: public_servants
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

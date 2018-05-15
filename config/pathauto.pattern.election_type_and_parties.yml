@@ -1,0 +1,24 @@
+uuid: d71f5b33-228a-40f0-8b4e-6ede54196518
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: election_type_and_parties
+label: 'Election Type and Parties'
+type: 'canonical_entities:taxonomy_term'
+pattern: '[term:vocabulary]/[term:name]'
+selection_criteria:
+  77c6b745-1f2b-404a-bcee-cf59444ee9f8:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      lt_election_type: lt_election_type
+      lt_political_party: lt_political_party
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 77c6b745-1f2b-404a-bcee-cf59444ee9f8
+selection_logic: and
+weight: -5
+relationships: {  }

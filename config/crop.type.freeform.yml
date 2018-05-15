@@ -1,0 +1,12 @@
+uuid: f55a935d-6dff-4f7d-ab74-6d7542024492
+langcode: en
+status: true
+dependencies: {  }
+label: Freeform
+id: freeform
+description: ''
+aspect_ratio: ''
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null

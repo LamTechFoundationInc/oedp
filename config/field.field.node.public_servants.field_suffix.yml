@@ -1,0 +1,21 @@
+uuid: 8cc06404-4b81-467c-809c-7e7e436c2359
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_suffix
+    - node.type.public_servants
+  module:
+    - options
+id: node.public_servants.field_suffix
+field_name: field_suffix
+entity_type: node
+bundle: public_servants
+label: Suffix
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,19 @@
+uuid: 975e39b0-68d2-424a-affc-f9b45ee3f3a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_op_subtitle
+    - node.type.public_servants
+id: node.public_servants.field_op_subtitle
+field_name: field_op_subtitle
+entity_type: node
+bundle: public_servants
+label: Subtitle
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

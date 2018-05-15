@@ -1,0 +1,19 @@
+uuid: 41e1f75b-bf89-4bff-86fd-3fcd85552eb7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_middle_given_names
+    - node.type.public_servants
+id: node.public_servants.field_middle_given_names
+field_name: field_middle_given_names
+entity_type: node
+bundle: public_servants
+label: 'Middle/Given Names'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

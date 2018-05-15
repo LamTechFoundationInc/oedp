@@ -1,0 +1,22 @@
+uuid: 399ad356-447b-42e4-85ea-389ec5912bb7
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: cities_town_and_villages
+label: 'Cities, Town and Villages'
+type: 'canonical_entities:node'
+pattern: 'locations/[node:title]'
+selection_criteria:
+  8e07a4fe-30da-44e6-9f20-770c632e1a85:
+    id: node_type
+    bundles:
+      villages_towns_cities: villages_towns_cities
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 8e07a4fe-30da-44e6-9f20-770c632e1a85
+selection_logic: and
+weight: -5
+relationships: {  }

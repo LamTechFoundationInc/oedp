@@ -1,0 +1,28 @@
+uuid: 88e1f29b-061c-4458-8ff7-8b0ff012ad13
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_mda
+    - node.type.public_servants
+    - taxonomy.vocabulary.sierra_leone_mdas
+id: node.public_servants.field_mda
+field_name: field_mda
+entity_type: node
+bundle: public_servants
+label: MDA
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      sierra_leone_mdas: sierra_leone_mdas
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

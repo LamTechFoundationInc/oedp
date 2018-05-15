@@ -1,0 +1,28 @@
+uuid: 3799d900-6f44-4a22-8997-ca1ccbc46768
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: boundaries
+label: Boundaries
+type: 'canonical_entities:taxonomy_term'
+pattern: '[term:name]'
+selection_criteria:
+  505e263a-2e35-46ce-890d-826e81777204:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      lt_chiefdom: lt_chiefdom
+      lt_constituency: lt_constituency
+      lt_district: lt_district
+      lt_province: lt_province
+      lt_section: lt_section
+      lt_ward: lt_ward
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 505e263a-2e35-46ce-890d-826e81777204
+selection_logic: and
+weight: -5
+relationships: {  }

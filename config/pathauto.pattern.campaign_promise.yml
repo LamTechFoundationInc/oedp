@@ -1,0 +1,22 @@
+uuid: 4513549a-40ad-4a0b-996e-55234e2a4bf0
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: campaign_promise
+label: 'Campaign Promise'
+type: 'canonical_entities:node'
+pattern: 'campaign-promises/[node:title]'
+selection_criteria:
+  48298fc1-2eb6-46f0-b64b-de68c050c3eb:
+    id: node_type
+    bundles:
+      score_card: score_card
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 48298fc1-2eb6-46f0-b64b-de68c050c3eb
+selection_logic: and
+weight: -5
+relationships: {  }

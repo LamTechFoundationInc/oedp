@@ -1,0 +1,22 @@
+uuid: 4ea0eb38-77dd-4c71-b789-caad1dba57f7
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: volunteers
+label: Volunteers
+type: 'canonical_entities:node'
+pattern: 'about-us/[node:field_op_team_member_category]/[node:title]'
+selection_criteria:
+  9433b01e-4187-488f-af5a-15ec804d5c38:
+    id: node_type
+    bundles:
+      op_team_member: op_team_member
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 9433b01e-4187-488f-af5a-15ec804d5c38
+selection_logic: and
+weight: -5
+relationships: {  }

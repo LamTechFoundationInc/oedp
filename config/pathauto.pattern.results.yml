@@ -1,0 +1,22 @@
+uuid: f58dbffa-ec47-458c-a426-62007d6a2918
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: results
+label: Results
+type: 'canonical_entities:node'
+pattern: 'results/[node:field_lt_election_type]/[node:field_lt_election_year:date:html_date]/[node:field_lt_party]/[node:field_lt_candidate:entity:field_lt_first_name]-[node:field_lt_candidate:entity:field_lt_surname]/[node:field_village:target_id][node:field_lt_district:target_id][node:field_lt_ward:target_id][node:field_lt_constituency:target_id][node:field_polling_station:target_id]/[node:field_votes]'
+selection_criteria:
+  516c00b7-9929-4adc-8347-2c676fb0bfd8:
+    id: node_type
+    bundles:
+      summary_election_results: summary_election_results
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 516c00b7-9929-4adc-8347-2c676fb0bfd8
+selection_logic: and
+weight: -5
+relationships: {  }

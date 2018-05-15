@@ -1,0 +1,19 @@
+uuid: 332ad354-5636-4690-9a7c-3407729dcb47
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lt_first_name
+    - node.type.public_servants
+id: node.public_servants.field_lt_first_name
+field_name: field_lt_first_name
+entity_type: node
+bundle: public_servants
+label: 'First Name'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
