@@ -79,7 +79,8 @@
         "drupal/redirect": "^1.1",
         "drupal/webform": "^5.0",
         "drupal/views_bootstrap": "^3.0",
-        "drupal/adminimal_admin_toolbar": "^1.5"
+        "drupal/adminimal_admin_toolbar": "^1.5",
+        "drupal/image_widget_crop": "^2.1"
     },
     "repositories": [
         {
