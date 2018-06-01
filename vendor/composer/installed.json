@@ -9184,6 +9184,69 @@
         }
     },
     {
+        "name": "drupal/taxonomy_manager",
+        "version": "1.0.0-alpha1",
+        "version_normalized": "1.0.0.0-alpha1",
+        "source": {
+            "type": "git",
+            "url": "https://git.drupal.org/project/taxonomy_manager",
+            "reference": "8.x-1.0-alpha1"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://ftp.drupal.org/files/projects/taxonomy_manager-8.x-1.0-alpha1.zip",
+            "reference": "8.x-1.0-alpha1",
+            "shasum": "b8ca893d46e222462e14f25a2b4805e3aa725665"
+        },
+        "require": {
+            "drupal/core": "*"
+        },
+        "type": "drupal-module",
+        "extra": {
+            "branch-alias": {
+                "dev-1.x": "1.x-dev"
+            },
+            "drupal": {
+                "version": "8.x-1.0-alpha1",
+                "datestamp": "1525698784",
+                "security-coverage": {
+                    "status": "not-covered",
+                    "message": "Alpha releases are not covered by Drupal security advisories."
+                }
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packages.drupal.org/8/downloads",
+        "license": [
+            "GPL-2.0+"
+        ],
+        "authors": [
+            {
+                "name": "Matthias Hutterer (mpdonadio)",
+                "homepage": "https://www.drupal.org/u/mh86",
+                "role": "Maintainer"
+            },
+            {
+                "name": "joaogarin",
+                "homepage": "https://www.drupal.org/user/612814"
+            },
+            {
+                "name": "kalinchernev",
+                "homepage": "https://www.drupal.org/user/231185"
+            },
+            {
+                "name": "mh86",
+                "homepage": "https://www.drupal.org/user/59747"
+            }
+        ],
+        "description": "Taxonomy_Manager provides a powerful interface for managing taxonomies via a tree view.",
+        "homepage": "https://drupal.org/project/taxonomy_manager",
+        "support": {
+            "source": "http://cgit.drupalcode.org/taxonomy_manager",
+            "issues": "https://drupal.org/project/issues/taxonomy_manager"
+        }
+    },
+    {
         "name": "drupal/tfa",
         "version": "1.0.0-alpha2",
         "version_normalized": "1.0.0.0-alpha2",
@@ -9744,6 +9807,68 @@
         "support": {
             "source": "http://cgit.drupalcode.org/votingapi",
             "issues": "http://drupal.org/project/issues/votingapi"
+        }
+    },
+    {
+        "name": "drupal/votingapi_widgets",
+        "version": "1.0.0-alpha3",
+        "version_normalized": "1.0.0.0-alpha3",
+        "source": {
+            "type": "git",
+            "url": "https://git.drupal.org/project/votingapi_widgets",
+            "reference": "8.x-1.0-alpha3"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://ftp.drupal.org/files/projects/votingapi_widgets-8.x-1.0-alpha3.zip",
+            "reference": "8.x-1.0-alpha3",
+            "shasum": "a8654448561e001512fe21f42d649041e0a57a43"
+        },
+        "require": {
+            "drupal/core": "~8.0",
+            "drupal/votingapi": "*"
+        },
+        "type": "drupal-module",
+        "extra": {
+            "branch-alias": {
+                "dev-1.x": "1.x-dev"
+            },
+            "drupal": {
+                "version": "8.x-1.0-alpha3",
+                "datestamp": "1524826980",
+                "security-coverage": {
+                    "status": "not-covered",
+                    "message": "Project has not opted into security advisory coverage!"
+                }
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packages.drupal.org/8/downloads",
+        "license": [
+            "GPL-2.0+"
+        ],
+        "authors": [
+            {
+                "name": "Andre-B",
+                "homepage": "https://www.drupal.org/user/1772408"
+            },
+            {
+                "name": "Erik Seifert",
+                "homepage": "https://www.drupal.org/user/161429"
+            },
+            {
+                "name": "Merlin Tribukait",
+                "homepage": "https://www.drupal.org/user/3217075"
+            }
+        ],
+        "description": "Voting API Widgets",
+        "homepage": "https://www.drupal.org/project/votingapi_widgets",
+        "keywords": [
+            "Drupal"
+        ],
+        "support": {
+            "source": "http://cgit.drupalcode.org/votingapi_widgets",
+            "issues": "https://www.drupal.org/project/issues/votingapi_widgets"
         }
     },
     {

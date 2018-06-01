@@ -80,7 +80,9 @@
         "drupal/webform": "^5.0",
         "drupal/views_bootstrap": "^3.0",
         "drupal/adminimal_admin_toolbar": "^1.5",
-        "drupal/image_widget_crop": "^2.1"
+        "drupal/image_widget_crop": "^2.1",
+        "drupal/taxonomy_manager": "^1.0",
+        "drupal/votingapi_widgets": "^1.0"
     },
     "repositories": [
         {
