@@ -1,0 +1,22 @@
+uuid: 6447f7ae-9d7a-49df-8ca3-9ffbb985764e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - votingapi_widgets
+id: node.field_rate_public_servant
+field_name: field_rate_public_servant
+entity_type: node
+type: voting_api_field
+settings:
+  vote_type: vote
+  vote_plugin: fivestar
+  status: ''
+module: votingapi_widgets
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

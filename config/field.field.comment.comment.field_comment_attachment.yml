@@ -1,0 +1,27 @@
+uuid: 5d98a21b-521f-4acc-96f2-fbd5aa7ede41
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment
+    - field.storage.comment.field_comment_attachment
+  module:
+    - file
+id: comment.comment.field_comment_attachment
+field_name: field_comment_attachment
+entity_type: comment
+bundle: comment
+label: Attachment
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: 'public-user-uploaded/[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'pdf doc docx xlsx csv jpg png jpeg'
+  max_filesize: ''
+  description_field: true
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

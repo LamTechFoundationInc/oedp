@@ -3,10 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
-    - entity_browser.browser.media_browser
     - field.field.node.public_servants.body
     - field.field.node.public_servants.field_lt_first_name
     - field.field.node.public_servants.field_lt_level_of_education
+    - field.field.node.public_servants.field_lt_manifesto
     - field.field.node.public_servants.field_lt_name_prefix
     - field.field.node.public_servants.field_lt_photo
     - field.field.node.public_servants.field_lt_profession
@@ -15,12 +15,16 @@ dependencies:
     - field.field.node.public_servants.field_middle_given_names
     - field.field.node.public_servants.field_op_linkedin_account
     - field.field.node.public_servants.field_op_subtitle
+    - field.field.node.public_servants.field_rate_public_servant
+    - field.field.node.public_servants.field_review
     - field.field.node.public_servants.field_suffix
     - node.type.public_servants
   module:
-    - entity_browser
+    - comment
+    - inline_entity_form
     - path
     - text
+    - votingapi_widgets
     - workbench_moderation
 id: node.public_servants.default
 targetEntityType: node
@@ -29,7 +33,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 9
+    weight: 14
     settings:
       rows: 9
       summary_rows: 3
@@ -38,70 +42,11 @@ content:
     region: content
   created:
     type: datetime_timestamp
-    weight: 11
+    weight: 16
     region: content
     settings: {  }
     third_party_settings: {  }
   field_lt_first_name:
-    weight: 1
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
-  field_lt_level_of_education:
-    weight: 28
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-    region: content
-  field_lt_name_prefix:
-    weight: 27
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-    region: content
-  field_lt_photo:
-    type: entity_browser_entity_reference
-    weight: 7
-    settings:
-      entity_browser: media_browser
-      field_widget_display: rendered_entity
-      field_widget_edit: true
-      field_widget_remove: true
-      selection_mode: selection_append
-      field_widget_display_settings:
-        view_mode: thumbnail
-      open: true
-    region: content
-    third_party_settings: {  }
-  field_lt_profession:
-    weight: 5
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
-  field_lt_surname:
-    weight: 2
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
-  field_mda:
-    weight: 6
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
-  field_middle_given_names:
     weight: 3
     settings:
       size: 60
@@ -109,7 +54,45 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
-  field_op_linkedin_account:
+  field_lt_level_of_education:
+    weight: 9
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_lt_manifesto:
+    type: inline_entity_form_complex
+    weight: 13
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+    region: content
+    third_party_settings: {  }
+  field_lt_name_prefix:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_lt_photo:
+    type: inline_entity_form_complex
+    weight: 11
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+    region: content
+    third_party_settings: {  }
+  field_lt_profession:
     weight: 8
     settings:
       size: 60
@@ -117,7 +100,28 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
-  field_op_subtitle:
+  field_lt_surname:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_mda:
+    weight: 10
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+    third_party_settings: {  }
+    type: inline_entity_form_complex
+    region: content
+  field_middle_given_names:
     weight: 4
     settings:
       size: 60
@@ -125,15 +129,43 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
+  field_op_linkedin_account:
+    weight: 12
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_op_subtitle:
+    weight: 7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_rate_public_servant:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: voting_api_widget
+    region: content
+  field_review:
+    weight: 21
+    settings: {  }
+    third_party_settings: {  }
+    type: comment_default
+    region: content
   field_suffix:
-    weight: 26
+    weight: 6
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   path:
     type: path
-    weight: 14
+    weight: 19
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -141,19 +173,19 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 12
+    weight: 17
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 13
+    weight: 18
     region: content
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: 0
+    weight: 1
     region: content
     settings:
       size: 60
@@ -161,7 +193,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 10
+    weight: 15
     settings:
       match_operator: CONTAINS
       size: 60
@@ -169,7 +201,7 @@ content:
     region: content
     third_party_settings: {  }
   url_redirects:
-    weight: 15
+    weight: 20
     region: content
     settings: {  }
     third_party_settings: {  }

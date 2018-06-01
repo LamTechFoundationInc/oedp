@@ -11,7 +11,7 @@ id: node.public_servants.body
 field_name: body
 entity_type: node
 bundle: public_servants
-label: Body
+label: Profile
 description: ''
 required: false
 translatable: true

@@ -39,6 +39,9 @@ settings:
       value: 'Legal Documents'
       label: 'Legal Documents'
     -
+      value: 'Campaign Promises'
+      label: 'Campaign Promises'
+    -
       value: Other
       label: Other
   allowed_values_function: ''

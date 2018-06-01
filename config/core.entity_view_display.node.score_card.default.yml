@@ -33,19 +33,19 @@ bundle: score_card
 mode: default
 content:
   addtoany:
-    weight: 9
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
   body:
     label: above
     type: text_default
-    weight: 5
+    weight: 4
     settings: {  }
     third_party_settings: {  }
     region: content
   field_campaign_promise:
-    weight: 4
+    weight: 3
     label: inline
     settings:
       link: true
@@ -53,7 +53,7 @@ content:
     type: entity_reference_label
     region: content
   field_comment:
-    weight: 10
+    weight: 9
     label: above
     settings:
       view_mode: default
@@ -62,7 +62,7 @@ content:
     type: comment_default
     region: content
   field_data_sources:
-    weight: 7
+    weight: 6
     label: above
     settings:
       link_to_entity: false
@@ -78,18 +78,11 @@ content:
     type: entity_reference_label
     region: content
   field_meta_tags:
-    weight: 11
+    weight: 10
     label: above
     settings: {  }
     third_party_settings: {  }
     type: metatag_empty_formatter
-    region: content
-  field_score:
-    weight: 3
-    label: inline
-    settings: {  }
-    third_party_settings: {  }
-    type: list_default
     region: content
   field_status:
     weight: 2
@@ -99,14 +92,14 @@ content:
     type: list_default
     region: content
   field_status_updates:
-    weight: 6
+    weight: 5
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   links:
-    weight: 8
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -115,4 +108,5 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_score: true

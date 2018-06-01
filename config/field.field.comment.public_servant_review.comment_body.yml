@@ -1,0 +1,21 @@
+uuid: dfb2b460-47eb-49bf-b27f-b712c77859dc
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.public_servant_review
+    - field.storage.comment.comment_body
+  module:
+    - text
+id: comment.public_servant_review.comment_body
+field_name: comment_body
+entity_type: comment
+bundle: public_servant_review
+label: Comment
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

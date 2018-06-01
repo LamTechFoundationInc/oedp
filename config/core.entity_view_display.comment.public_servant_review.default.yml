@@ -1,0 +1,26 @@
+uuid: 495a4700-414e-4996-98dd-b978164d055b
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.public_servant_review
+    - field.field.comment.public_servant_review.comment_body
+  module:
+    - text
+id: comment.public_servant_review.default
+targetEntityType: comment
+bundle: public_servant_review
+mode: default
+content:
+  comment_body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  addtoany: true

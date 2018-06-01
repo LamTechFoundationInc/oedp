@@ -1,26 +1,26 @@
-uuid: 88e1f29b-061c-4458-8ff7-8b0ff012ad13
+uuid: ed193dff-e6c1-4a0b-884f-d21bef28b040
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_mda
+    - field.storage.node.field_lt_manifesto
+    - media_entity.bundle.document
     - node.type.public_servants
-    - taxonomy.vocabulary.sierra_leone_mdas
-id: node.public_servants.field_mda
-field_name: field_mda
+id: node.public_servants.field_lt_manifesto
+field_name: field_lt_manifesto
 entity_type: node
 bundle: public_servants
-label: MDA
+label: CV
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:taxonomy_term'
+  handler: 'default:media'
   handler_settings:
     target_bundles:
-      sierra_leone_mdas: sierra_leone_mdas
+      document: document
     sort:
       field: _none
     auto_create: true

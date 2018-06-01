@@ -1,0 +1,27 @@
+uuid: 114168c7-c9b5-4c23-a592-108d26260ecf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_rate_public_servant
+    - node.type.public_servants
+  module:
+    - votingapi_widgets
+id: node.public_servants.field_rate_public_servant
+field_name: field_rate_public_servant
+entity_type: node
+bundle: public_servants
+label: Rating
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    status: '1'
+default_value_callback: ''
+settings:
+  anonymous_window: '-1'
+  user_window: '-1'
+  result_function: vote_average
+  widget_format: fivestar
+field_type: voting_api_field

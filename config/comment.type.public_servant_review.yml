@@ -1,0 +1,8 @@
+uuid: 0a208a73-e6cd-4c9d-b4e1-39601feb9670
+langcode: en
+status: true
+dependencies: {  }
+id: public_servant_review
+label: 'Public Servant Review'
+target_entity_type_id: node
+description: 'Public Servant Review'

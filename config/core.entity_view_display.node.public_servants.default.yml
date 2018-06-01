@@ -3,9 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.public_servant_review.default
     - field.field.node.public_servants.body
     - field.field.node.public_servants.field_lt_first_name
     - field.field.node.public_servants.field_lt_level_of_education
+    - field.field.node.public_servants.field_lt_manifesto
     - field.field.node.public_servants.field_lt_name_prefix
     - field.field.node.public_servants.field_lt_photo
     - field.field.node.public_servants.field_lt_profession
@@ -14,111 +16,111 @@ dependencies:
     - field.field.node.public_servants.field_middle_given_names
     - field.field.node.public_servants.field_op_linkedin_account
     - field.field.node.public_servants.field_op_subtitle
+    - field.field.node.public_servants.field_rate_public_servant
+    - field.field.node.public_servants.field_review
     - field.field.node.public_servants.field_suffix
     - node.type.public_servants
   module:
-    - options
+    - comment
+    - panelizer
     - text
     - user
+    - votingapi_widgets
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
 id: node.public_servants.default
 targetEntityType: node
 bundle: public_servants
 mode: default
 content:
+  addtoany:
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   body:
     label: hidden
     type: text_default
-    weight: 101
+    weight: 5
     settings: {  }
     third_party_settings: {  }
     region: content
-  field_lt_first_name:
-    weight: 103
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_lt_level_of_education:
-    weight: 112
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: list_default
-    region: content
-  field_lt_name_prefix:
-    weight: 111
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: list_default
-    region: content
-  field_lt_photo:
-    weight: 106
-    label: above
+  field_lt_manifesto:
+    weight: 6
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  field_lt_profession:
-    weight: 109
-    label: above
+  field_lt_photo:
+    weight: 1
+    label: hidden
     settings:
-      link_to_entity: false
+      view_mode: candidate_photos
+      link: false
     third_party_settings: {  }
-    type: string
+    type: entity_reference_entity_view
     region: content
-  field_lt_surname:
-    weight: 104
-    label: above
+  field_lt_profession:
+    weight: 4
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
   field_mda:
-    weight: 102
-    label: above
+    weight: 3
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  field_middle_given_names:
-    weight: 108
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_op_linkedin_account:
-    weight: 107
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
   field_op_subtitle:
-    weight: 105
-    label: above
+    weight: 2
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
-  field_suffix:
-    weight: 110
+  field_rate_public_servant:
+    weight: 0
     label: above
-    settings: {  }
+    settings:
+      style: default
+      readonly: '1'
+      show_results: '1'
+      values: {  }
     third_party_settings: {  }
-    type: list_default
+    type: voting_api_formatter
+    region: content
+  field_review:
+    weight: 9
+    label: above
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    type: comment_default
     region: content
   links:
-    weight: 100
+    weight: 8
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
-  addtoany: true
+  field_lt_first_name: true
+  field_lt_level_of_education: true
+  field_lt_name_prefix: true
+  field_lt_surname: true
+  field_middle_given_names: true
+  field_op_linkedin_account: true
+  field_suffix: true
+  like_and_dislike: true
