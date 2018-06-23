@@ -122,7 +122,7 @@ class ConfirmAction extends FormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $form_data = $form_state->getStorage();
-    $this->tempStoreFactory->get($form_data['tempstore_name'])->delete($this->currentUser()->id());
+    $this->deleteTempstoreData($form_data['view_id'], $form_data['display_id']);
     $this->actionProcessor->executeProcessing($form_data);
     $form_state->setRedirectUrl($form_data['redirect_url']);
   }

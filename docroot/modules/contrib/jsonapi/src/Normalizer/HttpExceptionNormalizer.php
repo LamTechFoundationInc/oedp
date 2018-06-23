@@ -2,6 +2,8 @@
 
 namespace Drupal\jsonapi\Normalizer;
 
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\jsonapi\Normalizer\Value\FieldItemNormalizerValue;
@@ -49,12 +51,16 @@ class HttpExceptionNormalizer extends NormalizerBase {
     $errors = $this->buildErrorObjects($object);
 
     $errors = array_map(function ($error) {
-      return new FieldItemNormalizerValue([$error]);
+      // @todo Either this should not use FieldItemNormalizerValue, or FieldItemNormalizerValue needs to be renamed to not be semantically coupled to "fields".
+      return new FieldItemNormalizerValue([$error], new CacheableMetadata());
     }, $errors);
 
+    // @todo The access result, cardinality and property type make no sense for HTTP exceptions, but it's because HttpExceptionNormalizerValue inappropriately subclasses FieldNormalizerValue
     return new HttpExceptionNormalizerValue(
+      AccessResult::allowed(),
       $errors,
-      FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED
+      FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED,
+      'attributes'
     );
   }
 
@@ -81,6 +87,11 @@ class HttpExceptionNormalizer extends NormalizerBase {
       $error['links']['info'] = $info_url;
     }
     $error['code'] = $exception->getCode();
+    // Exceptions thrown without an explicitly defined code get assigned zero by
+    // default. Since this is no helpful information, omit it.
+    if ($exception->getCode() !== 0) {
+      $error['code'] = $exception->getCode();
+    }
     if ($this->currentUser->hasPermission('access site reports')) {
       // The following information may contain sensitive information. Only show
       // it to authorized users.

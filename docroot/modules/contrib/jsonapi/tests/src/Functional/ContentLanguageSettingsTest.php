@@ -90,13 +90,9 @@ class ContentLanguageSettingsTest extends ResourceTestBase {
         'attributes' => [
           'default_langcode' => 'site_default',
           'dependencies' => [
-            // @todo Remove this first line in favor of the 3 commented lines in https://www.drupal.org/project/jsonapi/issues/2942979
-            // @codingStandardsIgnoreStart
-            'node.type.camelids',
-//            'config' => [
-//              'node.type.camelids',
-//            ],
-            // @codingStandardsIgnoreEnd
+            'config' => [
+              'node.type.camelids',
+            ],
           ],
           'id' => 'node.camelids',
           'langcode' => 'en',
@@ -120,14 +116,7 @@ class ContentLanguageSettingsTest extends ResourceTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function getExpectedCacheContexts() {
-    // @todo Uncomment first 4 lines, remove last line in https://www.drupal.org/project/jsonapi/issues/2940342.
-    // @codingStandardsIgnoreStart
-//    return [
-//      'languages:language_interface',
-//      'user.permissions',
-//    ];
-    // @codingStandardsIgnoreEnd
+  protected function getExpectedCacheContexts(array $sparse_fieldset = NULL) {
     return Cache::mergeContexts(parent::getExpectedCacheContexts(), ['languages:language_interface']);
   }
 

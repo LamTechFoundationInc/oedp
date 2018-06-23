@@ -24,27 +24,23 @@ class LoginSecurityEmailTest extends LoginSecurityTestBase {
   protected $account;
 
   /**
-   * Test user.
-   *
-   * @var \Drupal\user\UserInterface
-   */
-  protected $admin;
-
-  /**
    * {@inheritdoc}
    */
   public function setUp() {
     parent::setUp();
 
-    // Create some users.
-    $this->admin = $this->drupalCreateUser();
+    // Create first user.
+    $this->drupalCreateUser();
+
+    // Create second user.
     $this->account = $this->drupalCreateUser();
+
     $this->drupalLoginLite($this->account);
 
     // Setup emails to be sent.
     \Drupal::configFactory()->getEditable('login_security.settings')
-      ->set('user_blocked_email_user', $this->admin->getDisplayName())
-      ->set('login_activity_email_user', $this->admin->getDisplayName())
+      ->set('user_blocked_notification_emails', 'test@test.com')
+      ->set('login_activity_notification_emails', 'test@test.com')
       ->save();
   }
 
@@ -55,7 +51,7 @@ class LoginSecurityEmailTest extends LoginSecurityTestBase {
     $variables = ['@uid' => $this->account->id()];
     $form_state = new FormState();
     login_user_block_user_name($variables, $form_state);
-    $this->assertMail('to', $this->admin->getEmail(), 'Mail sent when a user is blocked.');
+    $this->assertMail('to', 'test@test.com', 'Mail sent when a user is blocked.');
   }
 
   /**

@@ -62,6 +62,10 @@ class VotingApiField extends FieldItemBase {
       ->setLabel(t('Vote status'))
       ->setRequired(TRUE);
 
+    $properties['value'] = DataDefinition::create('any')
+      ->setLabel(t('Vote initial'))
+      ->setRequired(FALSE);
+
     return $properties;
   }
 
@@ -113,7 +117,7 @@ class VotingApiField extends FieldItemBase {
     }
     $element['vote_type'] = array(
       '#type' => 'select',
-      '#title' => t('Vote type'),
+      '#title' => $this->t('Vote type'),
       '#options' => $options,
       '#required' => TRUE,
       '#default_value' => $this->getSetting('vote_type'),
@@ -122,7 +126,7 @@ class VotingApiField extends FieldItemBase {
 
     $element['vote_plugin'] = array(
       '#type' => 'select',
-      '#title' => t('Vote plugin'),
+      '#title' => $this->t('Vote plugin'),
       '#options' => $vote_options,
       '#required' => TRUE,
       '#default_value' => $this->getSetting('vote_plugin'),
@@ -185,6 +189,34 @@ class VotingApiField extends FieldItemBase {
    */
   public function isEmpty() {
     return FALSE;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function postSave($update) {
+    $entity = $this->getEntity();
+    $field_name = $this->getFieldDefinition()->getName();
+    $vote_type = $this->getFieldDefinition()->getSetting('vote_type');
+    $plugin = $this->getFieldDefinition()->getSetting('vote_plugin');
+    /**
+     * @var VotingApiWidgetBase $plugin
+     */
+    $plugin = \Drupal::service('plugin.manager.voting_api_widget.processor')
+      ->createInstance($plugin);
+
+    $vote_value = $entity->{$field_name}->value;
+    if (!empty($vote_value)) {
+      $vote = $plugin->getEntityForVoting(
+        $entity->getEntityTypeId(),
+        $entity->bundle(),
+        $entity->id(),
+        $vote_type,
+        $field_name
+      );
+      $vote->setValue($vote_value);
+      $vote->save();
+    }
   }
 
 }

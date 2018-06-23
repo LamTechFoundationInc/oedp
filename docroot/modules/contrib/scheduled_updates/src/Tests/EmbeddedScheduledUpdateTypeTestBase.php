@@ -243,10 +243,11 @@ abstract class EmbeddedScheduledUpdateTypeTestBase extends ScheduledUpdatesTestB
 
     // Create ief_test_complex node.
     $edit = ['title[0][value]' => $title];
-    $this->drupalPostForm(NULL, $edit, t('Save and publish'));
+    $this->drupalPostForm(NULL, $edit, t(static::NODE_SAVE_BUTTON_TEXT));
     $this->assertResponse(200, 'Saving parent entity was successful.');
 
     $node = $this->drupalGetNodeByTitle($title);
+    $this->assertNotEqual($node, FALSE, "Node was created");
     return $node;
   }
 

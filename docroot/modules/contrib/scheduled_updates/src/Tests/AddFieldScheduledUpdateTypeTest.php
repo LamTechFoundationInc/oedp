@@ -59,7 +59,7 @@ class AddFieldScheduledUpdateTypeTest extends EmbeddedScheduledUpdateTypeTestBas
     $this->assertUrl("admin/structure/types/manage/$bundle/fields/add-scheduled-update");
     $this->assertText('Update Field');
     $this->checkRunnersAvailable(['default_embedded', 'latest_revision']);
-    $this->checkNodeProperties();
+    $this->checkExpectedOptions('edit-clone-field', $this->getNodePropertyMachineNames());
 
 
 

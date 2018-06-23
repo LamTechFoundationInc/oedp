@@ -125,6 +125,20 @@ abstract class WebTestExtended extends WebTestBase{
   }
 
   /**
+   * Utility function to check that a checkboxes has the expected options.
+   *
+   * @param string $field_name
+   *   The field name.
+   * @param string $expected_options
+   *   The expected options.
+   */
+  protected function checkExpectedCheckboxes($field_name, $expected_options) {
+    foreach ($expected_options as $expected_option) {
+      $this->assertFieldByName("base_fields[$expected_option]");
+    }
+  }
+
+  /**
    * Utility Function around drupalGet to avoid call if not needed.
    *
    * @param $path

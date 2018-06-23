@@ -142,7 +142,7 @@ class SitemapHelper {
         ];
         $term_item .= Link::fromTextAndUrl($term->name, Url::fromRoute('forum.page', array('taxonomy_term' => $term->tid), $link_options))->toString();
       }
-      elseif ($term->count) {
+      elseif ($term->count || $config->get('vocabulary_show_links')) {
         $link_options = [
           array('attributes' => array('title' => $term->description__value))
         ];

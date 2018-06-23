@@ -321,6 +321,12 @@ class SitemapSettingsForm extends ConfigFormBase {
         '#default_value' => $config->get('show_count'),
         '#description' => $this->t('When enabled, this option will show the number of nodes in each taxonomy term.'),
       ];
+      $form['sitemap_taxonomy_options']['vocabulary_show_links'] = [
+        '#type' => 'checkbox',
+        '#title' => $this->t("Show links for taxonomy terms even if they don't contain any nodes"),
+        '#default_value' => $config->get('vocabulary_show_links'),
+        '#description' => $this->t('When enabled, this option will turn every taxonomy term into a link.'),
+      ];
       $form['sitemap_taxonomy_options']['vocabulary_depth'] = [
         '#type' => 'textfield',
         '#title' => $this->t('Vocabulary depth'),
@@ -365,6 +371,7 @@ class SitemapSettingsForm extends ConfigFormBase {
       'show_vocabularies',
       'show_description',
       'show_count',
+      'vocabulary_show_links',
       'vocabulary_depth',
       'term_threshold',
       'forum_threshold',

@@ -135,7 +135,8 @@ class ViewsBulkOperationsBatch {
 
       $context['finished'] = 0;
       // There may be cases where we don't know the total number of
-      // results (e.g. mini pager with a search_api view)
+      // results (probably all of them were already eliminated but
+      // leaving this code just in case).
       if ($context['sandbox']['total']) {
         $context['finished'] = $context['sandbox']['processed'] / $context['sandbox']['total'];
         $context['message'] = static::t('Processed @count of @total entities.', [

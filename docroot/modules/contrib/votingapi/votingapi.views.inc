@@ -65,7 +65,7 @@ function votingapi_views_data_alter(&$data) {
         $tokens['@result_function'] = (isset($result_function_definition['label']) && !strpos($result_function_id, '.')) ? $result_function_definition['label'] : $result_function_id;
 
         // Provide one to many relationship.
-        $data[$data_table_name][$entity_type_id . '_vote_result_' . str_replace('.','_',$result_function_id)] = [
+        $data[$data_table_name][$entity_type_id . '_vote_result_' . str_replace('.', '_', $result_function_id)] = [
           'title' => t('Vote Result "@result_function" for @plural_label', $tokens),
           'help' => t('This includes vote result "@result_function" for the @plural_label', $tokens),
           'relationship' => [
@@ -77,15 +77,15 @@ function votingapi_views_data_alter(&$data) {
             'extra' => [
               ['field' => 'entity_type', 'value' => $entity_type_id],
               ['field' => 'function', 'value' => $result_function_id],
-            ]
-          ]
+            ],
+          ],
         ];
 
         // Flattened relationship for each vote type.
         foreach ($vote_types as $vote_type_name => $vote_type) {
           $tokens['@vote_type_label'] = $vote_type->label();
 
-          $data[$data_table_name][$entity_type_id . '_vote_result_' . str_replace('.','_',$result_function_id) . '_' . $vote_type_name] = [
+          $data[$data_table_name][$entity_type_id . '_vote_result_' . str_replace('.', '_', $result_function_id) . '_' . $vote_type_name] = [
             'title' => t('Vote Result "@result_function" for @plural_label: @vote_type_label', $tokens),
             'help' => t('This includes vote result "@result_function" for the @plural_label voted with @vote_type', $tokens),
             'relationship' => [

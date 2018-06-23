@@ -30,7 +30,7 @@
         "drupal/styled_google_map": "^1.2",
         "drupal/geolocation_street_view": "^1.0@beta",
         "drupal/votingapi": "^3.0",
-        "drupal/address": "~1.0",
+        "drupal/address": "^1.4",
         "drupal/views_simplechart": "^1.2",
         "drupal/easychart": "^3.4",
         "drupal/geophp": "^1.0@beta",
@@ -82,7 +82,13 @@
         "drupal/adminimal_admin_toolbar": "^1.5",
         "drupal/image_widget_crop": "^2.1",
         "drupal/taxonomy_manager": "^1.0",
-        "drupal/votingapi_widgets": "^1.0"
+        "drupal/votingapi_widgets": "^1.0",
+        "drupal/captcha": "^1.0",
+        "drupal/react_comments": "^1.0",
+        "drupal/recaptcha": "^2.3",
+        "drupal/honeypot": "^1.27",
+        "drupal/entity": "^1.0",
+        "drupal/varbase_total_control": "^1.0"
     },
     "repositories": [
         {

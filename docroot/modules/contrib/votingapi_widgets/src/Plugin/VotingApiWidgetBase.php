@@ -6,10 +6,103 @@ use Drupal\Component\Plugin\PluginBase;
 use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\field\Entity\FieldConfig;
 
+use Drupal\votingapi\VoteResultFunctionManager;
+use Drupal\Core\Entity\EntityFormBuilderInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\Core\Session\AccountInterface;
+use Symfony\Component\HttpFoundation\RequestStack;
+use Drupal\Core\Config\ConfigFactoryInterface;
+
 /**
  * Base class for Voting api widget plugins.
  */
-abstract class VotingApiWidgetBase extends PluginBase implements VotingApiWidgetInterface {
+abstract class VotingApiWidgetBase extends PluginBase implements VotingApiWidgetInterface, ContainerFactoryPluginInterface {
+
+  /**
+   * The entity type manager service.
+   *
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
+   */
+  protected $entityTypeManager;
+  /**
+   * @var VoteResultFunctionManager $votingapiResult
+   */
+  protected $votingapiResult;
+
+  /**
+   * @var \Drupal\Core\Entity\EntityFormBuilderInterface
+   */
+  protected $entityFormBuilder;
+
+  /**
+   * @var AccountInterface $account
+   */
+  protected $account;
+
+  /**
+   * The request stack.
+   *
+   * @var \Symfony\Component\HttpFoundation\RequestStack
+   */
+  protected $requestStack;
+
+  /**
+   * The config factory service.
+   *
+   * @var \Drupal\Core\Config\ConfigFactoryInterface
+   */
+  protected $configFactory;
+
+  /**
+   * Constructs a new class instance.
+   *
+   * @param array $configuration
+   *   A configuration array containing information about the plugin instance.
+   * @param string $plugin_id
+   *   The plugin_id for the plugin instance.
+   * @param mixed $plugin_definition
+   *   The plugin implementation definition.
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
+   *   Entity type manager service.
+   * @param \Drupal\votingapi\VoteResultFunctionManager $vote_result
+   *   Vote result function service.
+   * @param \Drupal\Core\Entity\EntityFormBuilderInterface $form_builder
+   *   The form builder service.
+   * @param \Drupal\Core\Session\AccountInterface $account
+   *   The account service.
+   * @param \Symfony\Component\HttpFoundation\RequestStack $request_stack
+   *   The request stack.
+   * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
+   *   The config factory service.
+   */
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity_type_manager, VoteResultFunctionManager $vote_result, EntityFormBuilderInterface $form_builder, AccountInterface $account, RequestStack $request_stack, ConfigFactoryInterface $config_factory) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition);
+    $this->entityTypeManager = $entity_type_manager;
+    $this->votingapiResult = $vote_result;
+    $this->entityFormBuilder = $form_builder;
+    $this->account = $account;
+    $this->requestStack = $request_stack;
+    $this->configFactory = $config_factory;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
+    return new static(
+      $configuration,
+      $plugin_id,
+      $plugin_definition,
+      $container->get('entity_type.manager'),
+      $container->get('plugin.manager.votingapi.resultfunction'),
+      $container->get('entity.form_builder'),
+      $container->get('current_user'),
+      $container->get('request_stack'),
+      $container->get('config.factory')
+    );
+  }
 
   /**
    * Return label.
@@ -26,27 +119,47 @@ abstract class VotingApiWidgetBase extends PluginBase implements VotingApiWidget
   }
 
   /**
-   * Get results.
+   * Gets the widget form as configured for given parameters.
+   *
+   * @return \Drupal\Core\Form\FormInterface
+   *   configured vote form
    */
-  public function getForm($entity_type, $entity_bundle, $entity_id, $vote_type, $field_name, $style, $show_results, $read_only) {
+  public function getForm($entity_type, $entity_bundle, $entity_id, $vote_type, $field_name, $settings) {
     $vote = $this->getEntityForVoting($entity_type, $entity_bundle, $entity_id, $vote_type, $field_name);
-    return \Drupal::service('entity.form_builder')->getForm($vote, 'votingapi_' . $this->getPluginId(), [
-      'read_only' => $read_only,
+    /*
+     * @TODO: remove custom entity_form_builder once
+     *   https://www.drupal.org/node/766146 is fixed.
+     */
+
+    return $this->entityFormBuilder->getForm($vote, 'votingapi_' . $this->getPluginId(), [
       'options' => $this->getPluginDefinition()['values'],
-      'style' => $style,
-      'show_results' => $show_results,
+      'settings' => $settings,
       'plugin' => $this,
+      // @TODO: following keys can be removed once #766146 is fixed.
+      'entity_type' => $entity_type,
+      'entity_bundle' => $entity_bundle,
+      'entity_id' => $entity_id,
+      'vote_type' => $vote_type,
+      'field_name' => $field_name,
     ]);
   }
 
   /**
-   * Get results.
+   * Get initial element.
+   */
+  abstract public function getInitialVotingElement(array &$form);
+
+  /**
+   * Checks whether currentUser is allowed to vote.
+   *
+   * @return bool
+   *   True if user is allowed to vote
    */
   public function canVote($vote, $account = FALSE) {
     if (!$account) {
-      $account = \Drupal::currentUser();
+      $account = $this->account;
     }
-    $entity = \Drupal::service('entity.manager')
+    $entity = $this->entityTypeManager
       ->getStorage($vote->getVotedEntityType())
       ->load($vote->getVotedEntityId());
 
@@ -62,27 +175,32 @@ abstract class VotingApiWidgetBase extends PluginBase implements VotingApiWidget
   }
 
   /**
-   * Get results.
+   * Returns a Vote entity.
+   *
+   * Checks whether a vote was already done and if this vote should be reused
+   * instead of adding a new one.
+   *
+   * @return \Drupal\votingapi\Entity\Vote
+   *  Vote entity
    */
   public function getEntityForVoting($entity_type, $entity_bundle, $entity_id, $vote_type, $field_name) {
-    $storage = \Drupal::service('entity.manager')->getStorage('vote');
-    $currentUser = \Drupal::currentUser();
+    $storage = $this->entityTypeManager->getStorage('vote');
     $voteData = [
       'entity_type' => $entity_type,
       'entity_id'   => $entity_id,
       'type'      => $vote_type,
       'field_name'  => $field_name,
-      'user_id' => $currentUser->id(),
+      'user_id' => $this->account->id(),
     ];
     $vote = $storage->create($voteData);
     $timestamp_offset = $this->getWindow('user_window', $entity_type, $entity_bundle, $field_name);
 
-    if ($currentUser->isAnonymous()) {
-      $voteData['vote_source'] = \Drupal::service('request_stack')->getCurrentRequest()->getClientIp();
+    if ($this->account->isAnonymous()) {
+      $voteData['vote_source'] = $this->requestStack->getCurrentRequest()->getClientIp();
       $timestamp_offset = $this->getWindow('anonymous_window', $entity_type, $entity_bundle, $field_name);
     }
 
-    $query = \Drupal::entityQuery('vote');
+    $query = $this->entityTypeManager->getStorage('vote')->getQuery();
     foreach ($voteData as $key => $value) {
       $query->condition($key, $value);
     }
@@ -109,7 +227,7 @@ abstract class VotingApiWidgetBase extends PluginBase implements VotingApiWidget
     }
     $resultCache = &drupal_static(__FUNCTION__);
     if (!$resultCache) {
-      $resultCache = \Drupal::service('plugin.manager.votingapi.resultfunction')->getResults($entity->getVotedEntityType(), $entity->getVotedEntityId());
+      $resultCache = $this->votingapiResult->getResults($entity->getVotedEntityType(), $entity->getVotedEntityId());
     }
 
     if ($result_function) {
@@ -137,7 +255,7 @@ abstract class VotingApiWidgetBase extends PluginBase implements VotingApiWidget
     $window_field_setting = $config->getSetting($window_type);
     $use_site_default = FALSE;
 
-    if ($window_field_setting === NULL || $window_field_setting === -1) {
+    if ($window_field_setting === NULL || $window_field_setting === "-1") {
       $use_site_default = TRUE;
     }
 
@@ -146,7 +264,7 @@ abstract class VotingApiWidgetBase extends PluginBase implements VotingApiWidget
       /*
        * @var \Drupal\Core\Config\ImmutableConfig $voting_configuration
        */
-      $voting_configuration = \Drupal::config('votingapi.settings');
+      $voting_configuration = $this->configFactory->get('votingapi.settings');
       $window = $voting_configuration->get($window_type);
     }
 

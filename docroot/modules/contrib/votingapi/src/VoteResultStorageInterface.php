@@ -15,13 +15,16 @@ interface VoteResultStorageInterface extends EntityStorageInterface {
    * likes and also dislikes. Just need to change the type.
    *
    * @param string $entity_type_id
-   * @param int $entity_id the node id of the node for which number of votes is
+   * @param int $entity_id
+   *   the node id of the node for which number of votes is
    *   requited.
-   * @param string $vote_type Plugin implementing
-   *   Drupal\votingapi\Plugin\VoteType
+   * @param string $vote_type
+   *   Plugin implementing
+   *   Drupal\votingapi\Plugin\VoteType.
    * @param string $function
    *
    * @return \Drupal\votingapi\Entity\VoteResult[]
    */
   public function getEntityResults($entity_type_id, $entity_id, $vote_type, $function);
+
 }

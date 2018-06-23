@@ -2,7 +2,6 @@
 
 namespace Drupal\views_bulk_operations\Service;
 
-use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\views\Views;
 use Drupal\Core\Session\AccountProxyInterface;
 use Drupal\Core\Extension\ModuleHandlerInterface;
@@ -25,13 +24,6 @@ class ViewsBulkOperationsActionProcessor implements ViewsBulkOperationsActionPro
   protected $viewDataService;
 
   /**
-   * Entity type manager.
-   *
-   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
-   */
-  protected $entityTypeManager;
-
-  /**
    * VBO action manager.
    *
    * @var \Drupal\views_bulk_operations\Service\ViewsBulkOperationsActionManager
@@ -43,7 +35,7 @@ class ViewsBulkOperationsActionProcessor implements ViewsBulkOperationsActionPro
    *
    * @var \Drupal\Core\Session\AccountProxyInterface
    */
-  protected $user;
+  protected $currentUser;
 
   /**
    * Module handler service.
@@ -58,13 +50,6 @@ class ViewsBulkOperationsActionProcessor implements ViewsBulkOperationsActionPro
    * @var bool
    */
   protected $initialized = FALSE;
-
-  /**
-   * Definition of the processed action.
-   *
-   * @var array
-   */
-  protected $actionDefinition;
 
   /**
    * The processed action object.
@@ -99,26 +84,22 @@ class ViewsBulkOperationsActionProcessor implements ViewsBulkOperationsActionPro
    *
    * @param \Drupal\views_bulk_operations\Service\ViewsbulkOperationsViewDataInterface $viewDataService
    *   View data provider service.
-   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
-   *   Entity type manager.
    * @param \Drupal\views_bulk_operations\Service\ViewsBulkOperationsActionManager $actionManager
    *   VBO action manager.
-   * @param \Drupal\Core\Session\AccountProxyInterface $user
+   * @param \Drupal\Core\Session\AccountProxyInterface $currentUser
    *   Current user object.
    * @param \Drupal\Core\Extension\ModuleHandlerInterface $moduleHandler
    *   Module handler service.
    */
   public function __construct(
     ViewsbulkOperationsViewDataInterface $viewDataService,
-    EntityTypeManagerInterface $entityTypeManager,
     ViewsBulkOperationsActionManager $actionManager,
-    AccountProxyInterface $user,
+    AccountProxyInterface $currentUser,
     ModuleHandlerInterface $moduleHandler
   ) {
     $this->viewDataService = $viewDataService;
-    $this->entityTypeManager = $entityTypeManager;
     $this->actionManager = $actionManager;
-    $this->user = $user;
+    $this->currentUser = $currentUser;
     $this->moduleHandler = $moduleHandler;
   }
 
@@ -142,7 +123,6 @@ class ViewsBulkOperationsActionProcessor implements ViewsBulkOperationsActionPro
     }
 
     // Initialize action object.
-    $this->actionDefinition = $this->actionManager->getDefinition($view_data['action_id']);
     $this->action = $this->actionManager->createInstance($view_data['action_id'], $view_data['configuration']);
 
     // Set action context.
@@ -186,6 +166,10 @@ class ViewsBulkOperationsActionProcessor implements ViewsBulkOperationsActionPro
 
     $this->viewDataService->init($this->view, $this->view->getDisplay(), $this->bulkFormData['relationship_id']);
 
+    // Set exposed filters and pager parameters.
+    if (!empty($this->bulkFormData['exposed_input'])) {
+      $this->view->setExposedInput($this->bulkFormData['exposed_input']);
+    }
     $this->view->setItemsPerPage($this->bulkFormData['batch_size']);
     $this->view->setCurrentPage($page);
     $this->view->build();
@@ -254,10 +238,32 @@ class ViewsBulkOperationsActionProcessor implements ViewsBulkOperationsActionPro
     $this->view->setItemsPerPage(0);
     $this->view->setCurrentPage(0);
     $this->view->setOffset(0);
+    $this->view->initHandlers();
+
+    // Remove all exposed filters so we don't have any default filter
+    // values that could make the actual selection out of range.
+    if (!empty($this->view->filter)) {
+      foreach ($this->view->filter as $id => $filter) {
+        if (!empty($filter->options['exposed'])) {
+          unset($this->view->filter[$id]);
+        }
+      }
+    }
+
+    // Build the view query.
     $this->view->build();
 
+    // Modify the view query: determine and apply the base field condition.
     $base_field = $this->view->storage->get('base_field');
-    $this->view->query->addWhere(0, $base_field, $base_field_values, 'IN');
+    if (isset($this->view->query->fields[$base_field])) {
+      $base_field_alias = $this->view->query->fields[$base_field]['table'] . '.' . $this->view->query->fields[$base_field]['alias'];
+    }
+    else {
+      $base_field_alias = $base_field;
+    }
+    $this->view->query->addWhere(0, $base_field_alias, $base_field_values, 'IN');
+
+    // Rebuild the view query.
     $this->view->query->build($this->view);
 
     // Execute the view.
@@ -309,18 +315,21 @@ class ViewsBulkOperationsActionProcessor implements ViewsBulkOperationsActionPro
   }
 
   /**
-   * {@inheritdoc}
+   * Set action context if action method exists.
+   *
+   * @param array $context
+   *   The context to be set.
    */
-  public function setActionContext(array $context) {
+  protected function setActionContext(array $context) {
     if (isset($this->action) && method_exists($this->action, 'setContext')) {
       $this->action->setContext($context);
     }
   }
 
   /**
-   * {@inheritdoc}
+   * Sets the current view object as the executed action parameter.
    */
-  public function setActionView() {
+  protected function setActionView() {
     if (isset($this->action) && method_exists($this->action, 'setView')) {
       $this->action->setView($this->view);
     }
@@ -341,9 +350,10 @@ class ViewsBulkOperationsActionProcessor implements ViewsBulkOperationsActionPro
     }
 
     // Check entity type for multi-type views like search_api index.
-    if (!empty($this->actionDefinition['type'])) {
+    $action_definition = $this->actionManager->getDefinition($this->bulkFormData['action_id']);
+    if (!empty($action_definition['type'])) {
       foreach ($this->queue as $delta => $entity) {
-        if ($entity->getEntityTypeId() !== $this->actionDefinition['type']) {
+        if ($entity->getEntityTypeId() !== $action_definition['type']) {
           $output[] = $this->t('Entity type not supported');
           unset($this->queue[$delta]);
         }
@@ -352,7 +362,7 @@ class ViewsBulkOperationsActionProcessor implements ViewsBulkOperationsActionPro
 
     // Check access.
     foreach ($this->queue as $delta => $entity) {
-      if (!$this->action->access($entity, $this->user)) {
+      if (!$this->action->access($entity, $this->currentUser)) {
         $output[] = $this->t('Access denied');
         unset($this->queue[$delta]);
       }
@@ -404,13 +414,6 @@ class ViewsBulkOperationsActionProcessor implements ViewsBulkOperationsActionPro
       }
       ViewsBulkOperationsBatch::finished(TRUE, $results, []);
     }
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function getQueue() {
-    return $this->queue;
   }
 
 }

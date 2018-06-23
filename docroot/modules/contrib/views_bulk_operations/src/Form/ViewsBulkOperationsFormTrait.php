@@ -59,19 +59,18 @@ trait ViewsBulkOperationsFormTrait {
   }
 
   /**
-   * Calculates a bulk form key.
+   * Calculates the bulk form key for an entity.
    *
    * This generates a key that is used as the checkbox return value when
-   * submitting a bulk form. This key allows the entity for the row to be loaded
-   * totally independently of the executed view row.
+   * submitting the bulk form.
    *
    * @param \Drupal\Core\Entity\EntityInterface $entity
    *   The entity to calculate a bulk form key for.
    * @param mixed $base_field_value
-   *   The value of the base field for this result.
+   *   The value of the base field for this view result.
    *
    * @return string
-   *   The bulk form key representing the entity's id, language and revision (if
+   *   The bulk form key representing the entity id, language and revision (if
    *   applicable) as one string.
    *
    * @see self::loadEntityFromBulkFormKey()
@@ -79,7 +78,7 @@ trait ViewsBulkOperationsFormTrait {
   public static function calculateEntityBulkFormKey(EntityInterface $entity, $base_field_value) {
     // We don't really need the entity ID or type ID, since only the
     // base field value and language are used to select rows, but
-    // other omdules may need those values.
+    // other modules may need those values.
     $key_parts = [
       $base_field_value,
       $entity->language()->getId(),
@@ -133,9 +132,6 @@ trait ViewsBulkOperationsFormTrait {
    */
   protected function getTempstoreData($view_id = NULL, $display_id = NULL) {
     $data = $this->getTempstore($view_id, $display_id)->get($this->currentUser()->id());
-    if (!empty($data)) {
-      $data['tempstore_name'] = $this->tempStoreName;
-    }
 
     return $data;
   }

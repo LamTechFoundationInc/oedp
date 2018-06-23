@@ -387,6 +387,7 @@ class EntityResource {
    */
   public function getRelated(EntityInterface $entity, $related_field, Request $request) {
     $related_field = $this->resourceType->getInternalName($related_field);
+    $this->relationshipAccess($entity, 'view', $related_field);
     /* @var \Drupal\Core\Field\EntityReferenceFieldItemListInterface $field_list */
     $field_list = $entity->get($related_field);
     $this->validateReferencedResource($field_list, $related_field);
@@ -396,7 +397,7 @@ class EntityResource {
       ->getDataDefinition()
       ->getFieldStorageDefinition()
       ->isMultiple();
-    if (!$is_multiple) {
+    if (!$is_multiple && $field_list->entity) {
       $response = $this->getIndividual($field_list->entity, $request);
       // Add cacheable metadata for host entity to individual response.
       $response->addCacheableDependency($cacheable_metadata);
@@ -451,6 +452,8 @@ class EntityResource {
    */
   public function getRelationship(EntityInterface $entity, $related_field, Request $request, $response_code = 200) {
     $related_field = $this->resourceType->getInternalName($related_field);
+    $this->relationshipAccess($entity, 'view', $related_field);
+    /* @var \Drupal\Core\Field\FieldItemListInterface $field_list */
     $field_list = $entity->get($related_field);
     $this->validateReferencedResource($field_list, $related_field);
     $response = $this->buildWrappedResponse($field_list, $response_code);
@@ -502,13 +505,13 @@ class EntityResource {
    */
   public function createRelationship(EntityInterface $entity, $related_field, $parsed_field_list, Request $request) {
     $related_field = $this->resourceType->getInternalName($related_field);
+    /* @var \Drupal\Core\Field\EntityReferenceFieldItemListInterface $parsed_field_list */
+    $this->relationshipAccess($entity, 'update', $related_field);
     if ($parsed_field_list instanceof Response) {
       // This usually means that there was an error, so there is no point on
       // processing further.
       return $parsed_field_list;
     }
-    /* @var \Drupal\Core\Field\EntityReferenceFieldItemListInterface $parsed_field_list */
-    $this->relationshipAccess($entity, $related_field);
     // According to the specification, you are only allowed to POST to a
     // relationship if it is a to-many relationship.
     /* @var \Drupal\Core\Field\EntityReferenceFieldItemListInterface $field_list */
@@ -558,7 +561,7 @@ class EntityResource {
       return $parsed_field_list;
     }
     /* @var \Drupal\Core\Field\EntityReferenceFieldItemListInterface $parsed_field_list */
-    $this->relationshipAccess($entity, $related_field);
+    $this->relationshipAccess($entity, 'update', $related_field);
     // According to the specification, PATCH works a little bit different if the
     // relationship is to-one or to-many.
     /* @var \Drupal\Core\Field\EntityReferenceFieldItemListInterface $field_list */
@@ -634,7 +637,7 @@ class EntityResource {
       throw new BadRequestHttpException(sprintf('You need to provide a body for DELETE operations on a relationship (%s).', $related_field));
     }
     /* @var \Drupal\Core\Field\EntityReferenceFieldItemListInterface $parsed_field_list */
-    $this->relationshipAccess($entity, $related_field);
+    $this->relationshipAccess($entity, 'update', $related_field);
 
     $field_name = $parsed_field_list->getName();
     $field_access = $parsed_field_list->access('edit', NULL, TRUE);
@@ -787,15 +790,21 @@ class EntityResource {
    *
    * @param \Drupal\Core\Entity\EntityInterface $entity
    *   The entity.
+   * @param string $operation
+   *   The operation to test.
    * @param string $related_field
    *   The name of the field to check.
+   *
+   * @see \Drupal\Core\Access\AccessibleInterface
    */
-  protected function relationshipAccess(EntityInterface $entity, $related_field) {
+  protected function relationshipAccess(EntityInterface $entity, $operation, $related_field) {
     /* @var \Drupal\Core\Field\EntityReferenceFieldItemListInterface $parsed_field_list */
-    $entity_access = $entity->access('update', NULL, TRUE);
-    if (!$entity_access->isAllowed()) {
+    $field_access = $entity->{$related_field}->access($operation, NULL, TRUE);
+    $entity_access = $entity->access($operation, NULL, TRUE);
+    $combined_access = $entity_access->andIf($field_access);
+    if (!$combined_access->isAllowed()) {
       // @todo Is this really the right path?
-      throw new EntityAccessDeniedHttpException($entity, $entity_access, $related_field, 'The current user is not allowed to update the selected resource.');
+      throw new EntityAccessDeniedHttpException($entity, $combined_access, $related_field, "The current user is not allowed to $operation this relationship.");
     }
     if (!($field_list = $entity->get($related_field)) || !$this->isRelationshipField($field_list)) {
       throw new NotFoundHttpException(sprintf('The relationship %s is not present in this resource.', $related_field));
@@ -825,12 +834,8 @@ class EntityResource {
       }
 
       $origin_field_list = $origin->get($field_name);
-      if ($destination_field_list->getValue() != $origin_field_list->getValue()) {
-        $field_access = $destination_field_list->access('edit', NULL, TRUE);
-        if (!$field_access->isAllowed()) {
-          throw new EntityAccessDeniedHttpException($destination, $field_access, '/data/attributes/' . $field_name, sprintf('The current user is not allowed to PATCH the selected field (%s).', $field_name));
-        }
-        $destination->{$field_name} = $origin->get($field_name);
+      if ($this->checkPatchFieldAccess($destination_field_list, $origin_field_list)) {
+        $destination->set($field_name, $origin_field_list->getValue());
       }
     }
     elseif ($origin instanceof ConfigEntityInterface && $destination instanceof ConfigEntityInterface) {
@@ -840,6 +845,52 @@ class EntityResource {
     else {
       throw new BadRequestHttpException('The serialized entity and the destination entity are of different types.');
     }
+  }
+
+  /**
+   * Checks whether the given field should be PATCHed.
+   *
+   * @param \Drupal\Core\Field\FieldItemListInterface $original_field
+   *   The original (stored) value for the field.
+   * @param \Drupal\Core\Field\FieldItemListInterface $received_field
+   *   The received value for the field.
+   *
+   * @return bool
+   *   Whether the field should be PATCHed or not.
+   *
+   * @throws \Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException
+   *   Thrown when the user sending the request is not allowed to update the
+   *   field. Only thrown when the user could not abuse this information to
+   *   determine the stored value.
+   *
+   * @internal
+   *
+   * @see \Drupal\rest\Plugin\rest\resource\EntityResource::checkPatchFieldAccess()
+   */
+  protected function checkPatchFieldAccess(FieldItemListInterface $original_field, FieldItemListInterface $received_field) {
+    // If the user is allowed to edit the field, it is always safe to set the
+    // received value. We may be setting an unchanged value, but that is ok.
+    $field_edit_access = $original_field->access('edit', NULL, TRUE);
+    if ($field_edit_access->isAllowed()) {
+      return TRUE;
+    }
+
+    // The user might not have access to edit the field, but still needs to
+    // submit the current field value as part of the PATCH request. For
+    // example, the entity keys required by denormalizers. Therefore, if the
+    // received value equals the stored value, return FALSE without throwing an
+    // exception. But only for fields that the user has access to view, because
+    // the user has no legitimate way of knowing the current value of fields
+    // that they are not allowed to view, and we must not make the presence or
+    // absence of a 403 response a way to find that out.
+    if ($original_field->access('view') && $original_field->equals($received_field)) {
+      return FALSE;
+    }
+
+    // It's helpful and safe to let the user know when they are not allowed to
+    // update a field.
+    $field_name = $received_field->getName();
+    throw new EntityAccessDeniedHttpException($original_field->getEntity(), $field_edit_access, '/data/attributes/' . $field_name, sprintf('The current user is not allowed to PATCH the selected field (%s).', $field_name));
   }
 
   /**

@@ -46,7 +46,10 @@ class ViewsBulkOperationsAdvancedTestAction extends ViewsBulkOperationsActionBas
 
     // Unpublish entity.
     if ($this->configuration['test_config'] === 'unpublish') {
-      $entity->status = NODE_NOT_PUBLISHED;
+      if (!$entity->isDefaultTranslation()) {
+        $entity = \Drupal::service('entity_type.manager')->getStorage('node')->load($entity->id());
+      }
+      $entity->setPublished(FALSE);
       $entity->save();
     }
 

@@ -8,7 +8,7 @@ use Drupal\search_api\Display\DisplayPluginBase;
  * Represents a Views Data Export display.
  *
  * @SearchApiDisplay(
- *   id = "views_data",
+ *   id = "views_data_export",
  *   views_display_type = "data_export",
  *   deriver = "Drupal\search_api\Plugin\search_api\display\ViewsDisplayDeriver"
  * )

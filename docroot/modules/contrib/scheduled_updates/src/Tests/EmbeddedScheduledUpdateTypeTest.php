@@ -91,7 +91,7 @@ class EmbeddedScheduledUpdateTypeTest extends EmbeddedScheduledUpdateTypeTestBas
     $this->assertUrl("admin/config/workflow/scheduled-update-type/$type_id/clone-fields");
     $this->assertText("Created the $label Scheduled Update Type.");
     $this->assertText("Select fields to add to these updates");
-    $this->checkNodeProperties();
+    $this->checkExpectedCheckboxes('base_fields', $this->getNodePropertyMachineNames());
     // @todo test that node.body displays and is select field.
 
     $this->cloneFields($type_id, $clone_fields);

@@ -5,6 +5,8 @@ namespace Drupal\votingapi_widgets\Form;
 use Drupal\Core\Entity\ContentEntityForm;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Component\Utility\Html;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\votingapi\VoteResultFunctionManager;
 
 /**
  * Form controller for Campaign edit forms.
@@ -12,6 +14,44 @@ use Drupal\Component\Utility\Html;
  * @ingroup adspree_link_manager
  */
 class BaseRatingForm extends ContentEntityForm {
+
+  /**
+   * @var VoteResultFunctionManager $votingapiResult
+   */
+  protected $votingapiResult;
+
+  /**
+   * Class constructor.
+   */
+  public function __construct(VoteResultFunctionManager $votingapi_result) {
+    $this->votingapiResult = $votingapi_result;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('plugin.manager.votingapi.resultfunction')
+    );
+  }
+
+  public function getFormId() {
+    $form_id = parent::getFormId();
+    $entity = $this->getEntity();
+    $voted_entity_type = $entity->getVotedEntityType();
+    $voted_entity_id = $entity->getVotedEntityId();
+    $voted_entity = $this->entityManager->getStorage($voted_entity_type)->load($voted_entity_id);
+
+    $additional_form_id_parts = [];
+    $additional_form_id_parts[] = $voted_entity->getEntityTypeId();
+    $additional_form_id_parts[] = $voted_entity->bundle();
+    $additional_form_id_parts[] = $voted_entity->id();
+    $additional_form_id_parts[] = $entity->bundle();
+    $additional_form_id_parts[] = $entity->field_name->value;
+    $form_id = implode('_', $additional_form_id_parts) . '__' . $form_id;
+    return $form_id;
+  }
 
   public $plugin;
 
@@ -25,6 +65,7 @@ class BaseRatingForm extends ContentEntityForm {
     $options = $form_state->get('options');
     $form_id = Html::getUniqueId('vote-form');
     $plugin = $form_state->get('plugin');
+    $settings = $form_state->get('settings');
 
     $form['#cache']['contexts'][] = 'user.permissions';
     $form['#cache']['contexts'][] = 'user.roles:authenticated';
@@ -36,17 +77,25 @@ class BaseRatingForm extends ContentEntityForm {
       '#options' => $options,
       '#attributes' => [
         'autocomplete' => 'off',
-        'data-default-value' => ($this->getResults($result_function)) ? $this->getResults($result_function) : -1,
-        'data-style' => ($form_state->get('style')) ? $form_state->get('style') : 'default',
+        'data-result-value' => ($this->getResults($result_function)) ? $this->getResults($result_function) : -1,
+        'data-vote-value' => ($entity->getValue()) ? $entity->getValue() : (($this->getResults($result_function)) ? $this->getResults($result_function) : -1),
+        'data-style' => ($settings['style']) ? $settings['style'] : 'default',
       ],
-      '#default_value' => $this->getResults($result_function),
     ];
 
-    if ($form_state->get('read_only') || !$plugin->canVote($entity)) {
+    $form['value']['#attributes']['data-show-own-vote'] = 'true';
+    $form['value']['#default_value'] = (int) $entity->getValue();
+
+    if (!$settings['show_own_vote']) {
+      $form['value']['#attributes']['data-show-own-vote'] = 'false';
+      $form['value']['#default_value'] = $this->getResults($result_function);
+    }
+
+    if ($settings['readonly'] || !$plugin->canVote($entity)) {
       $form['value']['#attributes']['disabled'] = 'disabled';
     }
 
-    if ($form_state->get('show_results')) {
+    if ($settings['show_results']) {
       $form['result'] = [
         '#theme' => 'container',
         '#attributes' => [
@@ -69,7 +118,7 @@ class BaseRatingForm extends ContentEntityForm {
         'event' => 'click',
         'wrapper' => $form_id,
         'progress' => [
-          'method' => 'replace',
+          'type' => NULL,
         ],
       ],
     ];
@@ -94,12 +143,17 @@ class BaseRatingForm extends ContentEntityForm {
     }
     $resultCache = &drupal_static(__FUNCTION__);
 
+    if (!$resultCache) {
+      \Drupal::service('plugin.cache_clearer')
+        ->clearCachedDefinitions();
+    }
+
     if (!$result_function && isset($resultCache[$entity->getEntityTypeId()][$entity->getVotedEntityId()])) {
       return $resultCache[$entity->getEntityTypeId()][$entity->getVotedEntityId()];
     }
 
     if (!$result_function) {
-      $results = \Drupal::service('plugin.manager.votingapi.resultfunction')->getResults($entity->getVotedEntityType(), $entity->getVotedEntityId());
+      $results = $this->votingapiResult->getResults($entity->getVotedEntityType(), $entity->getVotedEntityId());
       if (!array_key_exists($entity->getEntityTypeId(), $results)) {
         return [];
       }
@@ -111,8 +165,8 @@ class BaseRatingForm extends ContentEntityForm {
       return $resultCache[$entity->getEntityTypeId()][$entity->getVotedEntityId()][$result_function];
     }
 
-    $results = \Drupal::service('plugin.manager.votingapi.resultfunction')->getResults($entity->getVotedEntityType(), $entity->getVotedEntityId());
-    if (array_key_exists($entity->getEntityTypeId(), $results)) {
+    $results = $this->votingapiResult->getResults($entity->getVotedEntityType(), $entity->getVotedEntityId());
+    if (isset($results[$entity->getEntityTypeId()][$result_function])) {
       $resultCache[$entity->getEntityTypeId()] = [
         $entity->getVotedEntityId() => $results[$entity->getEntityTypeId()],
       ];
@@ -126,19 +180,32 @@ class BaseRatingForm extends ContentEntityForm {
    */
   public function ajaxSubmit(array $form, FormStateInterface $form_state) {
     $this->save($form, $form_state);
+    $settings = $form_state->get('settings');
     $result_function = $this->getResultFunction($form_state);
     $plugin = $form_state->get('plugin');
     $entity = $this->getEntity();
-    $form['value']['#default_value'] = $this->getResults($result_function, TRUE);
-    $form['value']['#attributes']['data-default-value'] = $this->getResults($result_function);
-    if ($form_state->get('show_results')) {
+    $result_value = $this->getResults($result_function, TRUE);
+
+    $form['value']['#attributes']['data-show-own-vote'] = 'true';
+    $form['value']['#default_value'] = (int) $entity->getValue();
+
+    if ($settings['show_own_vote'] === '0') {
+      $form['value']['#attributes']['data-show-own-vote'] = 'false';
+      $form['value']['#default_value'] = $result_value;
+    }
+
+    $form['value']['#attributes']['data-vote-value'] = $entity->getValue();
+    $form['value']['#attributes']['data-result-value'] = $result_value;
+    if ($settings['show_results'] === '1') {
       $form['result']['#children']['result'] = $plugin->getVoteSummary($entity);
     }
-    if ($form_state->get('read_only') || !$plugin->canVote($entity)) {
+
+    if (!$plugin->canVote($entity)) {
       $form['value']['#attributes']['disabled'] = 'disabled';
     }
 
     $form_state->setRebuild(TRUE);
+
     return $form;
   }
 
@@ -146,8 +213,14 @@ class BaseRatingForm extends ContentEntityForm {
    * {@inheritdoc}
    */
   public function save(array $form, FormStateInterface $form_state) {
-    $status = parent::save($form, $form_state);
-    return $status;
+    $entity = $this->getEntity();
+    $plugin = $form_state->get('plugin');
+
+    if ($plugin->canVote($entity)) {
+      return parent::save($form, $form_state);
+    }
+
+    return FALSE;
   }
 
 }

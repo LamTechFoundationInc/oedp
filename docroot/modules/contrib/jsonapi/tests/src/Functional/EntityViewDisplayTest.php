@@ -91,15 +91,10 @@ class EntityViewDisplayTest extends ResourceTestBase {
         'attributes' => [
           'bundle' => 'camelids',
           'content' => [
-            // @todo Remove the first 2 lines in favor of the 4 commented lines in https://www.drupal.org/project/jsonapi/issues/2942979
-            // @codingStandardsIgnoreStart
-            'region' => 'content',
-            'weight' => 100,
-//            'links' => [
-//              'region' => 'content',
-//              'weight' => 100,
-//            ],
-            // @codingStandardsIgnoreEnd
+            'links' => [
+              'region' => 'content',
+              'weight' => 100,
+            ],
           ],
           'dependencies' => [
             'config' => [
@@ -127,17 +122,6 @@ class EntityViewDisplayTest extends ResourceTestBase {
   protected function getPostDocument() {
     // @todo Update in https://www.drupal.org/node/2300677.
   }
-
-  // @codingStandardsIgnoreStart
-  /**
-   * {@inheritdoc}
-   */
-  protected function getExpectedCacheContexts() {
-    // @todo Uncomment first line, remove second line in https://www.drupal.org/project/jsonapi/issues/2940342.
-//    return ['user.permissions'];
-    return parent::getExpectedCacheContexts();
-  }
-  // @codingStandardsIgnoreEnd
 
   /**
    * {@inheritdoc}

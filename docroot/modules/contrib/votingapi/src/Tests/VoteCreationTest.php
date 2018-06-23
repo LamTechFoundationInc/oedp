@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\votingapi\Tests\VoteCreationTest.
- */
-
 namespace Drupal\votingapi\Tests;
 
 use Drupal\node\Entity\Node;
@@ -26,14 +21,14 @@ class VoteCreationTest extends WebTestBase {
   public static $modules = ['node', 'votingapi', 'votingapi_test'];
 
   /**
-   * A simple user with basic node and vote permissions
+   * A simple user with basic node and vote permissions.
    *
    * @var \Drupal\user\Entity\User
    */
   protected $logged_user;
 
   /**
-   * A simple user vote permission
+   * A simple user vote permission.
    *
    * @var \Drupal\user\Entity\User
    */
@@ -49,6 +44,9 @@ class VoteCreationTest extends WebTestBase {
    */
   private $vote;
 
+  /**
+   *
+   */
   protected function setUp() {
     parent::setUp();
 
@@ -79,13 +77,12 @@ class VoteCreationTest extends WebTestBase {
   }
 
   /**
-   * Test voting with non-existent Vote Type Id
+   * Test voting with non-existent Vote Type Id.
    */
   public function testVoteCreationWithInvalidVoteType() {
 
-
     $this->vote = Vote::create(['type' => 'vote']);
-    //    $this->vote = Vote::create(['type' => 'fake_vote_type']);
+    // $this->vote = Vote::create(['type' => 'fake_vote_type']);.
     $this->vote->setVotedEntityId($this->node->id());
     $this->vote->setVotedEntityType($this->node->getEntityTypeId());
     $this->vote->setValue(50);

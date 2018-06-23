@@ -19,6 +19,7 @@ use Drupal\views_bulk_operations\Service\ViewsBulkOperationsActionProcessorInter
 use Drupal\views_bulk_operations\Form\ViewsBulkOperationsFormTrait;
 use Drupal\user\PrivateTempStoreFactory;
 use Drupal\Core\Session\AccountInterface;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Drupal\Core\Url;
 
 /**
@@ -70,6 +71,13 @@ class ViewsBulkOperationsBulkForm extends FieldPluginBase implements CacheableDe
   protected $currentUser;
 
   /**
+   * The current URL object.
+   *
+   * @var \Drupal\Core\Url
+   */
+  protected $url;
+
+  /**
    * An array of actions that can be executed.
    *
    * @var array
@@ -86,22 +94,12 @@ class ViewsBulkOperationsBulkForm extends FieldPluginBase implements CacheableDe
   /**
    * Tempstore data.
    *
-   * This gets passed to next requests if needed
+   * This gets passed to the next requests if needed
    * or used in the views form submit handler directly.
    *
    * @var array
    */
   protected $tempStoreData = [];
-
-  /**
-   * Pager data.
-   *
-   * @var array
-   */
-  protected $pagerData = [
-    'current' => 0,
-    'more' => FALSE,
-  ];
 
   /**
    * Constructs a new BulkForm object.
@@ -122,6 +120,8 @@ class ViewsBulkOperationsBulkForm extends FieldPluginBase implements CacheableDe
    *   User private temporary storage factory.
    * @param \Drupal\Core\Session\AccountInterface $currentUser
    *   The current user object.
+   * @param \Symfony\Component\HttpFoundation\RequestStack $requestStack
+   *   The request stack.
    */
   public function __construct(
     array $configuration,
@@ -131,7 +131,8 @@ class ViewsBulkOperationsBulkForm extends FieldPluginBase implements CacheableDe
     ViewsBulkOperationsActionManager $actionManager,
     ViewsBulkOperationsActionProcessorInterface $actionProcessor,
     PrivateTempStoreFactory $tempStoreFactory,
-    AccountInterface $currentUser
+    AccountInterface $currentUser,
+    RequestStack $requestStack
   ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
 
@@ -140,6 +141,7 @@ class ViewsBulkOperationsBulkForm extends FieldPluginBase implements CacheableDe
     $this->actionProcessor = $actionProcessor;
     $this->tempStoreFactory = $tempStoreFactory;
     $this->currentUser = $currentUser;
+    $this->url = Url::createFromRequest($requestStack->getCurrentRequest());
   }
 
   /**
@@ -154,7 +156,8 @@ class ViewsBulkOperationsBulkForm extends FieldPluginBase implements CacheableDe
       $container->get('plugin.manager.views_bulk_operations_action'),
       $container->get('views_bulk_operations.processor'),
       $container->get('user.private_tempstore'),
-      $container->get('current_user')
+      $container->get('current_user'),
+      $container->get('request_stack')
     );
   }
 
@@ -209,6 +212,8 @@ class ViewsBulkOperationsBulkForm extends FieldPluginBase implements CacheableDe
       'batch_size' => $this->options['batch'] ? $this->options['batch_size'] : 0,
       'total_results' => $this->viewData->getTotalResults(),
       'arguments' => $this->view->args,
+      'redirect_url' => $this->url,
+      'exposed_input' => $this->view->getExposedInput(),
     ];
 
     // Create tempstore data object if it doesn't exist.
@@ -230,15 +235,25 @@ class ViewsBulkOperationsBulkForm extends FieldPluginBase implements CacheableDe
 
     // Update some of the tempstore data parameters if required.
     else {
-      // Delete list if view arguments changed.
-      // NOTE: this should be subject to a discussion.
-      if (!empty(array_diff($variable['arguments'], $this->tempStoreData['arguments']))) {
-        $this->tempStoreData['arguments'] = $variable['arguments'];
-        $this->tempStoreData['list'] = [];
-      }
-      unset($variable['arguments']);
-
       $update = FALSE;
+
+      // Delete list if view arguments and optionally exposed filters changed.
+      // NOTE: this should be subject to a discussion, maybe tempstore
+      // should be arguments - specific?
+      $clear_triggers = ['arguments'];
+      if ($this->options['clear_on_exposed']) {
+        $clear_triggers[] = 'exposed_input';
+      }
+
+      foreach ($clear_triggers as $trigger) {
+        if ($variable[$trigger] !== $this->tempStoreData[$trigger]) {
+          $this->tempStoreData[$trigger] = $variable[$trigger];
+          $this->tempStoreData['list'] = [];
+        }
+        unset($variable[$trigger]);
+        $update = TRUE;
+      }
+
       foreach ($variable as $param => $value) {
         if (!isset($this->tempStoreData[$param]) || $this->tempStoreData[$param] != $value) {
           $update = TRUE;
@@ -308,6 +323,7 @@ class ViewsBulkOperationsBulkForm extends FieldPluginBase implements CacheableDe
     $options['batch_size'] = ['default' => 10];
     $options['form_step'] = ['default' => TRUE];
     $options['buttons'] = ['default' => FALSE];
+    $options['clear_on_exposed'] = ['default' => FALSE];
     $options['action_title'] = ['default' => $this->t('Action')];
     $options['selected_actions'] = ['default' => []];
     $options['preconfiguration'] = ['default' => []];
@@ -324,7 +340,7 @@ class ViewsBulkOperationsBulkForm extends FieldPluginBase implements CacheableDe
       $form = [
         '#type' => 'item',
         '#title' => $this->t('NOTE'),
-        '#markup' => $this->t('Views Bulk Operations will work only with normal entity views and contrib module views that are integrated. See /Drupal\views_bulk_operations\EventSubscriber\ViewsBulkOperationsEventSubscriber class for integration best practice.'),
+        '#markup' => $this->t('Views Bulk Operations will work only with normal entity views and contrib module views that are integrated. See \Drupal\views_bulk_operations\EventSubscriber\ViewsBulkOperationsEventSubscriber class for integration best practice.'),
         '#prefix' => '<div class="scroll">',
         '#suffix' => '</div>',
       ];
@@ -361,6 +377,12 @@ class ViewsBulkOperationsBulkForm extends FieldPluginBase implements CacheableDe
       '#type' => 'checkbox',
       '#title' => $this->t('Display selectable actions as buttons.'),
       '#default_value' => $this->options['buttons'],
+    ];
+
+    $form['clear_on_exposed'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('Clear selection when exposed filters change.'),
+      '#default_value' => $this->options['clear_on_exposed'],
     ];
 
     $form['action_title'] = [
@@ -501,12 +523,15 @@ class ViewsBulkOperationsBulkForm extends FieldPluginBase implements CacheableDe
     // @todo Evaluate this again in https://www.drupal.org/node/2503009.
     $form['#cache']['max-age'] = 0;
 
+    // Add VBO class to the form.
+    $form['#attributes']['class'][] = 'vbo-view-form';
+
     // Add VBO front UI and tableselect libraries for table display style.
     if ($this->view->style_plugin instanceof Table) {
       $form['#attached']['library'][] = 'core/drupal.tableselect';
-      $form['#attached']['library'][] = 'views_bulk_operations/frontUi';
+      $this->view->style_plugin->options['views_bulk_operations_enabled'] = TRUE;
     }
-
+    $form['#attached']['library'][] = 'views_bulk_operations/frontUi';
     // Only add the bulk form options and buttons if
     // there are results and any actions are available.
     $action_options = $this->getBulkOptions();
@@ -520,12 +545,14 @@ class ViewsBulkOperationsBulkForm extends FieldPluginBase implements CacheableDe
 
       // Get pager data if available.
       if (!empty($this->view->pager) && method_exists($this->view->pager, 'hasMoreRecords')) {
-        $this->pagerData['current'] = $this->view->pager->getCurrentPage();
-        $this->pagerData['more'] = $this->view->pager->hasMoreRecords();
+        $pagerData = [
+          'current' => $this->view->pager->getCurrentPage(),
+          'more' => $this->view->pager->hasMoreRecords(),
+        ];
       }
 
       // Render checkboxes for all rows.
-      $page_selected = 0;
+      $page_selected = [];
       $base_field = $this->view->storage->get('base_field');
       foreach ($this->view->result as $row_index => $row) {
         $entity = $this->getEntity($row);
@@ -536,7 +563,7 @@ class ViewsBulkOperationsBulkForm extends FieldPluginBase implements CacheableDe
 
         $checked = isset($this->tempStoreData['list'][$bulk_form_key]);
         if ($checked) {
-          $page_selected++;
+          $page_selected[] = $bulk_form_key;
         }
         $form[$this->options['id']][$row_index] = [
           '#type' => 'checkbox',
@@ -606,32 +633,52 @@ class ViewsBulkOperationsBulkForm extends FieldPluginBase implements CacheableDe
         }
       }
 
-      // Select all results checkbox and multipage selection.
-      if ($this->pagerData['more'] || $this->pagerData['current'] > 0) {
+      $display_select_all = isset($pagerData) && ($pagerData['more'] || $pagerData['current'] > 0);
+      // Selection info: displayed if exposed filters are set and selection
+      // is not cleared when they change or "select all" element display
+      // conditions are met.
+      if ((!$this->options['clear_on_exposed'] && !empty($this->view->getExposedInput())) || $display_select_all) {
 
-        // Add view_id and display_id to be available for
-        // js multipage selector functionality.
         $form['header'][$this->options['id']]['multipage'] = [
           '#type' => 'details',
-          '#open' => (count($this->tempStoreData['list']) > $page_selected),
-          '#title' => $this->t('Entire selection'),
-          '#description' => $this->t('Selected %count items in this view.', [
+          '#open' => FALSE,
+          '#title' => $this->t('Selected %count items in this view', [
             '%count' => count($this->tempStoreData['list']),
           ]),
           '#attributes' => [
+            // Add view_id and display_id to be available for
+            // js multipage selector functionality.
             'data-view-id' => $this->tempStoreData['view_id'],
             'data-display-id' => $this->tempStoreData['display_id'],
             'class' => ['vbo-multipage-selector'],
             'name' => 'somename',
           ],
         ];
-        $form['header'][$this->options['id']]['multipage']['clear'] = [
-          '#type' => 'submit',
-          '#value' => $this->t('Clear selection'),
-          '#submit' => [[$this, 'clearSelection']],
-          '#limit_validation_errors' => [],
-        ];
 
+        // Display a list of items selected on other pages.
+        $form['header'][$this->options['id']]['multipage']['list'] = [
+          '#theme' => 'item_list',
+          '#title' => $this->t('Items selected on other pages:'),
+          '#items' => [],
+          '#empty' => $this->t('No selection'),
+        ];
+        if (count($this->tempStoreData['list']) > count($page_selected)) {
+          foreach ($this->tempStoreData['list'] as $bulk_form_key => $item) {
+            if (!in_array($bulk_form_key, $page_selected)) {
+              $form['header'][$this->options['id']]['multipage']['list']['#items'][] = $item[4];
+            }
+          }
+          $form['header'][$this->options['id']]['multipage']['clear'] = [
+            '#type' => 'submit',
+            '#value' => $this->t('Clear'),
+            '#submit' => [[$this, 'clearSelection']],
+            '#limit_validation_errors' => [],
+          ];
+        }
+      }
+
+      // Select all results checkbox.
+      if ($display_select_all) {
         $form['header'][$this->options['id']]['select_all'] = [
           '#type' => 'checkbox',
           '#title' => $this->t('Select all@count results in this view', [
@@ -710,15 +757,10 @@ class ViewsBulkOperationsBulkForm extends FieldPluginBase implements CacheableDe
 
       $action = $this->actions[$action_id];
 
-      // Update tempstore data to make sure we have also
-      // results selected in other requests.
-      $this->tempStoreData = $this->getTempstoreData();
-
       $this->tempStoreData['action_id'] = $action_id;
       $this->tempStoreData['action_label'] = empty($this->options['preconfiguration'][$action_id]['label_override']) ? (string) $action['label'] : $this->options['preconfiguration'][$action_id]['label_override'];
       $this->tempStoreData['relationship_id'] = $this->options['relationship'];
       $this->tempStoreData['preconfiguration'] = isset($this->options['preconfiguration'][$action_id]) ? $this->options['preconfiguration'][$action_id] : [];
-      $this->tempStoreData['current_page'] = $this->pagerData['current'];
 
       if (!$form_state->getValue('select_all')) {
         // Update list data with the form selection.
@@ -731,9 +773,6 @@ class ViewsBulkOperationsBulkForm extends FieldPluginBase implements CacheableDe
       else {
         // Unset the list completely.
         $this->tempStoreData['list'] = [];
-
-        // Set exposed input.
-        $this->tempStoreData['exposed_input'] = $this->view->getExposedInput();
       }
 
       $configurable = $this->isConfigurable($action);
@@ -759,9 +798,6 @@ class ViewsBulkOperationsBulkForm extends FieldPluginBase implements CacheableDe
         if (!empty($action['confirm_form_route_name'])) {
           $redirect_route = $action['confirm_form_route_name'];
         }
-        else {
-          $redirect_route = 'views_bulk_operations.execute_batch';
-        }
       }
       elseif (!empty($action['confirm_form_route_name'])) {
         $redirect_route = $action['confirm_form_route_name'];
@@ -769,8 +805,6 @@ class ViewsBulkOperationsBulkForm extends FieldPluginBase implements CacheableDe
 
       // Redirect if needed.
       if (!empty($redirect_route)) {
-        $this->tempStoreData['redirect_url'] = Url::createFromRequest(\Drupal::request());
-
         $this->setTempstoreData($this->tempStoreData);
 
         $form_state->setRedirect($redirect_route, [
@@ -782,6 +816,7 @@ class ViewsBulkOperationsBulkForm extends FieldPluginBase implements CacheableDe
       else {
         $this->deleteTempstoreData();
         $this->actionProcessor->executeProcessing($this->tempStoreData, $this->view);
+        $form_state->setRedirectUrl($this->tempStoreData['redirect_url']);
       }
     }
   }
@@ -818,8 +853,12 @@ class ViewsBulkOperationsBulkForm extends FieldPluginBase implements CacheableDe
     }
 
     if (!$form_state->getValue('select_all')) {
+      // Update tempstore data to make sure we have also
+      // results selected in other requests and validate if
+      // anything is selected.
+      $this->tempStoreData = $this->getTempstoreData();
       $selected = array_filter($form_state->getValue($this->options['id']));
-      if (empty($selected)) {
+      if (empty($this->tempStoreData['list']) && empty($selected)) {
         $form_state->setErrorByName('', $this->t('No items selected.'));
       }
     }
@@ -840,13 +879,6 @@ class ViewsBulkOperationsBulkForm extends FieldPluginBase implements CacheableDe
    */
   public function clickSortable() {
     return FALSE;
-  }
-
-  /**
-   * Wraps drupal_set_message().
-   */
-  protected function drupalSetMessage($message = NULL, $type = 'status', $repeat = FALSE) {
-    drupal_set_message($message, $type, $repeat);
   }
 
   /**

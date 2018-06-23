@@ -80,20 +80,23 @@ very, very inefficient -- the slowdown of possibly running multiple aggregate qu
 far outweighed by the memory savings of each module handling its own queries. After all,
 MySQL calculates standard deviation far faster than you can in PHP.
 
-function mymodule_votingapi_results_alter(&$results, $entity_type, $entity_id) {
+function hook_votingapi_results_alter(&$vote_results, $content_type, $content_id) {
   // We're using a MySQLism (STDDEV isn't ANSI SQL), but it's OK because this is
   // an example. And no one would ever base real code on sample code. Ever. Never.
-  $sql  = "SELECT v.tag, STDDEV(v.value) as standard_deviation ";
+
+  $sql = "SELECT v.tag, STDDEV(v.value) as standard_deviation ";
   $sql .= "FROM {votingapi_vote} v ";
-  $sql .= "WHERE v.entity_type = '%s' AND v.entity_id = %d AND v.value_type = 'percent' ";
+  $sql .= "WHERE v.content_type = '%s' AND v.content_id = %d AND v.value_type = 'percent' ";
   $sql .= "GROUP BY v.tag";
 
-  $results = db_query($sql, $entity_type, $entity_id);
+  $aggregates = db_query($sql, $content_type, $content_id);
 
   // VotingAPI wants the data in the following format:
-  // $cache[$tag][$value_type][$math_function] = $value;
-  while ($result = db_fetch_array($results)) {
-    $cache[$result['tag']]['percent']['standard_deviation'] = $result['standard_deviation'];
+  // $vote_results[$tag][$value_type][$aggregate_function] = $value;
+
+  foreach ($aggregates as $aggregate) {
+    $aggregate = (array) $aggregate;
+    $vote_results[$aggregate['tag']]['percent']['standard_deviation'] = $aggregate['standard_deviation'];
   }
 }
 
@@ -103,7 +106,7 @@ VotingAPI provides Views Relationship connections for votes cast on nodes and co
 
 
 function mymodule_votingapi_relationships() {
-  $relationships[] = array(
+  $relationships[] = [
     // 'description' is used to construct the field description in the Views UI.
     'description' => t('nodes'),
     // 'entity_type' contain the value that your module stores in the voting
@@ -123,7 +126,7 @@ function mymodule_votingapi_relationships() {
     // nedjo.
     'pseudo_vote' => 'votingapi_vote',
     'pseudo_cache' => 'votingapi_cache',
-  );
+  ];
   return $relationships;
 }
 
@@ -133,9 +136,9 @@ VotingAPI's Views integration can present vote results as simple numbers, but mo
 
 function mymodule_votingapi_views_formatters($field) {
   if ($field->field == 'value') {
-    return array('mymodule_funky_formatter' => t('MyModule value formatter'));
+    return ['mymodule_funky_formatter' => t('MyModule value formatter')];
   }
   if ($field->field == 'tag') {
-    return array('mymodule_funky_tags' => t('MyModule tag formatter'));
+    return ['mymodule_funky_tags' => t('MyModule tag formatter')];
   }
 }

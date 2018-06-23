@@ -237,6 +237,9 @@ class DataExport extends Serializer {
       $url_options['query'] = $input;
     }
     $url_options['absolute'] = TRUE;
+    if (!empty($this->options['formats'])) {
+      $url_options['query']['_format'] = reset($this->options['formats']);
+    }
 
     $url = $url->setOptions($url_options)->toString();
 

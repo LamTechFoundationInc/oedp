@@ -95,4 +95,5 @@ interface VoteResultInterface extends ContentEntityInterface, EntityOwnerInterfa
    * {@inheritdoc}
    */
   public function setFunction($function);
+
 }

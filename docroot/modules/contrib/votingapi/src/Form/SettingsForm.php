@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Configures administrative settings for VotingAPI.
- */
-
 namespace Drupal\votingapi\Form;
 
 use Drupal\Core\Config\ConfigFactoryInterface;
@@ -148,4 +143,5 @@ class SettingsForm extends ConfigFormBase {
 
     parent::submitForm($form, $form_state);
   }
+
 }

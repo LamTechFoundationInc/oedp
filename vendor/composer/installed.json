@@ -2567,23 +2567,25 @@
     },
     {
         "name": "drupal/address",
-        "version": "1.3.0",
-        "version_normalized": "1.3.0.0",
+        "version": "1.4.0",
+        "version_normalized": "1.4.0.0",
         "source": {
             "type": "git",
             "url": "https://git.drupal.org/project/address",
-            "reference": "8.x-1.3"
+            "reference": "8.x-1.4"
         },
         "dist": {
             "type": "zip",
-            "url": "https://ftp.drupal.org/files/projects/address-8.x-1.3.zip",
-            "reference": "8.x-1.3",
-            "shasum": "170551d6ecf4a08bac178f31b9869a626279d9eb"
+            "url": "https://ftp.drupal.org/files/projects/address-8.x-1.4.zip",
+            "reference": "8.x-1.4",
+            "shasum": "143e426be73418c719c6bddd5fb81c610604e860"
         },
         "require": {
-            "commerceguys/addressing": "~1.0",
-            "commerceguys/intl": "~0.7",
+            "commerceguys/addressing": "^1.0.0",
             "drupal/core": "*"
+        },
+        "require-dev": {
+            "drupal/token": "*"
         },
         "type": "drupal-module",
         "extra": {
@@ -2591,8 +2593,8 @@
                 "dev-1.x": "1.x-dev"
             },
             "drupal": {
-                "version": "8.x-1.3",
-                "datestamp": "1511382784",
+                "version": "8.x-1.4",
+                "datestamp": "1527081784",
                 "security-coverage": {
                     "status": "covered",
                     "message": "Covered by Drupal's security advisory policy"
@@ -3092,6 +3094,133 @@
         "homepage": "https://www.drupal.org/project/captcha",
         "support": {
             "source": "http://cgit.drupalcode.org/captcha"
+        }
+    },
+    {
+        "name": "drupal/charts",
+        "version": "3.0.0-alpha9",
+        "version_normalized": "3.0.0.0-alpha9",
+        "source": {
+            "type": "git",
+            "url": "https://git.drupal.org/project/charts",
+            "reference": "8.x-3.0-alpha9"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://ftp.drupal.org/files/projects/charts-8.x-3.0-alpha9.zip",
+            "reference": "8.x-3.0-alpha9",
+            "shasum": "e092a6836881edb4097cb2789f04ddabbe7f24d0"
+        },
+        "require": {
+            "drupal/core": "~8.0"
+        },
+        "type": "drupal-module",
+        "extra": {
+            "branch-alias": {
+                "dev-3.x": "3.x-dev"
+            },
+            "drupal": {
+                "version": "8.x-3.0-alpha9",
+                "datestamp": "1527184381",
+                "security-coverage": {
+                    "status": "not-covered",
+                    "message": "Alpha releases are not covered by Drupal security advisories."
+                }
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packages.drupal.org/8/downloads",
+        "license": [
+            "GPL-2.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Pierre.Vriens",
+                "homepage": "https://www.drupal.org/user/1689304"
+            },
+            {
+                "name": "andileco",
+                "homepage": "https://www.drupal.org/user/2054544"
+            },
+            {
+                "name": "brmassa",
+                "homepage": "https://www.drupal.org/user/67164"
+            },
+            {
+                "name": "kenorb",
+                "homepage": "https://www.drupal.org/user/191974"
+            },
+            {
+                "name": "quicksketch",
+                "homepage": "https://www.drupal.org/user/35821"
+            },
+            {
+                "name": "rashad612",
+                "homepage": "https://www.drupal.org/user/319686"
+            }
+        ],
+        "description": "A charting API for Drupal that provides chart elements and integration with Views.",
+        "homepage": "https://www.drupal.org/project/charts",
+        "support": {
+            "source": "http://cgit.drupalcode.org/charts"
+        }
+    },
+    {
+        "name": "drupal/charts_highcharts",
+        "version": "3.0.0-alpha9",
+        "version_normalized": "3.0.0.0-alpha9",
+        "require": {
+            "drupal/charts": "self.version",
+            "drupal/core": "~8.0"
+        },
+        "type": "metapackage",
+        "extra": {
+            "branch-alias": {
+                "dev-3.x": "3.x-dev"
+            },
+            "drupal": {
+                "version": "8.x-3.0-alpha9",
+                "datestamp": "1527184381",
+                "security-coverage": {
+                    "status": "not-covered",
+                    "message": "Alpha releases are not covered by Drupal security advisories."
+                }
+            }
+        },
+        "notification-url": "https://packages.drupal.org/8/downloads",
+        "license": [
+            "GPL-2.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Pierre.Vriens",
+                "homepage": "https://www.drupal.org/user/1689304"
+            },
+            {
+                "name": "andileco",
+                "homepage": "https://www.drupal.org/user/2054544"
+            },
+            {
+                "name": "brmassa",
+                "homepage": "https://www.drupal.org/user/67164"
+            },
+            {
+                "name": "kenorb",
+                "homepage": "https://www.drupal.org/user/191974"
+            },
+            {
+                "name": "quicksketch",
+                "homepage": "https://www.drupal.org/user/35821"
+            },
+            {
+                "name": "rashad612",
+                "homepage": "https://www.drupal.org/user/319686"
+            }
+        ],
+        "description": "Charts module integration with Highcharts library.",
+        "homepage": "https://www.drupal.org/project/charts",
+        "support": {
+            "source": "http://cgit.drupalcode.org/charts"
         }
     },
     {
@@ -6000,6 +6129,134 @@
         }
     },
     {
+        "name": "drupal/google_analytics_reports",
+        "version": "3.0.0-beta1",
+        "version_normalized": "3.0.0.0-beta1",
+        "source": {
+            "type": "git",
+            "url": "https://git.drupal.org/project/google_analytics_reports",
+            "reference": "8.x-3.0-beta1"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://ftp.drupal.org/files/projects/google_analytics_reports-8.x-3.0-beta1.zip",
+            "reference": "8.x-3.0-beta1",
+            "shasum": "c75d9617ecbcf70c3c1d70a13c20073cc35cd6d0"
+        },
+        "require": {
+            "drupal/core": "~8.0",
+            "drupal/google_analytics_reports_api": "*"
+        },
+        "type": "drupal-module",
+        "extra": {
+            "branch-alias": {
+                "dev-3.x": "3.x-dev"
+            },
+            "drupal": {
+                "version": "8.x-3.0-beta1",
+                "datestamp": "1468152539",
+                "security-coverage": {
+                    "status": "not-covered",
+                    "message": "Beta releases are not covered by Drupal security advisories."
+                }
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packages.drupal.org/8/downloads",
+        "license": [
+            "GPL-2.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Plazik",
+                "homepage": "https://www.drupal.org/user/982724"
+            },
+            {
+                "name": "grendzy",
+                "homepage": "https://www.drupal.org/user/96647"
+            },
+            {
+                "name": "jantoine",
+                "homepage": "https://www.drupal.org/user/192192"
+            },
+            {
+                "name": "jkitching",
+                "homepage": "https://www.drupal.org/user/159067"
+            },
+            {
+                "name": "jojonaloha",
+                "homepage": "https://www.drupal.org/user/1579186"
+            },
+            {
+                "name": "raspberryman",
+                "homepage": "https://www.drupal.org/user/71464"
+            }
+        ],
+        "description": "Display statistics from Google Analytics using Views.",
+        "homepage": "https://www.drupal.org/project/google_analytics_reports",
+        "support": {
+            "source": "http://cgit.drupalcode.org/google_analytics_reports"
+        }
+    },
+    {
+        "name": "drupal/google_analytics_reports_api",
+        "version": "3.0.0-beta1",
+        "version_normalized": "3.0.0.0-beta1",
+        "require": {
+            "drupal/core": "~8.0",
+            "drupal/google_analytics_reports": "self.version"
+        },
+        "type": "metapackage",
+        "extra": {
+            "branch-alias": {
+                "dev-3.x": "3.x-dev"
+            },
+            "drupal": {
+                "version": "8.x-3.0-beta1",
+                "datestamp": "1468152539",
+                "security-coverage": {
+                    "status": "not-covered",
+                    "message": "Beta releases are not covered by Drupal security advisories."
+                }
+            }
+        },
+        "notification-url": "https://packages.drupal.org/8/downloads",
+        "license": [
+            "GPL-2.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Plazik",
+                "homepage": "https://www.drupal.org/user/982724"
+            },
+            {
+                "name": "grendzy",
+                "homepage": "https://www.drupal.org/user/96647"
+            },
+            {
+                "name": "jantoine",
+                "homepage": "https://www.drupal.org/user/192192"
+            },
+            {
+                "name": "jkitching",
+                "homepage": "https://www.drupal.org/user/159067"
+            },
+            {
+                "name": "jojonaloha",
+                "homepage": "https://www.drupal.org/user/1579186"
+            },
+            {
+                "name": "raspberryman",
+                "homepage": "https://www.drupal.org/user/71464"
+            }
+        ],
+        "description": "API to access statistics from the <a href=\"https://developers.google.com/analytics/devguides/reporting/core/v3/\">Google Analytics Core Reporting API</a>.",
+        "homepage": "https://www.drupal.org/project/google_analytics_reports",
+        "support": {
+            "source": "http://cgit.drupalcode.org/google_analytics_reports"
+        }
+    },
+    {
         "name": "drupal/honeypot",
         "version": "1.27.0",
         "version_normalized": "1.27.0.0",
@@ -7964,6 +8221,126 @@
         }
     },
     {
+        "name": "drupal/react_comments",
+        "version": "1.0.0-alpha1",
+        "version_normalized": "1.0.0.0-alpha1",
+        "source": {
+            "type": "git",
+            "url": "https://git.drupal.org/project/react_comments",
+            "reference": "8.x-1.0-alpha1"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://ftp.drupal.org/files/projects/react_comments-8.x-1.0-alpha1.zip",
+            "reference": "8.x-1.0-alpha1",
+            "shasum": "6b548e27036c81502bc40c9f57623ce9fa08b926"
+        },
+        "require": {
+            "drupal/core": "*"
+        },
+        "type": "drupal-module",
+        "extra": {
+            "branch-alias": {
+                "dev-1.x": "1.x-dev"
+            },
+            "drupal": {
+                "version": "8.x-1.0-alpha1",
+                "datestamp": "1517446080",
+                "security-coverage": {
+                    "status": "not-covered",
+                    "message": "Alpha releases are not covered by Drupal security advisories."
+                }
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packages.drupal.org/8/downloads",
+        "license": [
+            "GPL-2.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "minnur",
+                "homepage": "https://www.drupal.org/user/702026"
+            },
+            {
+                "name": "void--",
+                "homepage": "https://www.drupal.org/user/2990569"
+            }
+        ],
+        "description": "Commenting system built with React",
+        "homepage": "https://www.drupal.org/project/react_comments",
+        "support": {
+            "source": "http://cgit.drupalcode.org/react_comments"
+        }
+    },
+    {
+        "name": "drupal/recaptcha",
+        "version": "2.3.0",
+        "version_normalized": "2.3.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://git.drupal.org/project/recaptcha",
+            "reference": "8.x-2.3"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://ftp.drupal.org/files/projects/recaptcha-8.x-2.3.zip",
+            "reference": "8.x-2.3",
+            "shasum": "bd77c79c33c6732328a7c582adbe0aaffe704e74"
+        },
+        "require": {
+            "drupal/captcha": "^1.0.0-alpha1",
+            "drupal/core": "~8.0"
+        },
+        "type": "drupal-module",
+        "extra": {
+            "branch-alias": {
+                "dev-2.x": "2.x-dev"
+            },
+            "drupal": {
+                "version": "8.x-2.3",
+                "datestamp": "1521320880",
+                "security-coverage": {
+                    "status": "covered",
+                    "message": "Covered by Drupal's security advisory policy"
+                }
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packages.drupal.org/8/downloads",
+        "license": [
+            "GPL-2.0+"
+        ],
+        "authors": [
+            {
+                "name": "hass",
+                "homepage": "https://www.drupal.org/u/hass"
+            },
+            {
+                "name": "See other contributors",
+                "homepage": "https://www.drupal.org/node/147903/committers"
+            },
+            {
+                "name": "diolan",
+                "homepage": "https://www.drupal.org/user/2336786"
+            },
+            {
+                "name": "hass",
+                "homepage": "https://www.drupal.org/user/85918"
+            },
+            {
+                "name": "id.medion",
+                "homepage": "https://www.drupal.org/user/2542592"
+            }
+        ],
+        "description": "Protect your website from spam and abuse while letting real people pass through with ease.",
+        "homepage": "https://www.drupal.org/project/recaptcha",
+        "support": {
+            "source": "http://git.drupal.org/project/recaptcha.git",
+            "issues": "https://www.drupal.org/project/issues/recaptcha"
+        }
+    },
+    {
         "name": "drupal/redirect",
         "version": "1.1.0",
         "version_normalized": "1.1.0.0",
@@ -9382,6 +9759,77 @@
         }
     },
     {
+        "name": "drupal/total_control",
+        "version": "2.0.0-alpha4",
+        "version_normalized": "2.0.0.0-alpha4",
+        "source": {
+            "type": "git",
+            "url": "https://git.drupal.org/project/total_control",
+            "reference": "8.x-2.0-alpha4"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://ftp.drupal.org/files/projects/total_control-8.x-2.0-alpha4.zip",
+            "reference": "8.x-2.0-alpha4",
+            "shasum": "3cbc659fa0ad109a6fe824d907b7c0b207e439ee"
+        },
+        "require": {
+            "drupal/core": "*",
+            "drupal/ctools": "*",
+            "drupal/page_manager": "*",
+            "drupal/panels": "*"
+        },
+        "type": "drupal-module",
+        "extra": {
+            "branch-alias": {
+                "dev-2.x": "2.x-dev"
+            },
+            "drupal": {
+                "version": "8.x-2.0-alpha4",
+                "datestamp": "1515417486",
+                "security-coverage": {
+                    "status": "not-covered",
+                    "message": "Alpha releases are not covered by Drupal security advisories."
+                }
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packages.drupal.org/8/downloads",
+        "license": [
+            "GPL-2.0+"
+        ],
+        "authors": [
+            {
+                "name": "Jen Lampton",
+                "homepage": "https://github.com/jenlampton",
+                "role": "Maintainer"
+            },
+            {
+                "name": "Mohammed J. Razem",
+                "homepage": "https://github.com/moerazem",
+                "role": "Maintainer"
+            },
+            {
+                "name": "Abdulla Abu-Zakham",
+                "homepage": "https://github.com/abuzakham",
+                "role": "Maintainer"
+            },
+            {
+                "name": "populist",
+                "homepage": "https://www.drupal.org/user/58600"
+            },
+            {
+                "name": "squiggy",
+                "homepage": "https://www.drupal.org/user/44299"
+            }
+        ],
+        "description": "Total Control Administration Dashboard",
+        "homepage": "https://github.com/Vardot/total_control",
+        "support": {
+            "source": "http://cgit.drupalcode.org/total_control"
+        }
+    },
+    {
         "name": "drupal/ultimate_cron",
         "version": "2.0.0-alpha3",
         "version_normalized": "2.0.0.0-alpha3",
@@ -9444,6 +9892,70 @@
         "homepage": "https://www.drupal.org/project/ultimate_cron",
         "support": {
             "source": "http://cgit.drupalcode.org/ultimate_cron"
+        }
+    },
+    {
+        "name": "drupal/varbase_total_control",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://git.drupal.org/project/varbase_total_control",
+            "reference": "8.x-1.0"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://ftp.drupal.org/files/projects/varbase_total_control-8.x-1.0.zip",
+            "reference": "8.x-1.0",
+            "shasum": "0d9ddec64539f10b3a580b10e269aba10d25eb20"
+        },
+        "require": {
+            "drupal/charts": "*",
+            "drupal/charts_highcharts": "*",
+            "drupal/core": "~8.0",
+            "drupal/google_analytics_reports": "*",
+            "drupal/total_control": "*"
+        },
+        "type": "drupal-module",
+        "extra": {
+            "branch-alias": {
+                "dev-1.x": "1.x-dev",
+                "dev-8.x-1.x": "8.1.x-dev"
+            },
+            "drupal": {
+                "version": "8.x-1.0",
+                "datestamp": "1527379084",
+                "security-coverage": {
+                    "status": "covered",
+                    "message": "Covered by Drupal's security advisory policy"
+                }
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packages.drupal.org/8/downloads",
+        "license": [
+            "GPL-2.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Vardot",
+                "homepage": "https://www.drupal.org/vardot",
+                "role": "Maintainer"
+            },
+            {
+                "name": "RajabNatshah",
+                "homepage": "https://www.drupal.org/user/1414312"
+            },
+            {
+                "name": "abu-zakham",
+                "homepage": "https://www.drupal.org/user/2836067"
+            }
+        ],
+        "description": "Varbase Total Control Dashboard: A dashboard is what is missing for better Drupal administration experience. This dashboard is built on top of Total Control Admin Dashboard module, utilizing Panels, Google Analytics Reports, and several enhanced blocks and widgets for an intuitive and flexible administration experience.",
+        "homepage": "https://github.com/Vardot/varbase_total_control",
+        "support": {
+            "source": "http://cgit.drupalcode.org/varbase_total_control",
+            "issues": "https://www.drupal.org/project/issues/varbase_total_control"
         }
     },
     {

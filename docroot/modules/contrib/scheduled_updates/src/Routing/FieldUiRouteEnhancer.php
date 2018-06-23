@@ -9,6 +9,7 @@ namespace Drupal\scheduled_updates\Routing;
 
 use Drupal\Core\Entity\EntityManagerInterface;
 use Drupal\Core\Routing\Enhancer\RouteEnhancerInterface;
+use Symfony\Cmf\Component\Routing\RouteObjectInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Route;
 
@@ -38,6 +39,9 @@ class FieldUiRouteEnhancer implements RouteEnhancerInterface {
    * {@inheritdoc}
    */
   public function enhance(array $defaults, Request $request) {
+    if (!$this->applies($defaults[RouteObjectInterface::ROUTE_OBJECT])) {
+      return $defaults;
+    }
     if (($bundle = $this->entityManager->getDefinition($defaults['entity_type_id'])->getBundleEntityType()) && isset($defaults[$bundle])) {
       // Field UI forms only need the actual name of the bundle they're dealing
       // with, not an upcasted entity object, so provide a simple way for them

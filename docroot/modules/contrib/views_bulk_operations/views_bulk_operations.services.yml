@@ -1,10 +1,10 @@
 services:
   views_bulk_operations.data:
     class: Drupal\views_bulk_operations\Service\ViewsBulkOperationsViewData
-    arguments: ['@event_dispatcher', '@module_handler']
+    arguments: ['@event_dispatcher']
   views_bulk_operations.processor:
     class: Drupal\views_bulk_operations\Service\ViewsBulkOperationsActionProcessor
-    arguments: ['@views_bulk_operations.data', '@entity_type.manager', '@plugin.manager.views_bulk_operations_action', '@current_user', '@module_handler']
+    arguments: ['@views_bulk_operations.data', '@plugin.manager.views_bulk_operations_action', '@current_user', '@module_handler']
   plugin.manager.views_bulk_operations_action:
     class: Drupal\views_bulk_operations\Service\ViewsBulkOperationsActionManager
     arguments: ['@container.namespaces', '@cache.discovery', '@module_handler', '@event_dispatcher']

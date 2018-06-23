@@ -52,3 +52,26 @@ display:
     display_options:
       path: test/data_export/entity
       filename: foo.csv
+      style:
+        type: data_export
+        options:
+          formats:
+            json: json
+      displays:
+        page_1: page_1
+        default: '0'
+  page_1:
+    display_plugin: page
+    id: page_1
+    display_title: page
+    position: null
+    display_options:
+      defaults:
+        access: false
+        style: false
+        row: false
+      style:
+        type: default
+      row:
+        type: entity:entity_test
+      path: test/data_export/page

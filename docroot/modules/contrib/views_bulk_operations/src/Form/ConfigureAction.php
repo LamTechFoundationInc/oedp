@@ -123,9 +123,7 @@ class ConfigureAction extends FormBase {
 
     $form = $action->buildConfigurationForm($form, $form_state);
 
-    $storage = $form_state->getStorage();
-    $storage['views_bulk_operations'] = $form_data;
-    $form_state->setStorage($storage);
+    $form_state->set('views_bulk_operations', $form_data);
 
     return $form;
   }
@@ -134,8 +132,7 @@ class ConfigureAction extends FormBase {
    * {@inheritdoc}
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
-    $storage = $form_state->getStorage();
-    $form_data = $storage['views_bulk_operations'];
+    $form_data = $form_state->get('views_bulk_operations');
 
     $action = $this->actionManager->createInstance($form_data['action_id']);
     if (method_exists($action, 'validateConfigurationForm')) {
@@ -147,8 +144,7 @@ class ConfigureAction extends FormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $storage = $form_state->getStorage();
-    $form_data = $storage['views_bulk_operations'];
+    $form_data = $form_state->get('views_bulk_operations');
 
     $action = $this->actionManager->createInstance($form_data['action_id']);
     if (method_exists($action, 'submitConfigurationForm')) {
@@ -163,7 +159,7 @@ class ConfigureAction extends FormBase {
     $definition = $this->actionManager->getDefinition($form_data['action_id']);
     if (!empty($definition['confirm_form_route_name'])) {
       // Update tempStore data.
-      $this->tempStoreFactory->get($form_data['tempstore_name'])->set($this->currentUser()->id(), $form_data);
+      $this->setTempstoreData($form_data, $form_data['view_id'], $form_data['display_id']);
       // Go to the confirm route.
       $form_state->setRedirect($definition['confirm_form_route_name'], [
         'view_id' => $form_data['view_id'],
@@ -171,7 +167,7 @@ class ConfigureAction extends FormBase {
       ]);
     }
     else {
-      $this->tempStoreFactory->get($form_data['tempstore_name'])->delete($this->currentUser()->id());
+      $this->deleteTempstoreData($form_data['view_id'], $form_data['display_id']);
       $this->actionProcessor->executeProcessing($form_data);
       $form_state->setRedirectUrl($form_data['redirect_url']);
     }

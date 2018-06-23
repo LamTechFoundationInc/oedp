@@ -2,7 +2,6 @@
 
 namespace Drupal\webform\Form\AdminConfig;
 
-use Drupal\Component\Render\FormattableMarkup;
 use Drupal\Component\Utility\Xss;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Extension\ModuleHandlerInterface;
@@ -333,6 +332,20 @@ class WebformAdminConfigElementsForm extends WebformAdminConfigBaseForm {
       '#title' => $this->t('File upload settings'),
       '#open' => TRUE,
       '#tree' => TRUE,
+    ];
+    $form['file']['make_unused_managed_files_temporary'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('Unused webform submission files should be marked temporary'),
+      '#description' => $this->t('Drupal core does not automatically delete unused files because unused files could reused. For webform submissions it is recommended that unused files are deleted.'),
+      '#return_value' => TRUE,
+      '#default_value' => $config->get('file.make_unused_managed_files_temporary'),
+    ];
+    $form['file']['delete_temporary_managed_files'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('Immediately deleted temporary managed files'),
+      '#description' => $this->t('Drupal core does not immediately delete temporary file. For webform submissions it is recommended that temporary files are immediately deleted.'),
+      '#return_value' => TRUE,
+      '#default_value' => $config->get('file.delete_temporary_managed_files'),
     ];
     $form['file']['file_public'] = [
       '#type' => 'checkbox',

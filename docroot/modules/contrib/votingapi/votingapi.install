@@ -1,9 +1,11 @@
 <?php
+
 /**
  * @file
  * Installation file for VotingAPI module.
  */
 
+use Drupal\Core\Entity\EntityStorageException;
 /**
  * Implements hook_uninstall().
  */
@@ -33,7 +35,8 @@ function votingapi_update_8301(&$sandbox) {
     $entityDefUpManager = \Drupal::service('entity.definition_update_manager');
     $entityDefUpManager->applyUpdates();
     \Drupal::logger('votingapi: ')->notice('Successfully applied updates');
-  } catch (\Drupal\Core\Entity\EntityStorageException $e) {
+  }
+  catch (EntityStorageException $e) {
     \Drupal::logger('votingapi: ')->notice($e->getMessage());
   }
   // Restore the data.

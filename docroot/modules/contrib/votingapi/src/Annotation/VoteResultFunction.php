@@ -7,7 +7,7 @@ use Drupal\Component\Annotation\Plugin;
 /**
  * Defines a voting result annotation object.
  *
- * Plugin Namespace: Plugin\votingapi\VoteResultFunction
+ * Plugin Namespace: Plugin\votingapi\VoteResultFunction.
  *
  * For a working example, see
  * \Drupal\votingapi\Plugin\VoteResultFunction\Sum

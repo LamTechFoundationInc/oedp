@@ -4,6 +4,9 @@ namespace Drupal\votingapi;
 
 use Drupal\Core\Plugin\PluginBase;
 
+/**
+ *
+ */
 abstract class VoteResultFunctionBase extends PluginBase implements VoteResultFunctionInterface {
 
   /**
@@ -19,4 +22,5 @@ abstract class VoteResultFunctionBase extends PluginBase implements VoteResultFu
   public function getDescription() {
     return $this->t($this->pluginDefinition['description']);
   }
+
 }

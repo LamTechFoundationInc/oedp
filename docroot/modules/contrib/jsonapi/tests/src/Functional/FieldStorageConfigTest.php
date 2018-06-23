@@ -81,13 +81,9 @@ class FieldStorageConfigTest extends ResourceTestBase {
           'cardinality' => 1,
           'custom_storage' => FALSE,
           'dependencies' => [
-            // @todo Remove this first line in favor of the 3 commented lines in https://www.drupal.org/project/jsonapi/issues/2942979
-            // @codingStandardsIgnoreStart
-            'node',
-//            'module' => [
-//              'node',
-//            ],
-            // @codingStandardsIgnoreEnd
+            'module' => [
+              'node',
+            ],
           ],
           'entity_type' => 'node',
           'field_name' => 'true_llama',
@@ -120,16 +116,5 @@ class FieldStorageConfigTest extends ResourceTestBase {
   protected function getExpectedUnauthorizedAccessMessage($method) {
     return "The 'administer node fields' permission is required.";
   }
-
-  // @codingStandardsIgnoreStart
-  /**
-   * {@inheritdoc}
-   */
-  protected function getExpectedCacheContexts() {
-    // @todo Uncomment first line, remove second line in https://www.drupal.org/project/jsonapi/issues/2940342.
-//    return ['user.permissions'];
-    return parent::getExpectedCacheContexts();
-  }
-  // @codingStandardsIgnoreEnd
 
 }

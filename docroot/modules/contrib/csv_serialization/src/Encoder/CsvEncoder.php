@@ -176,10 +176,12 @@ class CsvEncoder implements EncoderInterface, DecoderInterface {
       $first_row = $data[0];
       $allowed_headers = array_keys($first_row);
 
-      $fields = $context['views_style_plugin']
-        ->view
-        ->getDisplay('rest_export_attachment_1')
-        ->getOption('fields');
+      if (!empty($context['views_style_plugin'])) {
+        $fields = $context['views_style_plugin']
+          ->view
+          ->getDisplay('rest_export_attachment_1')
+          ->getOption('fields');
+      }
 
       foreach ($allowed_headers as $allowed_header) {
         $headers[] = !empty($fields[$allowed_header]['label']) ? $fields[$allowed_header]['label'] : $allowed_header;

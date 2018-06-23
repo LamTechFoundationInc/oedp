@@ -169,6 +169,14 @@ class WebformAddonsManager implements WebformAddonsManagerInterface {
       'category' => 'element',
     ];
 
+    // Element: Webform Handsontable.
+    $projects['handsontable_yml_webform'] = [
+      'title' => $this->t('Webform Handsontable'),
+      'description' => $this->t("Allows both the Drupal Form API and the Drupal 8 Webforms module to use the Excel-like Handsontable library."),
+      'url' => Url::fromUri('https://www.drupal.org/handsontable_yml_webform'),
+      'category' => 'element',
+    ];
+
     // Element: Webform Layout Container.
     $projects['webform_layout_container'] = [
       'title' => $this->t('Webform Layout Container'),
@@ -238,6 +246,14 @@ class WebformAddonsManager implements WebformAddonsManagerInterface {
       'title' => $this->t('Webform MailChimp'),
       'description' => $this->t('Posts form submissions to MailChimp list.'),
       'url' => Url::fromUri('https://www.drupal.org/project/webform_mailchimp'),
+      'category' => 'integration',
+    ];
+
+    // Integrations: Webform MyEmma.
+    $projects['webform_myemma'] = [
+      'title' => $this->t('Webform MyEmma'),
+      'description' => $this->t('Provides MyEmma subscription field to webforms'),
+      'url' => Url::fromUri('https://www.drupal.org/project/webform_myemma'),
       'category' => 'integration',
     ];
 
@@ -354,7 +370,14 @@ class WebformAddonsManager implements WebformAddonsManagerInterface {
       'url' => Url::fromUri('https://www.drupal.org/project/captcha'),
       'category' => 'spam',
       'recommended' => TRUE,
+    ];
 
+    // Spam: CleanTalk.
+    $projects['cleantalk'] = [
+      'title' => $this->t('CleanTalk'),
+      'description' => $this->t('Antispam service from CleanTalk to protect your site.'),
+      'url' => Url::fromUri('https://www.drupal.org/project/cleantalk'),
+      'category' => 'spam',
     ];
 
     // Spam: Honeypot.

@@ -23,7 +23,14 @@ class DataExportTest extends ViewsKernelTestBase {
   /**
    * {@inheritdoc}
    */
-  public static $modules = ['views_data_export', 'csv_serialization', 'serialization', 'rest', 'views_data_export_test'];
+  public static $modules = [
+    'views_data_export',
+    'csv_serialization',
+    'entity_test',
+    'serialization',
+    'rest',
+    'views_data_export_test',
+  ];
 
   /**
    * {@inheritdoc}
@@ -67,7 +74,7 @@ class DataExportTest extends ViewsKernelTestBase {
     $view->save();
 
     $view->calculateDependencies();
-    $this->assertEquals(['module' => ['csv_serialization', 'rest', 'serialization', 'user', 'views_data_export']], $view->getDependencies());
+    $this->assertEquals(['module' => ['csv_serialization', 'entity_test', 'rest', 'serialization', 'user', 'views_data_export']], $view->getDependencies());
   }
 
 }

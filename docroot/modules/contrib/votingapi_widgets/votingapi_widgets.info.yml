@@ -1,14 +1,14 @@
-name: votingapi_widgets
+name: Votingapi Widgets
 type: module
-description: Voting API Widgets
+description: 'Voting API Widgets.'
 # core: 8.x
-package: votingapi
+package: Voting
 
 dependencies:
   - votingapi
 
-# Information added by Drupal.org packaging script on 2016-11-28
-version: '8.x-1.0-alpha3'
+# Information added by Drupal.org packaging script on 2018-04-27
+version: '8.x-1.0-alpha4'
 core: '8.x'
 project: 'votingapi_widgets'
-datestamp: 1480329489
+datestamp: 1524826997

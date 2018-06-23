@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\votingapi\Tests\VoteTest.
- */
-
 namespace Drupal\votingapi\Tests;
 
 use Drupal\simpletest\WebTestBase;
@@ -30,7 +25,7 @@ class VoteTest extends WebTestBase {
     $node = $this->drupalCreateNode(['type' => 'article']);
     $user = $this->drupalCreateUser();
 
-    // There are no votes on this entity yet
+    // There are no votes on this entity yet.
     $query = $vote_query->condition('entity_type', 'node')
       ->condition('entity_id', $node->id());
     $votes = $query->execute();
@@ -54,7 +49,7 @@ class VoteTest extends WebTestBase {
     $this->assertEqual($vote->getValue(), -1, 'Node vote has correct value.');
     $this->assertNotEqual($vote->getSource(), '', 'A vote with no explicit source received the default value.');
 
-    // Add a vote to a user
+    // Add a vote to a user.
     $vote = $vote_storage->create([
       'type' => 'vote',
       'entity_id' => $user->id(),
@@ -72,7 +67,7 @@ class VoteTest extends WebTestBase {
     $this->assertEqual($vote->getOwnerId(), 0, 'A vote with no explicit user received the default value.');
     $this->assertEqual($vote->getValue(), 0, 'A vote with no explicit value received the default value.');
 
-    // Deleting entity deletes votes
+    // Deleting entity deletes votes.
     entity_delete_multiple('user', [$user->id()]);
     $votes = $query->execute();
     $this->assertEqual(count($votes), 0, 'When an entity is deleted, the votes are also deleted.');
@@ -115,9 +110,8 @@ class VoteTest extends WebTestBase {
     // @todo This isn't working, as $results are pulled directly from the
     // database via the getResults() method.
     // $this->assertTrue(isset($results['vote']['zebra']), 'New result was calculated.');
-    // $this->assertEqual($results['vote']['zebra'], 10101, 'New result is correct.');
-
-    // Deleting entity removes results
+    // $this->assertEqual($results['vote']['zebra'], 10101, 'New result is correct.');.
+    // Deleting entity removes results.
     entity_delete_multiple('node', [$node->id()]);
     $results = $manager->getResults('node', $node->id());
     $this->assertTrue(empty($results), 'When an entity is deleted, the voting results are also deleted.');

@@ -3,7 +3,6 @@
 namespace Drupal\views_bulk_operations\Service;
 
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
-use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\views\ViewExecutable;
 use Drupal\views\Plugin\views\display\DisplayPluginBase;
 use Drupal\views\Views;
@@ -22,13 +21,6 @@ class ViewsBulkOperationsViewData implements ViewsBulkOperationsViewDataInterfac
    * @var \Symfony\Component\EventDispatcher\EventDispatcherInterface
    */
   protected $eventDispatcher;
-
-  /**
-   * Module handler service.
-   *
-   * @var \Drupal\Core\Extension\ModuleHandlerInterface
-   */
-  protected $moduleHandler;
 
   /**
    * The current view.
@@ -70,15 +62,9 @@ class ViewsBulkOperationsViewData implements ViewsBulkOperationsViewDataInterfac
    *
    * @param \Symfony\Component\EventDispatcher\EventDispatcherInterface $eventDispatcher
    *   The event dispatcher service.
-   * @param \Drupal\Core\Extension\ModuleHandlerInterface $moduleHandler
-   *   Module handler service.
    */
-  public function __construct(
-    EventDispatcherInterface $eventDispatcher,
-    ModuleHandlerInterface $moduleHandler
-  ) {
+  public function __construct(EventDispatcherInterface $eventDispatcher) {
     $this->eventDispatcher = $eventDispatcher;
-    $this->moduleHandler = $moduleHandler;
   }
 
   /**
@@ -176,33 +162,16 @@ class ViewsBulkOperationsViewData implements ViewsBulkOperationsViewDataInterfac
   /**
    * Get the total count of results on all pages.
    *
-   * TODO: Find a way to get total number of results with mini pager.
-   *
    * @return int
    *   The total number of results this view displays.
    */
   public function getTotalResults() {
-    // This number is not correct in $this->view->total_rows for
-    // standard entity views and different pagers, so we have to build
-    // a custom count query in such a case.
-    if (isset($this->view->query)) {
-      $query = $this->view->query->query();
+    $total_results = NULL;
+    if (!empty($this->view->pager->total_items)) {
+      $total_results = $this->view->pager->total_items;
     }
-    if (!empty($query)) {
-      $total_results = $query->countQuery()->execute()->fetchField();
-    }
-    else {
-      if (isset($this->view->query) && empty($this->view->result)) {
-        // Let modules modify the view just prior to executing it.
-        $this->moduleHandler->invokeAll('views_pre_execute', [$this->view]);
-        $this->view->query->execute($this->view);
-      }
+    elseif (!empty($this->view->total_rows)) {
       $total_results = $this->view->total_rows;
-    }
-
-    // Include pager offset.
-    if ($total_results && isset($this->view->pager) && $offset = $this->view->pager->getOffset()) {
-      $total_results -= $offset;
     }
 
     return $total_results;

@@ -33,7 +33,7 @@ function login_security_user_login(UserInterface $account) {
  */
 function login_security_user_update(UserInterface $account) {
   // The update case can be launched by the user or by any administrator.
-  // On update, remove only the unser information tracked.
+  // On update, remove only the user information tracked.
   if ($account->isActive()) {
     // Don't remove tracking events if account is being blocked.
     _login_security_remove_events($account->getDisplayName());
@@ -161,13 +161,12 @@ function login_security_validate(array $form, FormStateInterface $form_state) {
         // Mark alert status as notified and send the email.
         \Drupal::logger('login_security')->warning('Ongoing attack detected: Suspicious activity detected in login form submissions. Too many invalid login attempts threshold reached: currently @tracking_current_count events are tracked, and threshold is configured for @activity_threshold attempts.', $variables);
         \Drupal::state()->set('login_security.threshold_notified', TRUE);
-        // Submit email only if required.
-        $login_activity_email_user = $conf->get('login_activity_email_user');
-        if ($login_activity_email_user !== '') {
+        // Send notification only if required.
+        $email_to = $conf->get('login_activity_notification_emails');
+        if ($email_to !== '') {
           $from = \Drupal::config('system.site')->get('mail');
-          $admin_mail = db_query_range("SELECT mail FROM {users} WHERE name = :name", 0, 1, [':name' => $login_activity_email_user])->fetchField();
           $language = \Drupal::languageManager()->getDefaultLanguage();
-          \Drupal::service('plugin.manager.mail')->mail('login_security', 'login_activity_notify', $admin_mail, $language, $variables, $from, TRUE);
+          \Drupal::service('plugin.manager.mail')->mail('login_security', 'login_activity_notify', $email_to, $language, $variables, $from, TRUE);
         }
       }
     }
@@ -248,7 +247,7 @@ function login_security_validate(array $form, FormStateInterface $form_state) {
 }
 
 /**
- * Implements hook_sumbit().
+ * Implements hook_submit().
  */
 function login_security_submit(array $form, FormStateInterface $form_state) {
   $user = \Drupal::currentUser();
@@ -281,13 +280,13 @@ function _login_security_remove_events($name = NULL, $host = NULL) {
   // Remove selected events.
   if (!empty($name)) {
     if (!empty($host)) {
-      $result = db_delete('login_security_track')
+      db_delete('login_security_track')
         ->condition('name', $name)
         ->condition('host', $host)
         ->execute();
     }
     else {
-      $result = db_delete('login_security_track')
+      db_delete('login_security_track')
         ->condition('name', $name)
         ->execute();
     }
@@ -329,7 +328,7 @@ function _login_security_remove_all_events($time = NULL) {
  *   IP Address of the pair.
  */
 function _login_security_add_event($name, $ip) {
-  // Each attempt is kept for future minning of advanced bruteforcing like
+  // Each attempt is kept for future mining of advanced brute forcing like
   // multiple IP or X-Forwarded-for usage and automated track data cleanup.
   db_insert('login_security_track')
     ->fields([
@@ -384,17 +383,12 @@ function login_user_block_user_name($variables, FormStateInterface $form_state) 
       // Also notify the user that account has been blocked.
       $form_state->setErrorByName('void', SafeMarkup::format($conf->get('user_blocked'), $variables));
 
-      // Send admin email.
-      $user_blocked_email_user = $conf->get('user_blocked_email_user');
-      if ($user_blocked_email_user !== '') {
+      // Send notification.
+      $to = $conf->get('user_blocked_notification_emails');
+      if ($to !== '') {
         $from = \Drupal::config('system.site')->get('mail');
-        $admin_mail = \Drupal::database()->select('users_field_data', 'u')
-          ->fields('u', ['mail'])
-          ->condition('name', $user_blocked_email_user)
-          ->execute()
-          ->fetchField();
         $language = \Drupal::languageManager()->getDefaultLanguage();
-        return \Drupal::service('plugin.manager.mail')->mail('login_security', 'block_user_notify', $admin_mail, $language, $variables, $from, TRUE);
+        return \Drupal::service('plugin.manager.mail')->mail('login_security', 'block_user_notify', $to, $language, $variables, $from, TRUE);
       }
     }
   }
@@ -482,45 +476,4 @@ function login_security_help($route_name, RouteMatchInterface $route_match) {
     case 'help.page.login_security':
       return '<p>' . t('Make sure you have reviewed the <a href="!README">README file</a> for further information about how all these settings will affect your Drupal login form submissions.', ['!README' => 'http://drupalcode.org/project/login_security.git/blob/refs/heads/6.x-1.x:/README.txt']) . '</p>';
   }
-}
-
-/**
- * Implements hook_nagios().
- */
-function login_security_nagios() {
-  $return = [
-    'key' => 'login_security',
-  ];
-
-  // Get the token variables.
-  $variables = _login_security_get_variables_by_name('anonymous');
-
-  // Check the threshold_notified flag for the module status.
-  $condition = \Drupal::state('login_security.threshold_notified', FALSE);
-  if ($condition !== 'bogus') {
-    // Attack is happening.
-    if ($condition) {
-      $status = NAGIOS_STATUS_CRITICAL;
-      $text = login_security_t(LOGIN_SECURITY_LOGIN_ACTIVITY_EMAIL_SUBJECT, $variables);
-    }
-    // All is normal.
-    else {
-      $status = NAGIOS_STATUS_OK;
-      $text = '';
-    }
-  }
-  // Status unknown if the variable set to bogus.
-  else {
-    $status = NAGIOS_STATUS_UNKNOWN;
-    $text = t("Please check if the drupal variable login_security_threshold_notified exists.");
-  }
-
-  // Build the return data.
-  $return['login_security'] = [
-    'status' => $status,
-    'type' => 'state',
-    'text' => $text,
-  ];
-
-  return $return;
 }

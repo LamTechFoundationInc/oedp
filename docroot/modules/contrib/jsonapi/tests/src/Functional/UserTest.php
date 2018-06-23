@@ -100,6 +100,17 @@ class UserTest extends ResourceTestBase {
   /**
    * {@inheritdoc}
    */
+  protected function createAnotherEntity() {
+    /** @var \Drupal\user\UserInterface $user */
+    $user = $this->entity->createDuplicate();
+    $user->setUsername($user->label() . '_dupe');
+    $user->save();
+    return $user;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   protected function getExpectedDocument() {
     $self_url = Url::fromUri('base:/jsonapi/user/user/' . $this->entity->uuid())->setAbsolute()->toString(TRUE)->getGeneratedUrl();
     return [
@@ -196,7 +207,7 @@ class UserTest extends ResourceTestBase {
     // DX: 422 when changing email without providing the password.
     $response = $this->request('PATCH', $url, $request_options);
     // @todo Remove $expected + assertResourceResponse() in favor of the commented line below once https://www.drupal.org/project/jsonapi/issues/2943176 lands.
-    $expected = [
+    $expected_document = [
       'errors' => [
         [
           'title' => 'Unprocessable Entity',
@@ -209,7 +220,7 @@ class UserTest extends ResourceTestBase {
         ],
       ],
     ];
-    $this->assertResourceResponse(422, Json::encode($expected), $response);
+    $this->assertResourceResponse(422, $expected_document, $response);
     /* $this->assertResourceErrorResponse(422, 'Unprocessable Entity', 'mail: Your current password is missing or incorrect; it\'s required to change the Email.', $response, '/data/attributes/mail'); */
 
     $normalization['data']['attributes']['pass']['existing'] = 'wrong';
@@ -217,7 +228,7 @@ class UserTest extends ResourceTestBase {
 
     // DX: 422 when changing email while providing a wrong password.
     $response = $this->request('PATCH', $url, $request_options);
-    $this->assertResourceResponse(422, Json::encode($expected), $response);
+    $this->assertResourceResponse(422, $expected_document, $response);
 
     $normalization['data']['attributes']['pass']['existing'] = $this->account->passRaw;
     $request_options[RequestOptions::BODY] = Json::encode($normalization);
@@ -236,7 +247,7 @@ class UserTest extends ResourceTestBase {
     // DX: 422 when changing password without providing the current password.
     $response = $this->request('PATCH', $url, $request_options);
     // @todo Remove $expected + assertResourceResponse() in favor of the commented line below once https://www.drupal.org/project/jsonapi/issues/2943176 lands.
-    $expected = [
+    $expected_document = [
       'errors' => [
         [
           'title' => 'Unprocessable Entity',
@@ -249,7 +260,7 @@ class UserTest extends ResourceTestBase {
         ],
       ],
     ];
-    $this->assertResourceResponse(422, Json::encode($expected), $response);
+    $this->assertResourceResponse(422, $expected_document, $response);
     /* $this->assertResourceErrorResponse(422, 'Unprocessable Entity', 'pass: Your current password is missing or incorrect; it\'s required to change the Password.', $response, '/data/attributes/pass'); */
 
     $normalization['data']['attributes']['pass']['existing'] = $this->account->passRaw;
@@ -278,7 +289,7 @@ class UserTest extends ResourceTestBase {
     // DX: 403 when modifying username without required permission.
     $response = $this->request('PATCH', $url, $request_options);
     // @todo Remove $expected + assertResourceResponse() in favor of the commented line below once https://www.drupal.org/project/jsonapi/issues/2943176 lands.
-    $expected = [
+    $expected_document = [
       'errors' => [
         [
           'title' => 'Forbidden',
@@ -288,13 +299,14 @@ class UserTest extends ResourceTestBase {
             'info' => HttpExceptionNormalizer::getInfoUrl(403),
           ],
           'code' => 0,
+          'id' => '/user--user/' . $this->account->uuid(),
           'source' => [
             'pointer' => '/data/attributes/name',
           ],
         ],
       ],
     ];
-    $this->assertResourceResponse(403, Json::encode($expected), $response);
+    $this->assertResourceResponse(403, $expected_document, $response);
     /* $this->assertResourceErrorResponse(403, 'Forbidden', 'The current user is not allowed to PATCH the selected field (name).', $response, '/data/attributes/name'); */
 
     $this->grantPermissionsToTestedRole(['change own username']);
@@ -357,7 +369,7 @@ class UserTest extends ResourceTestBase {
     $response = $this->request('PATCH', $url, $request_options);
     // Ensure the email address has not changed.
     $this->assertEquals('admin@example.com', $this->entityStorage->loadUnchanged(1)->getEmail());
-    $expected = [
+    $expected_document = [
       'errors' => [
         [
           'title' => 'Forbidden',
@@ -375,9 +387,61 @@ class UserTest extends ResourceTestBase {
       ],
     ];
     // @todo Uncomment this assertion in https://www.drupal.org/project/jsonapi/issues/2939810.
-    // $this->assertResourceResponse(403, Json::encode($expected), $response);
+    // $this->assertResourceResponse(403, $expected_document, $response);
     // @todo Remove $expected + assertResourceResponse() in favor of the commented line below once https://www.drupal.org/project/jsonapi/issues/2943176 lands.
     /* $this->assertResourceErrorResponse(403, 'Forbidden', 'The current user is not allowed to PATCH the selected field (uid). The entity ID cannot be changed', $response, '/data/attributes/uid'); */
+  }
+
+  /**
+   * Tests GETting privacy-sensitive base fields.
+   */
+  public function testGetMailFieldOnlyVisibleToOwner() {
+    // Create user B, with the same roles (and hence permissions) as user A.
+    $user_a = $this->account;
+    $pass = user_password();
+    $user_b = User::create([
+      'name' => 'sibling-of-' . $user_a->getAccountName(),
+      'mail' => 'sibling-of-' . $user_a->getAccountName() . '@example.com',
+      'pass' => $pass,
+      'status' => 1,
+      'roles' => $user_a->getRoles(),
+    ]);
+    $user_b->save();
+    $user_b->passRaw = $pass;
+
+    // Grant permission to role that both users use.
+    $this->grantPermissionsToTestedRole(['access user profiles']);
+
+    $collection_url = Url::fromRoute('jsonapi.user--user.collection');
+    // @todo Remove line below in favor of commented line in https://www.drupal.org/project/jsonapi/issues/2878463.
+    $user_a_url = Url::fromRoute(sprintf('jsonapi.user--user.individual'), ['user' => $user_a->uuid()]);
+    /* $user_a_url = $user_a->toUrl('jsonapi'); */
+    $request_options = [];
+    $request_options[RequestOptions::HEADERS]['Accept'] = 'application/vnd.api+json';
+    $request_options = NestedArray::mergeDeep($request_options, $this->getAuthenticationRequestOptions());
+
+    // Viewing user A as user A: "mail" field is accessible.
+    $response = $this->request('GET', $user_a_url, $request_options);
+    $doc = Json::decode((string) $response->getBody());
+    $this->assertArrayHasKey('mail', $doc['data']['attributes']);
+    // Also when looking at the collection.
+    $response = $this->request('GET', $collection_url, $request_options);
+    $doc = Json::decode((string) $response->getBody());
+    $this->assertArrayHasKey('mail', $doc['data'][1]['attributes']);
+    $this->assertArrayNotHasKey('mail', $doc['data'][3]['attributes']);
+
+    // Now request the same URLs, but as user B (same roles/permissions).
+    $this->account = $user_b;
+    $request_options = NestedArray::mergeDeep($request_options, $this->getAuthenticationRequestOptions());
+    // Viewing user A as user B: "mail" field should be inaccessible.
+    $response = $this->request('GET', $user_a_url, $request_options);
+    $doc = Json::decode((string) $response->getBody());
+    $this->assertArrayNotHasKey('mail', $doc['data']['attributes']);
+    // Also when looking at the collection.
+    $response = $this->request('GET', $collection_url, $request_options);
+    $doc = Json::decode((string) $response->getBody());
+    $this->assertArrayNotHasKey('mail', $doc['data'][1]['attributes']);
+    $this->assertArrayHasKey('mail', $doc['data'][3]['attributes']);
   }
 
 }

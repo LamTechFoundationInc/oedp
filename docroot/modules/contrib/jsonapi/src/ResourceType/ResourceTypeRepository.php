@@ -58,6 +58,13 @@ class ResourceTypeRepository implements ResourceTypeRepositoryInterface {
   protected $all = [];
 
   /**
+   * Class to instantiate for resource type objects.
+   *
+   * @var string
+   */
+  const RESOURCE_TYPE_CLASS = ResourceType::class;
+
+  /**
    * Instantiates a ResourceTypeRepository object.
    *
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
@@ -71,6 +78,13 @@ class ResourceTypeRepository implements ResourceTypeRepositoryInterface {
     $this->entityTypeManager = $entity_type_manager;
     $this->entityTypeBundleInfo = $entity_bundle_info;
     $this->entityFieldManager = $entity_field_manager;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getPathPrefix() {
+    return 'jsonapi';
   }
 
   // @codingStandardsIgnoreStart
@@ -88,9 +102,10 @@ class ResourceTypeRepository implements ResourceTypeRepositoryInterface {
     if (!$this->all) {
       $entity_type_ids = array_keys($this->entityTypeManager->getDefinitions());
       foreach ($entity_type_ids as $entity_type_id) {
-        $this->all = array_merge($this->all, array_map(function ($bundle) use ($entity_type_id) {
+        $resource_type_class = static::RESOURCE_TYPE_CLASS;
+        $this->all = array_merge($this->all, array_map(function ($bundle) use ($entity_type_id, $resource_type_class) {
           $entity_type = $this->entityTypeManager->getDefinition($entity_type_id);
-          return new ResourceType(
+          return new $resource_type_class(
             $entity_type_id,
             $bundle,
             $entity_type->getClass(),

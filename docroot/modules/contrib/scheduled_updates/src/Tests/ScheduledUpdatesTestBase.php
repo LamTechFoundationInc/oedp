@@ -18,6 +18,8 @@ use Drupal\user\Entity\Role;
  */
 abstract class ScheduledUpdatesTestBase extends WebTestExtended {
 
+  const NODE_SAVE_BUTTON_TEXT = 'Save';
+
   /**
    * Profile to use.
    */
@@ -124,12 +126,27 @@ abstract class ScheduledUpdatesTestBase extends WebTestExtended {
     }
   }
 
-  protected function checkNodeProperties() {
-    $property_labels = $this->getNodePropertyLabels();
-    foreach ($property_labels as $property_label) {
-      $this->assertText($property_label);
-    }
-
+  /**
+   * Get Node Property machine names.
+   *
+   * @return array
+   *   The node property machine names.
+   */
+  protected function getNodePropertyMachineNames() {
+    $property_labels = [
+      'langcode',
+      'title',
+      'status',
+      'uid',
+      'revision_timestamp',
+      'revision_uid',
+      'revision_log',
+      'created',
+      'changed',
+      'promote',
+      'sticky',
+    ];
+    return $property_labels;
   }
 
   /**
@@ -180,7 +197,7 @@ abstract class ScheduledUpdatesTestBase extends WebTestExtended {
     $this->assertUrl("admin/config/workflow/scheduled-update-type/$id/clone-fields");
     $this->assertText("Created the $label Scheduled Update Type.");
     $this->assertText("Select fields to add to these updates");
-    $this->checkNodeProperties();
+    $this->checkExpectedCheckboxes('base_fields', $this->getNodePropertyMachineNames());
     // @todo test that node.body displays and is select field.
 
     $this->cloneFields($id, $clone_fields);
@@ -212,29 +229,6 @@ abstract class ScheduledUpdatesTestBase extends WebTestExtended {
     }
     $unexpected_runners = array_diff($all_runners, $expected_runners);
     $this->checkExpectedRadioOptions('update_runner[id]', $expected_runners, $unexpected_runners);
-  }
-
-  /**
-   * Get Node Property Labels.
-   *
-   * @return array
-   */
-  protected function getNodePropertyLabels() {
-    $property_labels = [
-      'Language',
-      'Title',
-      'Authored by',
-      'Publishing status',
-      'Authored on',
-      'Changed',
-      'Promoted to front page',
-      'Sticky at top of lists',
-      'Revision timestamp',
-      'Revision user ID',
-      'Revision log message',
-      'Default translation',
-    ];
-    return $property_labels;
   }
 
   /**

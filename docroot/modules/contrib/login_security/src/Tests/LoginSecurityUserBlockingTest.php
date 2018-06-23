@@ -190,7 +190,7 @@ class LoginSecurityUserBlockingTest extends LoginSecurityTestBase {
     // We can drupalGetMails() to see if a notice went out to admin.
     // In the meantime, turn the message off just in case it doesn't get
     // caught properly yet.
-    $config->set('user_blocked_email_user', '')->save();
+    $config->set('user_blocked_notification_emails', '')->save();
 
     $normal_user = $this->drupalCreateUser();
 

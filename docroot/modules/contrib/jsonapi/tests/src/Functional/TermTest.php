@@ -4,6 +4,7 @@ namespace Drupal\Tests\jsonapi\Functional;
 
 use Drupal\Component\Serialization\Json;
 use Drupal\Component\Utility\NestedArray;
+use Drupal\Core\Cache\Cache;
 use Drupal\Core\Url;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\taxonomy\Entity\Vocabulary;
@@ -195,7 +196,7 @@ class TermTest extends ResourceTestBase {
       ];
     }
 
-    return [
+    $document = [
       'jsonapi' => [
         'meta' => [
           'links' => [
@@ -221,8 +222,7 @@ class TermTest extends ResourceTestBase {
           'description' => [
             'value' => 'It is a little known fact that llamas cannot count higher than seven.',
             'format' => NULL,
-            // @todo Uncomment in https://www.drupal.org/project/jsonapi/issues/2921257.
-            /* 'processed' => "<p>It is a little known fact that llamas cannot count higher than seven.</p>\n", */
+            'processed' => "<p>It is a little known fact that llamas cannot count higher than seven.</p>\n",
           ],
           'langcode' => 'en',
           'name' => 'Llama',
@@ -250,6 +250,11 @@ class TermTest extends ResourceTestBase {
         ],
       ],
     ];
+    // @todo Remove this when JSON API requires Drupal 8.5 or newer.
+    if (floatval(\Drupal::VERSION) < 8.5) {
+      unset($document['data']['attributes']['description']['processed']);
+    }
+    return $document;
   }
 
   /**
@@ -332,26 +337,37 @@ class TermTest extends ResourceTestBase {
     $this->assertSame($normalization['data']['attributes']['path']['alias'], $updated_normalization['data']['attributes']['path']['alias']);
   }
 
-  // @codingStandardsIgnoreStart
   /**
    * {@inheritdoc}
    */
-  protected function getExpectedCacheTags() {
-    // @todo Uncomment first line, remove second line in https://www.drupal.org/project/jsonapi/issues/2940342.
-//    return Cache::mergeTags(parent::getExpectedCacheTags(), ['config:filter.format.plain_text', 'config:filter.settings']);
-    return parent::getExpectedCacheTags();
+  protected function getExpectedCacheTags(array $sparse_fieldset = NULL) {
+    // @todo Remove this when JSON API requires Drupal 8.5 or newer.
+    if (floatval(\Drupal::VERSION) < 8.5) {
+      return parent::getExpectedCacheTags($sparse_fieldset);
+    }
+
+    $tags = parent::getExpectedCacheTags($sparse_fieldset);
+    if ($sparse_fieldset === NULL || in_array('description', $sparse_fieldset)) {
+      $tags = Cache::mergeTags($tags, ['config:filter.format.plain_text', 'config:filter.settings']);
+    }
+    return $tags;
   }
 
   /**
    * {@inheritdoc}
    */
-  protected function getExpectedCacheContexts() {
-    // @todo Uncomment first line, remove second line in https://www.drupal.org/project/jsonapi/issues/2940342.
-//    return Cache::mergeContexts(['url.site'], $this->container->getParameter('renderer.config')['required_cache_contexts']);
-    return parent::getExpectedCacheContexts();
-  }
+  protected function getExpectedCacheContexts(array $sparse_fieldset = NULL) {
+    // @todo Remove this when JSON API requires Drupal 8.5 or newer.
+    if (floatval(\Drupal::VERSION) < 8.5) {
+      return parent::getExpectedCacheContexts($sparse_fieldset);
+    }
 
-  // @codingStandardsIgnoreEnd
+    $contexts = parent::getExpectedCacheContexts($sparse_fieldset);
+    if ($sparse_fieldset === NULL || in_array('description', $sparse_fieldset)) {
+      $contexts = Cache::mergeContexts($contexts, ['languages:language_interface', 'theme']);
+    }
+    return $contexts;
+  }
 
   /**
    * Tests GETting a term with a parent term other than the default <root> (0).
@@ -385,11 +401,7 @@ class TermTest extends ResourceTestBase {
     $request_options = NestedArray::mergeDeep($request_options, $this->getAuthenticationRequestOptions());
     $this->setUpAuthorization('GET');
     $response = $this->request('GET', $url, $request_options);
-    $expected = $this->getExpectedDocument();
-    static::recursiveKSort($expected);
-    $actual = Json::decode((string) $response->getBody());
-    static::recursiveKSort($actual);
-    $this->assertSame($expected, $actual);
+    $this->assertSameDocument($this->getExpectedDocument(), Json::decode($response->getBody()));
   }
 
   /**

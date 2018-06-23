@@ -181,7 +181,22 @@ display:
               preconfig: 'Test setting'
           plugin_id: views_bulk_operations_bulk_form
       filters: {  }
-      sorts: {  }
+      sorts:
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: DESC
+          exposed: false
+          expose:
+            label: ''
+          granularity: second
+          entity_type: node
+          entity_field: created
+          plugin_id: date
       title: 'Views Bulk Operations Test'
       header: {  }
       footer: {  }

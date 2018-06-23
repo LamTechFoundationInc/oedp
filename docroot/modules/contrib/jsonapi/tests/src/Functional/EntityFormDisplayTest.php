@@ -147,13 +147,9 @@ class EntityFormDisplayTest extends ResourceTestBase {
             ],
           ],
           'dependencies' => [
-            // @todo Remove the first line in favor of the 3 commented lines in https://www.drupal.org/project/jsonapi/issues/2942979
-            // @codingStandardsIgnoreStart
-            'node.type.camelids',
-//            'config' => [
-//              'node.type.camelids',
-//            ],
-            // @codingStandardsIgnoreEnd
+            'config' => [
+              'node.type.camelids',
+            ],
           ],
           'hidden' => [],
           'id' => 'node.camelids.default',
@@ -173,17 +169,6 @@ class EntityFormDisplayTest extends ResourceTestBase {
   protected function getPostDocument() {
     // @todo Update in https://www.drupal.org/node/2300677.
   }
-
-  // @codingStandardsIgnoreStart
-  /**
-   * {@inheritdoc}
-   */
-  protected function getExpectedCacheContexts() {
-    // @todo Uncomment first line, remove second line in https://www.drupal.org/project/jsonapi/issues/2940342.
-//    return ['user.permissions'];
-    return parent::getExpectedCacheContexts();
-  }
-  // @codingStandardsIgnoreEnd
 
   /**
    * {@inheritdoc}

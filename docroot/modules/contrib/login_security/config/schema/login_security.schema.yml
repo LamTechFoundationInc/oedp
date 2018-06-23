@@ -59,9 +59,9 @@ login_security.settings:
     login_activity_email_body:
       type: string
       label: 'Email body'
-    user_blocked_email_user:
+    user_blocked_notification_emails:
       type: string
-      label: 'Account to notify when user is blocked'
-    login_activity_email_user:
+      label: 'Emails to be notified when users are blocked'
+    login_activity_notification_emails:
       type: string
-      label: 'Account to notify during excess activity'
+      label: 'Emails to be notified during excess activity'
