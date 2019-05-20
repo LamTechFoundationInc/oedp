@@ -8274,6 +8274,65 @@
         }
     },
     {
+        "name": "drupal/real_aes",
+        "version": "2.1.0",
+        "version_normalized": "2.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://git.drupal.org/project/real_aes",
+            "reference": "8.x-2.1"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://ftp.drupal.org/files/projects/real_aes-8.x-2.1.zip",
+            "reference": "8.x-2.1",
+            "shasum": "1fd8a7cea1eda08d9e20dd56f3bb624b018b0de2"
+        },
+        "require": {
+            "defuse/php-encryption": "^2.0",
+            "drupal/core": "~8.0",
+            "drupal/encrypt": "*"
+        },
+        "type": "drupal-module",
+        "extra": {
+            "branch-alias": {
+                "dev-2.x": "2.x-dev"
+            },
+            "drupal": {
+                "version": "8.x-2.1",
+                "datestamp": "1526056384",
+                "security-coverage": {
+                    "status": "covered",
+                    "message": "Covered by Drupal's security advisory policy"
+                }
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packages.drupal.org/8/downloads",
+        "license": [
+            "GPL-2.0+"
+        ],
+        "authors": [
+            {
+                "name": "Heine",
+                "homepage": "https://www.drupal.org/user/17943"
+            },
+            {
+                "name": "nerdstein",
+                "homepage": "https://www.drupal.org/user/1557710"
+            },
+            {
+                "name": "rlhawk",
+                "homepage": "https://www.drupal.org/user/352283"
+            }
+        ],
+        "description": "Provides an Authenticated AES encryption method for Encrypt though the Defuse PHP Encryption library.",
+        "homepage": "https://www.drupal.org/project/real_aes",
+        "support": {
+            "source": "http://cgit.drupalcode.org/real_aes"
+        }
+    },
+    {
         "name": "drupal/recaptcha",
         "version": "2.3.0",
         "version_normalized": "2.3.0.0",
@@ -11134,12 +11193,12 @@
         "version_normalized": "2.2.1.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/google/google-api-php-client.git",
+            "url": "https://github.com/googleapis/google-api-php-client.git",
             "reference": "b69b8ac4bf6501793c389d4e013a79d09c85c5f2"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/google/google-api-php-client/zipball/b69b8ac4bf6501793c389d4e013a79d09c85c5f2",
+            "url": "https://api.github.com/repos/googleapis/google-api-php-client/zipball/b69b8ac4bf6501793c389d4e013a79d09c85c5f2",
             "reference": "b69b8ac4bf6501793c389d4e013a79d09c85c5f2",
             "shasum": ""
         },
@@ -11195,12 +11254,12 @@
         "version_normalized": "0.37.0.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/google/google-api-php-client-services.git",
+            "url": "https://github.com/googleapis/google-api-php-client-services.git",
             "reference": "75fb5412eec7cfc9f78ac0f8d23e907ce07c2330"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/google/google-api-php-client-services/zipball/75fb5412eec7cfc9f78ac0f8d23e907ce07c2330",
+            "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/75fb5412eec7cfc9f78ac0f8d23e907ce07c2330",
             "reference": "75fb5412eec7cfc9f78ac0f8d23e907ce07c2330",
             "shasum": ""
         },
@@ -11234,12 +11293,12 @@
         "version_normalized": "1.1.0.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/google/google-auth-library-php.git",
+            "url": "https://github.com/googleapis/google-auth-library-php.git",
             "reference": "548d27d670f0236dc5258fa4cdde6e7b63464cfd"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/google/google-auth-library-php/zipball/548d27d670f0236dc5258fa4cdde6e7b63464cfd",
+            "url": "https://api.github.com/repos/googleapis/google-auth-library-php/zipball/548d27d670f0236dc5258fa4cdde6e7b63464cfd",
             "reference": "548d27d670f0236dc5258fa4cdde6e7b63464cfd",
             "shasum": ""
         },
